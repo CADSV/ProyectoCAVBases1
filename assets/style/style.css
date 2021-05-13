@@ -5,6 +5,12 @@ body {
     margin: 0;
 }
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    box-sizing: border-box; /* Ajusta el tamaño a uno más compacto, tomando en cuenta el width y padding */
+}
+
 .signInContainer{
     background-color: #efefee;
     height: 100vh;
@@ -18,12 +24,15 @@ body {
     min-height: 300px;
     max-height: 100%;
     width: 450px;
-    box-shadow: rbga(0,0,0, 0.1) 0 1px 2px;
+    box-shadow: rgba(0,0,0, 0.1) 0 1px 2px;
+    padding: 20px 35px;
+    overflow-y: auto; /* Evita que el contenido se desborde en el eje "y", permitiendo que aparezca una barra de desplazamiento cuando sea necesaria (por ejemplo cuando se ve desde un celular) */
 }
 
 .column form {
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
 }
 
 .column form input[type="text"],
@@ -38,12 +47,59 @@ body {
 .column form input[type="submit"]{
     background-color: #4285f4;
     color: #fff;
-    height: 36px;
-    width: 88px;
+    padding: 1em 0.9em;
+    width: fit-content;
     border: none;
     border-radius: 3px;
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.column .button{
+    transition-duration: 0.4s;
+}
+
+.column .button:hover{ /* Al colocar el cursor sobre el botón, cambiara de color */
+    background-color: #24519b;
+    color: white;
+}
+
+.column .header {
+    padding: 20px 0;
+}
+
+.column /*.header*/ h3{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0;
+    padding-top: 16px;
+    color: #000;
+}
+
+.column .header span {
+    font-size: 14px;
+}
+
+.column .header img {
+    display: block; /* Genera un bloque para la imagen, para así poderla centrar con los margin */
+    margin-left: auto;
+    margin-right: auto;
+    width: 130px;
+}
+
+.signInMessage,
+.signUpMessage{
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration-line: none; /* Quita el subrayado del link */
+    transition-duration: 0.4s;
+}
+
+.signInMessage:hover,
+.signUpMessage:hover{
+    text-decoration-line: underline;
 }
