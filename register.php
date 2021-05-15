@@ -1,7 +1,19 @@
 <?php
+require_once("includes/classes/FormSanitizer.php");
     if(isset($_POST["botonEnviar"])) { // Si el botón Enviar es presionado, entonces...
-        echo "El formulario ha sido enviado con éxito";
+       
+        $nombre = FormSanitizer::sanitizeFormString($_POST["nombre"]);  //Validacion del nombre. 
+        $apellido = FormSanitizer::sanitizeFormString($_POST["apellido"]);
+        $nombreUsuario = FormSanitizer::sanitizeFormNombreUsuario($_POST["nombreUsuario"]);
+        $correo = FormSanitizer::sanitizeFormCorreo($_POST["correo"]);
+        $correo2 = FormSanitizer::sanitizeFormCorreo($_POST["correo2"]);
+        $contrasena = FormSanitizer::sanitizeFormContrasena($_POST["contraseña"]);
+        $contrasena2 = FormSanitizer::sanitizeFormContrasena($_POST["contraseña2"]);
+    
+
     }
+
+    
 ?>
 
 <!DOCTYPE html>
