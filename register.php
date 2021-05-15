@@ -1,5 +1,11 @@
 <?php
 require_once("includes/classes/FormSanitizer.php");
+require_once("includes/config.php");
+require_once("includes/classes/Account.php");
+require_once("includes/classes/Constants.php");
+
+    $account= new Account($con);
+
     if(isset($_POST["botonEnviar"])) { // Si el botón Enviar es presionado, entonces...
        
         $nombre = FormSanitizer::sanitizeFormString($_POST["nombre"]);  //Validacion del nombre. 
@@ -9,6 +15,9 @@ require_once("includes/classes/FormSanitizer.php");
         $correo2 = FormSanitizer::sanitizeFormCorreo($_POST["correo2"]);
         $contrasena = FormSanitizer::sanitizeFormContrasena($_POST["contraseña"]);
         $contrasena2 = FormSanitizer::sanitizeFormContrasena($_POST["contraseña2"]);
+
+
+        $account->validateNombre($nombre);
     
 
     }
@@ -33,6 +42,8 @@ require_once("includes/classes/FormSanitizer.php");
                 </div>
 
                 <form method="POST"> <!-- El método post sirve para enviar datos -->
+
+                    <?php echo $account->getError(Constants::$firstnameCharacters);?>
                     <input type="text" name="nombre" placeholder="Nombre(s)" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
 
                     <input type="text" name="apellido" placeholder="Apellido(s)" required>
