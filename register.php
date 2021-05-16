@@ -1,7 +1,28 @@
 <?php
+require_once("includes/classes/FormSanitizer.php");
+require_once("includes/config.php");
+require_once("includes/classes/Account.php");
+require_once("includes/classes/Constants.php");
+
+    $account= new Account($con);
+
     if(isset($_POST["botonEnviar"])) { // Si el botón Enviar es presionado, entonces...
-        echo "El formulario ha sido enviado con éxito";
+       
+        $nombre = FormSanitizer::sanitizeFormString($_POST["nombre"]);  //Validacion del nombre. 
+        $apellido = FormSanitizer::sanitizeFormString($_POST["apellido"]);
+        $nombreUsuario = FormSanitizer::sanitizeFormNombreUsuario($_POST["nombreUsuario"]);
+        $correo = FormSanitizer::sanitizeFormCorreo($_POST["correo"]);
+        $correo2 = FormSanitizer::sanitizeFormCorreo($_POST["correo2"]);
+        $contrasena = FormSanitizer::sanitizeFormContrasena($_POST["contraseña"]);
+        $contrasena2 = FormSanitizer::sanitizeFormContrasena($_POST["contraseña2"]);
+
+        $account->register($nombre, $apellido, $nombreUsuario, $correo, $correo2, $contrasena, $contrasena2);
+        
+    
+
     }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +42,20 @@
                 </div>
 
                 <form method="POST"> <!-- El método post sirve para enviar datos -->
+
+                    <?php echo $account->getError(Constants::$firstnameCharacters);?>
                     <input type="text" name="nombre" placeholder="Nombre(s)" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
 
+                    <?php echo $account->getError(Constants::$lastnameCharacters);?>
                     <input type="text" name="apellido" placeholder="Apellido(s)" required>
-
+                    
+                    <?php echo $account->getError(Constants::$usernameCharacters);?>        
+                    <?php echo $account->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
                     <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" required>
 
+                    <?php echo $account->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
+                    <?php echo $account->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
+                    <?php echo $account->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
                     <input type="email" name="correo" placeholder="Correo electrónico" required>
 
                     <input type="email" name="correo2" placeholder="Confirmar correo electrónico" required>
