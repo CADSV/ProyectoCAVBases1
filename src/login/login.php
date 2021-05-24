@@ -8,14 +8,14 @@
 <html>
     <head>
         <title>Bienvenido a Carlevix</title>
-        <link rel="stylesheet" type="text/css" href="assets/style/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../assets/style/style.css"/>
     </head>
     <body>
         <div class="signInContainer">
             <div class="column">
 
                 <div class="header">
-                    <img src="assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
+                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
                     <h3>Inicia sesión</h3>
                     <span>para continuar a Carlevix</span>
                 </div>
@@ -30,7 +30,7 @@
 
                 </form>
 
-                <a href="src/register/register.php" class="signUpMessage">¿No estás registrado? Regístrate aquí</a>
+                <a href="../../src/register/register.php" class="signUpMessage">¿No estás registrado? Regístrate aquí</a>
 
             </div>
 
