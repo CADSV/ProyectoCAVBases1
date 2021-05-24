@@ -68,7 +68,7 @@ require_once("includes/classes/Constants.php");
 
                 </form>
 
-                <a href="login.php" class="signInMessage">¿Ya estás registrado? Inicia sesión aquí</a>
+                <a href="src/login/login.php" class="signInMessage">¿Ya estás registrado? Inicia sesión aquí</a>
 
             </div>
 

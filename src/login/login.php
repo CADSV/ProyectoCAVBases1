@@ -30,7 +30,7 @@
 
                 </form>
 
-                <a href="register.php" class="signUpMessage">¿No estás registrado? Regístrate aquí</a>
+                <a href="src/register/register.php" class="signUpMessage">¿No estás registrado? Regístrate aquí</a>
 
             </div>
 
