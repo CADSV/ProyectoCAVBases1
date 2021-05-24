@@ -13,8 +13,8 @@ body {
 
 .signInContainer{
     background-color: #efefee;
-    height: 100vh;
-    display: flex;
+    height: 100vh; /* vh es view height, y el número es un porcentaje*/
+    display: flex; /*siempre poner esto */
     align-items: center;
     justify-content: center;
 }
