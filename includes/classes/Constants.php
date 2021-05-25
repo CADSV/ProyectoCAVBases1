@@ -1,7 +1,7 @@
 <?php
 
 class Constants {
-    public static $firstnameCharacters = "El nombre debe tener una longitud mínima de 2 caracteres";
+    public static $nameCharacters = "El nombre debe tener una longitud mínima de 2 caracteres";
     public static $lastnameCharacters = "El apellido debe tener una longitud mínima de 2 caracteres";
     public static $usernameCharacters = "El usuario debe tener una longitud mínima de 2 caracteres";
     public static $usernameTaken = "Nombre de usuario existente";

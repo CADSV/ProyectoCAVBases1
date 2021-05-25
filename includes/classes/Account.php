@@ -11,30 +11,30 @@ class Account{
     }
 
     public function register($fn, $ln, $un, $em, $em2, $pw, $pw2){
-        $this->validateNombre($fn);
-        $this->validateApellido($ln);
-        $this->validateUsuario($un);
-        $this->validateCorreos($em, $em2);
+        $this->validateName($fn);
+        $this->validateLastName($ln);
+        $this->validateUsername($un);
+        $this->validateEmail($em, $em2);
 
 
 
     }
 
-    private function validateNombre($fn){ // Valida la longitud del nombre
+    private function validateName($fn){ // Valida la longitud del nombre
         if(strlen($fn)< 2 || strlen($fn)> 25){
-            array_push($this->errorArray, Constants::$firstnameCharacters);
+            array_push($this->errorArray, Constants::$nameCharacters);
         }
 
     }
 
-    private function validateApellido($ln){ //Valida la Longitud del Apellido
+    private function validateLastName($ln){ //Valida la Longitud del Apellido
         if(strlen($ln)< 2 || strlen($ln)> 25){
             array_push($this->errorArray, Constants::$lastnameCharacters);
         }
 
     }
 
-    private function validateUsuario($un){ 
+    private function validateUsername($un){ 
         if(strlen($un)< 2 || strlen($un)> 25){              //Valida la Longitud del usuario
             array_push($this->errorArray, Constants::$usernameCharacters);
             return;
@@ -51,7 +51,7 @@ class Account{
 
     }
 
-    private function validateCorreos($em, $em2){
+    private function validateEmail($em, $em2){
         if ($em != $em2){
             array_push($this->errorArray, Constants::$emailsDontMatch);
             return;
