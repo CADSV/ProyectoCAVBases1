@@ -28,15 +28,15 @@ require_once("includes/classes/Constants.php");
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bienvenido a Carlevix</title>
-        <link rel="stylesheet" type="text/css" href="assets/style/style.css"/>
+        <title>Bienvenid@ a Carlevix</title>
+        <link rel="stylesheet" type="text/css" href="../../assets/style/style.css"/>
     </head>
     <body>
         <div class="signInContainer">
             <div class="column">
 
                 <div class="header">
-                    <img src="assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
+                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
                     <h3>Regístrese</h3>
                     <span>para continuar a Carlevix</span>
                 </div>
@@ -68,7 +68,7 @@ require_once("includes/classes/Constants.php");
 
                 </form>
 
-                <a href="src/login/login.php" class="signInMessage">¿Ya estás registrado? Inicia sesión aquí</a>
+                <a href="../../src/login/login.php" class="signInMessage">¿Ya estás registrado? Inicia sesión aquí</a>
 
             </div>
 
