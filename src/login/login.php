@@ -11,31 +11,33 @@
         <link rel="stylesheet" type="text/css" href="../../assets/style/style.css"/> <!-- el "../" sirve para regresar a un directorio superior, se puede colocar tantas veces sea necesario -->
     </head>
     <body>
-        <div class="signInContainer">
-            <div class="column">
-
-                <div class="header">
-                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
-                    <h3>Inicia sesión</h3>
-                    <span>para continuar a Carlevix</span>
-                </div>
-
-                <form method="POST">
-
-                    <input type="text" name="username" placeholder="Nombre de usuario" required>
-
-                    <input type="password" name="password" placeholder="Contraseña" required>
-
-                    <input type="submit" class="button" name="botonIniciarSesion" value="Iniciar sesión">
-
-                </form>
-
-                <a href="../../src/register/register.php" class="signUpMessage">¿No estás registrado? Regístrate aquí</a>
-
+        <div class="wrapper">
+            <div class="background">
+                <img src="../../assets/images/loginBackground.jpg" title="Imagen de fondo" alt="Cartelera multimedia, imagen de fondo">
             </div>
+            <div class="signInContainer">
+                <div class="column">
 
+                    <div class="header">
+                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
+                        <h3>Inicia sesión</h3>
+                        <span>para continuar a Carlevix</span>
+                    </div>
+
+                    <form method="POST">
+
+                        <input type="text" name="username" placeholder="Nombre de usuario" required>
+
+                        <input type="password" name="password" placeholder="Contraseña" required>
+
+                        <input type="submit" class="button" name="botonIniciarSesion" value="Iniciar sesión">
+
+                    </form>
+
+                    <a href="../../src/register/register.php" class="signUpMessage">¿No estás registrado? Regístrate aquí</a>
+
+                </div>
+            </div>
         </div>
-
     </body>
-
 </html>
