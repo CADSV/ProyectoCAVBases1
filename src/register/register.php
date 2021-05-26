@@ -28,7 +28,7 @@ require_once("../../includes/classes/Constants.php");
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bienvenido a Carlevix</title>
+        <title>Bienvenid@ a Carlevix</title>
         <link rel="stylesheet" type="text/css" href="../../assets/style/style.css"/>
     </head>
     <body>
