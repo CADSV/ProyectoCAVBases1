@@ -6,7 +6,7 @@ body {
 }
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #fff;
     box-sizing: border-box; /* Ajusta el tamaño a uno más compacto, tomando en cuenta el width y padding */
 }
@@ -26,12 +26,17 @@ body {
     box-shadow: rgba(0,0,0, 0.1) 0 1px 2px;
     padding: 20px 35px;
     overflow-y: auto; /* Evita que el contenido se desborde en el eje "y", permitiendo que aparezca una barra de desplazamiento cuando sea necesaria (por ejemplo cuando se ve desde un celular) */
+    padding-bottom: 100px;
 }
 
 .column form {
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+}
+
+.column form input {
+    padding: 1em 0.9em;
+    border-radius: 3px;
 }
 
 .column form input[type="text"],
@@ -41,17 +46,15 @@ body {
     font-size: 14px;
     margin: 10px 0;
     border: none;
-    border-bottom: 1px solid #dedede;
+    height: 50px;
 }
 
 .column form input[type="submit"]{
     background-color: #e50914;
     color: #fff;
-    padding: 1em 0.9em;
-    width: fit-content;
     border: none;
     border-radius: 3px;
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 16px;
@@ -71,9 +74,9 @@ body {
     padding: 20px 0;
 }
 
-.column /*.header*/ h3{
-    font-size: 24px;
-    font-weight: 400;
+.column .header h1{
+    font-size: 32px;
+    font-weight: 700;
     line-height: 32px;
     margin: 0;
     padding-top: 16px;
@@ -124,4 +127,15 @@ body {
 .wrapper {
     background-color: #000;
     position: relative;
+    z-index: 0;
+}
+
+.login-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: transparent;
+    z-index: 2;
+    background: linear-gradient(to bottom,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 100%) /* Oscurece un poco el fondo para que se lea mejor el logo
 }
