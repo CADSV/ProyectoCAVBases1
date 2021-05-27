@@ -6,17 +6,17 @@ require_once("../../includes/classes/Constants.php");
 
     $account= new Account($con);
 
-    if(isset($_POST["botonEnviar"])) { // Si el botón Enviar es presionado, entonces...
+    if(isset($_POST["submitButton"])) { // Si el botón Enviar es presionado, entonces...
        
-        $nombre = FormSanitizer::sanitizeFormString($_POST["nombre"]);  //Validacion del nombre. 
-        $apellido = FormSanitizer::sanitizeFormString($_POST["apellido"]);
-        $nombreUsuario = FormSanitizer::sanitizeFormNombreUsuario($_POST["nombreUsuario"]);
-        $correo = FormSanitizer::sanitizeFormCorreo($_POST["correo"]);
-        $correo2 = FormSanitizer::sanitizeFormCorreo($_POST["correo2"]);
-        $contrasena = FormSanitizer::sanitizeFormContrasena($_POST["contraseña"]);
-        $contrasena2 = FormSanitizer::sanitizeFormContrasena($_POST["contraseña2"]);
+        $name = FormSanitizer::sanitizeFormString($_POST["name"]);  //Validacion del nombre. 
+        $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
+        $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
+        $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
+        $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
+        $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
+        $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
 
-        $account->register($nombre, $apellido, $nombreUsuario, $correo, $correo2, $contrasena, $contrasena2);
+        $account->register($name, $lastName, $username, $email, $email2, $password, $password2);
         
     
 
@@ -43,28 +43,28 @@ require_once("../../includes/classes/Constants.php");
 
                 <form method="POST"> <!-- El método post sirve para enviar datos -->
 
-                    <?php echo $account->getError(Constants::$firstnameCharacters);?>
-                    <input type="text" name="nombre" placeholder="Nombre(s)" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
+                    <?php echo $account->getError(Constants::$nameCharacters);?>
+                    <input type="text" name="name" placeholder="Nombre(s)" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
 
                     <?php echo $account->getError(Constants::$lastnameCharacters);?>
-                    <input type="text" name="apellido" placeholder="Apellido(s)" required>
+                    <input type="text" name="lastName" placeholder="Apellido(s)" required>
                     
                     <?php echo $account->getError(Constants::$usernameCharacters);?>        
                     <?php echo $account->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
-                    <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" required>
+                    <input type="text" name="username" placeholder="Nombre de usuario" required>
 
                     <?php echo $account->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
                     <?php echo $account->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
                     <?php echo $account->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
-                    <input type="email" name="correo" placeholder="Correo electrónico" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
 
-                    <input type="email" name="correo2" placeholder="Confirmar correo electrónico" required>
+                    <input type="email" name="email2" placeholder="Confirmar correo electrónico" required>
 
-                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
 
-                    <input type="password" name="contraseña2" placeholder="Confirmar contraseña" required>
+                    <input type="password" name="password2" placeholder="Confirmar contraseña" required>
 
-                    <input type="submit" class="button" name="botonEnviar" value="ENVIAR">
+                    <input type="submit" class="button" name="submitButton" value="ENVIAR">
 
                 </form>
 
