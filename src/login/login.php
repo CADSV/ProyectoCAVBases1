@@ -5,8 +5,12 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang='es'>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
         <title>Bienvenido a Carlevix</title>
         <link rel="stylesheet" type="text/css" href="../../assets/style/loginStyle.css"/> <!-- el "../" sirve para regresar a un directorio superior, se puede colocar tantas veces sea necesario -->
     </head>
