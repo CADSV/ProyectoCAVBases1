@@ -11,7 +11,7 @@ class FormSanitizer {
 
     }
 
-    public static function  sanitizeFormNombreUsuario($inputText){   //Valida la entrada 
+    public static function  sanitizeFormUsername($inputText){   //Valida la entrada 
         $inputText = strip_tags($inputText);
         $inputText = str_replace(" ","",$inputText); //Elimina los espacios en blanco
        
@@ -19,7 +19,7 @@ class FormSanitizer {
 
     }
 
-    public static function  sanitizeFormContrasena($inputText){   //Valida la entrada 
+    public static function  sanitizeFormPassword($inputText){   //Valida la entrada 
         $inputText = strip_tags($inputText);
        
        
@@ -27,7 +27,7 @@ class FormSanitizer {
 
     }
 
-    public static function  sanitizeFormCorreo($inputText){   //Valida la entrada 
+    public static function  sanitizeFormEmail($inputText){   //Valida la entrada 
         $inputText = strip_tags($inputText);
         $inputText = str_replace(" ","",$inputText); //Elimina los espacios en blanco
        

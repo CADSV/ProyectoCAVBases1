@@ -6,13 +6,12 @@ body {
 }
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #fff;
     box-sizing: border-box; /* Ajusta el tamaño a uno más compacto, tomando en cuenta el width y padding */
 }
 
 .signInContainer{
-    background-color: #efefee;
     height: 100vh; /* vh es view height, y el número es un porcentaje*/
     display: flex; /*siempre poner esto */
     align-items: center;
@@ -20,38 +19,42 @@ body {
 }
 
 .column {
-    background-color: #fff;
+    background-color: rgba(0,0,0, 0.75);
     min-height: 300px;
     max-height: 100%;
     width: 450px;
     box-shadow: rgba(0,0,0, 0.1) 0 1px 2px;
     padding: 20px 35px;
     overflow-y: auto; /* Evita que el contenido se desborde en el eje "y", permitiendo que aparezca una barra de desplazamiento cuando sea necesaria (por ejemplo cuando se ve desde un celular) */
+    padding-bottom: 100px;
 }
 
 .column form {
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+}
+
+.column form input {
+    padding: 1em 0.9em;
+    border-radius: 3px;
 }
 
 .column form input[type="text"],
 .column form input[type="email"],
 .column form input[type="password"]{
+    background-color: #333;
     font-size: 14px;
     margin: 10px 0;
     border: none;
-    border-bottom: 1px solid #dedede;
+    height: 50px;
 }
 
 .column form input[type="submit"]{
-    background-color: #4285f4;
+    background-color: #e50914;
     color: #fff;
-    padding: 1em 0.9em;
-    width: fit-content;
     border: none;
     border-radius: 3px;
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 16px;
@@ -63,7 +66,7 @@ body {
 }
 
 .column .button:hover{ /* Al colocar el cursor sobre el botón, cambiara de color */
-    background-color: #24519b;
+    background-color: #ff5d65;
     color: white;
 }
 
@@ -71,13 +74,13 @@ body {
     padding: 20px 0;
 }
 
-.column /*.header*/ h3{
-    font-size: 24px;
-    font-weight: 400;
+.column .header h1{
+    font-size: 32px;
+    font-weight: 700;
     line-height: 32px;
     margin: 0;
     padding-top: 16px;
-    color: #000;
+    color: #fff;
 }
 
 .column .header span {
@@ -102,4 +105,37 @@ body {
 .signInMessage:hover,
 .signUpMessage:hover{
     text-decoration-line: underline;
+}
+
+.background {
+    background-size: cover;
+    display: block;
+    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.background img {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.wrapper {
+    background-color: #000;
+    position: relative;
+    z-index: 0;
+}
+
+.login-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: transparent;
+    z-index: 2;
+    background: linear-gradient(to bottom,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 100%) /* Oscurece un poco el fondo para que se lea mejor el logo
 }
