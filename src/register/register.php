@@ -26,8 +26,12 @@ require_once("../../includes/classes/Constants.php");
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang='es'>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
         <title>Bienvenid@ a Carlevix</title>
         <link rel="stylesheet" type="text/css" href="../../assets/style/style.css"/>
     </head>
