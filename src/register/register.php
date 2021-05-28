@@ -1,10 +1,10 @@
 <?php
-require_once("../../includes/classes/FormSanitizer.php");
-require_once("../../includes/config.php");
-require_once("../../includes/classes/Account.php");
-require_once("../../includes/classes/Constants.php");
+require_once("../../data/classes/formSanitizer.php");
+require_once("../../data/config.php");
+require_once("../../data/account/registerAccount.php");
+require_once("../../data/classes/constants.php");
 
-    $account= new Account($con);
+    $registerAccount= new RegisterAccount($connection);
 
     if(isset($_POST["submitButton"])) { // Si el botón Enviar es presionado, entonces...
        
@@ -16,7 +16,7 @@ require_once("../../includes/classes/Constants.php");
         $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
         $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
 
-        $account->register($name, $lastName, $username, $email, $email2, $password, $password2);
+        $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
         
     
 
@@ -33,7 +33,7 @@ require_once("../../includes/classes/Constants.php");
         <meta name="viewport"
             content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
         <title>Bienvenid@ a Carlevix</title>
-        <link rel="stylesheet" type="text/css" href="../../assets/style/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../../assets/style/loginStyle.css"/>
     </head>
     <body>
         <div class="signInContainer">
@@ -47,19 +47,19 @@ require_once("../../includes/classes/Constants.php");
 
                 <form method="POST"> <!-- El método post sirve para enviar datos -->
 
-                    <?php echo $account->getError(Constants::$nameCharacters);?>
+                    <?php echo $registerAccount->getError(Constants::$nameLength);?>
                     <input type="text" name="name" placeholder="Nombre(s)" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
 
-                    <?php echo $account->getError(Constants::$lastnameCharacters);?>
+                    <?php echo $registerAccount->getError(Constants::$lastNameLength);?>
                     <input type="text" name="lastName" placeholder="Apellido(s)" required>
                     
-                    <?php echo $account->getError(Constants::$usernameCharacters);?>        
-                    <?php echo $account->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
+                    <?php echo $registerAccount->getError(Constants::$usernameLength);?>        
+                    <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
                     <input type="text" name="username" placeholder="Nombre de usuario" required>
 
-                    <?php echo $account->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
-                    <?php echo $account->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
-                    <?php echo $account->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
+                    <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
+                    <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
+                    <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
                     <input type="email" name="email" placeholder="Correo electrónico" required>
 
                     <input type="email" name="email2" placeholder="Confirmar correo electrónico" required>
