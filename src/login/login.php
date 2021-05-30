@@ -41,7 +41,7 @@
 
                     </form>
 
-                    <a href="../../src/register/register.php" class="signUpMessage">¿No estás registrado? Regístrate aquí</a>
+                    <a href="../../src/register/register3.php" class="signUpMessage">¿No estás registrado? Regístrate aquí</a>
                     
                 </div>
             </div>
