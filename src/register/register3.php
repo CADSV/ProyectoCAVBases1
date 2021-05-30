@@ -13,7 +13,20 @@
     <link rel="stylesheet" type="text/css" href="../../assets/style/registerStyle.css">
 </head>
 <body>
-    
+    <div class="wrapper">
+        <header>
+            <div class="login-header">
+                <a href="../../index.php"> 
+                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
+                </a>          
+            </div>
+            <nav class = "login">
+                <a href="../login/login.php">Iniciar Sesión</a>
+            </nav>
+        </header>
+        <div class = "line"></div>
+
+    </div>
 </body>
 </html>
 

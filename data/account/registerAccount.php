@@ -1,6 +1,6 @@
 <?php
 
-require_once("C:/xampp/htdocs/carlevix/ProyectoCAVBases1/data/request/registerRequest.php");
+require_once("C:/xampp/htdocs/ProyectoCAVBases1/data/request/registerRequest.php");
 
 
 class RegisterAccount{
