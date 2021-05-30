@@ -22,7 +22,7 @@
                 </a>          
             </div>
             <nav class = "login">
-                <a href="../login/login.php">Iniciar Sesión</a>
+                <a href="../login/login.php">Inicia Sesión</a>
             </nav>
         </header>
         <div class = "line"></div>
@@ -44,6 +44,9 @@
                     <p>Carlevix está personalizado para ti.</p>
                     <p>Completa tus datos para ver Carlevix en</p>
                     <p>cualquier dispositivo, cuando quieras.</p>
+                </div>
+                <div class = "buttonContainer">
+                    <a href="register.php">Continuar</a>
                 </div>
             </div>
         </section>
