@@ -46,7 +46,7 @@
                 </p>   <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">   Disfruta sin límites en todos tus dispositivos.</p>
                 </div>
                 <div class = "buttonContainer">
-                    <a href="register.php">Ver los planes</a>
+                    <a href="register3.php">Ver los planes</a>
                 </div>
             </div>
         </section>
