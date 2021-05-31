@@ -46,7 +46,7 @@
                     <p>cualquier dispositivo, cuando quieras.</p>
                 </div>
                 <div class = "buttonContainer">
-                    <a href="register.php">Continuar</a>
+                    <a href="register4.php">Continuar</a>
                 </div>
             </div>
         </section>
