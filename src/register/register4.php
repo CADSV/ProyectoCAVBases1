@@ -32,10 +32,27 @@ require_once("../../data/classes/constants.php");
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport"
             content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
-        <title>Bienvenid@ a Carlevix</title>
-        <link rel="stylesheet" type="text/css" href="../../assets/style/loginStyle.css"/>
+        <title>Complete sus datos</title>
+        <link rel="stylesheet" type="text/css" href="../../assets/style/RegisterStyle.css"/>
     </head>
+
     <body>
+
+        <div class="wrapper">
+
+            <header>
+                <div class="login-header">
+                    <a href="../../index.php"> 
+                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
+                    </a>          
+                </div>
+                <nav class = "login">
+                    <a href="../login/login.php">Inicia Sesión</a>
+                </nav>
+            </header>
+            <div class = "line"></div>
+            </div>
+            
         <div class="signInContainer">
             <div class="column">
 
