@@ -79,6 +79,32 @@ require_once("../../data/classes/constants.php");
                         <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
                         <input type="text" name="username" placeholder="Nombre de usuario" required>
 
+                        <div class = "dropdowns">
+                            <div class = "genreDropdown">
+                                <label for="genre">Elige un género:</label>
+                                <select id="genre" name="genre" form = "POST" required>
+                                    <option value="N/A">N/A</option>
+                                    <option value="women">Mujer</option>
+                                    <option value="male">Hombre</option>
+                                </select>
+                            </div>
+
+                            <div class = "cityDropdown">
+                                <label for="city">Elige tu ciudad:</label>
+                                <select id="city" name="city" form = "POST" required>
+                                <optgroup label="Bélgica">
+                                    <option value="Bruselas">Bruselas</option>
+                                    <option value="Charleroi">Charleroi</option>
+                                </optgroup>
+                                <optgroup label="Venezuela">
+                                    <option value="Barquisimeto">Barquisimeto</option>
+                                    <option value="Caracas">Caracas</option>
+                                </optgroup>
+                                </select>
+                            </div>
+
+                        </div>
+
                         <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
                         <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
                         <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
