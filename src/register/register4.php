@@ -16,8 +16,11 @@ require_once("../../data/classes/constants.php");
         $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
         $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
 
-        $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
-        
+        // echo $genre = FormSanitizer::sanitizeFormString($_POST["genre"]);
+        // echo $city = FormSanitizer::sanitizeFormString($_POST["city"]);
+
+        // $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
+        // Mientras no hay back.
     
 
     }
@@ -81,8 +84,8 @@ require_once("../../data/classes/constants.php");
 
                         <div class = "dropdowns">
                             <div class = "genreDropdown">
-                                <label for="genre">Elige un género:</label>
-                                <select id="genre" name="genre" form = "POST" required>
+                                <label class = "titleLabel" for="genre">Elige un género:</label>
+                                <select class = "dropdown" id="genre" name="genre" required>
                                     <option value="N/A">N/A</option>
                                     <option value="women">Mujer</option>
                                     <option value="male">Hombre</option>
@@ -90,16 +93,16 @@ require_once("../../data/classes/constants.php");
                             </div>
 
                             <div class = "cityDropdown">
-                                <label for="city">Elige tu ciudad:</label>
-                                <select id="city" name="city" form = "POST" required>
-                                <optgroup label="Bélgica">
-                                    <option value="Bruselas">Bruselas</option>
-                                    <option value="Charleroi">Charleroi</option>
-                                </optgroup>
-                                <optgroup label="Venezuela">
-                                    <option value="Barquisimeto">Barquisimeto</option>
-                                    <option value="Caracas">Caracas</option>
-                                </optgroup>
+                                <label class ="titleLabel" for="city">Elige tu ciudad:</label>
+                                <select class = "dropdown" id="city" name="city" required>
+                                    <optgroup label="Bélgica">
+                                        <option value="Bruselas">Bruselas</option>
+                                        <option value="Charleroi">Charleroi</option>
+                                    </optgroup>
+                                    <optgroup label="Venezuela">
+                                        <option value="Barquisimeto">Barquisimeto</option>
+                                        <option value="Caracas">Caracas</option>
+                                    </optgroup>
                                 </select>
                             </div>
 
