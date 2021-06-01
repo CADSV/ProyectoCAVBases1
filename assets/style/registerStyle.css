@@ -55,6 +55,7 @@ section .container {
     /* margin: 0px 20%; */
     max-height: 1000px;
     min-height: 400px;
+    margin-top: 50px;
 }
 
 section .container .logo img {
@@ -108,7 +109,7 @@ section .buttonContainer a {
     padding: .75rem 180px;
     min-width: 110px;
     width: 400px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -117,4 +118,50 @@ section .buttonContainer a {
 section .buttonContainer a:hover {
     background-color: #ff5d65;
     box-shadow: none;
+}
+
+
+/* FORM */
+
+section .container .dataForm {  
+    width: 50%;
+    padding: 20px 35px;
+    padding-bottom: 80px;
+}
+
+.dataForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+section .container .dataForm form input {
+    padding: 1em 0.9em;
+    border-radius: 3px;
+    min-width:fit-content;
+}
+
+section .container .dataForm form input[type="text"],
+section .container .dataForm form input[type="email"],
+section .container .dataForm form input[type="password"]{
+    border-color: rgba(0,0,0, 0.5);
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.dataForm form input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #e50914;
+    min-width: 110px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.dataForm form input[type="submit"]:hover{
+    background-color: #ff5d65;
+    box-shadow: none;   
 }

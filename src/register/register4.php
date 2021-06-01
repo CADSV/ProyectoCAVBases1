@@ -65,6 +65,36 @@ require_once("../../data/classes/constants.php");
                 <div class = "text">
                     <p>¡Unos pasos más y listo!</p>
                 </div>
+
+                <div class = "dataForm">
+                    <form method="POST"> <!-- El método post sirve para enviar datos -->
+
+                        <?php echo $registerAccount->getError(Constants::$nameLength);?>
+                        <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
+
+                        <?php echo $registerAccount->getError(Constants::$lastNameLength);?>
+                        <input type="text" name="lastName" placeholder="Apellido" required>
+                        
+                        <?php echo $registerAccount->getError(Constants::$usernameLength);?>        
+                        <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
+                        <input type="text" name="username" placeholder="Nombre de usuario" required>
+
+                        <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
+                        <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
+                        <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+
+                        <input type="email" name="email2" placeholder="Confirmar correo electrónico" required>
+
+                        <input type="password" name="password" placeholder="Contraseña" required>
+
+                        <input type="password" name="password2" placeholder="Confirmar contraseña" required>
+
+                        <input type="submit" class="buttonContainer" name="submitButton" value="Continuar">
+
+                    </form>
+                </div>
+
             </div>
         </section>
 
