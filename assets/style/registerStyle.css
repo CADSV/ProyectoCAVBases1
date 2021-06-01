@@ -185,4 +185,19 @@ section .container .dataForm .dropdowns .dropdown {
     border-radius: 3px;
     border-color: rgba(0,0,0, 0.65);
 }
-  
+
+
+@media screen and (max-width:987px){
+
+    section .container .dataForm .dropdowns {
+        height: 70px;
+        padding: 10px 0px 0px 15px;
+        margin: 0px;
+    }
+
+    section .container .dataForm .dropdowns .dropdown{
+        justify-content: center;
+        align-items: stretch;
+    }
+
+}
