@@ -33,7 +33,7 @@ require_once("../../data/classes/constants.php");
         <meta name="viewport"
             content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
         <title>Complete sus datos</title>
-        <link rel="stylesheet" type="text/css" href="../../assets/style/RegisterStyle.css"/>
+        <link rel="stylesheet" type="text/css" href="../../assets/style/registerStyle.css"/>
     </head>
 
     <body>
@@ -51,49 +51,22 @@ require_once("../../data/classes/constants.php");
                 </nav>
             </header>
             <div class = "line"></div>
-            </div>
-            
-        <div class="signInContainer">
-            <div class="column">
-
-                <div class="header">
-                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
-                    <h3>Regístrese</h3>
-                    <span>para continuar a Carlevix</span>
-                </div>
-
-                <form method="POST"> <!-- El método post sirve para enviar datos -->
-
-                    <?php echo $registerAccount->getError(Constants::$nameLength);?>
-                    <input type="text" name="name" placeholder="Nombre(s)" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
-
-                    <?php echo $registerAccount->getError(Constants::$lastNameLength);?>
-                    <input type="text" name="lastName" placeholder="Apellido(s)" required>
-                    
-                    <?php echo $registerAccount->getError(Constants::$usernameLength);?>        
-                    <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
-                    <input type="text" name="username" placeholder="Nombre de usuario" required>
-
-                    <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
-                    <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
-                    <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
-                    <input type="email" name="email" placeholder="Correo electrónico" required>
-
-                    <input type="email" name="email2" placeholder="Confirmar correo electrónico" required>
-
-                    <input type="password" name="password" placeholder="Contraseña" required>
-
-                    <input type="password" name="password2" placeholder="Confirmar contraseña" required>
-
-                    <input type="submit" class="button" name="submitButton" value="ENVIAR">
-
-                </form>
-
-                <a href="../../src/login/login.php" class="signInMessage">¿Ya estás registrado? Inicia sesión aquí</a>
-
-            </div>
-
         </div>
+
+        <section>
+            <div class = "container">
+                <div class = "title">
+                    <p>PASO 2 DE 3</p>
+                </div>
+                <div class = "subtitle">
+                    <p>Crea un usuario para que empieces tu</p>
+                    <p>experiencia Carlevix.</p>
+                </div>
+                <div class = "text">
+                    <p>¡Unos pasos más y listo!</p>
+                </div>
+            </div>
+        </section>
 
     </body>
 
