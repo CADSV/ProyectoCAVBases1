@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function(event) { // Se carga el js solo después que cargue el documento, para evitar null
     function show() {
         var p = document.getElementById('pwd');
         p.setAttribute('type', 'text');

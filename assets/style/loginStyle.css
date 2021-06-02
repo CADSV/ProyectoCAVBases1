@@ -29,16 +29,13 @@ body {
     padding-bottom: 100px;
 }
 
-.column form {
-    display: flex;
-    flex-direction: column;
-}
-
 .column form input {
     padding: 1em 0.9em;
     border-radius: 3px;
     min-width:fit-content;
     height: auto;
+    width: 100%;
+    outline: none;
 }
 
 .column form input[type="text"],
@@ -84,17 +81,6 @@ body {
     color: #fff;
 }
 
-.column .header span {
-    font-size: 14px;
-}
-
-.column .header img {
-    display: block; /* Genera un bloque para la imagen, para así poderla centrar con los margin */
-    margin-left: auto;
-    margin-right: auto;
-    width: 130px;
-}
-
 .signInMessage,
 .signUpMessage{
     font-size: 14px;
@@ -128,16 +114,35 @@ body {
     background: #000;
 }
 
+@media only screen and (max-width: 749px) { /* Para cuando está pequeña la vista, se posiciona el logo en el medio para que se vea mejor */
+    .login-header img {
+        display: block; /* Genera un bloque para la imagen, para así poderla centrar con los margin */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .column .eyeButton {
     background: none;
     border: none;
-    width: fit-content;
+    width: 0;
+    height: 0;
     cursor: pointer;
-    margin-left: -40px; /* Quitar esto y mejor quitar el flex-direction column de form */
+    text-align: center;
+    margin: 10px 0;  
+    position: relative;
 }
 
-.passwordContainer {
-    flex-direction: row;
+.column .eyeImage {
+    position: relative;
+    left: calc(100% - 35px);
+    margin: 10px 0;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 @media only screen and (min-width: 750px){ /* Desktop */
