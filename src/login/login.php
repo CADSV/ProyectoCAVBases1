@@ -13,6 +13,7 @@
             content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
         <title>Bienvenido a Carlevix</title>
         <link rel="stylesheet" type="text/css" href="../../assets/style/loginStyle.css"/> <!-- el "../" sirve para regresar a un directorio superior, se puede colocar tantas veces sea necesario -->
+        <script type="text/javascript" src="login.js"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -34,8 +35,13 @@
                     <form method="POST">
 
                         <input type="text" name="username" placeholder="Nombre de usuario, o Email" required>
-
-                        <input type="password" name="password" placeholder="Contraseña" required>
+                        
+                        <div class="passwordContainer">
+                            <input type="password" name="password" placeholder="Contraseña" id="pwd" required>
+                            <button type="button" id="eyeButton" class="eyeButton">
+                                <img src="../../assets/images/eye_outline_visibility_white_24dp.png" alt="Mostrar" id="eyeImage"/>
+                            </button>     
+                        </div>
 
                         <input type="submit" class="button" name="botonIniciarSesion" value="Iniciar sesión">
 
