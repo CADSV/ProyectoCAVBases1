@@ -34,15 +34,16 @@
 
                     <form method="POST">
 
-                        <input type="text" name="username" placeholder="Nombre de usuario, o Email" required>
-                        
-                        <div class="passwordContainer">
-                            <input type="password" name="password" placeholder="Contraseña" id="pwd" required>
-                            <button type="button" id="eyeButton" class="eyeButton">
-                                <img src="../../assets/images/eye_outline_visibility_white_24dp.png" alt="Mostrar" id="eyeImage"/>
-                            </button>     
+                        <div class="input-container">
+                            <input type="text" name="username" placeholder="Nombre de usuario, o Email" required>
                         </div>
-
+                        
+                        <div class="input-container">
+                            <input type="password" name="password" placeholder="Contraseña" id="pwd" required>
+                            <div id="eyeButton" class="eyeButton">
+                                <img src="../../assets/images/eye_outline_visibility_white_24dp.png" alt="Mostrar" id="eyeImage" class="eyeImage"/>
+                            </div>     
+                        </div>
                         <input type="submit" class="button" name="botonIniciarSesion" value="Iniciar sesión">
 
                     </form>
