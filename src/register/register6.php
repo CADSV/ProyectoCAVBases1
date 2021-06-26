@@ -81,21 +81,32 @@ require_once("../../data/classes/constants.php");
                         <?php echo $registerAccount->getError(Constants::$usernameLength);?>        
                         <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
                         <input type="number" name="cardnumber" placeholder="Numero de la tarjeta" required>
-                        <input type="month" name="expiredate" placeholder="Fecha de vencimiento" required>
+
+                        <div class= "date">
+                              
+                                
+                            <input type="number" max="3" name="cvv" placeholder="CVV" id="cvv" required>
+                            <label class ="titleLabel" for="expiredate">Fecha de vencimiento de la tarjeta:</label>
+
+                            <input type="month" name="expiredate" placeholder="Fecha de vencimiento" min="2021-05" max="2030-12" id="expiredate" required>
+                        </div>
                        
 
                         <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
                         <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
                         <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
-                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                        
 
-                        <input type="email" name="email2" placeholder="Confirmar correo electrónico" required>
+                        <input type="text" name="direccion" placeholder="Direccion de facturación" required>
 
-                        <input type="password" name="password" placeholder="Contraseña" required>
+                        <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
 
-                        <input type="password" name="password2" placeholder="Confirmar contraseña" required>
-
-                        <input type="submit" class="buttonContainer" name="submitButton" value="Continuar">
+                        
+                        
+                        <div class = "formulario1">
+                             <a href="register2.php">Cambiar Plan</a>
+                        </div>
+                        <input type="submit" class="buttonContainer" name="submitButton" value="Iniciar Suscripción">
 
                     </form>
                 </div>

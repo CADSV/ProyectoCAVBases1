@@ -167,8 +167,35 @@ section .buttonContainer a {
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+
 section .buttonContainer a:hover {
     background-color: #ff5d65;
+    box-shadow: none;
+}
+
+
+
+section .buttonOmitir a {
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,.25);
+    color: #fff;
+    background-color: #c2c2c2;
+    padding: 5px  80px;
+    position: relative;
+    left: 500px;
+    min-width: 70px;
+    width: 200px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+section .buttonOmitir a:hover {
+    background-color: #505050;
     box-shadow: none;
 }
 
@@ -195,7 +222,6 @@ section .buttonOmitir a:hover {
     background-color: #505050;
     box-shadow: none;
 }
-
  
 
 
@@ -206,9 +232,7 @@ section .container .dataForm {
     padding: 20px 35px;
     padding-bottom: 80px;
 }
-section .container .formulario {  
-    
-}
+
 
 .dataForm form {
     display: flex;
@@ -304,6 +328,30 @@ section .container .dataForm form input[type="password"]{
 }
 
 
+.formulario1 a{
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #b9b9b9;
+    text-align:end;
+    min-width: 110px;
+    text-decoration: none;
+    margin: 10px 0px 0px -100px;
+    padding: 10px 50px 10px 290px;
+    width: 100%;
+    min-width:fit-content;
+    
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.formulario1 a:hover{
+    background-color: #5f5c5c;
+    box-shadow: none;   
+}
+
+
 /* DROPDOWNS */
 
 section .container .dataForm .dropdowns {
@@ -338,3 +386,22 @@ section .container .dataForm .dropdowns .dropdown {
     }
 
 }
+
+
+section .container .dataForm .date {
+    display: flex;
+    flex-flow: row wrap;
+    
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+section .container .dataForm .date .titleLabel {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 15px;
+    margin-left: 40px;
+    vertical-align: baseline;
+}
+
+
