@@ -148,6 +148,12 @@ section  .textdown  {
 
 section .buttonContainer {
     margin-top: 30px;
+    
+}
+
+section .marginbutton{
+    margin-left: -130px;
+    text-align: center;
 }
 
 section .buttonContainer a {

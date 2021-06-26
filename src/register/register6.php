@@ -85,7 +85,7 @@ require_once("../../data/classes/constants.php");
                         <div class= "date">
                               
                                 
-                            <input type="number" max="3" name="cvv" placeholder="CVV" id="cvv" required>
+                            <input type="number"  name="cvv" placeholder="CVV" id="cvv" min="000" max="999" required>
                             <label class ="titleLabel" for="expiredate">Fecha de vencimiento de la tarjeta:</label>
 
                             <input type="month" name="expiredate" placeholder="Fecha de vencimiento" min="2021-05" max="2030-12" id="expiredate" required>

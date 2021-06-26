@@ -49,30 +49,30 @@
                         <input type="radio" name="plan" value="Estandar" id="Estandar">  <label for="Estandar">Estándar </label>
                         <input type="radio" name="plan" value="Premium" id="Premium">    <label for="Premium">Premium   </label>
                         <div class= "columnas">  
-                    <p> Precio Mensual</p>
-                    <p>  USD 7,99  </p>
-                    <p>  USD 10,99 </p>
-                    <p>  USD 13,99</p>
-                    <div class = "lineplanes"></div>
+                        <p> Precio Mensual</p>
+                        <p>  USD 7,99  </p>
+                        <p>  USD 10,99 </p>
+                        <p>  USD 13,99</p>
+                        <div class = "lineplanes"></div>
 
-                    <p> Calidad de video</p>
-                    <p>  Regular  </p>
-                    <p>  Buena </p>
-                    <p>  Excelente</p>
-                    <div class = "lineplanes"></div>
+                        <p> Calidad de video</p>
+                        <p>  Regular  </p>
+                        <p>  Buena </p>
+                        <p>  Excelente</p>
+                        <div class = "lineplanes"></div>
 
-                    <p> Resolución</p>
-                    <p>  480p  </p>
-                    <p>  1080p </p>
-                    <p>  4K+HDR</p>
-                    <div class = "lineplanes"></div>
+                        <p> Resolución</p>
+                        <p>  480p  </p>
+                        <p>  1080p </p>
+                        <p>  4K+HDR</p>
+                        <div class = "lineplanes"></div>
 
-                    <p> Dispositivos que pueden visualizar contenido a la vez</p>
-                    <p>  1  </p>
-                    <p>  2 </p>
-                    <p>  4</p>
-                    <div class = "lineplanes"></div>
-                 </div>
+                        <p> Dispositivos que pueden visualizar contenido a la vez</p>
+                        <p>  1  </p>
+                        <p>  2 </p>
+                        <p>  4</p>
+                        <div class = "lineplanes"></div>
+                    </div>
                  
 
                  <div class="textdown">
@@ -80,8 +80,11 @@
                  </div>
                         <input type="submit" class="buttonContainer" name="continuarbutton" value="Continuar">  
                         <div class = "buttonOmitir">
-                    <a href="register4.php">Omitir</a>
-                </div>
+                            
+                             <a href="register4.php">Omitir</a>
+                        </div>
+
+
                     </form>
 
                 </div>
