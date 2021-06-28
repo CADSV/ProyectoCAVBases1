@@ -86,8 +86,8 @@
                             <a href="register3.php">Continuar</a>
                         </div>
                     </div>
-                        <div class = "marginbutton">
-                            <div class = "buttonOmitir">  
+                        <div class = "buttonOmitir">
+                            <div class = "marginbuttonGray">  
                                 <a href="register3.php">Omitir</a>
                             </div>
                         </div>

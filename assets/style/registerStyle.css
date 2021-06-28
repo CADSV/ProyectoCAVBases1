@@ -150,9 +150,9 @@ section .buttons {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    justify-content: center;
-    width: fit-content;
-    height: fit-content;
+    justify-items: center;
+    /* width: 1000px; */
+
 }
 
 section .buttonContainer {
@@ -160,20 +160,23 @@ section .buttonContainer {
 }
 
 section .marginbutton{
-    margin-left: -130px;
-    text-align: center;
+    margin-left: -10%;
+}
+
+section .marginbuttonGray {
+    margin-left: -14%;
 }
 
 section .buttonContainer a {
     cursor: pointer;
-    text-align: center;
+    align-self: center;
     text-decoration: none;
     justify-content: center;
     border: none;
     box-shadow: 0 1px 1px rgba(0,0,0,.25);
     color: #fff;
     background-color: #e50914;
-    padding: .75rem 50px;
+    padding: .75rem 180px;
     min-width: 110px;
     width: 550px;
     font-weight: 700;
@@ -192,7 +195,7 @@ section .buttonContainer a:hover {
 
 section .buttonOmitir a {
     cursor: pointer;
-    text-align: center;
+    align-self: center;
     text-decoration: none;
     justify-content: center;
     border: none;
@@ -225,7 +228,7 @@ section .buttonOmitir a:hover {
 section .container .dataForm {  
     width: 50%;
     padding: 20px 35px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
 }
 
 

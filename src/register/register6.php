@@ -101,15 +101,21 @@ require_once("../../data/classes/constants.php");
 
                         <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
 
-                        
-                        
-                        <div class = "formulario1">
-                             <a href="register2.php">Cambiar Plan</a>
-                        </div>
-                        <input type="submit" class="buttonContainer" name="submitButton" value="Iniciar Suscripción">
-
-                    </form>
+                        </form>
                 </div>
+
+                <div class = "buttons">
+                    <div class = "buttonOmitir">
+                        <div class = "marginbuttonGray">
+                            <a href="register2.php">Cambiar Plan</a>
+                        </div>
+                    </div>
+                        <div class = "buttonContainer">
+                            <div class = "marginbutton">  
+                                <a href="login.php">Iniciar Suscripción</a>
+                            </div>
+                        </div>
+                 </div>
 
             </div>
         </section>
