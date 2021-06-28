@@ -18,6 +18,33 @@
 
     <section>
         <div class = "container">
+            <div class = "question">
+                <h1>¿Quién eres? Elige tu perfil</h1>
+            </div>
+
+            <div class = "profile">
+                <div class ="p1">
+                    <div class = "topFace">
+                        <div class = "eye"></div>
+                        <div class = "eye"></div>
+                    </div>
+                    <div class = "mouth"></div>
+                </div>
+                <div class ="p2">
+                    <div class = "topFace">
+                        <div class = "eye"></div>
+                        <div class = "eye"></div>
+                    </div>
+                    <div class = "mouth"></div>
+                </div>
+                <div class ="p3">
+                    <div class = "topFace">
+                        <div class = "eye"></div>
+                        <div class = "eye"></div>
+                    </div>
+                    <div class = "mouth"></div>
+                </div>
+            </div>
 
         </div>
 
