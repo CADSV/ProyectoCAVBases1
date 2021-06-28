@@ -193,7 +193,7 @@ section .buttonOmitir a {
     position: relative;
     left: 500px;
     min-width: 70px;
-    width: 200px;
+    width: 40%;
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
@@ -339,11 +339,11 @@ section .container .dataForm form input[type="password"]{
     border: none;
     color: #fff;
     background-color: #b9b9b9;
-    text-align:end;
+    text-align:center;
     min-width: 110px;
     text-decoration: none;
     margin: 10px 0px 0px -100px;
-    padding: 10px 50px 10px 290px;
+    padding: 10px 50px 10px 100px;
     width: 100%;
     min-width:fit-content;
     
@@ -406,7 +406,7 @@ section .container .dataForm .date .titleLabel {
     font-size: 14px;
     font-weight: 500;
     padding-top: 15px;
-    margin-left: 40px;
+    padding-left: 50px;
     vertical-align: baseline;
 }
 

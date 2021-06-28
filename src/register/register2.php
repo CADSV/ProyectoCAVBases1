@@ -45,9 +45,9 @@
             <div class = "container">
                 <div class="formulario">
                     <form  action="register3.php" method=""> 
-                        <input type="radio" name="plan" value="Basico" id="Basico" >      <label for="Basico"> Básico</label>
-                        <input type="radio" name="plan" value="Estandar" id="Estandar">  <label for="Estandar">Estándar </label>
-                        <input type="radio" name="plan" value="Premium" id="Premium">    <label for="Premium">Premium   </label>
+                        <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico</label>
+                        <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar </label>
+                        <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium   </label>
                         <div class= "columnas">  
                         <p> Precio Mensual</p>
                         <p>  USD 7,99  </p>
