@@ -74,27 +74,24 @@
                         <div class = "lineplanes"></div>
                     </div>
                  
+                    </form>
 
                  <div class="textdown">
                      <p>La disponibilidad del contenido en HD (720p), Full HD (1080p), Ultra HD (4K) y HDR depende de tu servicio de internet y del dispositivo en uso. No todo el contenido está disponible en todas las resoluciones. Consulta nuestros Términos de uso para obtener más información. </p>
-                 </div>
-                        <input type="submit" class="buttonContainer" name="continuarbutton" value="Continuar">  
-                        <div class = "buttonOmitir">
-                            
-                             <a href="register4.php">Omitir</a>
+                 </div> 
+
+                 <div class = "buttons">
+                    <div class = "buttonContainer">
+                        <div class = "marginbutton">
+                            <a href="register3.php">Continuar</a>
                         </div>
-
-
-                    </form>
-
-                </div>
-
-                
-
-                 
-                 
-                 
-
+                    </div>
+                        <div class = "marginbutton">
+                            <div class = "buttonOmitir">  
+                                <a href="register3.php">Omitir</a>
+                            </div>
+                        </div>
+                 </div>
                 
             </div>
         </section>
