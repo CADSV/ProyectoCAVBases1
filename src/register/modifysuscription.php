@@ -26,6 +26,9 @@
             </header>
         
         <div class = "line"></div>
+            <div class="text-line">
+                <h1>Informacion de suscripción</h1>
+             </div>
             <div class ="information-container">
                 <div class = "personalinformation-container">
                     <h3>Alejandro Carlevix</h3>
@@ -47,24 +50,24 @@
         <div class = "line"></div>
         <div class="modifyplan-container">
             <div class="welcome-container">
-
                  <div class="text-line">
-                    <h1>Informacion de plan</h1>
+                    <h1>Planes disponibles</h1>
                 </div>
                 <div class="plan-container">
-                    <form  action="register3.php" method=""> 
-                            <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico</label>
-                            <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar </label>
-                            <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium   </label>
-                            <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
-                             
-                    </form>
-                    <div class = "button">
-                         <a href="register2.php">Cancelar</a>
-                     </div>
-                    
-                    
-                
+                    <div>
+                        <form  action="register3.php" method=""> 
+                                <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
+                                <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
+                                <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
+                                <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
+                            
+                        </form>
+                    </div>
+                    <div class = "buttonCancelar">
+                            <a href="../../index.php">Cancelar</a>
+                                          
+                    </div>
+              
                 </div>
                                            
             </div>
