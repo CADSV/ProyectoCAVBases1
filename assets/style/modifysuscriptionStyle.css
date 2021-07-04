@@ -15,15 +15,43 @@ body {
     border-top: 1px solid #A6A6A6;
     height: 2px;
     width: 100%;
-    margin: 40px 0px 40px 0px;
+    margin: 0px 0px 20px 0px;
 }
 
 
+
+
+
+
+
+.information-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    max-height: 100%;
+    width: 100%;
+    padding: 20px 35px;
+    overflow-y: auto; 
+}
 .personalinformation-container{
-    margin: 20px 40px 20px 40px;
+    margin: 20px 100px 20px 100px;
+}
+
+.plan-container form {
+    align-items: center;
+    justify-content: center;
+    padding-left: 70px;
+    
+    
 }
 
 
+.plan-container form label{
+    display: flexbox;
+    margin: 0px 30px 0px 0px;
+    
+}
 
 .modifyplan-container {
     
@@ -31,21 +59,9 @@ body {
     align-items: center;
     justify-content: center;
 }
-.information-container {
-    display: flex;
-    align-items: center;
-    min-height: 300px;
-    max-height: 100%;
-    width: 50%;
-    padding: 20px 35px;
-    overflow-y: auto; 
-}
-.plan-container form input[type="radio"]{
-    display: flexbox;
-    
-}
 .welcome-container {
     align-items: center;
+    justify-content: center;
     min-height: 300px;
     max-height: 100%;
     width: 750px;
@@ -53,9 +69,7 @@ body {
     overflow-y: auto; 
 }
 
-.plan-container {
-   display: inline-flexbox;
-}
+
 
 .index-header {
     display: flex;

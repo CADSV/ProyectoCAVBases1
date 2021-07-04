@@ -34,11 +34,13 @@
                     <h3>Telefono: +58 412 0555556</h3>
                 </div>
 
-                <div class ="">
-                    <h3>Alejandro Carlevix</h3>
-                    <h3>alejandro@carlevix.com</h3> 
-                    <h3>Contraseña: *********</h3>
-                    <h3>Telefono: +58 412 0555556</h3>
+                <div class ="personalinformation-container">
+                    <h3>Direccion</h3>
+                    <h3>Residencias Morichal Apto 3-A , Los Chaguaramos </h3>
+                    <h3>Caracas, Venezuela</h3> 
+                    <div class = "line"></div>
+                    <h3>VISA **** **** **** 5896</h3>
+                    <h3>Fecha de pago: </h3>
                 </div>
             </div>
 
@@ -51,11 +53,18 @@
                 </div>
                 <div class="plan-container">
                     <form  action="register3.php" method=""> 
-                                    <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico</label>
-                                    <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar </label>
-                                    <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium   </label>
-                                    <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
+                            <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico</label>
+                            <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar </label>
+                            <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium   </label>
+                            <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
+                             
                     </form>
+                    <div class = "button">
+                         <a href="register2.php">Cancelar</a>
+                     </div>
+                    
+                    
+                
                 </div>
                                            
             </div>
