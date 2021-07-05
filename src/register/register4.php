@@ -70,7 +70,7 @@ require_once("../../data/classes/constants.php");
                 </div>
 
                 <div class = "dataForm">
-                    <form method="POST"> <!-- El método post sirve para enviar datos -->
+                    <form method="POST" action="register5.php"> <!-- El método post sirve para enviar datos -->
 
                         <?php echo $registerAccount->getError(Constants::$nameLength);?>
                         <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
