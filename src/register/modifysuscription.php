@@ -22,13 +22,28 @@
                         <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
                     </a>          
                 </div>
+                <nav class = "login">
+                    <a href="../login/login.php">Volver a perfil</a>
+                 </nav>
                 
             </header>
         
-        <div class = "line"></div>
+        <div class = "line"></div>       
+
             <div class="text-line">
                 <h1>Informacion de suscripción</h1>
-             </div>
+            </div>
+
+            <div class="edit-container">  
+                             
+                <form  action="register3.php" method="">                            
+                    <input class="buttonEdit" type="submit" name="plan" value="Guardar" id="Plan"required>    <label for="Premium">   </label>                                                                                            
+                </form>
+                <div class = "buttonCancel">
+                     <a href="../../index.php">Cancelar</a>                                          
+                </div>
+            </div>
+
             <div class ="information-container">
                 <div class = "personalinformation-container">
                     <h3>Alejandro Carlevix</h3>
@@ -64,8 +79,7 @@
                         </form>
                     </div>
                     <div class = "buttonCancelar">
-                            <a href="../../index.php">Cancelar</a>
-                                          
+                            <a href="../../index.php">Cancelar</a>                                          
                     </div>
               
                 </div>

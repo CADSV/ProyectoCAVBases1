@@ -18,11 +18,42 @@ body {
     margin: 0px 0px 0px 0px;
 }
 
+.login{
+    margin-bottom: 10px;
+}
 
+header nav a {
+    color: rgb(252, 252, 252);
+    text-decoration: none;
+    margin: 20px;
+    font-size: 18px;
+    position: relative;
+    left: 90%;
+    align-content: flex-end;
+    
+}
 
+header nav a:hover {
+    text-decoration: underline;
+}
 
+.edit-container {
+    position: absolute;
+    display: flex;
+    
+}
 
-
+.edit-container  {
+    position: absolute;
+    margin-left: 20px;
+    left: 1200px;
+    top: 170px;
+    width: 300px;
+}
+.edit-container form {
+   
+    margin-right: 20px;
+}
 
 .information-container {
     display: flex;
@@ -188,6 +219,44 @@ a{
     
     width: 18%;
     height: 50px;
+}
+
+
+
+.buttonEdit {
+    border-radius: 3px;
+    
+    height: 100%;
+    width: 100px;
+    outline: none;
+    background-color: #346dd8;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.buttonEdit:hover{ /* Al colocar el cursor sobre el botón, cambiara de color */
+    background-color: #055097;
+}
+
+
+
+.buttonCancel {
+    border-radius: 3px;
+    padding-left: 15px;
+    
+   width: 100px;
+   background-color: #8f8f8f;
+   font-weight: 700;
+    font-size: 16px;
+}
+
+.buttonCancel:hover{ /* Al colocar el cursor sobre el botón, cambiara de color */
+    background-color: #696969;
 }
 @media only screen and (max-width: 749px) { 
     .index-header img {
