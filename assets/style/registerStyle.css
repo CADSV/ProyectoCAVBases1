@@ -163,7 +163,13 @@ section .marginbutton{
 
 section .marginbuttonGray {
     margin-left: -14%;
+    margin-bottom: -5%;
 }
+
+section .marginbuttonRedPlan {
+    margin-left: 9%;
+}
+
 
 section .buttonContainer a {
     cursor: pointer;
@@ -314,8 +320,8 @@ section .container .dataForm form input[type="password"]{
     min-width: 110px;
     width: 400px;
     padding: 10px 100px 10px 100px;
-    position: relative;
-    left: 400px;
+    justify-content: center;
+    
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
