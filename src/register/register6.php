@@ -59,7 +59,7 @@ require_once("../../data/classes/constants.php");
         <section>
             <div class = "container">
                 <div class = "title">
-                    <p>PASO 2 DE 3</p>
+                    <p>PASO 3 DE 3</p>
                 </div>
                 <div class = "subtitle">
                     <p>Configura tu tarjeta de crédito</p>
@@ -112,7 +112,7 @@ require_once("../../data/classes/constants.php");
                     </div>
                         <div class = "buttonContainer">
                             <div class = "marginbutton">  
-                                <a href="login.php">Iniciar Suscripción</a>
+                                <a href="../login/login.php">Iniciar Suscripción</a>
                             </div>
                         </div>
                  </div>

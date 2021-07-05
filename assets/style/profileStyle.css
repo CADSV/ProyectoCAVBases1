@@ -1,0 +1,116 @@
+* {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    box-sizing: border-box;
+    background-color: #221F1F;
+}
+
+header {
+    width: 100%;
+    height: 20%;
+    margin: 20px;
+}
+
+
+section {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    margin: 20px;
+    margin-top: 100px;
+}
+
+
+.container {
+    min-width: none;
+    max-width: fit-content;
+    width: 100%;
+    display: flex; 
+    align-items: stretch;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+.question {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+section .question h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.profilesSelection {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 40px;
+    width: fit-content;
+}
+
+.profilesSelection .profile {
+
+    /* width: 150px;
+    height: 150px; */
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profilesSelection .newProfile {
+    width: 130px;
+    height: 130px;
+    align-self: center;
+}
+
+
+.profilesSelection .profile h2 {
+    margin-top: 20px;
+    opacity: 0.7;
+    font-size: 20px;
+}
+
+.profilesSelection .profile img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.profilesSelection .newProfile:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+.administrarPerfiles {
+    padding-top: 90px;
+    margin-left: 33%;
+    justify-self: center;
+}
+
+.administrarPerfiles a {
+    cursor: pointer;
+    align-self: center;
+    text-decoration: none;
+    justify-content: center;
+    border: 2.4px solid white;
+    color: #fff;
+    padding: .75rem 180px;
+    min-width: 110px;
+    width: 550px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    transition-duration: 0.3s;
+}
+
+.administrarPerfiles a:hover {
+    opacity: 0.4;
+}
