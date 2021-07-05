@@ -24,25 +24,20 @@
 
             <div class = "profile">
                 <div class ="p1">
-                    <div class = "topFace">
-                        <div class = "eye"></div>
-                        <div class = "eye"></div>
-                    </div>
-                    <div class = "mouth"></div>
+                    <img src="../../assets/images/profiles/yellowProfile.png" title="Profile" alt="Profile">
                 </div>
+
                 <div class ="p2">
-                    <div class = "topFace">
-                        <div class = "eye"></div>
-                        <div class = "eye"></div>
-                    </div>
-                    <div class = "mouth"></div>
+                    <img src="../../assets/images/profiles/blueProfile.png" title="Profile" alt="Profile">
                 </div>
+
                 <div class ="p3">
-                    <div class = "topFace">
-                        <div class = "eye"></div>
-                        <div class = "eye"></div>
-                    </div>
-                    <div class = "mouth"></div>
+                    <img src="../../assets/images/profiles/redProfile.png" title="Profile" alt="Profile">
+                </div>
+
+                <div class = "plus">
+                    <img src="../../assets/images/plus.png" title="New Profile" alt="New Profile">
+
                 </div>
             </div>
 

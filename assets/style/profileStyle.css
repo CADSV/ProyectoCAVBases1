@@ -27,6 +27,7 @@ section {
 .container {
 min-width: none;
 max-width: fit-content;
+width: 100%;
 
 }
 
@@ -38,47 +39,59 @@ max-width: fit-content;
 
 section .question h1 {
     font-size: 35px;
+    margin-bottom: 30px;
 }
 
 .profile {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 40px;
-    margin-top: 20px;
+    width: fit-content;
 }
 
 .profile .p1 {
-    margin: 40px;
-    overflow-y: auto;
-    background-color: #F2DC17;
-    height: 130px;
+
     width: 130px;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center; 
+    height: 130px;
 }
 
 .profile .p2 {
-    margin: 40px;
-    /* overflow-y: auto;*/
-    background-color: #2EA2E3;
-    height: 130px;
     width: 130px;
-    display: flex;
-    flex-flow: column wrap;
+    height: 130px;
 }
 
 .profile .p3 {
-    margin: 40px;
-    /* overflow-y: auto;*/
-    background-color: #E50914;
-    height: 130px;
     width: 130px;
-    display: flex;
-    flex-flow: column wrap;
+    height: 130px;
+} 
+
+.profile .plus {
+    width: 130px;
+    height: 130px;
+    padding-top: 40px;
+    align-self: center;
+}
+
+
+.profile .p1:hover {
+    opacity: 0.5;
+}
+.profile .p2:hover {
+    opacity: 0.5;
+}
+.profile .p3:hover {
+    opacity: 0.5;
+}
+.profile .p4:hover {
+    opacity: 0.5;
+}
+.profile .p5:hover {
+    opacity: 0.5;
+}
+.profile .plus:hover {
+    opacity: 0.5;
 }
 
 
