@@ -24,6 +24,8 @@ body {
     width: 750px;
     padding: 20px 35px;
     overflow-y: auto; 
+    background-color: rgba(0,0,0, 0.75);
+    border-radius: 3px;
 }
 
 
@@ -94,7 +96,7 @@ a{
     min-width:fit-content;
     height: auto;
     outline: none;
-    background-color: #e50914;
+    background-color: #023ADE;
     color: #fff;
     border: none;
     font-weight: 700;
@@ -106,7 +108,7 @@ a{
 }
 
 .button:hover{ /* Al colocar el cursor sobre el botón, cambiara de color */
-    background-color: #ff5d65;
+    background-color: #0983F5;
 }
 
 @media only screen and (max-width: 749px) { 
