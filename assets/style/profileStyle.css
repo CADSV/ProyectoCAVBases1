@@ -42,7 +42,7 @@ section .question h1 {
     margin-bottom: 30px;
 }
 
-.profile {
+.profilesSelection {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -51,23 +51,14 @@ section .question h1 {
     width: fit-content;
 }
 
-.profile .p1 {
+.profilesSelection .profile {
 
     width: 130px;
     height: 130px;
 }
 
-.profile .p2 {
-    width: 130px;
-    height: 130px;
-}
 
-.profile .p3 {
-    width: 130px;
-    height: 130px;
-} 
-
-.profile .plus {
+.profilesSelection .newProfile {
     width: 130px;
     height: 130px;
     padding-top: 40px;
@@ -75,36 +66,9 @@ section .question h1 {
 }
 
 
-.profile .p1:hover {
+.profilesSelection .profile:hover {
     opacity: 0.5;
 }
-.profile .p2:hover {
+.profilesSelection .newProfile:hover {
     opacity: 0.5;
-}
-.profile .p3:hover {
-    opacity: 0.5;
-}
-.profile .p4:hover {
-    opacity: 0.5;
-}
-.profile .p5:hover {
-    opacity: 0.5;
-}
-.profile .plus:hover {
-    opacity: 0.5;
-}
-
-
-.topFace {
-    flex-flow: row wrap;
-    align-items:flex-start;
-    justify-content: space-between;
-}
-
-.eye {
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    height: 18px;
-    width: 18px;
 }
