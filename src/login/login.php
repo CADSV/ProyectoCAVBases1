@@ -25,7 +25,7 @@
                     <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
                 </a>          
             </div>
-            <div class="signInContainer">
+            <div class="signin-container">
                 <div class="column">
 
                     <div class="header">

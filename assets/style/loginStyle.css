@@ -11,7 +11,7 @@ body {
     box-sizing: border-box; /* Ajusta el tamaño a uno más compacto, tomando en cuenta el width y padding */
 }
 
-.signInContainer{
+.signin-container{
     height: 100vh; /* vh es view height, y el número es un porcentaje*/
     display: flex; /*siempre poner esto */
     align-items: center;
