@@ -28,7 +28,6 @@ header {
 header nav a {
     color: #000;
     text-decoration: none;
-    margin: 20px;
     font-size: 18px;
     align-content: flex-end;
 }
