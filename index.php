@@ -24,13 +24,13 @@
                 <div class="welcome-container">
 
                     <div class="text-line">
-                        <h1>Películas y series ilimitadas y mucho más.</h1>
+                        <h1>Películas y series ilimitadas y mucho más</h1>
                     </div>
                     <div class="text-line">
-                        <h2>Disfruta donde quieras. Cancela cuando quieras.</h2>
+                        <h2>Disfruta donde quieras. Cancela cuando quieras</h2>
                     </div>
                     <div class="text-line">
-                        <h3>¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o reiniciar tu membresía de Netflix.</h3>
+                        <h3>¿Quieres ver Carlevix ya? Crea una cuenta o renueva tu membresía de Carlevix</h3>
                     </div>
                     <a href="src/register/register1.php" class="text-line"> 
                         <button class="button">Registrarse</button>

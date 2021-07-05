@@ -11,7 +11,7 @@ body {
     box-sizing: border-box; /* Ajusta el tamaño a uno más compacto, tomando en cuenta el width y padding */
 }
 
-.signInContainer{
+.signin-container{
     height: 100vh; /* vh es view height, y el número es un porcentaje*/
     display: flex; /*siempre poner esto */
     align-items: center;
@@ -48,7 +48,7 @@ body {
 }
 
 .column form input[type="submit"]{
-    background-color: #e50914;
+    background-color: #023ADE;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -64,7 +64,7 @@ body {
 }
 
 .column .button:hover{ /* Al colocar el cursor sobre el botón, cambiara de color */
-    background-color: #ff5d65;
+    background-color: #0983F5;
     color: white;
 }
 

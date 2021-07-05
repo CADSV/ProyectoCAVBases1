@@ -43,6 +43,13 @@ header nav a:hover {
     width: 100%;
 }
 
+.lineplanes {
+    border-top: 1px solid #A6A6A6;
+    height: 2px;
+    position: relative;
+    left: 110px;
+    width: 985px;
+}
 
 /* SECTION */
 
@@ -92,33 +99,130 @@ section .container .text p {
     text-align: center;
 
 }
+section .container .columnas p, a {
+    display: inline-flex;
+    
+    margin:10px 80px 10px 10px;
+    width: 200px;
+    position: relative;
+    left: 100px;
+   /* text-align: center;*/
+    font-size: 18px;
+    color:#4e4e4e;
+}
 
+section  .titleleft  {
+    margin: 50px 50px 5px 80px;
+    position: relative;
+    left: 200px;
+    font-size: 22px;
+    font-weight:lighter;
+    color: #201F1F;
+}
+section  .subtitleleft  {
+    margin: 0px  50px 10px 80px;
+    position: relative;
+    left: 200px;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #201F1F;
+}
+section  .textleft  {
+    margin: 0px  50px -60px 80px;
+    position: relative;
+    left: 200px;
+    font-size: 13px;
+    font-weight: lighter;
+    color: #201F1F;
+}
+section  .textdown  {
+    margin: 20px  50px 20px 50px;
+    position: relative;
+    left: 50px;
+    font-size: 13px;
+    width: 1000px;
+    font-weight: lighter;
+    color: #201F1F;
+}
+
+
+section .buttons {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-items: center;
+    /* width: 1000px; */
+
+}
 
 section .buttonContainer {
     margin-top: 30px;
 }
 
+section .marginbutton{
+    margin-left: -10%;
+}
+
+section .marginbuttonGray {
+    margin-left: -14%;
+}
+
 section .buttonContainer a {
     cursor: pointer;
-    text-align: center;
+    align-self: center;
     text-decoration: none;
+    justify-content: center;
     border: none;
     box-shadow: 0 1px 1px rgba(0,0,0,.25);
     color: #fff;
-    background-color: #e50914;
+    background-color: #023ADE;
     padding: .75rem 180px;
     min-width: 110px;
-    width: 400px;
+    width: 550px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
 }
 
+
 section .buttonContainer a:hover {
-    background-color: #ff5d65;
+    background-color: #0983F5;
     box-shadow: none;
 }
+
+
+
+section .buttonOmitir a {
+    cursor: pointer;
+    align-self: center;
+    text-decoration: none;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,.25);
+    color: #fff;
+    background-color: #c2c2c2;
+    padding: 5px  50px;
+    min-width: 110px;
+    width: 350px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+}
+
+section .buttonOmitir a:hover {
+    background-color: #505050;
+    box-shadow: none;
+}
+
+section .buttonOmitir a:hover {
+    background-color: #505050;
+    box-shadow: none;
+}
+ 
 
 
 /* FORM */
@@ -126,8 +230,9 @@ section .buttonContainer a:hover {
 section .container .dataForm {  
     width: 50%;
     padding: 20px 35px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
 }
+
 
 .dataForm form {
     display: flex;
@@ -153,16 +258,97 @@ section .container .dataForm form input[type="password"]{
     cursor: pointer;
     border: none;
     color: #fff;
-    background-color: #e50914;
+    background-color: #023ADE;
     min-width: 110px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
 }
 
 .dataForm form input[type="submit"]:hover{
-    background-color: #ff5d65;
+    background-color: #0983F5;
+    box-shadow: none;   
+}
+
+.formulario form input[type="radio"]{
+    display: none;
+    
+}
+.formulario form  label{
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    margin: -350px 80px 10px 100px;
+    width: 110px;
+    height: 110px;
+    left: 300px;
+    display: inline-block;
+    border: 1.5px solid #000;
+    text-align: center;
+    line-height: 110px;
+    position: relative;
+    border-radius: 3px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    font-weight: 700;
+}
+
+.formulario form  label:hover{
+    color: #000000;
+    background-color: #0983F5;
+
+}
+
+.formulario form input[type="radio"]:checked + label{
+    background-color: #023ADE;
+    border: 3px solid #000;
+    color: #fff;
+    font-size: 16px;
+} 
+
+.formulario form input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #023ADE;
+    text-align: center;
+    min-width: 110px;
+    width: 400px;
+    padding: 10px 100px 10px 100px;
+    position: relative;
+    left: 400px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.formulario form input[type="submit"]:hover{
+    background-color: #0983F5;
+    box-shadow: none;   
+}
+
+
+.formulario1 a{
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #b9b9b9;
+    text-align:center;
+    min-width: 110px;
+    text-decoration: none;
+    margin: 10px 0px 0px -100px;
+    padding: 10px 50px 10px 100px;
+    width: 100%;
+    min-width:fit-content;
+    
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.formulario1 a:hover{
+    background-color: #5f5c5c;
     box-shadow: none;   
 }
 
@@ -201,3 +387,22 @@ section .container .dataForm .dropdowns .dropdown {
     }
 
 }
+
+
+section .container .dataForm .date {
+    display: flex;
+    flex-flow: row wrap;
+    
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+section .container .dataForm .date .titleLabel {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 15px;
+    padding-left: 50px;
+    vertical-align: baseline;
+}
+
+
