@@ -46,7 +46,7 @@
 
 
             <div class = "administrarPerfiles">
-                <a href="">ADMINISTRAR PERFILES</a>
+                <a href="../../index.php">ADMINISTRAR PERFILES</a>
             </div>
         </div>
 

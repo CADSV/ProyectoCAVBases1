@@ -112,7 +112,7 @@ require_once("../../data/classes/constants.php");
                     </div>
                         <div class = "buttonContainer">
                             <div class = "marginbutton">  
-                                <a href="../login/login.php">Iniciar Suscripción</a>
+                                <a href="../profile/select_profile.php">Iniciar Suscripción</a>
                             </div>
                         </div>
                  </div>
