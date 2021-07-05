@@ -30,24 +30,22 @@
         <section>
             <div class = "container">
                 <div class = "logo">
-                    <img src="../../assets/images/laptop.png" title="laptop" alt="laptop">
-                    <img src="../../assets/images/computer.png" title="computer" alt="computer">
-                    <img src="../../assets/images/phone.png" title="phone" alt="phone">
+                    <img src="../../assets/images/lock.png" title="candado" alt="candado">
                 </div>
                 <div class = "title">
-                    <p>PASO 2 DE 3</p>
+                    <p>PASO 3 DE 3</p>
                 </div>
                 <div class = "subtitle">
-                    <p>Completa la configuración de tu cuenta</p>
+                    <p>Configura tu pago</p>
                 </div>
                 <div class = "text">
-                    <p>Carlevix está personalizado para ti.</p>
-                    <p>Completa tus datos para ver Carlevix en</p>
-                    <p>cualquier dispositivo, cuando quieras.</p>
+                    <p>Tu mes gratis empieza en cuanto configures el pago.</p>
+                    <p>Sin compromisos.</p>
+                    <p>Cancela online cuando quieras.</p>
                 </div>
                 <div class = "buttonContainer">
                     <div class = "marginbutton">
-                        <a href="register4.php">Continuar</a>
+                        <a href="register6.php">Continuar</a>
                     </div>
                 </div>
             </div>

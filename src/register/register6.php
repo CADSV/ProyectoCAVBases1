@@ -59,18 +59,18 @@ require_once("../../data/classes/constants.php");
         <section>
             <div class = "container">
                 <div class = "title">
-                    <p>PASO 2 DE 3</p>
+                    <p>PASO 3 DE 3</p>
                 </div>
                 <div class = "subtitle">
-                    <p>Crea un usuario para que empieces tu</p>
-                    <p>experiencia Carlevix.</p>
+                    <p>Configura tu tarjeta de crédito</p>
+                   
                 </div>
                 <div class = "text">
-                    <p>¡Unos pasos más y listo!</p>
+                    <p>¡Falta poco para terminar!</p>
                 </div>
 
                 <div class = "dataForm">
-                    <form method="POST" action="register5.php"> <!-- El método post sirve para enviar datos -->
+                    <form method="POST"> <!-- El método post sirve para enviar datos -->
 
                         <?php echo $registerAccount->getError(Constants::$nameLength);?>
                         <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
@@ -80,49 +80,42 @@ require_once("../../data/classes/constants.php");
                         
                         <?php echo $registerAccount->getError(Constants::$usernameLength);?>        
                         <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
-                        <input type="text" name="username" placeholder="Nombre de usuario" required>
+                        <input type="number" name="cardnumber" placeholder="Numero de la tarjeta" required>
 
-                        <div class = "dropdowns">
-                            <div class = "genreDropdown">
-                                <label class = "titleLabel" for="genre">Elige un género:</label>
-                                <select class = "dropdown" id="genre" name="genre" required>
-                                    <option value="N/A">N/A</option>
-                                    <option value="women">Mujer</option>
-                                    <option value="male">Hombre</option>
-                                </select>
-                            </div>
+                        <div class= "date">
+                              
+                                
+                            <input type="number"  name="cvv" placeholder="CVV" id="cvv" min="000" max="999" required>
+                            <label class ="titleLabel" for="expiredate">Fecha de vencimiento de la tarjeta:</label>
 
-                            <div class = "cityDropdown">
-                                <label class ="titleLabel" for="city">Elige tu ciudad:</label>
-                                <select class = "dropdown" id="city" name="city" required>
-                                    <optgroup label="Bélgica">
-                                        <option value="Bruselas">Bruselas</option>
-                                        <option value="Charleroi">Charleroi</option>
-                                    </optgroup>
-                                    <optgroup label="Venezuela">
-                                        <option value="Barquisimeto">Barquisimeto</option>
-                                        <option value="Caracas">Caracas</option>
-                                    </optgroup>
-                                </select>
-                            </div>
-
+                            <input type="month" name="expiredate" placeholder="Fecha de vencimiento" min="2021-05" max="2030-12" id="expiredate" required>
                         </div>
+                       
 
                         <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
                         <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
                         <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
-                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                        
 
-                        <input type="email" name="email2" placeholder="Confirmar correo electrónico" required>
+                        <input type="text" name="direccion" placeholder="Direccion de facturación" required>
 
-                        <input type="password" name="password" placeholder="Contraseña" required>
+                        <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
 
-                        <input type="password" name="password2" placeholder="Confirmar contraseña" required>
-
-                        <input type="submit" class="buttonContainer" name="submitButton" value="Continuar">
-
-                    </form>
+                        </form>
                 </div>
+
+                <div class = "buttons">
+                    <div class = "buttonOmitir">
+                        <div class = "marginbuttonGray">
+                            <a href="register2.php">Cambiar Plan</a>
+                        </div>
+                    </div>
+                        <div class = "buttonContainer">
+                            <div class = "marginbutton">  
+                                <a href="../login/login.php">Iniciar Suscripción</a>
+                            </div>
+                        </div>
+                 </div>
 
             </div>
         </section>
