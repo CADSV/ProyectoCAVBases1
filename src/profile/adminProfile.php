@@ -45,7 +45,7 @@
             </div>
 
 
-            <div class = "administrarPerfiles">
+            <div class = "readyButton">
                 <a href="select_profile.php">LISTO</a>
             </div>
         </div>
