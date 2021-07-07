@@ -56,8 +56,6 @@ section .question h1 {
 
 .profilesSelection .profile {
 
-    /* width: 150px;
-    height: 150px; */
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -72,7 +70,7 @@ section .question h1 {
 }
 
 
-.profilesSelection .profile h2 {
+.profilesSelection  h2 {
     margin-top: 20px;
     opacity: 0.7;
     font-size: 20px;
@@ -86,6 +84,22 @@ section .question h1 {
 .profilesSelection .newProfile:hover {
     opacity: 0.5;
     cursor: pointer;
+}
+
+
+.profilesSelection .adminProfile {
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profilesSelection .adminProfile img {
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 
 

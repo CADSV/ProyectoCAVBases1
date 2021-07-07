@@ -23,17 +23,17 @@
             </div>
 
             <div class = "profilesSelection">
-                <div class ="profile">
+                <div class ="adminProfile">
                     <img src="../../assets/images/profiles/yellowProfile.png" title="Profile" alt="Profile">
                     <h2>Alejandro</h2>
                 </div>
 
-                <div class ="profile">
+                <div class ="adminProfile">
                     <img src="../../assets/images/profiles/blueProfile.png" title="Profile" alt="Profile">
                     <h2>Carlos</h2>
                 </div>
 
-                <div class ="profile">
+                <div class ="adminProfile">
                     <img src="../../assets/images/profiles/redProfile.png" title="Profile" alt="Profile">
                     <h2>Vicente</h2>
                 </div>
