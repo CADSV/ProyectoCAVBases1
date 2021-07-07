@@ -24,29 +24,29 @@
 
             <div class = "profilesSelection">
                 <div class ="adminProfile">
-                    <img src="../../assets/images/profiles/yellowProfile.png" title="Profile" alt="Profile">
-                    <h2>Alejandro</h2>
+                    <img src="../../assets/images/profiles/editYellow.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
+                        <h2>Alejandro</h2>
                 </div>
 
                 <div class ="adminProfile">
-                    <img src="../../assets/images/profiles/blueProfile.png" title="Profile" alt="Profile">
-                    <h2>Carlos</h2>
+                    <img src="../../assets/images/profiles/editBlue.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
+                        <h2>Carlos</h2>
                 </div>
 
                 <div class ="adminProfile">
-                    <img src="../../assets/images/profiles/redProfile.png" title="Profile" alt="Profile">
-                    <h2>Vicente</h2>
-                </div>
+                    <img src="../../assets/images/profiles/editRed.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
+                        <h2>Vicente</h2>
+                </div> 
 
                 <div class = "newProfile">
-                    <img src="../../assets/images/plus.png" title="New Profile" alt="New Profile">
+                    <img src="../../assets/images/plus.png" title="Nuevo perfil" alt="Nuevo perfil">
 
                 </div>
             </div>
 
 
             <div class = "readyButton">
-                <a href="select_profile.php">LISTO</a>
+                <a href="select_profile.php" title="Listo" alt= "Listo">LISTO</a>
             </div>
         </div>
 

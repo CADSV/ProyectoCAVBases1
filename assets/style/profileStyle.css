@@ -62,6 +62,11 @@ section .question h1 {
     justify-content: center;
 }
 
+.profilesSelection .profile img {
+    height: 208px;
+    width: 208px;
+}
+
 
 .profilesSelection .newProfile {
     width: 130px;
@@ -96,12 +101,17 @@ section .question h1 {
 }
 
 
+
 .profilesSelection .adminProfile img {
+    height: 208px;
+    width: 208px;
+}
+
+.profilesSelection .adminProfile img:hover{
     opacity: 0.5;
     cursor: pointer;
     transition-duration: 0.3s;
 }
-
 
 .administrarPerfiles {
     padding-top: 90px;
