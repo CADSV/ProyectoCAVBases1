@@ -21,13 +21,13 @@ INSERT INTO issuscribed VALUES (3,3,858,0102030405060708,'2021-07-08 14:01:01',N
 UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 1080, UserAvenueStreet = 'Manzanares Oeste', UserBuildingHouse = 'Casa Grande' WHERE IdUser = 3;
 
 INSERT INTO issuscribed VALUES (6,1,112,9900886673651286,'2021-10-18 23:13:56',NULL); 
-UPDATE user SET UserIsSuscribed = 1 WHERE IdUser = 6;
+UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 2386, UserAvenueStreet = 'Spa Street', UserBuildingHouse = 'Francorchamps' WHERE IdUser = 6;
 
 INSERT INTO issuscribed VALUES (8,3,075,7624541287976542,'2021-08-15 00:00:01',NULL); 
-UPDATE user SET UserIsSuscribed = 1 WHERE IdUser = 8;
+UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 7023, UserAvenueStreet = 'El Poblado', UserBuildingHouse = 'My Heart' WHERE IdUser = 8;
 
 INSERT INTO issuscribed VALUES (10,2,666,0001000200030004,'2022-01-03 09:53:27',NULL); --
-UPDATE user SET UserIsSuscribed = 1 WHERE IdUser = 10;
+UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 8998, UserAvenueStreet = 'Dictator Avenue', UserBuildingHouse = 'Kim Un II' WHERE IdUser = 10;
 
 INSERT INTO issuscribed VALUES (4,3,163,1878126903615428,'2021-07-11 22:22:01',NULL);
-UPDATE user SET UserIsSuscribed = 1 WHERE IdUser = 4;
+UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 7621, UserAvenueStreet = 'Mohammed Street', UserBuildingHouse = 'Abdala' WHERE IdUser = 4;
