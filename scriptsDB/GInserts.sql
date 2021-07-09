@@ -102,3 +102,90 @@ INSERT INTO episode VALUES (4,5,29,'Ataques a Bebbaburg','0:18:00');
 INSERT INTO episode VALUES (5,5,29,'El arrepentimiento','0:29:00');
 INSERT INTO episode VALUES (6,5,29,'La conquista llega','0:19:00');
 INSERT INTO episode VALUES (7,5,29,'Celebracion de tropas','0:19:00');
+
+
+
+
+
+--Episodios de series con una temporada
+
+--Episodios de Lupin
+
+INSERT INTO episode VALUES (1,1,21,'Robo improvisado','0:19:00');
+INSERT INTO episode VALUES (2,1,21,'El escape','0:19:00');
+INSERT INTO episode VALUES (3,1,21,'La entrevista','0:19:00');
+INSERT INTO episode VALUES (4,1,21,'La entrega','0:19:00');
+INSERT INTO episode VALUES (5,1,21,'Tiempos de analisis','0:19:00');
+INSERT INTO episode VALUES (6,1,21,'Viaje con acompañante','0:19:00');
+INSERT INTO episode VALUES (7,1,21,'Ataque en lo mas profundo','0:17:00');
+
+
+--Episodios de La niña
+
+INSERT INTO episode VALUES (1,1,22,'La captura','0:22:00');
+INSERT INTO episode VALUES (2,1,22,'El cine','0:22:00');
+INSERT INTO episode VALUES (3,1,22,'Emboscada','0:22:00');
+INSERT INTO episode VALUES (4,1,22,'Viaje extraño','0:22:00');
+INSERT INTO episode VALUES (5,1,22,'Lugar desconocido','0:22:00');
+INSERT INTO episode VALUES (6,1,22,'Sabiduría','0:22:00');
+INSERT INTO episode VALUES (7,1,22,'La visita','0:23:00');
+
+
+--Episodios de La Bella y las Bestias
+INSERT INTO episode VALUES (1,1,23,'La odisea de Isabela','01:27:00');
+INSERT INTO episode VALUES (2,1,23,'El autor intelectual','01:27:00');
+INSERT INTO episode VALUES (3,1,23,'Las pruebas del asesino','01:27:00');
+INSERT INTO episode VALUES (4,1,23,'Mike y Penelope','01:27:00');
+INSERT INTO episode VALUES (5,1,23,'El video de las bestias','01:27:00');
+INSERT INTO episode VALUES (6,1,23,'El camino a la justicia','01:27:00');
+INSERT INTO episode VALUES (7,1,23,'Terrenos abiertos','01:27:00');
+
+
+--Episodios de Sobreviviendo a Escobar
+INSERT INTO episode VALUES (1,1,24,'El Popeye en la jugada','0:23:00');
+INSERT INTO episode VALUES (2,1,24,'La llegada','0:23:00');
+INSERT INTO episode VALUES (3,1,24,'La boda a todo dar','0:23:00');
+INSERT INTO episode VALUES (4,1,24,'El regalo del patrón','0:23:00');
+INSERT INTO episode VALUES (5,1,24,'Empieza el negocio','0:23:00');
+INSERT INTO episode VALUES (6,1,24,'El Popeye escritor','0:23:00');
+INSERT INTO episode VALUES (7,1,24,'La positiva oyó','0:29:00');
+
+
+--Episodios de La Ley Secreta
+INSERT INTO episode VALUES (1,1,25,'La operación','1:45:00');
+INSERT INTO episode VALUES (2,1,25,'Agentes encubiertos','1:45:00');
+INSERT INTO episode VALUES (3,1,25,'La frustración','1:45:00');
+INSERT INTO episode VALUES (4,1,25,'El equipo descubierto','1:45:00');
+INSERT INTO episode VALUES (5,1,25,'La improvisación','1:45:00');
+INSERT INTO episode VALUES (6,1,25,'La oferta','1:45:00');
+INSERT INTO episode VALUES (7,1,25,'El fin de la operación','1:48:00');
+
+
+--Episodios de Merlin
+INSERT INTO episode VALUES (1,1,26,'The dragon´s call','0:46:00');
+INSERT INTO episode VALUES (2,1,26,'Valiant','0:46:00');
+INSERT INTO episode VALUES (3,1,26,'The Mark of Nimueh','0:46:00');
+INSERT INTO episode VALUES (4,1,26,'The poisoned Chalice','0:46:00');
+INSERT INTO episode VALUES (5,1,26,'Lancelot','0:46:00');
+INSERT INTO episode VALUES (6,1,26,'Remedy to Cure All ills','0:46:00');
+INSERT INTO episode VALUES (7,1,26,'The Gates of Avalon','0:48:00');
+
+
+--Episodios de Carta al Rey
+INSERT INTO episode VALUES (1,1,28,'Se avecina una tormenta','0:34:00');
+INSERT INTO episode VALUES (2,1,28,'¿No es un encanto?','0:34:00');
+INSERT INTO episode VALUES (3,1,28,'En el fin del mundo','0:34:00');
+INSERT INTO episode VALUES (4,1,28,'Caballeros peligrosos','0:34:00');
+INSERT INTO episode VALUES (5,1,28,'Espiral','0:32:00');
+INSERT INTO episode VALUES (6,1,28,'Luna de sangre','0:32:00');
+INSERT INTO episode VALUES (7,1,28,'La embarcación','0:32:00');
+
+
+--Episodios de No hables con extraños
+INSERT INTO episode VALUES (1,1,30,'Un desconocido se acerca','2:45:00');
+INSERT INTO episode VALUES (2,1,30,'Ataque juvenil','2:45:00');
+INSERT INTO episode VALUES (3,1,30,'La confesión','2:45:00');
+INSERT INTO episode VALUES (4,1,30,'El descubrimiento','2:45:00');
+INSERT INTO episode VALUES (5,1,30,'Un violento enfrentamiento','2:45:00');
+INSERT INTO episode VALUES (6,1,30,'Un insolito aliado','2:45:00');
+INSERT INTO episode VALUES (7,1,30,'Reunión inseperada','2:45:00');
