@@ -34,7 +34,7 @@ INSERT INTO featurecontent VALUES (15,'Mesa Verde',2001,0,1,'Un banco quiebra en
 INSERT INTO content VALUES (16, 0, 1);
 INSERT INTO featurecontent VALUES (16,'La Base de Datos',2021,DEFAULT,1,'Un estudiante de ingeniería informática debe hacer una base de datos para guardar la información del mundo entero','2:11:00',); --Ciencia ficción
 INSERT INTO content VALUES (17, 0, 1);
-INSERT INTO featurecontent VALUES (17,'El Señor de los Anillos: el retorno del Rey',2003,DEFAULT,1,'','3:21:00',); -- Premio óscar mejor película, Aventura y Fantasía
+INSERT INTO featurecontent VALUES (17,'El Señor de los Anillos: el retorno del Rey',2003,DEFAULT,1,'La conclusión de la trilogía del Señor de los Anillos','3:21:00',); -- Premio óscar mejor película, Aventura y Fantasía
 INSERT INTO content VALUES (18, 0, 1);
 INSERT INTO featurecontent VALUES (18,'Viaje al Sol',2005,1,1,'Un grupo de astronautas debe viajar al Sol para salvar al sistema solar','2:44:00',); -- Ciencia ficción
 INSERT INTO content VALUES (19, 0, 1);
