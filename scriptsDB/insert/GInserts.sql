@@ -1,0 +1,1 @@
+-- INSERCIÓN G: Cada temporada puede estar compuesta por un mínimo de 7 capítulos 

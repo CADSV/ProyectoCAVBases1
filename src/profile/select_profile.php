@@ -22,30 +22,32 @@
                 <h1>¿Quién eres? Elige tu perfil</h1>
             </div>
 
-            <div class = "profile">
-                <div class ="p1">
-                    <div class = "topFace">
-                        <div class = "eye"></div>
-                        <div class = "eye"></div>
-                    </div>
-                    <div class = "mouth"></div>
+            <div class = "profilesSelection">
+                <div class ="profile">
+                    <img src="../../assets/images/profiles/yellowProfile.png" title="Profile" alt="Profile">
+                    <h2>Alejandro</h2>
                 </div>
-                <div class ="p2">
-                    <div class = "topFace">
-                        <div class = "eye"></div>
-                        <div class = "eye"></div>
-                    </div>
-                    <div class = "mouth"></div>
+
+                <div class ="profile">
+                    <img src="../../assets/images/profiles/blueProfile.png" title="Profile" alt="Profile">
+                    <h2>Carlos</h2>
                 </div>
-                <div class ="p3">
-                    <div class = "topFace">
-                        <div class = "eye"></div>
-                        <div class = "eye"></div>
-                    </div>
-                    <div class = "mouth"></div>
+
+                <div class ="profile">
+                    <img src="../../assets/images/profiles/redProfile.png" title="Profile" alt="Profile">
+                    <h2>Vicente</h2>
+                </div>
+
+                <div class = "newProfile">
+                    <img src="../../assets/images/plus.png" title="New Profile" alt="New Profile">
+
                 </div>
             </div>
 
+
+            <div class = "administrarPerfiles">
+                <a href="adminProfile.php" title = "Administrar Perfiles" alt = "Administrar Perfiles">ADMINISTRAR PERFILES</a>
+            </div>
         </div>
 
     </section>

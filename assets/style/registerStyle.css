@@ -28,7 +28,6 @@ header {
 header nav a {
     color: #000;
     text-decoration: none;
-    margin: 20px;
     font-size: 18px;
     align-content: flex-end;
 }
@@ -59,7 +58,6 @@ section .container {
     align-items: center;
     justify-content: center;
     flex-flow: column wrap;
-    /* margin: 0px 20%; */
     max-height: 1000px;
     min-height: 400px;
     margin-top: 50px;
@@ -165,7 +163,13 @@ section .marginbutton{
 
 section .marginbuttonGray {
     margin-left: -14%;
+    margin-bottom: -5%;
 }
+
+section .marginbuttonRedPlan {
+    margin-left: 9%;
+}
+
 
 section .buttonContainer a {
     cursor: pointer;
@@ -316,8 +320,8 @@ section .container .dataForm form input[type="password"]{
     min-width: 110px;
     width: 400px;
     padding: 10px 100px 10px 100px;
-    position: relative;
-    left: 400px;
+    justify-content: center;
+    
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
