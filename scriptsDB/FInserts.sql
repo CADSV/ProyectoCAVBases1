@@ -1,21 +1,20 @@
 -- INSERCIÓN F: De las 10 series, 2 son clásicos con 5 temporadas, el resto tiene al menos una temporada.
--- INSERCIÓN F: De las 10 series, 2 son clásicos con 5 temporadas, el resto tiene al menos una temporada.
 --SERIES 
 
 INSERT INTO episodiccontent VALUES (21,'Lupin',2021,1,1,'','Basada en la historia de Arsène Lupin','2:11:00');
 
-INSERT INTO episodiccontent VALUES (22,'La niña',2016,1,0,'','Belki tenía 8 años cuando vivia con su familia','2:35:00');
-INSERT INTO episodiccontent VALUES (23,'La Bella y las Bestias',2018,1,0,'','Una mujer con sed de revancha vuelve a Mexico','10:09:00');
+INSERT INTO episodiccontent VALUES (22,'La niña',2016,1,DEFAULT,'','Belki tenía 8 años cuando vivia con su familia','2:35:00');
+INSERT INTO episodiccontent VALUES (23,'La Bella y las Bestias',2018,1,DEFAULT,'','Una mujer con sed de revancha vuelve a Mexico','10:09:00');
 
-INSERT INTO episodiccontent VALUES (24,'Sobreviviendo a Escobar',2021,0,1,'','Alias JJ','2:47:00');
+INSERT INTO episodiccontent VALUES (24,'Sobreviviendo a Escobar',2021,DEFAULT,1,'','Alias JJ','2:47:00');
 
-INSERT INTO episodiccontent VALUES (25,'La Ley Secreta',2017,0,1,'','Agentes de inteligencia se filtran en un cartel','12:18:00');
-INSERT INTO episodiccontent VALUES (26,'Merlin',2012,0,0,'','Merlin llega a Camelot','5:24:00');
-INSERT INTO episodiccontent VALUES (27,'The Crown',2020,0,1,'','Gran Bretaña necesita la recuperacion financiaera de los Estados Unidos','18:13:00');
+INSERT INTO episodiccontent VALUES (25,'La Ley Secreta',2017,DEFAULT,1,'','Agentes de inteligencia se filtran en un cartel','12:18:00');
+INSERT INTO episodiccontent VALUES (26,'Merlin',2012,DEFAULT,DEFAULT,'','Merlin llega a Camelot','5:24:00');
+INSERT INTO episodiccontent VALUES (27,'The Crown',2020,DEFAULT,1,'','Gran Bretaña necesita la recuperacion financiaera de los Estados Unidos','18:13:00');
 
-INSERT INTO episodiccontent VALUES (28,'Carta al Rey',2020,0,1,'','Para salvar su reino, un joven aprendiz de caballero emprende una travesía épica','3:56:00');
-INSERT INTO episodiccontent VALUES (29,'The Last Kingdom',2020,0,1,'','Alfred el grande defiende su reino de los invasores nordicos','20:31:00');
-INSERT INTO episodiccontent VALUES (30,'No hables con extraños',2018,0,1,'','Un hombre de familia termina envuelto en un misterio','2:45:00');
+INSERT INTO episodiccontent VALUES (28,'Carta al Rey',2020,DEFAULT,1,'','Para salvar su reino, un joven aprendiz de caballero emprende una travesía épica','3:56:00');
+INSERT INTO episodiccontent VALUES (29,'The Last Kingdom',2020,DEFAULT,1,'','Alfred el grande defiende su reino de los invasores nordicos','20:31:00');
+INSERT INTO episodiccontent VALUES (30,'No hables con extraños',2018,DEFAULT,1,'','Un hombre de familia termina envuelto en un misterio','2:45:00');
 
 --Temporadas 
 
