@@ -102,10 +102,11 @@ CREATE TABLE Episode( -- Episodio que puede tener temporada
 
     IdEpisode INT(10) UNIQUE NOT NULL, 
     IdSeason INT(10) UNIQUE NOT NULL,
+    IdContent   INT(10)  NOT NULL AUTO_INCREMENT
     EpisodeName VARCHAR(30) NOT NULL,
     EpisodeRunTime TIME NOT NULL,
 
     CONSTRAINT Episode_PK PRIMARY KEY (IdEpisode),
 
-    CONSTRAINT Episode_FK FOREIGN KEY (IdSeason) REFERENCES Carlevix.Season(IdSeason) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Episode_FK FOREIGN KEY (IdSeason,IdContent) REFERENCES Carlevix.Season(IdSeason,IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );

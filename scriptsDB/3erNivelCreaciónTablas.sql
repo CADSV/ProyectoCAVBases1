@@ -117,12 +117,12 @@ CREATE TABLE EpisodicContent( -- Contenido episódico, es decir que tiene varias
 
 CREATE TABLE Season( -- Temporada que tiene contenido episódico, es decir grupo de episodios/capítulos
     
-    IdSeason INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
+    IdSeason INT(10)  NOT NULL AUTO_INCREMENT,
     IdContent INT(10) NOT NULL,
     SeasonName VARCHAR(30) NOT NULL,
     TotalSeasonTime TIME NOT NULL,
 
-    CONSTRAINT Season_PK PRIMARY KEY (IdSeason),
+    CONSTRAINT Season_PK PRIMARY KEY (IdSeason, IdContent),
     
     CONSTRAINT Season_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
 );
