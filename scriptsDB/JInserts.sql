@@ -13,11 +13,12 @@ INSERT INTO genre VALUES (9, 'Terror');
 INSERT INTO genre VALUES (10, 'Comedia');
 INSERT INTO genre VALUES (11, 'Aventura');
 INSERT INTO genre VALUES (12, 'Fantasía');
+INSERT INTO genre VALUES (13, 'Misterio');
+INSERT INTO genre VALUES (14, 'Historia');
 
 
 -- Content -> IsAbout -> Genre:
 -- Películas:
-INSERT INTO isabout VALUES (IdContent,IdGenre,Relevance);
 INSERT INTO isabout VALUES (1,1,1);
 INSERT INTO isabout VALUES (2,2,1);
 INSERT INTO isabout VALUES (3,3,1);
@@ -49,13 +50,18 @@ INSERT INTO isabout VALUES (19,10,1);
 INSERT INTO isabout VALUES (20,8,1);
 
 -- Series:
-INSERT INTO isabout VALUES (21,1,1);
-INSERT INTO isabout VALUES (22,1,1);
-INSERT INTO isabout VALUES (23,1,1);
-INSERT INTO isabout VALUES (24,1,1);
-INSERT INTO isabout VALUES (25,1,1);
-INSERT INTO isabout VALUES (26,1,1);
-INSERT INTO isabout VALUES (27,1,1);
-INSERT INTO isabout VALUES (28,1,1);
-INSERT INTO isabout VALUES (29,1,1);
-INSERT INTO isabout VALUES (30,1,1);
+INSERT INTO isabout VALUES (21,5,1);
+INSERT INTO isabout VALUES (21,13,2);
+INSERT INTO isabout VALUES (22,2,1);
+INSERT INTO isabout VALUES (23,2,1);
+INSERT INTO isabout VALUES (24,7,1);
+INSERT INTO isabout VALUES (24,2,2);
+INSERT INTO isabout VALUES (25,2,1);
+INSERT INTO isabout VALUES (26,12,1);
+INSERT INTO isabout VALUES (26,11,2);
+INSERT INTO isabout VALUES (27,14,1);
+INSERT INTO isabout VALUES (27,2,2);
+INSERT INTO isabout VALUES (28,11,1);
+INSERT INTO isabout VALUES (29,2,1);
+INSERT INTO isabout VALUES (29,14,1);
+INSERT INTO isabout VALUES (30,2,1);
