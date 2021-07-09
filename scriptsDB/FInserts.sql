@@ -36,7 +36,7 @@ INSERT INTO season VALUES (5,2,'The Kingdom','2:18:00');
 
 
 
---Temporadas Unicas
+--Temporadas Unicas--
 
 
 INSERT INTO season VALUES (1,21,'Necklace','2:11:00');
