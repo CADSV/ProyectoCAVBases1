@@ -34,7 +34,7 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     IdMembership INT(10) NOT NULL,
     CVV INT(3) NOT NULL,
     CardNumber INT(20) NOT NULL,
-    StartDateSus DATETIME NOT NULL, 
+    StartDateSus DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     EndDateSus DATETIME,
     
     CONSTRAINT IsSuscribed_PK PRIMARY KEY (StartDateSus),
