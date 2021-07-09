@@ -1,4 +1,3 @@
-
 ------------------------------------------------------------------------
 -- SEGUNDO NIVEL DE TABLAS (Que tienen FK que dependen del Primer Nivel)
 ------------------------------------------------------------------------
@@ -11,7 +10,7 @@ CREATE TABLE City ( -- Ciudad que puede tener país y/o usuario viviendo en ella
     
     CONSTRAINT City_PK PRIMARY KEY (IdCity),
     
-    CONSTRAINT City_FK FOREIGN KEY (IdCountry) REFERENCES Carlevix.Country(IdCountry) ON DELETE CASCADE -- Al eliminar un país se eliminan sus ciudades
+    CONSTRAINT City_FK FOREIGN KEY (IdCountry) REFERENCES Carlevix.Country(IdCountry) ON DELETE CASCADE ON UPDATE CASCADE    -- Al eliminar un país se eliminan sus ciudades
 );
 
 CREATE TABLE Content ( -- Contenido audiovisual
@@ -22,8 +21,8 @@ CREATE TABLE Content ( -- Contenido audiovisual
 
     CONSTRAINT Content_PK PRIMARY KEY (IdContent),
     
-    CONSTRAINT Content_FK1 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE NO ACTION,  -- Al eliminar una clasificación por edad se deja como está
-    CONSTRAINT Content_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE NO ACTION -- Al eliminar un idioma se deja como está en sus contenidos
+    CONSTRAINT Content_FK1 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE CASCADE ON UPDATE CASCADE,  -- Al eliminar una clasificación por edad se deja como está
+    CONSTRAINT Content_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE CASCADE ON UPDATE CASCADE -- Al eliminar un idioma se deja como está en sus contenidos
 );
 
 CREATE TABLE Director( -- Persona que dirige un contenido
@@ -32,7 +31,7 @@ CREATE TABLE Director( -- Persona que dirige un contenido
     
     CONSTRAINT Director_PK PRIMARY KEY (IdWorker),
 
-    CONSTRAINT Director_FK FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE -- Al eliminar el trabajador, se elimina el subtipo
+    CONSTRAINT Director_FK FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE -- Al eliminar el trabajador, se elimina el subtipo
 );
 
 
@@ -42,5 +41,5 @@ CREATE TABLE Performer( -- Persona que actúa en un contenido
     
     CONSTRAINT Performer_PK PRIMARY KEY (IdWorker),
     
-    CONSTRAINT Performer_FK FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE -- Verificar esto
+    CONSTRAINT Performer_FK FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
 );

@@ -1,4 +1,3 @@
-
 -------------------------------------------------------------------------------
 -- CUARTO NIVEL DE TABLAS (Que tienen FK que dependen del 1er, 2do y 3er Nivel)
 -------------------------------------------------------------------------------
@@ -20,8 +19,8 @@ CREATE TABLE HasSeen ( -- Ha visto, relación entre perfil y contenido
 
     CONSTRAINT RATING_Domain CHECK (Rating BETWEEN 1 AND 5),
 
-    CONSTRAINT HasSeen_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE, 
-    CONSTRAINT HasSeen_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE
+    CONSTRAINT HasSeen_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE, 
+    CONSTRAINT HasSeen_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -34,8 +33,8 @@ CREATE TABLE HasSeenOf ( -- Ha visto de, relación entre perfil y género de con
 
     CONSTRAINT HasSeenOf_PK PRIMARY KEY (IdProfile, IdGenre),
 
-    CONSTRAINT HasSeenOf_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE, 
-    CONSTRAINT HasSeenOf_FK2 FOREIGN KEY (IdGenre) REFERENCES Carlevix.Genre(IdGenre) ON DELETE CASCADE
+    CONSTRAINT HasSeenOf_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE, 
+    CONSTRAINT HasSeenOf_FK2 FOREIGN KEY (IdGenre) REFERENCES Carlevix.Genre(IdGenre) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -47,8 +46,8 @@ CREATE TABLE Blocked( -- Bloqueado, relación
 
     CONSTRAINT Blocked_PK PRIMARY KEY (IdProfile, IdContent),
     
-    CONSTRAINT Blocked_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE, 
-    CONSTRAINT Blocked_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE
+    CONSTRAINT Blocked_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE, 
+    CONSTRAINT Blocked_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -61,8 +60,8 @@ CREATE TABLE Session( -- Sesión, relación entre perfil y dispositivo
 
     CONSTRAINT Session_PK PRIMARY KEY (IdProfile, IdDevice, ConStartDate),
     
-    CONSTRAINT Session_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE, 
-    CONSTRAINT Session_FK2 FOREIGN KEY (IdDevice) REFERENCES Carlevix.Device(IdDevice) ON DELETE CASCADE
+    CONSTRAINT Session_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE, 
+    CONSTRAINT Session_FK2 FOREIGN KEY (IdDevice) REFERENCES Carlevix.Device(IdDevice) ON DELETE CASCADE ON UPDATE CASCADE
 
 );
 
@@ -74,8 +73,8 @@ CREATE TABLE Watchlist ( -- Lista de contenidos para ver más tarde (Mi Lista)
 
     CONSTRAINT Watchlist_PK PRIMARY KEY (IdProfile, IdContent),
 
-    CONSTRAINT Watchlist_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE, 
-    CONSTRAINT Watchlist_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE
+    CONSTRAINT Watchlist_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE, 
+    CONSTRAINT Watchlist_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -93,10 +92,10 @@ CREATE TABLE Configurate ( -- Configura, relación entre perfil e idioma, clasif
     CONSTRAINT FONT_Domain CHECK ((Font='Arial') OR (Font='Helvetica') OR (Font='Sans-Serif')),
 
 
-    CONSTRAINT Configurate_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE,
-    CONSTRAINT Configurate_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE CASCADE,
-    CONSTRAINT Configurate_FK3 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE CASCADE,
-    CONSTRAINT Configurate_FK4 FOREIGN KEY (Font, Size) REFERENCES Carlevix.Subtitle(Font, Size) ON DELETE CASCADE
+    CONSTRAINT Configurate_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT Configurate_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT Configurate_FK3 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT Configurate_FK4 FOREIGN KEY (Font, Size) REFERENCES Carlevix.Subtitle(Font, Size) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Episode( -- Episodio que puede tener temporada
@@ -108,5 +107,5 @@ CREATE TABLE Episode( -- Episodio que puede tener temporada
 
     CONSTRAINT Episode_PK PRIMARY KEY (IdEpisode),
 
-    CONSTRAINT Episode_FK FOREIGN KEY (IdSeason) REFERENCES Carlevix.Season(IdSeason) ON DELETE CASCADE
+    CONSTRAINT Episode_FK FOREIGN KEY (IdSeason) REFERENCES Carlevix.Season(IdSeason) ON DELETE CASCADE ON UPDATE CASCADE
 );

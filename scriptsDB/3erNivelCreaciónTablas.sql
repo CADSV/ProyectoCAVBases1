@@ -1,4 +1,3 @@
-
 --------------------------------------------------------------------------
 -- TERCER NIVEL DE TABLAS (Que tienen FK que dependen del 1er y 2do Nivel)
 --------------------------------------------------------------------------
@@ -26,11 +25,10 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     CONSTRAINT EMAIL_Domain CHECK (EmailUser LIKE '%_@__%.__%'),
     CONSTRAINT GENDER_Domain CHECK (UserGender='M' OR UserGender='F' OR UserGender='N/A'),
 
-    CONSTRAINT User_FK FOREIGN KEY (IdCity) REFERENCES Carlevix.City(IdCity) ON DELETE NO ACTION-- Si se elimina la ciudad, no es necesario eliminar a los usuarios que viven en ella
+    CONSTRAINT User_FK FOREIGN KEY (IdCity) REFERENCES Carlevix.City(IdCity) ON DELETE CASCADE ON UPDATE CASCADE  -- Si se elimina la ciudad, no es necesario eliminar a los usuarios que viven en ella
 );
 
-
-CREATE TABLE IsSuscribed ( -- Relación entre usuario y membresía, que indica suscripción actual o pasada
+    CREATE TABLE IsSuscribed ( -- Relación entre usuario y membresía, que indica suscripción actual o pasada
 
     IdUser INT(10) NOT NULL, 
     IdMembership INT(10) NOT NULL,
@@ -41,9 +39,9 @@ CREATE TABLE IsSuscribed ( -- Relación entre usuario y membresía, que indica s
     
     CONSTRAINT IsSuscribed_PK PRIMARY KEY (StartDateSus),
     
-    CONSTRAINT IsSuscribed_FK1 FOREIGN KEY (IdUser) REFERENCES Carlevix.User(IdUser) ON DELETE CASCADE,
-    CONSTRAINT IsSuscribed_FK2 FOREIGN KEY (IdMembership) REFERENCES Carlevix.Membership(IdMembership) ON DELETE CASCADE,
-    CONSTRAINT IsSuscribed_FK3 FOREIGN KEY (CardNumber, CVV) REFERENCES Carlevix.PaymentCard(CardNumber, CVV) ON DELETE CASCADE
+    CONSTRAINT IsSuscribed_FK1 FOREIGN KEY (IdUser) REFERENCES Carlevix.User(IdUser) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT IsSuscribed_FK2 FOREIGN KEY (IdMembership) REFERENCES Carlevix.Membership(IdMembership) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT IsSuscribed_FK3 FOREIGN KEY (CardNumber, CVV) REFERENCES Carlevix.PaymentCard(CardNumber, CVV) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -62,7 +60,7 @@ CREATE TABLE Profile ( -- Perfil que tiene usuario en Carlevix para ver y prefer
     
     CONSTRAINT PROFILE_PHOTO_Domain CHECK ((ProfilePhoto = 1) OR (ProfilePhoto = 2) OR (ProfilePhoto = 3) OR (ProfilePhoto = 4) OR (ProfilePhoto = 5)),  --   1: Azul 2: Rojo 3: Amarillo 4: Verde 5: Rosado
     
-    CONSTRAINT Profile_FK FOREIGN KEY (IdUser) REFERENCES Carlevix.User(IdUser) ON DELETE CASCADE -- Al eliminar un usuario se eliminan sus perfiles
+    CONSTRAINT Profile_FK FOREIGN KEY (IdUser) REFERENCES Carlevix.User(IdUser) ON DELETE CASCADE ON UPDATE CASCADE -- Al eliminar un usuario se eliminan sus perfiles
 );
 
 
@@ -78,8 +76,8 @@ CREATE TABLE IsAbout ( -- Es sobre, relación entre contenido y género (o categ
 
     CONSTRAINT RELEVANCE_Domain CHECK ((Relevance = 1) OR (Relevance = 2)), -- 1: Lead (Principal), 2: Secondary (Secundario)
 
-    CONSTRAINT IsAbout_FK1 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE,
-    CONSTRAINT IsAbout_FK2 FOREIGN KEY (IdGenre) REFERENCES Carlevix.Genre(IdGenre) ON DELETE CASCADE  
+    CONSTRAINT IsAbout_FK1 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT IsAbout_FK2 FOREIGN KEY (IdGenre) REFERENCES Carlevix.Genre(IdGenre) ON DELETE CASCADE ON UPDATE CASCADE  
 );
 
 
@@ -96,7 +94,7 @@ CREATE TABLE FeatureContent( -- Contenido individual, como películas
     
     CONSTRAINT FeatureContent_PK PRIMARY KEY (IdContent),
 
-    CONSTRAINT FeatureContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE -- Verificar esto
+    CONSTRAINT FeatureContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
 ); 
 
 
@@ -113,7 +111,7 @@ CREATE TABLE EpisodicContent( -- Contenido episódico, es decir que tiene varias
 
     CONSTRAINT EpisodicContent_PK PRIMARY KEY (IdContent),
     
-    CONSTRAINT EpisodicContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE -- Verificar esto
+    CONSTRAINT EpisodicContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
 ); 
 
 
@@ -126,7 +124,7 @@ CREATE TABLE Season( -- Temporada que tiene contenido episódico, es decir grupo
 
     CONSTRAINT Season_PK PRIMARY KEY (IdSeason),
     
-    CONSTRAINT Season_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE -- Verificar esto
+    CONSTRAINT Season_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
 );
 
 
@@ -139,7 +137,7 @@ CREATE TABLE Award( -- Premio que puede tener contenido
 
     CONSTRAINT Award_PK PRIMARY KEY (IdAward, IdContent, WinningYear),
     
-    CONSTRAINT Award_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE 
+    CONSTRAINT Award_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE 
 );
 
 
@@ -150,8 +148,8 @@ CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 
     CONSTRAINT Directed_PK PRIMARY KEY (IdWorker, IdContent),
 
-    CONSTRAINT Directed_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE,
-    CONSTRAINT Directed_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE
+    CONSTRAINT Directed_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT Directed_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -167,7 +165,6 @@ CREATE TABLE Stars  ( -- Actúa, relación entre actor y contenido
 
     CONSTRAINT ROLE_Domain CHECK ((Role = 1) OR (Role = 2) OR (Role = 3)), -- 1: Lead (Principal), 2: Side (De reparto), 3: Guest (Invitado)
 
-    CONSTRAINT Stars_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE, 
-    CONSTRAINT Stars_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE
+    CONSTRAINT Stars_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE, 
+    CONSTRAINT Stars_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
-

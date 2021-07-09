@@ -1,4 +1,4 @@
--- INSERCIÓN B: 10 Países, y 3 ciudades en cada uno.
+-- INSERCIÓN B: 10 Países, y 3 ciudades en cada uno.-------------------------------------------------------------------------
 INSERT INTO country VALUES (1,"Venezuela");
 INSERT INTO country VALUES (2,"Bélgica");
 INSERT INTO country VALUES (3,"Francia");

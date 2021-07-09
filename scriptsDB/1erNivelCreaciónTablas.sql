@@ -37,6 +37,8 @@ CREATE TABLE Country ( -- País en el que puede vivir usuario
 );
 
 
+-- CREATE DOMAIN DTYPE AS VARCHAR(13) NOT NULL CHECK (VALUE = "Laptop" OR VALUE = "Computer" OR VALUE = "Cellphone" OR VALUE = "Tablet" OR VALUE = "Other/Unknown")); -- Tipo de dispositivo
+
 CREATE TABLE Device ( -- Dispositivo que puede utilizar usuario para navegar en Carlevix
    
     IdDevice        INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
@@ -80,7 +82,7 @@ CREATE TABLE AgeClass( -- Clasificación por edad que puede tener contenido
 
 
 
-CREATE TABLE ( -- Idioma que puede preferir perfil y/o puede tener contenido
+CREATE TABLE Language( -- Idioma que puede preferir perfil y/o puede tener contenido
 
     IdLanguage INT(10) UNIQUE NOT NULL AUTO_INCREMENT ,
     LanguageName VARCHAR(30) UNIQUE NOT NULL,
