@@ -8,7 +8,7 @@ CREATE TABLE HasSeen ( -- Ha visto, relación entre perfil y contenido
 
     IdProfile       INT(10) NOT NULL,
     IdContent       INT(10) NOT NULL,
-    LastDateWatched DATETIME NOT NULL, 
+    LastDateWatched DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     Rating          FLOAT(2),
     WatchedByRecomm BIT(1) NOT NULL DEFAULT 0, -- 1: Visto por recomendación, 0: Visto sin recomendación.
     TimesSeen       INT(10) NOT NULL DEFAULT 1,  -- 1 es la primera visualización del contenido.
