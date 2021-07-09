@@ -102,7 +102,7 @@ CREATE TABLE Episode( -- Episodio que puede tener temporada
 
     IdEpisode INT(10) UNIQUE NOT NULL, 
     IdSeason INT(10) UNIQUE NOT NULL,
-    IdContent   INT(10)  NOT NULL AUTO_INCREMENT
+    IdContent   INT(10)  NOT NULL AUTO_INCREMENT,
     EpisodeName VARCHAR(30) NOT NULL,
     EpisodeRunTime TIME NOT NULL,
 
