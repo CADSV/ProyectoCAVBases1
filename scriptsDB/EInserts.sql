@@ -1,1 +1,0 @@
--- INSERCIÓN E: Solo 7 usuarios han hecho formal su inscripción.

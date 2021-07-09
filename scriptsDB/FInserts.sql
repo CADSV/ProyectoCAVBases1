@@ -1,1 +1,0 @@
--- INSERCIÓN F: De las 10 series, 2 son clásicos con 5 temporadas, el resto tiene al menos una temporada.

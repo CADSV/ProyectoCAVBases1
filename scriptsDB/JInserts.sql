@@ -1,1 +1,0 @@
--- INSERCIÓN J: Cada contenido posee al menos 1 género y 2 actores asociados
