@@ -1,17 +1,17 @@
 -- INSERCIÓN H: Al menos 10 actores.--------------------------------------------------------------------------
 
 --FilmWorker--
-INSERT INTO filmworker VALUES (1,'Rachel','McAdams','F');
+INSERT INTO filmworker VALUES (1,'Rodolfo','Rodríguez','M');
 INSERT INTO filmworker VALUES (2,'Daniel','Craig','M');
 INSERT INTO filmworker VALUES (3.'Emma','Stone','F');
 INSERT INTO filmworker VALUES (4,'Leonardo','DiCaprio','M');
-INSERT INTO filmworker VALUES (5,'Tom','Cruise','M');
+INSERT INTO filmworker VALUES (5,'Rachel','McAdams','F');
 INSERT INTO filmworker VALUES (6,'Jennifer','Aniston','F');
 INSERT INTO filmworker VALUES (7,'Scarlett','Johansson','F');
 INSERT INTO filmworker VALUES (8,'Chris','Evans','M');
 INSERT INTO filmworker VALUES (9,'Keanu','Reeves','M');
 INSERT INTO filmworker VALUES (10,'Jordana','Brewster','F');
-INSERT INTO filmworker VALUES (11,'Daniel','Bruhl','M');
+INSERT INTO filmworker VALUES (11,'Daniel','Brühl','M');
 
 
 --Performer--
