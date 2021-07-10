@@ -1,10 +1,16 @@
 
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
--- INSERTS PROPIOS */
--- INSERT INTO country VALUES (0, "Desconocido");
--- INSERT INTO city VALUES (0, 0, "Desconocida");
+-- DEFAULT INSERTS
 
+INSERT INTO device VALUES (1, 'Desconocido','Desconocido', 'Desconocido');
+INSERT INTO subtitle VALUES ('Arial', 12);
+INSERT INTO country VALUES(1,'Desconocido');
+INSERT INTO city VALUES(1,1,'Desconocido');
+-- INSERT INTO ageclass VALUES(0,'Todo público');
+INSERT INTO language VALUES(1, 'Desconocido');
+INSERT INTO filmworker VALUES(1,'Desconocido','Desconocido','N/A');
+INSERT INTO genre VALUES(1,'Desconocido');
 
 
 
@@ -51,21 +57,6 @@ INSERT INTO award VALUES (10,5,2015,'GOLDEN');
 INSERT INTO award VALUES (12,6,2017,'OSCAR');
 INSERT INTO award VALUES (13,7,2018,'EMMY');
 INSERT INTO award VALUES (14,8,2016,'GOLDEN');
-
-
-
-
-INSERT INTO device VALUES (1, 'Desconocido','Desconocido', 'Desconocido');
-INSERT INTO subtitle VALUES ('Arial', 12);
-INSERT INTO country VALUES(1,'Desconocido');
-INSERT INTO city VALUES(1,1,'Desconocido');
-
--- INSERT INTO ageclass VALUES(0,'Todo público');
-
-INSERT INTO language VALUES(1, 'Desconocido');
-INSERT INTO filmworker VALUES(1,'Desconocido','Desconocido','N/A');
-
-INSERT INTO genre VALUES(1,'Desconocido');
 
 
 
