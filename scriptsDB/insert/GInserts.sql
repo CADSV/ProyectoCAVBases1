@@ -1,5 +1,6 @@
---  INSERCIÓN G: Cada temporada puede estar compuesta por un mínimo de 7 capítulos 
+-- INSERCIÓN G: Cada temporada puede estar compuesta por un mínimo de 7 capítulos 
 -- Episodios
+
 
 
 -- Episodios The Crown Temporada 1

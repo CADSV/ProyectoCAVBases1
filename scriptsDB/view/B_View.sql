@@ -1,5 +1,5 @@
 -- REPORTE B: ¿Cuál es el usuario que ha visto más episodios de series originales? 
---Imprimir la información del usuario, de dónde es y la cantidad de episodios vistos. 
+-- Imprimir la información del usuario, de dónde es y la cantidad de episodios vistos. 
 
 
 

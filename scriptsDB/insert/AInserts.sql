@@ -1,6 +1,6 @@
 -- INSERCIÓN A: 10 Usuarios registrados, de los cuales solo 5 poseen 1 solo perfil creado. Los demás poseen al menos 2.----------------------------
 
---USUARIOS--
+-- USUARIOS--
 INSERT INTO user VALUES (1,1,'alejandro','alejandropestana@outlook.com','contraseña','Alejandro','Pestana',DEFAULT,12345678,'M', NULL, NULL , NULL );
 INSERT INTO user VALUES (2,2,'vicente','vicentemirabal16@gmail.com','jajaja','Vicente','Mirabal',DEFAULT,12345678,'M', NULL, NULL, NULL);
 INSERT INTO user VALUES (3,1,'carlos','cadoffiny.19@est.ucab.edu.ve','notelawaadecir','Carlos','Doffiny S-V',DEFAULT,12345678,'M', NULL, NULL, NULL);
@@ -15,8 +15,10 @@ INSERT INTO user VALUES (11,17,'aDriana','adririvera@gmail.com','161020','Adrian
 INSERT INTO user VALUES (12,9,'reyAdriano','emperador@roma.italia','romamia','Adriano','Trajano',DEFAULT,87127645,'M',NULL, NULL, NULL);
 
 
+SELECT COUNT(IdProfile) FROM profile;
 
---PERFILES--
+
+-- PERFILES--
 INSERT INTO profile VALUES (1,1,3,'alejandro');
 INSERT INTO profile VALUES (2,2,2,'vicente');
 INSERT INTO profile VALUES (3,3,1,'carlos');

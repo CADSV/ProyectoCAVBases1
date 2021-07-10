@@ -1,6 +1,6 @@
 -- INSERCIÓN E: Solo 7 usuarios han hecho formal su inscripción.----------------------------------------------------------------
 
---PaymentCard--
+-- PaymentCard--
 INSERT INTO paymentcard VALUES (6276559076321199,123,'Alejandro','Pestana','2025-11-11');
 INSERT INTO paymentcard VALUES (1122334455667788,000,'Vicente','Mirabal','2022-07-24');
 INSERT INTO paymentcard VALUES (0102030405060708,858, 'Carlos', 'Doffiny S-V','2023-08-15');
@@ -10,7 +10,7 @@ INSERT INTO paymentcard VALUES (0001000200030004,666,'Ying','Yang','2100-01-01')
 INSERT INTO paymentcard VALUES (1878126903615428,163,'Hassan','Nasrallah','2025-10-27');
 
 
---IsSuscribed--
+-- IsSuscribed--
 INSERT INTO issuscribed VALUES (1,3,123,6276559076321199,'2021-07-08 14:01:01',NULL);
 UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 1111, UserAvenueStreet = 'Paraiso', UserBuildingHouse = 'Las Palmas' WHERE IdUser = 1;
 

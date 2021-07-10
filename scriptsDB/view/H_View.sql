@@ -1,2 +1,2 @@
 -- REPORTE H: Liste toda la información de las usuarias que tengan en su nombre la cadena “aDRi”, tengan una 
---suscripción activa y hayan visto al menos 2 contenidos que requieran suscripción.
+-- suscripción activa y hayan visto al menos 2 contenidos que requieran suscripción.

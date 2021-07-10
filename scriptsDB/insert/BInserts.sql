@@ -10,7 +10,7 @@ INSERT INTO country VALUES (8,"Libano");
 INSERT INTO country VALUES (9,"Cuba");
 INSERT INTO country VALUES (10,"Corea del Norte");
 
---VENEZUELA
+-- VENEZUELA
 INSERT INTO city VALUES (1,1,'Caracas');
 INSERT INTO city VALUES (2,1,'Barquisimeto');
 INSERT INTO city VALUES (3,1,'Valencia');
@@ -20,7 +20,7 @@ INSERT INTO city VALUES (4,2,'Bruselas');
 INSERT INTO city VALUES (5,2,'Charleroi');
 INSERT INTO city VALUES (6,2,'Vlamerting');
 
---FRANCIA
+-- FRANCIA
 INSERT INTO city VALUES (7,3,'París');
 INSERT INTO city VALUES (8,3,'Montpellier');
 INSERT INTO city VALUES (9,3,'Lyon');

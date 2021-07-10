@@ -1,4 +1,4 @@
---REPORTE A: Películas que duren más de 2 horas y media, sean de drama, que hayan ganado un premio
+-- REPORTE A: Películas que duren más de 2 horas y media, sean de drama, que hayan ganado un premio
 -- y su calificación promedio es mayor o igual 4, ordenadas cronológicamente por el año de lanzamiento.
 
 INSERT INTO award VALUES (19,NULL,2002,'BAFTA Mejor Diseño de Producción');
