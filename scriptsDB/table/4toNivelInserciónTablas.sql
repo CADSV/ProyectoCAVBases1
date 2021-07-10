@@ -54,7 +54,7 @@ CREATE TABLE Blocked( -- Bloqueado, relación
 CREATE TABLE Session( -- Sesión, relación entre perfil y dispositivo
 
     IdProfile       INT(10) NOT NULL,
-    IdDevice        INT(10),     
+    IdDevice        INT(10) NOT NULL,     
     ConStartDate    DATETIME NOT NULL, 
     SessionTotalTime TIME,
 
