@@ -143,12 +143,12 @@ CREATE TABLE Award( -- Premio que puede tener contenido
 
 CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 
-    IdWorker INT(10),       -- NULL: Director Desconocido.
+    IdWorker INT(10) NOT NULL,
     IdContent INT(10) NOT NULL,
 
     CONSTRAINT Directed_PK PRIMARY KEY (IdWorker, IdContent),
 
-    CONSTRAINT Directed_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT Directed_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Directed_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -157,7 +157,7 @@ CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 
 CREATE TABLE Stars  ( -- Actúa, relación entre actor y contenido
 
-    IdWorker    INT(10),     -- NULL: Actor Desconocido.
+    IdWorker    INT(10) NOT NULL, 
     IdContent   INT(10) NOT NULL, 
     Role        INT(1) NOT NULL, 
 
@@ -165,6 +165,6 @@ CREATE TABLE Stars  ( -- Actúa, relación entre actor y contenido
 
     CONSTRAINT ROLE_Domain CHECK ((Role = 1) OR (Role = 2) OR (Role = 3)), -- 1: Lead (Principal), 2: Side (De reparto), 3: Guest (Invitado)
 
-    CONSTRAINT Stars_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE SET NULL ON UPDATE CASCADE, 
+    CONSTRAINT Stars_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE, 
     CONSTRAINT Stars_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
