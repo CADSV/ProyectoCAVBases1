@@ -84,7 +84,7 @@ CREATE TABLE IsAbout ( -- Es sobre, relación entre contenido y género (o categ
 CREATE TABLE FeatureContent( -- Contenido individual, como películas
     
     IdContent       INT(10)  UNIQUE NOT NULL, 
-    TitleCont       VARCHAR(30)  NOT NULL,
+    TitleCont       VARCHAR(100)  NOT NULL,
     ReleaseYearCont YEAR NOT NULL,
     IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, -- 1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
     ReqSusCont      BIT(1) NOT NULL DEFAULT 0, -- 1: Requiere suscripcion, 0: no requiere suscripcion
@@ -101,7 +101,7 @@ CREATE TABLE FeatureContent( -- Contenido individual, como películas
 CREATE TABLE EpisodicContent( -- Contenido episódico, es decir que tiene varias partes (temporadas y episodios)
     
     IdContent       INT(10)  UNIQUE NOT NULL, 
-    TitleCont       VARCHAR(30)  NOT NULL,
+    TitleCont       VARCHAR(100)  NOT NULL,
     ReleaseYearCont YEAR NOT NULL,
     IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, -- 1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
     ReqSusCont      BIT(1) NOT NULL DEFAULT 0, -- 1: Requiere suscripcion, 0: no requiere suscripcion
