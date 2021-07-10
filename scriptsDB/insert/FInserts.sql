@@ -15,7 +15,7 @@ INSERT INTO season VALUES (1,29,'From Londres','5:13:00');
 INSERT INTO season VALUES (2,29,'Army','6:00:00');
 INSERT INTO season VALUES (3,29,'Hostage','4:00:00');
 INSERT INTO season VALUES (4,29,'Winchester','3:00:00');
-INSERT INTO season VALUES (5,2,'The Kingdom','2:18:00');
+INSERT INTO season VALUES (5,29,'The Kingdom','2:18:00');
 
 
 
