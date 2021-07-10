@@ -54,14 +54,14 @@ CREATE TABLE Blocked( -- Bloqueado, relación
 CREATE TABLE Session( -- Sesión, relación entre perfil y dispositivo
 
     IdProfile       INT(10) NOT NULL,
-    IdDevice        INT(10) NOT NULL DEFAULT 1,       -- 1: Dispositivo desconocido.
+    IdDevice        INT(10) ,       -- 1: Dispositivo desconocido.
     ConStartDate    DATETIME NOT NULL, 
     SessionTotalTime TIME,
 
     CONSTRAINT Session_PK PRIMARY KEY (IdProfile, IdDevice, ConStartDate),
     
     CONSTRAINT Session_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE, 
-    CONSTRAINT Session_FK2 FOREIGN KEY (IdDevice) REFERENCES Carlevix.Device(IdDevice) ON DELETE SET DEFAULT ON UPDATE CASCADE
+    CONSTRAINT Session_FK2 FOREIGN KEY (IdDevice) REFERENCES Carlevix.Device(IdDevice) ON DELETE SET NULL  ON UPDATE CASCADE
 
 );
 
@@ -81,10 +81,10 @@ CREATE TABLE Watchlist ( -- Lista de contenidos para ver más tarde (Mi Lista)
 CREATE TABLE Configurate ( -- Configura, relación entre perfil e idioma, clasificación por edad y subitítulo
 
     IdProfile       INT(10) NOT NULL,
-    IdLanguage      INT(10) NOT NULL DEFAULT 1,     -- 1: Lenguaje desconocido. 
-    MinAge          TINYINT(2) NOT NULL DEFAULT 0,  -- 0: Para todo público
-    Font            VARCHAR(20) NOT NULL DEFAULT 'Arial',
-    Size            TINYINT(2) NOT NULL DEFAULT 12, 
+    IdLanguage      INT(10),     -- 1: Lenguaje desconocido. 
+    MinAge          TINYINT(2),  -- 0: Para todo público
+    Font            VARCHAR(20),
+    Size            TINYINT(2), 
     ConfigurationDate DATETIME DEFAULT CURRENT_TIME,
 
     CONSTRAINT Configurate_PK PRIMARY KEY (IdProfile, ConfigurationDate),
@@ -93,9 +93,9 @@ CREATE TABLE Configurate ( -- Configura, relación entre perfil e idioma, clasif
 
 
     CONSTRAINT Configurate_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Configurate_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE SET DEFAULT ON UPDATE CASCADE,
-    CONSTRAINT Configurate_FK3 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE SET DEFAULT ON UPDATE CASCADE,
-    CONSTRAINT Configurate_FK4 FOREIGN KEY (Font, Size) REFERENCES Carlevix.Subtitle(Font, Size) ON DELETE DEFAULT ON UPDATE CASCADE
+    CONSTRAINT Configurate_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE SET NULL  ON UPDATE CASCADE,
+    CONSTRAINT Configurate_FK3 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE SET NULL  ON UPDATE CASCADE,
+    CONSTRAINT Configurate_FK4 FOREIGN KEY (Font, Size) REFERENCES Carlevix.Subtitle(Font, Size) ON DELETE NULL  ON UPDATE CASCADE
 );
 
 CREATE TABLE Episode( -- Episodio que puede tener temporada
