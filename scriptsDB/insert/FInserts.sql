@@ -1,8 +1,8 @@
 -- INSERCIÓN F: De las 10 series, 2 son clásicos con 5 temporadas, el resto tiene al menos una temporada.
 
---Temporadas 
+-- Temporadas 
 
---The Crown
+-- The Crown
 
 INSERT INTO season VALUES (1,27,'The Queen','4:13:00');
 INSERT INTO season VALUES (2,27,'Beryl','4:00:00');
@@ -19,7 +19,7 @@ INSERT INTO season VALUES (5,2,'The Kingdom','2:18:00');
 
 
 
---Temporadas Unicas--
+-- Temporadas Unicas--
 
 
 INSERT INTO season VALUES (1,21,'Necklace','2:11:00');

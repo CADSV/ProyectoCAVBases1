@@ -38,9 +38,9 @@ INSERT INTO featurecontent VALUES (10,'¡Ayuda, Ahí Vienen!',2016,1,1,'','Un d�
 INSERT INTO featurecontent VALUES (11,'Solo en Berlín',2016,DEFAULT,1,'','Drama en Berlín, durante la Segunda Guerra Mundial','1:43:00'); -- Actua Daniel Bruhl, Guerra y Drama
 INSERT INTO featurecontent VALUES (12,'Incontenible',2002,1,1,'','Una graciosa aventura sobre un payaso y su hijo carambola','1:24:00'); -- Comedia
 INSERT INTO featurecontent VALUES (13,'Cántame la Zona',1988,DEFAULT,1,'','Un viaje en carro se convierte en una divertida aventura','2:12:00'); -- Comedia
-INSERT INTO featurecontent VALUES (14,'Tu Casa es Su Casa',2013,DEFAULT,1,'','Un criminal secuestra a una familia y pretende que todo está bien','2:06:00'); --Suspenso
-INSERT INTO featurecontent VALUES (15,'Mesa Verde',2001,DEFAULT,1,'','Un banco quiebra en medio de una crisis financiera','2:55:00'); --Drama
-INSERT INTO featurecontent VALUES (16,'La Base de Datos',2021,DEFAULT,1,'','Un estudiante de ingeniería informática debe hacer una base de datos para guardar la información del mundo entero','2:11:00'); --Ciencia ficción
+INSERT INTO featurecontent VALUES (14,'Tu Casa es Su Casa',2013,DEFAULT,1,'','Un criminal secuestra a una familia y pretende que todo está bien','2:06:00'); -- Suspenso
+INSERT INTO featurecontent VALUES (15,'Mesa Verde',2001,DEFAULT,1,'','Un banco quiebra en medio de una crisis financiera','2:55:00'); -- Drama
+INSERT INTO featurecontent VALUES (16,'La Base de Datos',2021,DEFAULT,1,'','Un estudiante de ingeniería informática debe hacer una base de datos para guardar la información del mundo entero','2:11:00'); -- Ciencia ficción
 INSERT INTO featurecontent VALUES (17,'El Señor de los Anillos: el retorno del Rey',2003,DEFAULT,1,'','La conclusión de la trilogía del Señor de los Anillos','3:21:00'); -- Premio óscar mejor película, Aventura y Fantasía
 INSERT INTO featurecontent VALUES (18,'Viaje al Sol',2005,1,1,'','Un grupo de astronautas debe viajar al Sol para salvar al sistema solar','2:44:00'); -- Premio Oscar mejor actor principal, Ciencia ficción y Drama
 INSERT INTO featurecontent VALUES (19,'El Domingo No',2020,1,1,'','Un señor quiere pasar sus domingos tranquilo, pero sus vecinos no lo dejan','2:46:00'); -- Premio Golden Globe mejor guión, Comedia y Drama

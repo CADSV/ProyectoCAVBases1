@@ -1,6 +1,6 @@
---SERIES hay 10 series de las cuales 3 son contenido original
+-- SERIES hay 10 series de las cuales 3 son contenido original
 
---SERIES 
+-- SERIES 
 
 INSERT INTO content VALUES (21, 0, 2);
 INSERT INTO content VALUES (22, 18, 2);

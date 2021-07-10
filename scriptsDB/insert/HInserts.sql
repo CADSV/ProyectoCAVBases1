@@ -1,6 +1,6 @@
 -- INSERCIÓN H: Al menos 10 actores.--------------------------------------------------------------------------
 
---FilmWorker--
+-- FilmWorker--
 INSERT INTO filmworker VALUES (1,'Rodolfo','Rodríguez','M');
 INSERT INTO filmworker VALUES (2,'Daniel','Craig','M');
 INSERT INTO filmworker VALUES (3,'Emma','Stone','F');
@@ -14,7 +14,7 @@ INSERT INTO filmworker VALUES (10,'Jordana','Brewster','F');
 INSERT INTO filmworker VALUES (11,'Daniel','Brühl','M');
 
 
---Performer--
+-- Performer--
 INSERT INTO performer VALUES (1);
 INSERT INTO performer VALUES (2);
 INSERT INTO performer VALUES (3);
