@@ -3,7 +3,7 @@
 --FilmWorker--
 INSERT INTO filmworker VALUES (1,'Rodolfo','Rodríguez','M');
 INSERT INTO filmworker VALUES (2,'Daniel','Craig','M');
-INSERT INTO filmworker VALUES (3.'Emma','Stone','F');
+INSERT INTO filmworker VALUES (3,'Emma','Stone','F');
 INSERT INTO filmworker VALUES (4,'Leonardo','DiCaprio','M');
 INSERT INTO filmworker VALUES (5,'Rachel','McAdams','F');
 INSERT INTO filmworker VALUES (6,'Jennifer','Aniston','F');
