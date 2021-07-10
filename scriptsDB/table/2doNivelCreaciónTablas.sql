@@ -5,24 +5,24 @@
 CREATE TABLE City ( -- Ciudad que puede tener país y/o usuario viviendo en ella
     
     IdCity      INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
-    IdCountry   INT(10) NOT NULL,
+    IdCountry   INT(10) NOT NULL DEFAULT 1,
     CityName    VARCHAR(30) NOT NULL,
     
     CONSTRAINT City_PK PRIMARY KEY (IdCity),
     
-    CONSTRAINT City_FK FOREIGN KEY (IdCountry) REFERENCES Carlevix.Country(IdCountry) ON DELETE CASCADE ON UPDATE CASCADE    -- Al eliminar un país se eliminan sus ciudades
+    CONSTRAINT City_FK FOREIGN KEY (IdCountry) REFERENCES Carlevix.Country(IdCountry) ON DELETE SET DEFAULT ON UPDATE CASCADE
 );
 
 CREATE TABLE Content ( -- Contenido audiovisual
     
     IdContent   INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
-    MinAge      TINYINT(2) NOT NULL,
-    IdLanguage  INT(10) NOT NULL,
+    MinAge      TINYINT(2) NOT NULL DEFAULT 0,
+    IdLanguage  INT(10) NOT NULL DEFAULT 1,
 
     CONSTRAINT Content_PK PRIMARY KEY (IdContent),
     
-    CONSTRAINT Content_FK1 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE CASCADE ON UPDATE CASCADE,  -- Al eliminar una clasificación por edad se deja como está
-    CONSTRAINT Content_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE CASCADE ON UPDATE CASCADE -- Al eliminar un idioma se deja como está en sus contenidos
+    CONSTRAINT Content_FK1 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE SET DEFAULT ON UPDATE CASCADE, 
+    CONSTRAINT Content_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE SET DEFAULT ON UPDATE CASCADE 
 );
 
 CREATE TABLE Director( -- Persona que dirige un contenido
@@ -31,7 +31,7 @@ CREATE TABLE Director( -- Persona que dirige un contenido
     
     CONSTRAINT Director_PK PRIMARY KEY (IdWorker),
 
-    CONSTRAINT Director_FK FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE -- Al eliminar el trabajador, se elimina el subtipo
+    CONSTRAINT Director_FK FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -41,5 +41,5 @@ CREATE TABLE Performer( -- Persona que actúa en un contenido
     
     CONSTRAINT Performer_PK PRIMARY KEY (IdWorker),
     
-    CONSTRAINT Performer_FK FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
+    CONSTRAINT Performer_FK FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE CASCADE ON UPDATE CASCADE
 );
