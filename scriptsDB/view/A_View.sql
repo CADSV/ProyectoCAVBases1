@@ -10,35 +10,17 @@ INSERT INTO hasseen VALUES (4, 17, CURRENT_TIMESTAMP, NULL, DEFAULT, DEFAULT, '0
 
 
 
-CREATE VIEW reporteA AS;
-
+CREATE VIEW reporteA AS
 SELECT * FROM featurecontent 
 WHERE ((FeatureRunTime >= '02:30:00') AND (IdContent IN (SELECT IdContent FROM award)) 
 AND (IdContent = (SELECT IdContent FROM genre WHERE GenreName = 'Drama')) 
-AND (IdContent IN ())
-);
-AND ( 4.0 <= (SELECT AVG(Rating) FROM hasseen WHERE IdContent = (SELECT IdContent FROM featurecontent WHERE IdContent = 15)))
-);
-
-
-
-SELECT * FROM isabout
-WHERE IdContent = (SELECT IdContent FROM genre
-                WHERE GenreName = 'Drama');
-
-
-SELECT  * FROM featurecontent
-WHERE IdContent IN (SELECT IdContent FROM award);
-
-
-SELECT COUNT (Rating) FROM hasseen
-WHERE IdContent = (SELECT IdContent FROM featurecontent
-                                        WHERE IdContent = 15);
-
-SELECT AVG(Rating) FROM hasseen
-WHERE IdContent = (SELECT IdContent FROM featurecontent
-                                        WHERE IdContent = 15);
-
-
-
+AND (IdContent IN (SELECT IdContent FROM hasseen
+GROUP BY Idcontent HAVING AVG(Rating) >= 4.0)))
 ORDER BY ReleaseYearCont;
+
+
+SELECT * FROM  reporteA;
+
+
+
+
