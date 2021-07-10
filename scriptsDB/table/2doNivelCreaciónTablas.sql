@@ -5,7 +5,7 @@
 CREATE TABLE City ( -- Ciudad que puede tener país y/o usuario viviendo en ella
     
     IdCity      INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
-    IdCountry   INT(10) NOT NULL DEFAULT 1,
+    IdCountry   INT(10) NOT NULL DEFAULT 1,     -- 1: Ciudad desconocida.
     CityName    VARCHAR(30) NOT NULL,
     
     CONSTRAINT City_PK PRIMARY KEY (IdCity),
@@ -16,8 +16,8 @@ CREATE TABLE City ( -- Ciudad que puede tener país y/o usuario viviendo en ella
 CREATE TABLE Content ( -- Contenido audiovisual
     
     IdContent   INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
-    MinAge      TINYINT(2) NOT NULL DEFAULT 0,
-    IdLanguage  INT(10) NOT NULL DEFAULT 1,
+    MinAge      TINYINT(2) NOT NULL DEFAULT 0,    -- 0: Para Todo público
+    IdLanguage  INT(10) NOT NULL DEFAULT 1,       -- 1: Lenguaje desconocido
 
     CONSTRAINT Content_PK PRIMARY KEY (IdContent),
     
