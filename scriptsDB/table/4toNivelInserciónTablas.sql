@@ -2,7 +2,7 @@
 -- CUARTO NIVEL DE TABLAS (Que tienen FK que dependen del 1er, 2do y 3er Nivel)
 -------------------------------------------------------------------------------
 
-/* CREATE DOMAIN RATING_DOMAIN AS FLOAT(2) NOT NULL CHECK (VALUE BETWEEN 1 AND 5); */
+-- CREATE DOMAIN RATING_DOMAIN AS FLOAT(2) NOT NULL CHECK (VALUE BETWEEN 1 AND 5); */
 
 CREATE TABLE HasSeen ( -- Ha visto, relación entre perfil y contenido
 
