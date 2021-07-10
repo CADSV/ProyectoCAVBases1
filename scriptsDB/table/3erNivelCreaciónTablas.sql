@@ -143,7 +143,7 @@ CREATE TABLE Award( -- Premio que puede tener contenido
 
 CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 
-    IdWorker INT(10) NOT NULL,       -- NULL: Director Desconocido.
+    IdWorker INT(10) NOT NULL,
     IdContent INT(10) NOT NULL,
 
     CONSTRAINT Directed_PK PRIMARY KEY (IdWorker, IdContent),
@@ -157,7 +157,7 @@ CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 
 CREATE TABLE Stars  ( -- Actúa, relación entre actor y contenido
 
-    IdWorker    INT(10) NOT NULL,    
+    IdWorker    INT(10) NOT NULL, 
     IdContent   INT(10) NOT NULL, 
     Role        INT(1) NOT NULL, 
 

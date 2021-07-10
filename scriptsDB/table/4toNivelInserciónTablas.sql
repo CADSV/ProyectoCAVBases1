@@ -54,7 +54,7 @@ CREATE TABLE Blocked( -- Bloqueado, relación
 CREATE TABLE Session( -- Sesión, relación entre perfil y dispositivo
 
     IdProfile       INT(10) NOT NULL,
-    IdDevice        INT(10) NOT NULL,       -- 1: Dispositivo desconocido.
+    IdDevice        INT(10) NOT NULL,     
     ConStartDate    DATETIME NOT NULL, 
     SessionTotalTime TIME,
 
@@ -81,8 +81,8 @@ CREATE TABLE Watchlist ( -- Lista de contenidos para ver más tarde (Mi Lista)
 CREATE TABLE Configurate ( -- Configura, relación entre perfil e idioma, clasificación por edad y subitítulo
 
     IdProfile       INT(10) NOT NULL,
-    IdLanguage      INT(10),     -- 1: Lenguaje desconocido. 
-    MinAge          TINYINT(2),  -- 0: Para todo público
+    IdLanguage      INT(10),     
+    MinAge          TINYINT(2),  
     Font            VARCHAR(20),
     Size            TINYINT(2), 
     ConfigurationDate DATETIME DEFAULT CURRENT_TIME,
@@ -94,7 +94,7 @@ CREATE TABLE Configurate ( -- Configura, relación entre perfil e idioma, clasif
 
     CONSTRAINT Configurate_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT Configurate_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE SET NULL  ON UPDATE CASCADE,
-    CONSTRAINT Configurate_FK3 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE SET NULL  ON UPDATE CASCADE,
+    CONSTRAINT Configurate_FK3 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT Configurate_FK4 FOREIGN KEY (Font, Size) REFERENCES Carlevix.Subtitle(Font, Size) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
