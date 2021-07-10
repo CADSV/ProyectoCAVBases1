@@ -7,7 +7,7 @@
 CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     
     IdUser      INT(10) UNIQUE NOT NULL AUTO_INCREMENT, 
-    IdCity      INT(10) NOT NULL DEFAULT 1,     -- 1: Ciudad Desconocida.
+    IdCity      INT(10),     -- NULL: Ciudad Desconocida.
     Username    VARCHAR(60) UNIQUE NOT NULL , 
     EmailUser   VARCHAR(60) UNIQUE NOT NULL,    
     PasswordUser    VARCHAR(20) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     CONSTRAINT EMAIL_Domain CHECK (EmailUser LIKE '%_@__%.__%'),
     CONSTRAINT GENDER_Domain CHECK (UserGender='M' OR UserGender='F' OR UserGender='N/A'),
 
-    CONSTRAINT User_FK FOREIGN KEY (IdCity) REFERENCES Carlevix.City(IdCity) ON DELETE SET DEFAULT ON UPDATE CASCADE
+    CONSTRAINT User_FK FOREIGN KEY (IdCity) REFERENCES Carlevix.City(IdCity) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
     CREATE TABLE IsSuscribed ( -- Relación entre usuario y membresía, que indica suscripción actual o pasada
@@ -69,7 +69,7 @@ CREATE TABLE Profile ( -- Perfil que tiene usuario en Carlevix para ver y prefer
 CREATE TABLE IsAbout ( -- Es sobre, relación entre contenido y género (o categoría)
 
     IdContent INT(10) NOT NULL,
-    IdGenre INT(10) NOT NULL DEFAULT 1, -- 1: Género desconocido.
+    IdGenre INT(10) NOT NULL, 
     Relevance INT(1) NOT NULL,
 
     CONSTRAINT IsAbout_PK PRIMARY KEY (IdContent, IdGenre),
@@ -77,7 +77,7 @@ CREATE TABLE IsAbout ( -- Es sobre, relación entre contenido y género (o categ
     CONSTRAINT RELEVANCE_Domain CHECK ((Relevance = 1) OR (Relevance = 2)), -- 1: Lead (Principal), 2: Secondary (Secundario)
 
     CONSTRAINT IsAbout_FK1 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT IsAbout_FK2 FOREIGN KEY (IdGenre) REFERENCES Carlevix.Genre(IdGenre) ON DELETE SET DEFAULT ON UPDATE CASCADE  
+    CONSTRAINT IsAbout_FK2 FOREIGN KEY (IdGenre) REFERENCES Carlevix.Genre(IdGenre) ON DELETE CASCADE ON UPDATE CASCADE  
 );
 
 
@@ -143,12 +143,12 @@ CREATE TABLE Award( -- Premio que puede tener contenido
 
 CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 
-    IdWorker INT(10) NOT NULL DEFAULT 1,       -- 1: Director Desconocido.
+    IdWorker INT(10),       -- NULL: Director Desconocido.
     IdContent INT(10) NOT NULL,
 
     CONSTRAINT Directed_PK PRIMARY KEY (IdWorker, IdContent),
 
-    CONSTRAINT Directed_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE SET DEFAULT  ON UPDATE CASCADE,
+    CONSTRAINT Directed_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT Directed_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -157,7 +157,7 @@ CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 
 CREATE TABLE Stars  ( -- Actúa, relación entre actor y contenido
 
-    IdWorker    INT(10) NOT NULL DEFAULT 1,     -- 1: Actor Desconocido.
+    IdWorker    INT(10),     -- NULL: Actor Desconocido.
     IdContent   INT(10) NOT NULL, 
     Role        INT(1) NOT NULL, 
 
@@ -165,6 +165,6 @@ CREATE TABLE Stars  ( -- Actúa, relación entre actor y contenido
 
     CONSTRAINT ROLE_Domain CHECK ((Role = 1) OR (Role = 2) OR (Role = 3)), -- 1: Lead (Principal), 2: Side (De reparto), 3: Guest (Invitado)
 
-    CONSTRAINT Stars_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE SET DEFAULT ON UPDATE CASCADE, 
+    CONSTRAINT Stars_FK1 FOREIGN KEY (IdWorker) REFERENCES Carlevix.FilmWorker(IdWorker) ON DELETE SET NULL ON UPDATE CASCADE, 
     CONSTRAINT Stars_FK2 FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
