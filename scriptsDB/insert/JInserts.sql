@@ -69,7 +69,6 @@ INSERT INTO isabout VALUES (29,14,1);
 INSERT INTO isabout VALUES (30,2,1);
 
 -- Performer -> Stars -> Content
-INSERT INTO stars VALUES (1,1,1);
 INSERT INTO stars VALUES (2,1,3);
 INSERT INTO stars VALUES (1,2,1);
 INSERT INTO stars VALUES (3,2,3);
