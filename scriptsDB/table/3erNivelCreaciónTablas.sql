@@ -46,7 +46,7 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
 
 
 
-/* CREATE DOMAIN PROFILE_PHOTO_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3, 4, 5)); --   1: Azul 2: Rojo 3: Amarillo 4: Verde 5: Morado */
+-- CREATE DOMAIN PROFILE_PHOTO_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3, 4, 5)); --   1: Azul 2: Rojo 3: Amarillo 4: Verde 5: Morado */
 
 
 CREATE TABLE Profile ( -- Perfil que tiene usuario en Carlevix para ver y preferir contenidos
@@ -64,7 +64,7 @@ CREATE TABLE Profile ( -- Perfil que tiene usuario en Carlevix para ver y prefer
 );
 
 
-/* CREATE DOMAIN RELEVANCE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2)); -- 1: Lead (Principal), 2: Secondary (Secundario) */
+-- CREATE DOMAIN RELEVANCE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2)); -- 1: Lead (Principal), 2: Secondary (Secundario) */
 
 CREATE TABLE IsAbout ( -- Es sobre, relación entre contenido y género (o categoría)
 
@@ -86,32 +86,32 @@ CREATE TABLE FeatureContent( -- Contenido individual, como películas
     IdContent       INT(10)  UNIQUE NOT NULL, 
     TitleCont       VARCHAR(30)  NOT NULL,
     ReleaseYearCont YEAR NOT NULL,
-    IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, --1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
-    ReqSusCont      BIT(1) NOT NULL DEFAULT 0, --1: Requiere suscripcion, 0: no requiere suscripcion
+    IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, -- 1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
+    ReqSusCont      BIT(1) NOT NULL DEFAULT 0, -- 1: Requiere suscripcion, 0: no requiere suscripcion
     ContentImage    VARCHAR(250)  NOT NULL,
     Description     VARCHAR(250)  NOT NULL,
     FeatureRunTime  TIME NOT NULL,
     
     CONSTRAINT FeatureContent_PK PRIMARY KEY (IdContent),
 
-    CONSTRAINT FeatureContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
+    CONSTRAINT FeatureContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE 
 ); 
 
 
 CREATE TABLE EpisodicContent( -- Contenido episódico, es decir que tiene varias partes (temporadas y episodios)
     
-    IdContent       INT(10)  UNIQUE NOT NULL, --DEFINIR COMO CLAVE FORANEA
+    IdContent       INT(10)  UNIQUE NOT NULL, 
     TitleCont       VARCHAR(30)  NOT NULL,
     ReleaseYearCont YEAR NOT NULL,
-    IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, --1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
-    ReqSusCont      BIT(1) NOT NULL DEFAULT 0, --1: Requiere suscripcion, 0: no requiere suscripcion
+    IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, -- 1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
+    ReqSusCont      BIT(1) NOT NULL DEFAULT 0, -- 1: Requiere suscripcion, 0: no requiere suscripcion
     ContentImage    VARCHAR(250)  NOT NULL,
     Description     VARCHAR(250)  NOT NULL,
     EpisodicTotalRunTime    TIME NOT NULL ,
 
     CONSTRAINT EpisodicContent_PK PRIMARY KEY (IdContent),
     
-    CONSTRAINT EpisodicContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
+    CONSTRAINT EpisodicContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE 
 ); 
 
 
@@ -124,7 +124,7 @@ CREATE TABLE Season( -- Temporada que tiene contenido episódico, es decir grupo
 
     CONSTRAINT Season_PK PRIMARY KEY (IdSeason, IdContent),
     
-    CONSTRAINT Season_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
+    CONSTRAINT Season_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE 
 );
 
 
@@ -153,7 +153,7 @@ CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 );
 
 
-/* CREATE DOMAIN ROLE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3)); -- 1: Lead (Principal), 2: Side (De reparto), 3: Guest (Invitado) */
+-- CREATE DOMAIN ROLE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3)); -- 1: Lead (Principal), 2: Side (De reparto), 3: Guest (Invitado) */
 
 CREATE TABLE Stars  ( -- Actúa, relación entre actor y contenido
 
