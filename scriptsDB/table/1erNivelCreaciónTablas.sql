@@ -7,7 +7,7 @@ USE Carlevix;
 ------------------------------------------------
 CREATE TABLE PaymentCard ( -- Tarjeta con la que usuario pagan membresía
    
-    CardNumber      INT(20) NOT NULL,
+    CardNumber      BIGINT(20) NOT NULL,
     CVV             INT(3) NOT NULL,
     OwnerName       VARCHAR(30) NOT NULL,
     OwnerLastname   VARCHAR(30) NOT NULL,
