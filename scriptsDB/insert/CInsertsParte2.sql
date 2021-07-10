@@ -2,16 +2,16 @@
 
 -- SERIES 
 
-INSERT INTO content VALUES (21, 0, 2);
-INSERT INTO content VALUES (22, 18, 2);
-INSERT INTO content VALUES (23, 0, 2);
-INSERT INTO content VALUES (24, 18, 2);
-INSERT INTO content VALUES (25, 0, 2);
-INSERT INTO content VALUES (26, 13, 1);
-INSERT INTO content VALUES (27, 13, 1);
-INSERT INTO content VALUES (28, 0, 2);
-INSERT INTO content VALUES (29, 18, 1);
-INSERT INTO content VALUES (30, 13, 2);
+INSERT INTO content VALUES (21, 0, 3);
+INSERT INTO content VALUES (22, 18, 3);
+INSERT INTO content VALUES (23, 0, 3);
+INSERT INTO content VALUES (24, 18, 3);
+INSERT INTO content VALUES (25, 0, 3);
+INSERT INTO content VALUES (26, 13, 2);
+INSERT INTO content VALUES (27, 13, 2);
+INSERT INTO content VALUES (28, 0, 3);
+INSERT INTO content VALUES (29, 18, 2);
+INSERT INTO content VALUES (30, 13, 3);
 INSERT INTO episodiccontent VALUES (21,'Lupin',2021,1,1,'','Basada en la historia de Arsène Lupin','2:11:00');
 INSERT INTO episodiccontent VALUES (22,'La niña',2016,1,1,'','Belki tenía 8 años cuando vivia con su familia','2:35:00');
 INSERT INTO episodiccontent VALUES (23,'La Bella y las Bestias',2018,1,1,'','Una mujer con sed de revancha vuelve a Mexico','10:09:00');

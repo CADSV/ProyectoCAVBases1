@@ -3,14 +3,11 @@
 ---------------------------------------------------------------------------------
 -- DEFAULT INSERTS
 
-INSERT INTO device VALUES (1, 'Desconocido','Desconocido', 'Desconocido');
 INSERT INTO subtitle VALUES ('Arial', 12);
--- INSERT INTO country VALUES(1,'Desconocido');
+INSERT INTO country VALUES(1,'Desconocido');
 INSERT INTO city VALUES(1,1,'Desconocido');
--- INSERT INTO ageclass VALUES(0,'Todo público');
 INSERT INTO language VALUES(1, 'Desconocido');
-INSERT INTO filmworker VALUES(1,'Desconocido','Desconocido','N/A');
-INSERT INTO genre VALUES(1,'Desconocido');
+-- INSERT INTO ageclass VALUES(0,'Todo público');
 
 
 

@@ -2,29 +2,29 @@
 INSERT INTO ageclass VALUES (0,'Todo público');
 INSERT INTO ageclass VALUES (13,'PG-13');
 INSERT INTO ageclass VALUES (18,'R');
-INSERT INTO language VALUES (1,'Inglés');
-INSERT INTO language VALUES (2,'Español');
+INSERT INTO language VALUES (2,'Inglés');
+INSERT INTO language VALUES (3,'Español');
 
-INSERT INTO content VALUES (1, 18, 1);
-INSERT INTO content VALUES (2, 13, 1);
-INSERT INTO content VALUES (3, 13, 1);
-INSERT INTO content VALUES (4, 13, 1);
-INSERT INTO content VALUES (5, 13, 2);
-INSERT INTO content VALUES (6, 18, 1);
-INSERT INTO content VALUES (7, 18, 1);
-INSERT INTO content VALUES (8, 13, 1);
-INSERT INTO content VALUES (9, 18, 2);
-INSERT INTO content VALUES (10, 18, 2);
-INSERT INTO content VALUES (11, 18, 1);
-INSERT INTO content VALUES (12, 0, 1);
-INSERT INTO content VALUES (13, 13, 2);
-INSERT INTO content VALUES (14, 13, 1);
-INSERT INTO content VALUES (15, 13, 1);
-INSERT INTO content VALUES (16, 13, 2);
-INSERT INTO content VALUES (17, 13, 1);
-INSERT INTO content VALUES (18, 13, 2);
-INSERT INTO content VALUES (19, 0, 2);
-INSERT INTO content VALUES (20, 13, 1);
+INSERT INTO content VALUES (1, 18, 2);
+INSERT INTO content VALUES (2, 13, 2);
+INSERT INTO content VALUES (3, 13, 2);
+INSERT INTO content VALUES (4, 13, 2);
+INSERT INTO content VALUES (5, 13, 3);
+INSERT INTO content VALUES (6, 18, 2);
+INSERT INTO content VALUES (7, 18, 2);
+INSERT INTO content VALUES (8, 13, 2);
+INSERT INTO content VALUES (9, 18, 3);
+INSERT INTO content VALUES (10, 18, 3);
+INSERT INTO content VALUES (11, 18, 2);
+INSERT INTO content VALUES (12, 0, 2);
+INSERT INTO content VALUES (13, 13, 3);
+INSERT INTO content VALUES (14, 13, 2);
+INSERT INTO content VALUES (15, 13, 2);
+INSERT INTO content VALUES (16, 13, 3);
+INSERT INTO content VALUES (17, 13, 2);
+INSERT INTO content VALUES (18, 13, 3);
+INSERT INTO content VALUES (19, 0, 3);
+INSERT INTO content VALUES (20, 13, 2);
 INSERT INTO featurecontent VALUES (1,'Duro de Matar',1988,DEFAULT,1,'','Una persona cuya vida es difícil de arrebatar salva al mundo','2:11:00'); -- Acción
 INSERT INTO featurecontent VALUES (2,'Nomadland',2020,DEFAULT,1,'','Una nómada deja su hogar y viaja por los Estados Unidos','1:48:00'); -- Drama, premio Oscar mejor película
 INSERT INTO featurecontent VALUES (3,'Blade Runner',1982,DEFAULT,1,'','En el futuro, la bioingeniería permite la fabricación de humanos artificiales','1:57:00'); -- Neo-noir y Ciencia ficción
