@@ -33,11 +33,11 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     IdUser INT(10) NOT NULL, 
     IdMembership INT(10) NOT NULL,
     CVV INT(3) NOT NULL,
-    CardNumber INT(20) NOT NULL,
+    CardNumber BIGINT(20) NOT NULL,
     StartDateSus DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     EndDateSus DATETIME,
     
-    CONSTRAINT IsSuscribed_PK PRIMARY KEY (StartDateSus),
+    CONSTRAINT IsSuscribed_PK PRIMARY KEY (IdUser, StartDateSus),
     
     CONSTRAINT IsSuscribed_FK1 FOREIGN KEY (IdUser) REFERENCES Carlevix.User(IdUser) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT IsSuscribed_FK2 FOREIGN KEY (IdMembership) REFERENCES Carlevix.Membership(IdMembership) ON DELETE CASCADE ON UPDATE CASCADE,

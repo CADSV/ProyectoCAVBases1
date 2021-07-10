@@ -7,7 +7,7 @@ USE Carlevix;
 ------------------------------------------------
 CREATE TABLE PaymentCard ( -- Tarjeta con la que usuario pagan membresía
    
-    CardNumber      INT(20) NOT NULL,
+    CardNumber      BIGINT(20) NOT NULL,
     CVV             INT(3) NOT NULL,
     OwnerName       VARCHAR(30) NOT NULL,
     OwnerLastname   VARCHAR(30) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE Membership ( -- Plan de suscripción que usuario puede pagar
     
     IdMembership    INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
     MembershipName  VARCHAR(10) UNIQUE NOT NULL,
-    Description     VARCHAR(30) NOT NULL,
+    Description     VARCHAR(100) NOT NULL,
     Price           FLOAT(30) NOT NULL,
 
     CONSTRAINT Membership_PK PRIMARY KEY (IdMembership) 
