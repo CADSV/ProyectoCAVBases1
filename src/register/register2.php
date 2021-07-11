@@ -163,7 +163,7 @@ require_once("../../data/classes/constants.php");
                         <input type="password" name="password" placeholder="Contraseña" required>
 
                         <input type="password" name="password2" placeholder="Confirmar contraseña" required>
-
+                        <?php echo $registerAccount->getError(Constants::$phoneNumberincorrect);?> 
                         <input type="number" name="phoneNumber" placeholder="Numero de teléfono" required>
 
                         <input type="submit" class="buttonContainer" name="submitButton" value="Continuar">
