@@ -26,9 +26,11 @@ class RegisterAccount{
     }
 
     private function insertUserDetails($name, $lastName, $username, $email, $password, $phoneNumber, $gender, $city){
+            
         $password = hash("sha512", $password);
         $query = $this->connection->prepare("INSERT INTO User (NameUser, LastNameUser, Username, EmailUser, PasswordUser, UserPhone, UserGender, IdCity) 
                                         VALUES (:name, :lastName, :username, :email, :password, :phoneNumber, :gender, :city)");
+        
         $query->bindValue(":name", $name);    
         $query->bindValue(":lastName", $lastName); 
         $query->bindValue(":username", $username); 
