@@ -12,7 +12,7 @@ class Constants {
     public static $passwordLength = "La contraseña debe tener entre 5 y 25 caracteres";
     public static $phoneNumberincorrect = "Número telefónico inválido";
     public static $InvalidCardNumber = "Número de tarjeta inválido";
+    public static $loginFailed = "Nombre de usuario y/o contraseña inválido";
 }
-$InvalidCardNumber
 
 ?>

@@ -1,6 +1,21 @@
 <?php
-    if(isset($_POST["botonEnviar"])) { // Si el botón Enviar es presionado, entonces...
-        echo "El formulario ha sido enviado con éxito";
+require_once("../../data/classes/formSanitizer.php");
+require_once("../../data/config.php");
+require_once("../../data/account/loginAccount.php");
+require_once("../../data/classes/constants.php");
+
+    $loginAccount= new loginAccount($connection);
+
+    if(isset($_POST["botonIniciarSesion"])) { // Si el botón Enviar es presionado, entonces...
+        $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
+        $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
+
+        $success = $loginAccount->login($username, $password);
+
+        if($success) {
+            // Guardaremos la sesión aquí
+            header("Location: ../profile/select_profile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
+        }
     }
 ?>
 
@@ -33,9 +48,9 @@
                     </div>
 
                     <form method="POST">
-
+                        <?php echo $loginAccount->getError(Constants::$loginFailed);?>
                         <div class="input-container">
-                            <input type="text" name="username" placeholder="Nombre de usuario, o Email" required>
+                            <input type="text" name="username" placeholder="Nombre de usuario" required>
                         </div>
                         
                         <div class="input-container">
