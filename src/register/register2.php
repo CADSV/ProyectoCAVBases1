@@ -107,7 +107,8 @@ require_once("../../data/classes/constants.php");
                             </div>
 
                         </div>
-
+                        <?php echo $registerAccount->getError(Constants::$passwordLength);?> 
+                        <?php echo $registerAccount->getError(Constants::$passwordsDontMatch);?> 
                         <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
                         <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
                         <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
