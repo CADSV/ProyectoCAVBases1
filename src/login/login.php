@@ -22,7 +22,7 @@
             </div>
             <div class="login-header">
                 <a href="../../index.php"> 
-                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
+                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> <!-- title provee una especie de tooltip, que al poner el cursor encima de la imagen revela un texto, esto ayuda a la accesibilidad, al igual que alt cuando la imagen no cargue -->
                 </a>          
             </div>
             <div class="signin-container">
