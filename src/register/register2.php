@@ -19,9 +19,7 @@ require_once("../../data/classes/constants.php");
         // echo $genre = FormSanitizer::sanitizeFormString($_POST["genre"]);
         // echo $city = FormSanitizer::sanitizeFormString($_POST["city"]);
 
-        $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
-        // Mientras no hay back.
-    
+        $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $genre, $city);
 
     }
 
@@ -95,56 +93,58 @@ require_once("../../data/classes/constants.php");
                             <div class = "cityDropdown">
                                 <label class ="titleLabel" for="city">Elige tu ciudad:</label>
                                 <select class = "dropdown" id="city" name="city" required>
+                                    <option disabled="disabled" selected="selected">Elige</option>
                                     <optgroup label="Alemania">
-                                        <option value="Berlín">Berlín</option>
-                                        <option value="Köln">Köln</option>
-                                        <option value="Münich">Münich</option>
+                                        <option value="14">Berlín</option>
+                                        <option value="16">Köln</option>
+                                        <option value="15">Münich</option>
                                     </optgroup>
                                     <optgroup label="Bélgica">
-                                        <option value="Bruselas">Bruselas</option>
-                                        <option value="Charleroi">Charleroi</option>
-                                        <option value="Vlamerting">Vlamerting</option>
+                                        <option value="5">Bruselas</option>
+                                        <option value="6">Charleroi</option>
+                                        <option value="7">Vlamerting</option>
                                     </optgroup>
                                     <optgroup label="Colombia">
-                                        <option value="Bogotá">Bogotá</option>
-                                        <option value="Cali">Cali</option>
-                                        <option value="Medellín">Medellín</option>
+                                        <option value="17">Bogotá</option>
+                                        <option value="18">Cali</option>
+                                        <option value="19">Medellín</option>
                                     </optgroup>
                                     <optgroup label="Corea del Norte">
-                                        <option value="Kaesong">Kaesong</option>
-                                        <option value="Piongyang">Piongyang</option>
-                                        <option value="Sinuiju">Sinuiju</option>
+                                        <option value="30">Kaesong</option>
+                                        <option value="29">Piongyang</option>
+                                        <option value="31">Sinuiju</option>
                                     </optgroup>
                                     <optgroup label="Cuba">
-                                        <option value="Cienfuegos">Cienfuegos</option>
-                                        <option value="La Habana">La Habana</option>
-                                        <option value="Varadero">Varadero</option>
+                                        <option value="28">Cienfuegos</option>
+                                        <option value="26">La Habana</option>
+                                        <option value="27">Varadero</option>
                                     </optgroup>
                                     <optgroup label="Francia">
-                                        <option value="Lyon">Lyon</option>
-                                        <option value="Montpellier">Montpellier</option>
-                                        <option value="París">París</option> 
+                                        <option value="10">Lyon</option>
+                                        <option value="9">Montpellier</option>
+                                        <option value="8">París</option> 
                                     </optgroup>
                                     <optgroup label="Italia">
-                                        <option value="Milán">Milán</option>
-                                        <option value="Roma">Roma</option>
-                                        <option value="Venecia">Venecia</option>
+                                        <option value="12">Milán</option>
+                                        <option value="11">Roma</option>
+                                        <option value="13">Venecia</option>
                                     </optgroup>
                                     <optgroup label="Líbano">
-                                        <option value="Beirut">Beirut</option>
-                                        <option value="Sidón">Sidón</option>
-                                        <option value="Tripoli">Tripoli</option>
+                                        <option value="23">Beirut</option>
+                                        <option value="25">Sidón</option>
+                                        <option value="24">Tripoli</option>
                                     </optgroup>
                                     <optgroup label="Portugal">
-                                        <option value="Funchal">Funchal</option>
-                                        <option value="Lisboa">Lisboa</option>
-                                        <option value="Porto">Porto</option>
+                                        <option value="21">Funchal</option>
+                                        <option value="20">Lisboa</option>
+                                        <option value="22">Porto</option>
                                     </optgroup>
                                     <optgroup label="Venezuela">
-                                        <option value="Barquisimeto">Barquisimeto</option>
-                                        <option value="Caracas">Caracas</option>
-                                        <option value="Valencia">Valencia</option>
+                                        <option value="3">Barquisimeto</option>
+                                        <option value="2">Caracas</option>
+                                        <option value="4">Valencia</option>
                                     </optgroup>
+                                    <option value="1">Otra</option>
                                 </select>
                             </div>
 
@@ -163,7 +163,7 @@ require_once("../../data/classes/constants.php");
 
                         <input type="password" name="password2" placeholder="Confirmar contraseña" required>
 
-                        <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
+                        <input type="number" name="phoneNumber" placeholder="Numero de teléfono" required>
 
                         <input type="submit" class="buttonContainer" name="submitButton" value="Continuar">
 
