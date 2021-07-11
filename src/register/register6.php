@@ -6,7 +6,7 @@ require_once("../../data/account/suscriptionAccount.php");
 require_once("../../data/classes/constants.php");
 
     if (!isset($_SESSION["userLoggedIn"])){
-        header("Location: ../../index.php");
+        header("Location: register1.php");
     }
 
     $suscriptionAccount= new SuscriptionAccount($connection);
