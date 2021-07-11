@@ -84,6 +84,7 @@ require_once("../../data/classes/constants.php");
                             <div class = "genreDropdown">
                                 <label class = "titleLabel" for="genre">Elige un género:</label>
                                 <select class = "dropdown" id="genre" name="genre" required>
+                                    <option disabled="disabled" selected="selected">Elige</option>
                                     <option value="N/A">N/A</option>
                                     <option value="F">Mujer</option>
                                     <option value="M">Hombre</option>

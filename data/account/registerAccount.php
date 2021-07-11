@@ -10,7 +10,7 @@ class RegisterAccount{
 
     }
 
-    public function register($name, $lastName, $username, $email, $email2, $password, $password2){
+    public function register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $genre, $city){
         $this->validateName($name);
         $this->validateLastName($lastName);
         $this->validateUsername($username);
