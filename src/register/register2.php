@@ -90,7 +90,7 @@ require_once("../../data/classes/constants.php");
                                 <select class = "dropdown" id="gender" name="gender" required>
                                     <option value="">Elige</option>
                                     <option value="M">Hombre</option>
-                                    <option value="H">Mujer</option>
+                                    <option value="F">Mujer</option>
                                     <option value="N/A">N/A</option>                                   
                                 </select>
                             </div>
