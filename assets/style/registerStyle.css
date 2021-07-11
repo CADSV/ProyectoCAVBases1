@@ -407,11 +407,10 @@ section .container .dataForm .date .titleLabel {
     vertical-align: baseline;
 }
 
-
-
-.errorMessages {
-    color:#f00;
+.errorMessage {
+    color: #f00;
     font-size: 14px;
     font-weight: 400;
-    text-align: start;
+    text-align: center;
+
 }
