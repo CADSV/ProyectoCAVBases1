@@ -95,13 +95,55 @@ require_once("../../data/classes/constants.php");
                             <div class = "cityDropdown">
                                 <label class ="titleLabel" for="city">Elige tu ciudad:</label>
                                 <select class = "dropdown" id="city" name="city" required>
+                                    <optgroup label="Alemania">
+                                        <option value="Berlín">Berlín</option>
+                                        <option value="Köln">Köln</option>
+                                        <option value="Münich">Münich</option>
+                                    </optgroup>
                                     <optgroup label="Bélgica">
                                         <option value="Bruselas">Bruselas</option>
                                         <option value="Charleroi">Charleroi</option>
+                                        <option value="Vlamerting">Vlamerting</option>
+                                    </optgroup>
+                                    <optgroup label="Colombia">
+                                        <option value="Bogotá">Bogotá</option>
+                                        <option value="Cali">Cali</option>
+                                        <option value="Medellín">Medellín</option>
+                                    </optgroup>
+                                    <optgroup label="Corea del Norte">
+                                        <option value="Kaesong">Kaesong</option>
+                                        <option value="Piongyang">Piongyang</option>
+                                        <option value="Sinuiju">Sinuiju</option>
+                                    </optgroup>
+                                    <optgroup label="Cuba">
+                                        <option value="Cienfuegos">Cienfuegos</option>
+                                        <option value="La Habana">La Habana</option>
+                                        <option value="Varadero">Varadero</option>
+                                    </optgroup>
+                                    <optgroup label="Francia">
+                                        <option value="Lyon">Lyon</option>
+                                        <option value="Montpellier">Montpellier</option>
+                                        <option value="París">París</option> 
+                                    </optgroup>
+                                    <optgroup label="Italia">
+                                        <option value="Milán">Milán</option>
+                                        <option value="Roma">Roma</option>
+                                        <option value="Venecia">Venecia</option>
+                                    </optgroup>
+                                    <optgroup label="Líbano">
+                                        <option value="Beirut">Beirut</option>
+                                        <option value="Sidón">Sidón</option>
+                                        <option value="Tripoli">Tripoli</option>
+                                    </optgroup>
+                                    <optgroup label="Portugal">
+                                        <option value="Funchal">Funchal</option>
+                                        <option value="Lisboa">Lisboa</option>
+                                        <option value="Porto">Porto</option>
                                     </optgroup>
                                     <optgroup label="Venezuela">
                                         <option value="Barquisimeto">Barquisimeto</option>
                                         <option value="Caracas">Caracas</option>
+                                        <option value="Valencia">Valencia</option>
                                     </optgroup>
                                 </select>
                             </div>
