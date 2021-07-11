@@ -10,7 +10,7 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     IdCity      INT(10),     -- NULL: Ciudad Desconocida.
     Username    VARCHAR(60) UNIQUE NOT NULL , 
     EmailUser   VARCHAR(60) UNIQUE NOT NULL,    
-    PasswordUser    VARCHAR(20) NOT NULL,
+    PasswordUser    VARCHAR(255) NOT NULL,
     NameUser        VARCHAR(30) NOT NULL,
     LastNameUser    VARCHAR(30) NOT NULL,
     UserIsSuscribed     BIT(1)  NOT NULL DEFAULT 0, -- 1: Suscrito, 0: No suscrito

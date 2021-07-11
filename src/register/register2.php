@@ -18,7 +18,6 @@ require_once("../../data/classes/constants.php");
         $phoneNumber = $_POST["phoneNumber"];
         $gender = $_POST["gender"];
         $city = $_POST["city"];
-        
 
         $success = $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $gender, $city);
 
