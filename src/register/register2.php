@@ -85,6 +85,7 @@ require_once("../../data/classes/constants.php");
                         <input type="text" name="username" placeholder="Nombre de usuario" required>
 
                         <div class = "dropdowns">
+                            <?php echo $registerAccount->getError(Constants::$undefinedError);?> 
                             <div class = "genderDropdown">
                                 <label class = "titleLabel" for="gender">Elige un género:</label>
                                 <select class = "dropdown" id="gender" name="gender" required>
@@ -95,6 +96,7 @@ require_once("../../data/classes/constants.php");
                                 </select>
                             </div>
 
+                            <?php echo $registerAccount->getError(Constants::$undefinedError);?> 
                             <div class = "cityDropdown">
                                 <label class ="titleLabel" for="city">Elige tu ciudad:</label>
                                 <select class = "dropdown" id="city" name="city" required>
@@ -167,6 +169,7 @@ require_once("../../data/classes/constants.php");
                         <input type="password" name="password" placeholder="Contraseña" required>
 
                         <input type="password" name="password2" placeholder="Confirmar contraseña" required>
+                        
                         <?php echo $registerAccount->getError(Constants::$phoneNumberincorrect);?> 
                         <input type="number" name="phoneNumber" placeholder="Numero de teléfono" required>
 
