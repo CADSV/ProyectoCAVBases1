@@ -59,12 +59,12 @@ class SuscriptionAccount{
             return;
         }
 
-        $query = $this->connection->prepare("SELECT * FROM PaymentCard WHERE CardNumber=:cardnumber AND CVV=:cvv");
+        $query = $this->connection->prepare("SELECT * FROM PaymentCard WHERE (CardNumber=:cardnumber) AND (CVV=:cvv)");
         $query->bindValue(":cardnumber", $cardnumber);
         $query->bindValue(":cvv", $cvv);
         $query->execute();
 
-        if($query->rowCount()!= 0){                         //Valida si no existe el nombre de usuario
+        if($query->rowCount()!= 0){                         //Valida que no exista la misma clave compuesta en la BD
             array_push($this->errorArray, Constants::$cardTaken);
         }
 
