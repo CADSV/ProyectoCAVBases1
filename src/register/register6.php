@@ -83,6 +83,7 @@ require_once("../../data/classes/constants.php");
                         <input type="text" name="lastName" placeholder="Apellido" required>
                         
                         <?php echo $suscriptionAccount->getError(Constants::$InvalidCardNumber);?>
+                        <?php echo $suscriptionAccount->getError(Constants::$cardTaken);?>
                         <input type="number" name="cardnumber" placeholder="Numero de la tarjeta"  required>
 
                         <div class= "date">

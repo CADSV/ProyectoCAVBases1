@@ -13,7 +13,7 @@ class SuscriptionAccount{
     public function suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate){
         $this->validateName($name);
         $this->validateLastName($lastName);
-        $this->validateCardnumber($cardnumber);
+        $this->validateCardnumber($cardnumber,$cvv);
 
         if(empty($this->errorAray)){
             return $this->insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate);
@@ -53,11 +53,21 @@ class SuscriptionAccount{
     }
 
     
-    private function validateCardnumber($cardnumber){
+    private function validateCardnumber($cardnumber,$cvv){
         if ($cardnumber <1000000000000000000 || $cardnumber>9999999999999999999){
             array_push($this->errorArray, Constants::$InvalidCardNumber);
             return;
         }
+
+        $query = $this->connection->prepare("SELECT * FROM PaymentCard WHERE CardNumber=:cardnumber AND CVV=:cvv");
+        $query->bindValue(":cardnumber", $cardnumber);
+        $query->bindValue(":cvv", $cvv);
+        $query->execute();
+
+        if($query->rowCount()!= 0){                         //Valida si no existe el nombre de usuario
+            array_push($this->errorArray, Constants::$cardTaken);
+        }
+
 
     }
 
