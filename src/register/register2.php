@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
 require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
 require_once("../../data/account/registerAccount.php");
@@ -90,7 +91,7 @@ require_once("../../data/classes/constants.php");
                                 <select class = "dropdown" id="gender" name="gender" required>
                                     <option value="">Elige</option>
                                     <option value="M">Hombre</option>
-                                    <option value="H">Mujer</option>
+                                    <option value="F">Mujer</option>
                                     <option value="N/A">N/A</option>                                   
                                 </select>
                             </div>

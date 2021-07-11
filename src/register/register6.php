@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
 require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
 require_once("../../data/account/suscriptionAccount.php");
@@ -14,11 +15,11 @@ require_once("../../data/classes/constants.php");
         $buildingHouse = FormSanitizer::sanitizeFormString($_POST["buildingHouse"]);
         $cardnumber = $_POST["cardnumber"];
         $postalcode = $_POST["postalCode"];
-        $cvv = $_POST["cardnumber"];
+        $cvv = $_POST["cvv"];
         $expiredate = $_POST["expiredate"];
         
 
-        $suscriptionAccount->suscription($name, $lastName, $cardnumber);
+        $suscriptionAccount->suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate);
         
 
     }
