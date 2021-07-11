@@ -100,7 +100,8 @@ require_once("../../data/classes/constants.php");
                         <input type="text" name="direccion" placeholder="Direccion de facturación" required>
 
                         <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
-
+                        <input type="submit" class="buttonContainer" name="submitButton" value="Iniciar Suscripción">
+                        
                         </form>
                 </div>
 
@@ -110,12 +111,7 @@ require_once("../../data/classes/constants.php");
                             <a href="register4.php">Cambiar Plan</a>
                         </div>
                     </div>
-                        <div class = "buttonContainer">
-                            <div class = "marginbutton">  
-                                <a href="../profile/select_profile.php">Iniciar Suscripción</a>
-                            </div>
-                        </div>
-                 </div>
+                   
 
             </div>
         </section>
