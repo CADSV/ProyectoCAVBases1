@@ -1,27 +1,25 @@
 <?php
 require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
-require_once("../../data/account/registerAccount.php");
+require_once("../../data/account/suscriptionAccount.php");
 require_once("../../data/classes/constants.php");
 
-    $registerAccount= new RegisterAccount($connection);
+    $suscriptionAccount= new SuscriptionAccount($connection);
 
     if(isset($_POST["submitButton"])) { // Si el botón Enviar es presionado, entonces...
        
         $name = FormSanitizer::sanitizeFormString($_POST["name"]);  //Validacion del nombre. 
         $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
-        $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
-        $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
-        $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
-        $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
-        $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
+        $avenueStreet = FormSanitizer::sanitizeFormString($_POST["avenueStreet"]);  //Validacion del nombre. 
+        $buildingHouse = FormSanitizer::sanitizeFormString($_POST["buildingHouse"]);
+        $cardnumber = $_POST["cardnumber"];
+        $postalcode = $_POST["postalCode"];
+        $cvv = $_POST["cardnumber"];
+        $expiredate = $_POST["expiredate"];
+        
 
-        // echo $genre = FormSanitizer::sanitizeFormString($_POST["genre"]);
-        // echo $city = FormSanitizer::sanitizeFormString($_POST["city"]);
-
-        // $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
-        // Mientras no hay back.
-    
+        $suscriptionAccount->suscription($name, $lastName, $cardnumber);
+        
 
     }
 
@@ -70,17 +68,16 @@ require_once("../../data/classes/constants.php");
                 </div>
 
                 <div class = "dataForm">
-                    <form method="POST"> <!-- El método post sirve para enviar datos -->
+                    <form method="POST" action="register6.php"> <!-- El método post sirve para enviar datos -->
 
-                        <?php echo $registerAccount->getError(Constants::$nameLength);?>
+                        <?php echo $suscriptionAccount->getError(Constants::$nameLength);?>
                         <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
 
-                        <?php echo $registerAccount->getError(Constants::$lastNameLength);?>
+                        <?php echo $suscriptionAccount->getError(Constants::$lastNameLength);?>
                         <input type="text" name="lastName" placeholder="Apellido" required>
                         
-                        <?php echo $registerAccount->getError(Constants::$usernameLength);?>        
-                        <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
-                        <input type="number" name="cardnumber" placeholder="Numero de la tarjeta" required>
+                        <?php echo $suscriptionAccount->getError(Constants::$InvalidCardNumber);?>
+                        <input type="number" name="cardnumber" placeholder="Numero de la tarjeta"  required>
 
                         <div class= "date">
                               
@@ -92,9 +89,7 @@ require_once("../../data/classes/constants.php");
                         </div>
                        
 
-                        <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
-                        <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
-                        <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
+
                         
                         <div class = "text">
                             <p>Dirección de facturamiento</p>

@@ -11,7 +11,8 @@ class Constants {
     public static $passwordsDontMatch = "Las contraseñas no coinciden";
     public static $passwordLength = "La contraseña debe tener entre 5 y 25 caracteres";
     public static $phoneNumberincorrect = "Número telefónico inválido";
+    public static $InvalidCardNumber = "Número de tarjeta inválido";
 }
-
+$InvalidCardNumber
 
 ?>
