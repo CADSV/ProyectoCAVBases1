@@ -12,9 +12,7 @@ class RegisterAccount{
         $this->validateLastName($lastName);
         $this->validateUsername($username);
         $this->validateEmail($email, $email2);
-
-
-
+        $this->validatePasswords($password, $password2);
     }
 
     private function validateName($name){ // Valida la longitud del nombre
@@ -50,6 +48,17 @@ class RegisterAccount{
         }
 
         RegisterRequest :: validateEmailIsnotTaken($email);
+
+    }
+
+    private function validatePasswords($password, $password2){
+        if ($password != $password2){
+            array_push($this->errorArray, Constants::$passwordsDontMatch);
+            return;
+        }
+        if(strlen($password)< 5 || strlen($password)> 25){
+            array_push($this->errorArray, Constants::$passwordLength);
+        }
 
     }
 
