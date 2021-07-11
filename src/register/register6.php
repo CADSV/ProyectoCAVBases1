@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
 require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
 require_once("../../data/account/suscriptionAccount.php");
@@ -23,7 +23,7 @@ require_once("../../data/classes/constants.php");
 
         if($success) {
             
-            header("Location: register3.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
+            header("Location: ../profile/select_profile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
         }
         
 
@@ -74,7 +74,7 @@ require_once("../../data/classes/constants.php");
                 </div>
 
                 <div class = "dataForm">
-                    <form method="POST" action="register6.php"> <!-- El método post sirve para enviar datos -->
+                    <form method="POST"> <!-- El método post sirve para enviar datos -->
 
                         <?php echo $suscriptionAccount->getError(Constants::$nameLength);?>
                         <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->

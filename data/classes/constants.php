@@ -13,7 +13,7 @@ class Constants {
     public static $phoneNumberincorrect = "Número telefónico inválido";
     public static $InvalidCardNumber = "Número de tarjeta inválido";
     public static $cardTaken = "Número de tarjeta existente";
+    public static $loginFailed = "Nombre de usuario y/o contraseña inválido";
 }
-
 
 ?>
