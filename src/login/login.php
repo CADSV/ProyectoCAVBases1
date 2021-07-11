@@ -14,7 +14,7 @@ require_once("../../data/classes/constants.php");
 
         if($success) {
             // Guardaremos la sesión aquí
-            header("Location: register3.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
+            header("Location: ../profile/select_profile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
         }
     }
 ?>
