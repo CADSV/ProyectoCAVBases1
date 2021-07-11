@@ -15,11 +15,15 @@ require_once("../../data/classes/constants.php");
         $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
         $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
         $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
+        $phoneNumber = $_POST["phoneNumber"];
+        $gender = $_POST["gender"];
+        $city = $_POST["city"];
+        
 
-        // echo $genre = FormSanitizer::sanitizeFormString($_POST["genre"]);
+        // echo $gender = FormSanitizer::sanitizeFormString($_POST["gender"]);
         // echo $city = FormSanitizer::sanitizeFormString($_POST["city"]);
 
-        $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $genre, $city);
+        $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $gender, $city);
 
     }
 
@@ -81,13 +85,13 @@ require_once("../../data/classes/constants.php");
                         <input type="text" name="username" placeholder="Nombre de usuario" required>
 
                         <div class = "dropdowns">
-                            <div class = "genreDropdown">
-                                <label class = "titleLabel" for="genre">Elige un género:</label>
-                                <select class = "dropdown" id="genre" name="genre" required>
+                            <div class = "genderDropdown">
+                                <label class = "titleLabel" for="gender">Elige un género:</label>
+                                <select class = "dropdown" id="gender" name="gender" required>
                                     <option disabled="disabled" selected="selected">Elige</option>
-                                    <option value="N/A">N/A</option>
-                                    <option value="F">Mujer</option>
                                     <option value="M">Hombre</option>
+                                    <option value="H">Mujer</option>
+                                    <option value="N/A">N/A</option>                                   
                                 </select>
                             </div>
 
