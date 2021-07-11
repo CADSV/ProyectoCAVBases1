@@ -96,8 +96,12 @@ require_once("../../data/classes/constants.php");
                         <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
                         <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
                         
-
-                        <input type="text" name="direccion" placeholder="Direccion de facturación" required>
+                        <div class = "text">
+                            <p>Dirección de facturamiento</p>
+                        </div>
+                        <input type="number" name="postalCode" placeholder="Código postal" required>
+                        <input type="text" name="avenueStreet" placeholder="Avenida o calle" required>
+                        <input type="text" name="buildingHouse" placeholder="Nombre de edificio o casa" required>
 
                         <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
                         <input type="submit" class="buttonContainer" name="submitButton" value="Iniciar Suscripción">
