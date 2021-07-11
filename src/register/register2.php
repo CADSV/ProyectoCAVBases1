@@ -8,7 +8,7 @@ require_once("../../data/classes/constants.php");
 
     if(isset($_POST["submitButton"])) { // Si el botón Enviar es presionado, entonces...
        
-        $name = FormSanitizer::sanitizeFormString($_POST["name"]);  //Validacion del nombre. 
+       echo $name = FormSanitizer::sanitizeFormString($_POST["name"]);  //Validacion del nombre. 
         $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
         $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
         $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
@@ -19,7 +19,7 @@ require_once("../../data/classes/constants.php");
         // echo $genre = FormSanitizer::sanitizeFormString($_POST["genre"]);
         // echo $city = FormSanitizer::sanitizeFormString($_POST["city"]);
 
-        // $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
+        $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
         // Mientras no hay back.
     
 
@@ -70,7 +70,7 @@ require_once("../../data/classes/constants.php");
                 </div>
 
                 <div class = "dataForm">
-                    <form method="POST" action="register3.php"> <!-- El método post sirve para enviar datos -->
+                    <form method="POST" action="register2.php"> <!-- El método post sirve para enviar datos -->
 
                         <?php echo $registerAccount->getError(Constants::$nameLength);?>
                         <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
@@ -87,8 +87,8 @@ require_once("../../data/classes/constants.php");
                                 <label class = "titleLabel" for="genre">Elige un género:</label>
                                 <select class = "dropdown" id="genre" name="genre" required>
                                     <option value="N/A">N/A</option>
-                                    <option value="women">Mujer</option>
-                                    <option value="male">Hombre</option>
+                                    <option value="F">Mujer</option>
+                                    <option value="M">Hombre</option>
                                 </select>
                             </div>
 
@@ -149,8 +149,7 @@ require_once("../../data/classes/constants.php");
                             </div>
 
                         </div>
-                        <?php echo $registerAccount->getError(Constants::$passwordLength);?> 
-                        <?php echo $registerAccount->getError(Constants::$passwordsDontMatch);?> 
+
                         <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
                         <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
                         <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
@@ -158,6 +157,8 @@ require_once("../../data/classes/constants.php");
 
                         <input type="email" name="email2" placeholder="Confirmar correo electrónico" required>
 
+                        <?php echo $registerAccount->getError(Constants::$passwordLength);?> 
+                        <?php echo $registerAccount->getError(Constants::$passwordsDontMatch);?> 
                         <input type="password" name="password" placeholder="Contraseña" required>
 
                         <input type="password" name="password2" placeholder="Confirmar contraseña" required>
