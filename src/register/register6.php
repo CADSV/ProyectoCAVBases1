@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_WARNING);
+
 require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
 require_once("../../data/account/suscriptionAccount.php");
@@ -19,7 +19,12 @@ require_once("../../data/classes/constants.php");
         $expiredate = $_POST["expiredate"];
         
 
-        $suscriptionAccount->suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate);
+        $success= $suscriptionAccount->suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate);
+
+        if($success) {
+            
+            header("Location: register3.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
+        }
         
 
     }
@@ -86,7 +91,7 @@ require_once("../../data/classes/constants.php");
                             <input type="number"  name="cvv" placeholder="CVV" id="cvv" min="000" max="999" required>
                             <label class ="titleLabel" for="expiredate">Fecha de vencimiento de la tarjeta:</label>
 
-                            <input type="month" name="expiredate" placeholder="Fecha de vencimiento" min="2021-05" max="2030-12" id="expiredate" required>
+                            <input type="date" name="expiredate" placeholder="Fecha de vencimiento" min="2021-05-01" max="2030-12-01" id="expiredate" required>
                         </div>
                        
 

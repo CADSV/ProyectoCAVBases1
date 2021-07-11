@@ -14,8 +14,29 @@ class SuscriptionAccount{
         $this->validateName($name);
         $this->validateLastName($lastName);
         $this->validateCardnumber($cardnumber);
+
+        if(empty($this->errorAray)){
+            return $this->insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate);
+        }
+
+        return false;
     }
 
+    private function insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate){
+            
+        
+        $query = $this->connection->prepare("INSERT INTO Paymentcard (CardNumber, CVV, OwnerName, OwnerLastname, ExpDate) 
+                                        VALUES (:cardnumber, :cvv, :name, :lastName, :expiredate)");
+        
+        $query->bindValue(":name", $name);    
+        $query->bindValue(":lastName", $lastName); 
+        $query->bindValue(":cardnumber", $cardnumber); 
+        $query->bindValue(":cvv", $cvv); 
+        $query->bindValue(":expiredate", $expiredate); 
+  
+        
+        return $query->execute(); // Retorna true si funcionó la inserción en la base de datos, false si no
+    }
 
     private function validateName($name){ // Valida la longitud del nombre
         if(strlen($name)< 2 || strlen($name)> 25){
