@@ -5,7 +5,13 @@ require_once("C:/xampp/htdocs/ProyectoCAVBases1/data/request/registerRequest.php
 
 class RegisterAccount{
 
+    private $connection;
     private $errorArray = array ();
+
+    public function __construct($connection){
+        $this->connection=$connection;
+
+    }
 
     public function register($name, $lastName, $username, $email, $email2, $password, $password2){
         $this->validateName($name);
@@ -34,7 +40,14 @@ class RegisterAccount{
             array_push($this->errorArray, Constants::$usernameLength);
             return;
         }
-         RegisterRequest :: validateUsernameIsNotTaken($username);
+        $query = $this->connection->prepare("SELECT * FROM User WHERE Username=:username");        
+        $query->bindValue(":username", $username);
+        $query->execute();
+        
+        if($query->rowCount()!= 0){                         //Valida si no existe el nombre de usuario
+            array_push($this->errorArray, Constants::$usernameTaken);
+
+        }
     }
 
     private function validateEmail($email, $email2){
@@ -47,7 +60,13 @@ class RegisterAccount{
             return;
         }
 
-        RegisterRequest :: validateEmailIsnotTaken($email);
+        $query = $this->connection->prepare("SELECT * FROM User WHERE EmailUser=:email");
+        $query->bindValue(":email", $email);
+        $query->execute();
+
+        if($query->rowCount()!= 0){                         //Valida si no existe el nombre de usuario
+            array_push($this->errorArray, Constants::$emailTaken);
+        }
 
     }
 

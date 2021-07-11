@@ -12,10 +12,10 @@ class RegisterRequest {
 
     private function validateUsernameIsNotTaken($username) {
 
-        $query = $this->connection->prepare("SELECT * FROM users WHERE username=:username");
-        $query->bindValue(":username", $username);
+        $query = $this->connection->prepare("SELECT * FROM User WHERE Username=:username");
         $query->execute();
-
+        $query->bindValue(":username", $username);
+        
         if($query->rowCount()!= 0){                         //Valida si no existe el nombre de usuario
             array_push($this->errorArray, Constants::$usernameTaken);
 
@@ -25,7 +25,7 @@ class RegisterRequest {
 
     private function validateEmailIsNotTaken($email) {
 
-        $query = $this->connection->prepare("SELECT * FROM users WHERE email=:email");
+        $query = $this->connection->prepare("SELECT * FROM User WHERE EmailUser=:email");
         $query->bindValue(":email", $email);
         $query->execute();
 

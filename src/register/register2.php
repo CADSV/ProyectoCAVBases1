@@ -8,7 +8,7 @@ require_once("../../data/classes/constants.php");
 
     if(isset($_POST["submitButton"])) { // Si el botón Enviar es presionado, entonces...
        
-       echo $name = FormSanitizer::sanitizeFormString($_POST["name"]);  //Validacion del nombre. 
+        $name = FormSanitizer::sanitizeFormString($_POST["name"]);  //Validacion del nombre. 
         $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
         $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
         $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
