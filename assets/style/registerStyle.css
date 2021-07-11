@@ -244,6 +244,7 @@ section .container .dataForm form input {
     padding: 1em 0.9em;
     border-radius: 3px;
     min-width:fit-content;
+    margin: 10px 0;
 }
 
 section .container .dataForm form input[type="text"],
@@ -251,9 +252,9 @@ section .container .dataForm form input[type="email"],
 section .container .dataForm form input[type="password"]{
     border-color: rgba(0,0,0, 0.5);
     font-size: 14px;
-    margin: 10px 0;
     font-weight: 500;
 }
+
 
 .dataForm form input[type="submit"]{
     cursor: pointer;
