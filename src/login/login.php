@@ -14,7 +14,7 @@ require_once("../../data/classes/constants.php");
         $success = $loginAccount->login($username, $password);
 
         if($success) {
-            // Guardaremos la sesión aquí
+            $_SESSION["userLoggedIn"] = $username;
             header("Location: ../profile/select_profile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
         }
     }

@@ -1,4 +1,12 @@
 <?php
+
+require_once("../../data/config.php");
+
+
+if (!isset($_SESSION["userLogedIn"])){
+    header("Location: ../../index.php");
+}
+
 ?>
 
 

@@ -5,6 +5,10 @@ require_once("../../data/config.php");
 require_once("../../data/account/suscriptionAccount.php");
 require_once("../../data/classes/constants.php");
 
+    if (!isset($_SESSION["userLoggedIn"])){
+        header("Location: register1.php");
+    }
+
     $suscriptionAccount= new SuscriptionAccount($connection);
 
     if(isset($_POST["submitButton"])) { // Si el botón Enviar es presionado, entonces...
