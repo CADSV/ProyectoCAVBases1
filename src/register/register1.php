@@ -29,25 +29,25 @@
     </div>
         <section>
             <div class = "container">
-                <div class = "checkbox">
-                    <img src="../../assets/images/check.png" title="check" alt="check">
-
+                <div class = "logo">
+                    <img src="../../assets/images/laptop.png" title="laptop" alt="laptop">
+                    <img src="../../assets/images/computer.png" title="computer" alt="computer">
+                    <img src="../../assets/images/phone.png" title="phone" alt="phone">
                 </div>
-
                 <div class = "title">
                     <p>PASO 1 DE 3</p>
                 </div>
                 <div class = "subtitle">
-                    <p>Selecciona tu plan</p>
+                    <p>Completa la configuración de tu cuenta</p>
                 </div>
                 <div class = "text">
-                </p>  <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">   Sin compromisos, cancela cuando quieras.</p>
-                </p>  <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">   Todo Carlevix a un bajo costo.</p>
-                </p>   <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">   Disfruta sin límites en todos tus dispositivos.</p>
+                    <p>Carlevix está personalizado para ti.</p>
+                    <p>Completa tus datos para ver Carlevix en</p>
+                    <p>cualquier dispositivo, cuando quieras.</p>
                 </div>
                 <div class = "buttonContainer">
                     <div class = "marginbutton">
-                        <a href="register2.php">Ver los planes</a>
+                        <a href="register2.php">Continuar</a>
                     </div>
                 </div>
             </div>
@@ -55,3 +55,4 @@
     
 </body>
 </html>
+

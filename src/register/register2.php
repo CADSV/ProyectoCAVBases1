@@ -1,103 +1,132 @@
 <?php
+require_once("../../data/classes/formSanitizer.php");
+require_once("../../data/config.php");
+require_once("../../data/account/registerAccount.php");
+require_once("../../data/classes/constants.php");
+
+    $registerAccount= new RegisterAccount($connection);
+
+    if(isset($_POST["submitButton"])) { // Si el botón Enviar es presionado, entonces...
+       
+        $name = FormSanitizer::sanitizeFormString($_POST["name"]);  //Validacion del nombre. 
+        $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
+        $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
+        $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
+        $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
+        $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
+        $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
+
+        // echo $genre = FormSanitizer::sanitizeFormString($_POST["genre"]);
+        // echo $city = FormSanitizer::sanitizeFormString($_POST["city"]);
+
+        // $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
+        // Mientras no hay back.
+    
+
+    }
+
+    
 ?>
 
-
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" 
-        content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
-    <title>Registro 2</title>
-    <link rel="stylesheet" type="text/css" href="../../assets/style/registerStyle.css">
-</head>
-<body>
-    <div class="wrapper">
+<html lang='es'>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
+        <title>Complete sus datos</title>
+        <link rel="stylesheet" type="text/css" href="../../assets/style/registerStyle.css"/>
+    </head>
 
-        <header>
-            <div class="login-header">
-                <a href="../../index.php"> 
-                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
-                </a>          
-            </div>
-            <nav class = "login">
-                <a href="../login/login.php">Inicia Sesión</a>
-            </nav>
-        </header>
-        <div class = "line"></div>
-    </div>
+    <body>
+
+        <div class="wrapper">
+
+            <header>
+                <div class="login-header">
+                    <a href="../../index.php"> 
+                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
+                    </a>          
+                </div>
+                <nav class = "login">
+                    <a href="../login/login.php">Inicia Sesión</a>
+                </nav>
+            </header>
+            <div class = "line"></div>
+        </div>
+
         <section>
-            <div class = "titleleft">
-                <p>PASO 1 DE 3</p>
-            </div>
-
-            <div class = "subtitleleft">
-                  <p>Selecciona tu plan</p>
-            </div>
-
-            <div class = "textleft">
-                </p>  <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">  Ve todo lo que quieras sin anuncios.</p>
-                </p>  <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">   Recomendaciones, exclusivas para ti.</p>
-                </p>   <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">   Puedes cambiar de plan cuando quieras.</p>
-            </div>
-
             <div class = "container">
-                <div class="formulario">
-                    <form  action="register3.php" method=""> 
-                        <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico</label>
-                        <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar </label>
-                        <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium   </label>
-                        <div class= "columnas">  
-                        <p> Precio Mensual</p>
-                        <p>  USD 7,99  </p>
-                        <p>  USD 10,99 </p>
-                        <p>  USD 13,99</p>
-                        <div class = "lineplanes"></div>
+                <div class = "title">
+                    <p>PASO 1 DE 3</p>
+                </div>
+                <div class = "subtitle">
+                    <p>Crea un usuario para que empieces tu</p>
+                    <p>experiencia Carlevix.</p>
+                </div>
+                <div class = "text">
+                    <p>¡Unos pasos más y listo!</p>
+                </div>
 
-                        <p> Calidad de video</p>
-                        <p>  Regular  </p>
-                        <p>  Buena </p>
-                        <p>  Excelente</p>
-                        <div class = "lineplanes"></div>
+                <div class = "dataForm">
+                    <form method="POST" action="register3.php"> <!-- El método post sirve para enviar datos -->
 
-                        <p> Resolución</p>
-                        <p>  480p  </p>
-                        <p>  1080p </p>
-                        <p>  4K+HDR</p>
-                        <div class = "lineplanes"></div>
+                        <?php echo $registerAccount->getError(Constants::$nameLength);?>
+                        <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
 
-                        <p> Dispositivos que pueden visualizar contenido a la vez</p>
-                        <p>  1  </p>
-                        <p>  2 </p>
-                        <p>  4</p>
-                        <div class = "lineplanes"></div>
-                        </div>
-                        <div class="textdown">
-                        <p>La disponibilidad del contenido en HD (720p), Full HD (1080p), Ultra HD (4K) y HDR depende de tu servicio de internet y del dispositivo en uso. No todo el contenido está disponible en todas las resoluciones. Consulta nuestros Términos de uso para obtener más información. </p>
-                        </div> 
-                        <div class = "buttons">
-                            <div class = "buttonContainer">
-                                <div class = "marginbutton">
-                                <input type="submit" class="marginbuttonRedPlan" name="submitButton" value="Continuar">
-                                </div>
+                        <?php echo $registerAccount->getError(Constants::$lastNameLength);?>
+                        <input type="text" name="lastName" placeholder="Apellido" required>
+                        
+                        <?php echo $registerAccount->getError(Constants::$usernameLength);?>        
+                        <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
+                        <input type="text" name="username" placeholder="Nombre de usuario" required>
+
+                        <div class = "dropdowns">
+                            <div class = "genreDropdown">
+                                <label class = "titleLabel" for="genre">Elige un género:</label>
+                                <select class = "dropdown" id="genre" name="genre" required>
+                                    <option value="N/A">N/A</option>
+                                    <option value="women">Mujer</option>
+                                    <option value="male">Hombre</option>
+                                </select>
                             </div>
-                                
+
+                            <div class = "cityDropdown">
+                                <label class ="titleLabel" for="city">Elige tu ciudad:</label>
+                                <select class = "dropdown" id="city" name="city" required>
+                                    <optgroup label="Bélgica">
+                                        <option value="Bruselas">Bruselas</option>
+                                        <option value="Charleroi">Charleroi</option>
+                                    </optgroup>
+                                    <optgroup label="Venezuela">
+                                        <option value="Barquisimeto">Barquisimeto</option>
+                                        <option value="Caracas">Caracas</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+
                         </div>
+
+                        <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
+                        <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
+                        <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+
+                        <input type="email" name="email2" placeholder="Confirmar correo electrónico" required>
+
+                        <input type="password" name="password" placeholder="Contraseña" required>
+
+                        <input type="password" name="password2" placeholder="Confirmar contraseña" required>
+
+                        <input type="submit" class="buttonContainer" name="submitButton" value="Continuar">
+
                     </form>
+                </div>
 
-                 
-
-                 <div class = "buttons">
-                    
-                        <div class = "buttonOmitir">
-                            <div class = "marginbuttonGray">  
-                                <a href="register3.php">Omitir</a>
-                            </div>
-                        </div>
-                 </div>
-                
             </div>
         </section>
-</body>
+
+    </body>
+
 </html>
