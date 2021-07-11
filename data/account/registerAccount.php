@@ -18,31 +18,29 @@ class RegisterAccount{
         $this->validatePasswords($password, $password2);
         $this->validatePhonenumber($phoneNumber);
 
-        if(empty($this->errorArray)) {
-            return $this->insertUserDetail($name, $lastName, $username, $email, $password, $phoneNumber, $gender, $city);
+        if(empty($this->errorAray)){
+            return $this->insertUserDetails($name, $lastName, $username, $email, $password, $phoneNumber, $gender, $city);
         }
 
         return false;
     }
 
-
-    private function insertUserDetail($name, $lastName, $username, $email, $password, $phoneNumber, $gender, $city) {
-
-        $password = hash("sha512",$password);
-
-        $query = $this->connection->prepare("INSERT INTO User VALUES (NULL, :city, :username, :email, :password, :name, :lastName, DEFAULT, :phoneNumber, :gender, NULL, NULL, NULL) ");
+    private function insertUserDetails($name, $lastName, $username, $email, $password, $phoneNumber, $gender, $city){
+            
+        $password = hash("sha512", $password);
+        $query = $this->connection->prepare("INSERT INTO User (NameUser, LastNameUser, Username, EmailUser, PasswordUser, UserPhone, UserGender, IdCity) 
+                                        VALUES (:name, :lastName, :username, :email, :password, :phoneNumber, :gender, :city)");
         
-        $query->bindValue(":city", $city);
-        $query->bindValue(":username", $username);
-        $query->bindValue(":email", $email);
-        $query->bindValue(":password", $password);
-        $query->bindValue(":name", $name);
-        $query->bindValue(":lastName", $lastName);
-        $query->bindValue(":phoneNumber", $phoneNumber);
-        $query->bindValue(":gender", $gender);
-
-        return $query->execute();
-   
+        $query->bindValue(":name", $name);    
+        $query->bindValue(":lastName", $lastName); 
+        $query->bindValue(":username", $username); 
+        $query->bindValue(":email", $email); 
+        $query->bindValue(":password", $password); 
+        $query->bindValue(":phoneNumber", $phoneNumber); 
+        $query->bindValue(":gender", $gender); 
+        $query->bindValue(":city", $city);    
+        
+        return $query->execute(); // Retorna true si funcionó la inserción en la base de datos, false si no
     }
 
     private function validateName($name){ // Valida la longitud del nombre
