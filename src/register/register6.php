@@ -102,8 +102,7 @@ require_once("../../data/classes/constants.php");
                         <input type="number" name="postalCode" placeholder="Código postal" required>
                         <input type="text" name="avenueStreet" placeholder="Avenida o calle" required>
                         <input type="text" name="buildingHouse" placeholder="Nombre de edificio o casa" required>
-
-                        <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
+                        
                         <input type="submit" class="buttonContainer" name="submitButton" value="Iniciar Suscripción">
                         
                         </form>

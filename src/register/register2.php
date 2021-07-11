@@ -163,6 +163,8 @@ require_once("../../data/classes/constants.php");
 
                         <input type="password" name="password2" placeholder="Confirmar contraseña" required>
 
+                        <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
+
                         <input type="submit" class="buttonContainer" name="submitButton" value="Continuar">
 
                     </form>
