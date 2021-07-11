@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
 require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
 require_once("../../data/account/loginAccount.php");
