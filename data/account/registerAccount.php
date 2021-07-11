@@ -17,8 +17,6 @@ class RegisterAccount{
         $this->validateEmail($email, $email2);
         $this->validatePasswords($password, $password2);
         $this->validatePhonenumber($phoneNumber);
-        $this->validateGender($gender);
-        $this->validateCity($city);
     }
 
     private function validateName($name){ // Valida la longitud del nombre
@@ -88,21 +86,6 @@ class RegisterAccount{
         }
 
     }
-
-    private function validateGender($gender){
-        if ($gender == null){
-            array_push($this->errorArray, Constants::$undefinedError);
-            return;
-        }
-    }
-
-    private function validateCity($city){
-        if ($city == null){
-            array_push($this->errorArray, Constants::$undefinedError);
-            return;
-        }
-    }
-
 
     public function getError($error){
         if (in_array($error, $this->errorArray)){
