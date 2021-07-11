@@ -23,7 +23,7 @@ require_once("../../data/classes/constants.php");
         $success = $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $gender, $city);
 
         if($success) {
-            // Guardaremos la sesión aquí
+            $_SESSION["userLoggedIn"] = $username;
             header("Location: register3.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
         }
     }

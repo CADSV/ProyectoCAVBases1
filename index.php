@@ -1,3 +1,11 @@
+<?php
+    require_once("data/config.php");
+
+    if(isset($_SESSION["userLoggedIn"])){
+        header("Location: src/profile/select_profile.php"); 
+    }
+?>
+
 <!DOCTYPE html>
 <html lang='es'>
     <head>
