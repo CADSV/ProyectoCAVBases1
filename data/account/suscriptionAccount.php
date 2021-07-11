@@ -10,7 +10,7 @@ class SuscriptionAccount{
 
     }
 
-    public function suscription($name, $lastName, $cardnumber){
+    public function suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate){
         $this->validateName($name);
         $this->validateLastName($lastName);
         $this->validateCardnumber($cardnumber);
