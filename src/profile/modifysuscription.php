@@ -23,7 +23,7 @@
                     </a>          
                 </div>
                 <nav class = "login">
-                    <a href="../login/login.php">Volver a perfil</a>
+                    <a href="adminProfile.php">Volver a perfil</a>
                  </nav>
                 
             </header>
