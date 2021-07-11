@@ -19,7 +19,7 @@
             <header>
                 <div class="login-header">
                     <a href="../../index.php"> 
-                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
+                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
                     </a>          
                 </div>
                 <nav class = "login">
