@@ -20,11 +20,12 @@ require_once("../../data/classes/constants.php");
         $city = $_POST["city"];
         
 
-        // echo $gender = FormSanitizer::sanitizeFormString($_POST["gender"]);
-        // echo $city = FormSanitizer::sanitizeFormString($_POST["city"]);
+        $success = $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $gender, $city);
 
-        $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $gender, $city);
-
+        if($success) {
+            // Guardaremos la sesión aquí
+            header("Location: register3.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
+        }
     }
 
     
@@ -72,7 +73,7 @@ require_once("../../data/classes/constants.php");
                 </div>
 
                 <div class = "dataForm">
-                    <form method="POST" action="register2.php"> <!-- El método post sirve para enviar datos -->
+                    <form method="POST"> <!-- El método post sirve para enviar datos -->
 
                         <?php echo $registerAccount->getError(Constants::$nameLength);?>
                         <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->

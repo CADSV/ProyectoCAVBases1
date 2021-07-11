@@ -17,6 +17,28 @@ class RegisterAccount{
         $this->validateEmail($email, $email2);
         $this->validatePasswords($password, $password2);
         $this->validatePhonenumber($phoneNumber);
+
+        if(empty($this->errorAray)){
+            return $this->insertUserDetails($name, $lastName, $username, $email, $password, $phoneNumber, $gender, $city);
+        }
+
+        return false;
+    }
+
+    private function insertUserDetails($name, $lastName, $username, $email, $password, $phoneNumber, $gender, $city){
+        $password = hash("sha512", $password);
+        $query = $this->connection->prepare("INSERT INTO User (NameUser, LastNameUser, Username, EmailUser, PasswordUser, UserPhone, UserGender, IdCity) 
+                                        VALUES (:name, :lastName, :username, :email, :password, :phoneNumber, :gender, :city)");
+        $query->bindValue(":name", $name);    
+        $query->bindValue(":lastName", $lastName); 
+        $query->bindValue(":username", $username); 
+        $query->bindValue(":email", $email); 
+        $query->bindValue(":password", $password); 
+        $query->bindValue(":phoneNumber", $phoneNumber); 
+        $query->bindValue(":gender", $gender); 
+        $query->bindValue(":city", $city);    
+        
+        return $query->execute(); // Retorna true si funcionó la inserción en la base de datos, false si no
     }
 
     private function validateName($name){ // Valida la longitud del nombre
