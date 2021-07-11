@@ -10,12 +10,13 @@ class RegisterAccount{
 
     }
 
-    public function register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $genre, $city){
+    public function register($name, $lastName, $username, $email, $email2, $password, $password2, $phoneNumber, $gender, $city){
         $this->validateName($name);
         $this->validateLastName($lastName);
         $this->validateUsername($username);
         $this->validateEmail($email, $email2);
         $this->validatePasswords($password, $password2);
+        $this->validatePhonenumber($phoneNumber);
     }
 
     private function validateName($name){ // Valida la longitud del nombre
@@ -77,7 +78,14 @@ class RegisterAccount{
         }
 
     }
+    private function validatePhonenumber($phoneNumber){
+        if ($phoneNumber <1000000000 || $phoneNumber>9999999999){
+            array_push($this->errorArray, Constants::$phoneNumberincorrect);
+            return;
+        }
+        
 
+    }
 
 
 
