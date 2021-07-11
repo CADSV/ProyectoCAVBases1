@@ -24,18 +24,24 @@
 
             <div class = "profilesSelection">
                 <div class ="adminProfile">
-                    <img src="../../assets/images/profiles/editYellow.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
-                        <h2>Alejandro</h2>
+                    <a href="modifysuscription.php" title = "Modificar Suscripción" alt = "Modificar Suscripción">
+                        <img src="../../assets/images/profiles/editYellow.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
+                    </a>
+                    <h2>Alejandro</h2>
                 </div>
 
                 <div class ="adminProfile">
-                    <img src="../../assets/images/profiles/editBlue.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
-                        <h2>Carlos</h2>
+                    <a href="modifysuscription.php" title = "Modificar Suscripción" alt = "Modificar Suscripción">
+                        <img src="../../assets/images/profiles/editBlue.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
+                    </a>
+                    <h2>Carlos</h2>
                 </div>
 
                 <div class ="adminProfile">
-                    <img src="../../assets/images/profiles/editRed.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
-                        <h2>Vicente</h2>
+                    <a href="modifysuscription.php" title = "Modificar Suscripción" alt = "Modificar Suscripción">
+                        <img src="../../assets/images/profiles/editRed.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
+                    </a>
+                    <h2>Vicente</h2>
                 </div> 
 
                 <div class = "newProfile">
