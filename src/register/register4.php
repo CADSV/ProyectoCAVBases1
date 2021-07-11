@@ -37,9 +37,9 @@
             </div>
 
             <div class = "textleft">
-                </p>  <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">  Ve todo lo que quieras sin anuncios.</p>
-                </p>  <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">   Recomendaciones, exclusivas para ti.</p>
-                </p>   <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">   Puedes cambiar de plan cuando quieras.</p>
+                </p>  <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align-self="left">  Ve todo lo que quieras sin anuncios.</p>
+                </p>  <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align-self="left">   Recomendaciones, exclusivas para ti.</p>
+                </p>   <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align-self="left">   Puedes cambiar de plan cuando quieras.</p>
             </div>
 
             <div class = "container">

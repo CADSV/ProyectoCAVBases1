@@ -110,25 +110,22 @@ section .container .columnas p, a {
 }
 
 section  .titleleft  {
-    margin: 50px 50px 5px 80px;
-    position: relative;
-    left: 200px;
+    margin-top: 30px;
+    margin-left: 20%;
     font-size: 22px;
     font-weight:lighter;
     color: #201F1F;
 }
 section  .subtitleleft  {
-    margin: 0px  50px 10px 80px;
-    position: relative;
-    left: 200px;
+    margin-top: 20px;
+    margin-left: 20%;
     font-size: 22px;
     font-weight: bolder;
     color: #201F1F;
 }
 section  .textleft  {
-    margin: 0px  50px -60px 80px;
-    position: relative;
-    left: 200px;
+    margin-top: 15px;
+    margin-left: 20%;
     font-size: 13px;
     font-weight: lighter;
     color: #201F1F;
