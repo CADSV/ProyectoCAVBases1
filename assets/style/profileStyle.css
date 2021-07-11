@@ -144,7 +144,8 @@ section .question h1 {
 
 .readyButton {
     padding-top: 90px;
-    margin-left: 33%;
+    margin-left: auto;
+    margin-right: auto;
     justify-self: center;
 }
 
