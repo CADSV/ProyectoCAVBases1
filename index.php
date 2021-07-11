@@ -12,10 +12,9 @@
         <div class="wrapper">
             <div class="background">
                 <img src="assets/images/loginBackground.jpg" title="Imagen de fondo" alt="Cartelera multimedia, imagen de fondo">
-                <!--<div class="backgroundimg-gradient">-->
             </div>
             <div class="index-header">
-                <img src="assets/images/logo.png" title="Logo" alt="Logo de la página"> 
+                <img src="assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
                 <a href="src/login/login.php"> 
                     <button class="button">Iniciar sesión</button>
                 </a>          

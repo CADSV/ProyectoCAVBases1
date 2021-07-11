@@ -11,6 +11,10 @@ body {
     box-sizing: border-box; /* Ajusta el tamaño a uno más compacto, tomando en cuenta el width y padding */
 }
 
+.carlevixLogo {
+    margin: 20px;
+}
+
 .signin-container{
     height: 100vh; /* vh es view height, y el número es un porcentaje*/
     display: flex; /*siempre poner esto */
