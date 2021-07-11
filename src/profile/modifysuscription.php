@@ -36,11 +36,11 @@
 
             <div class="edit-container">  
                              
-                <form  action="register3.php" method="">                            
+                <form  action="adminProfile.php" method="">                            
                     <input class="buttonEdit" type="submit" name="plan" value="Guardar" id="Plan"required>    <label for="Premium">   </label>                                                                                            
                 </form>
                 <div class = "buttonCancel">
-                     <a href="../../index.php">Cancelar</a>                                          
+                     <a href="adminProfile.php">Cancelar</a>                                          
                 </div>
             </div>
 
@@ -70,7 +70,7 @@
                 </div>
                 <div class="plan-container">
                     <div>
-                        <form  action="register3.php" method=""> 
+                        <form  action="adminProfile.php" method=""> 
                                 <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
                                 <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
                                 <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
@@ -79,7 +79,7 @@
                         </form>
                     </div>
                     <div class = "buttonCancelar">
-                            <a href="../../index.php">Cancelar</a>                                          
+                            <a href="adminProfile.php">Cancelar</a>                                          
                     </div>
               
                 </div>
