@@ -1,7 +1,4 @@
-<?php
-
-require_once("C:/xampp/htdocs/ProyectoCAVBases1/data/request/registerRequest.php");
-
+<?php  
 
 class RegisterAccount{
 
