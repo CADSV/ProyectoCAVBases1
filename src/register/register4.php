@@ -61,7 +61,7 @@ require_once("../../data/config.php");
             <div class = "container">
                 <div class="formulario">
                     <form method="POST"> 
-                        <input type="radio" name="membership" value="1" id="Basico" required >      <label for="Basico">Básico</label>
+                        <input type="radio" name="membership" value="1" id="Gold" required >      <label for="Gold">Gold</label>
                         <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium</label>
                         <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP</label>
                         <div class= "columnas">  
