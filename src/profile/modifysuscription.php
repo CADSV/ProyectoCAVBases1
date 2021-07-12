@@ -87,7 +87,7 @@ require_once("../../data/classes/constants.php");
             ?>
             </div>
 
-        <div class = "line"></div>
+            <div class = "line"></div>
         <div class="modifyplan-container">
             <div class="welcome-container">
                  <div class="text-line">
@@ -95,21 +95,16 @@ require_once("../../data/classes/constants.php");
                 </div>
                 <div class="plan-container">
                     <div>
-                        <form  action="select_profile.php" method=""> 
-                                <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
-                                <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
-                                <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
-
-                                <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
+                        <form method="POST"> 
+                                <input type="radio" name="membership" value="1" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
+                                <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99 </label>
+                                <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99  </label>
+                                <input class="button" type="submit" name="changeSuscriptionButton" value="Cambiar membresía" required> 
                             
                         </form>
                     </div>
-                    <div class = "buttonCancel">
-                            <a href="select_profile.php">Cancelar</a>                                          
-                    </div>
-              
-                </div>
-                                          
+                    <form method="POST"> <input class="buttonCancel" type="submit" name="cancelSuscriptionButton" value="Cancelar suscripción" required> </form>           
+                </div>                                          
             </div>
         </div>
     </div>
