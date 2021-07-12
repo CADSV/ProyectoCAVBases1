@@ -7,10 +7,21 @@
     background-color: #221F1F;
 }
 
+.wrapper {
+    margin: auto; /*centra todo */
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
 header {
     width: 100%;
     height: 20%;
     margin: 20px;
+    display: flex;
+    flex: row wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -22,7 +33,18 @@ section {
     margin: 20px;
     margin-top: 100px;
 }
-.index-header {
+
+
+.logoutButton a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.logoutButton a:hover {
+    text-decoration: underline;
+}
+/* .index-header {
     display: flex;
     position: absolute;
     color: rgb(27, 25, 170);
@@ -33,7 +55,7 @@ section {
     z-index: 2;
     align-items: center;
     justify-content:space-between;
-}
+} */
 
 .container {
     min-width: none;
