@@ -41,18 +41,13 @@ require_once("../../data/classes/constants.php");
 </head>
 <body>
     <div class="wrapper">
-        <div class="background">
-        </div>
             <header>
-                <div class="login-header">
-                    <a href="../../index.php"> 
-                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
-                    </a>          
-                </div>
-                <nav class = "login">
-                    <a href="adminProfile.php">Volver a perfil</a>
+                <a href="../../index.php"> 
+                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
+                </a>          
+                <nav class = "back">
+                    <a href="select_profile.php">Volver a perfiles</a>
                  </nav>
-                
             </header>
         
         <div class = "line"></div>       
@@ -63,11 +58,11 @@ require_once("../../data/classes/constants.php");
 
             <div class="edit-container">  
                              
-                <form  action="adminProfile.php" method="">                            
+                <form  action="select_profile.php" method="">                            
                     <input class="buttonEdit" type="submit" name="plan" value="Guardar" id="Plan"required>    <label for="Premium">   </label>                                                                                            
                 </form>
                 <div class = "buttonCancel">
-                     <a href="adminProfile.php">Cancelar</a>                                          
+                     <a href="select_profile.php">Cancelar</a>                                          
                 </div>
             </div>
 
@@ -97,16 +92,21 @@ require_once("../../data/classes/constants.php");
                 </div>
                 <div class="plan-container">
                     <div>
-                        <form method="POST"> 
-                                <input type="radio" name="membership" value="1" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
-                                <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99 </label>
-                                <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99  </label>
-                                <input class="button" type="submit" name="changeSuscriptionButton" value="Cambiar membresía" required> 
+                        <form  action="select_profile.php" method=""> 
+                                <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
+                                <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
+                                <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
+
+                                <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
                             
                         </form>
                     </div>
-                    <form method="POST"> <input class="buttonCancelar" type="submit" name="cancelSuscriptionButton" value="Cancelar suscripción" required> </form>           
-                </div>                                          
+                    <div class = "buttonCancel">
+                            <a href="select_profile.php">Cancelar</a>                                          
+                    </div>
+              
+                </div>
+                                          
             </div>
         </div>
     </div>
