@@ -14,7 +14,7 @@ body {
 
 .carlevixLogo {
     margin: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 .line {
@@ -121,7 +121,6 @@ header {
 }
 
 .modifyplan-container {
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,7 +128,7 @@ header {
 .welcome-container {
     align-items: center;
     justify-content: center;
-    min-height: 300px;
+    min-height: 280px;
     max-height: 100%;
     width: 1000px;
     padding: 20px 35px;
@@ -159,12 +158,6 @@ header {
     justify-content: center;
     text-shadow: 1px 1px rgba(0,0,0,0.8);
 }
-
-/* .welcome-container .button {
-    width: 30%;
-    padding: 1em 0.9em;
-} */
-
 
 a{
     text-decoration: none;
@@ -199,7 +192,6 @@ a{
     text-decoration: none;
     border: none;
     min-width:fit-content;
-    box-shadow: 0 1px 1px rgba(0,0,0,.25);
     color: #fff;
     background-color: #959392;
     padding: .75rem 10px;
@@ -214,6 +206,11 @@ a{
     opacity: 0.5;
     cursor: pointer;
     transition-duration: 0.3s; 
+}
+
+.buttonCancel a {
+    text-decoration: none;
+    background-color: #959392;
 }
 
 
