@@ -110,10 +110,10 @@ require_once("../../data/config.php");
                     </form>
 
                  
-
-                <form method="GET">
-                 <div class = "buttons">
-                    
+            
+                
+                 <div class = "OmitirButtonForm">
+                 <form method="GET">
                         <!-- <div class = "buttonOmitir"> -->
                             <div class = "buttonOmitir">  
                                 <input type="submit" class = "marginButtonGray" name = "Omitir" value ="Omitir">
@@ -122,7 +122,6 @@ require_once("../../data/config.php");
                         <!-- </div> -->
                  </div>
                  </form>
-                
             </div>
         </section>
 </body>
