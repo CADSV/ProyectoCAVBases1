@@ -3,10 +3,16 @@
 require_once("../../data/config.php");
 
 
-if (!isset($_SESSION["userLoggedIn"])){
-    header("Location: register1.php");
-}
+    if (!isset($_SESSION["userLoggedIn"])){
+        header("Location: register1.php");
+    }
 
+    if(isset($_POST["submitButton"])){
+
+        $IdMembership = $_POST["membership"];
+
+        $_SESSION["IdMembership"] = $IdMembership;
+    }
 ?>
 
 
@@ -52,10 +58,10 @@ if (!isset($_SESSION["userLoggedIn"])){
 
             <div class = "container">
                 <div class="formulario">
-                    <form  action="register5.php" method=""> 
-                        <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico</label>
-                        <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar </label>
-                        <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium   </label>
+                    <form method="POST"> 
+                        <input type="radio" name="plan" value="1" id="membership" required >      <label for="Basico">Básico</label>
+                        <input type="radio" name="plan" value="2" id="membership"required>  <label for="Estandar">Premiun</label>
+                        <input type="radio" name="plan" value="3" id="membership"required>    <label for="Premium">VIP</label>
                         <div class= "columnas">  
                         <p> Precio Mensual</p>
                         <p>  USD 7,99  </p>

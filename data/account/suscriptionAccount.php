@@ -10,19 +10,19 @@ class SuscriptionAccount{
 
     }
 
-    public function suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate){
+    public function suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate, $username, $IdMembership){
         $this->validateName($name);
         $this->validateLastName($lastName);
         $this->validateCardnumber($cardnumber,$cvv);
 
         if(empty($this->errorAray)){
-            return $this->insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate);
+            return $this->insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate, $username, $IdMembership);
         }
 
         return false;
     }
 
-    private function insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate){
+    private function insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate, $username, $IdMembership){
             
         
         $query = $this->connection->prepare("INSERT INTO Paymentcard (CardNumber, CVV, OwnerName, OwnerLastname, ExpDate) 
@@ -35,7 +35,28 @@ class SuscriptionAccount{
         $query->bindValue(":expiredate", $expiredate); 
   
         
-        return $query->execute(); // Retorna true si funcionó la inserción en la base de datos, false si no
+        if($query->execute()) {   // Retorna true si funcionó la inserción en la base de datos, false si no
+            
+            $query2 = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)");
+            $query2->bindValue(":username", $username);
+            $query2->execute();
+
+            $IdUser = $query2;
+
+
+            $query3 = $this->connection->prepare("INSERT INTO IsSuscribed (IdUser, IdMembership, CVV, CardNumber, StartDateSus)
+                                                VALUES (:IdUser, :IdMembership, :CVV, :CardNumber, :StartDateSus)");
+            $query3->bindValue(":IdUser", $IdUser);
+            $query3->bindValue(":IdMembershio", $IdMembershio);
+            $query3->bindValue(":CVV", $CVV);
+            $query3->bindValue(":CardNumber", $CardNumber);
+            $query3->bindValue(":StartDateSus", $StartDateSus);
+            $query3->execute();
+
+            return true;
+        } 
+
+        return false;
     }
 
     private function validateName($name){ // Valida la longitud del nombre
