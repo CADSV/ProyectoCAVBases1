@@ -75,7 +75,7 @@ class SuscriptionAccount{
         $query1->bindValue(":username", $username);
         $query1->execute();
 
-        $userData = $query->fetch(PDO::FETCH_ASSOC);
+        $userData = $query1->fetch(PDO::FETCH_ASSOC);
         $IdUser = $userData["IdUser"];
 
         return $IdUser;
@@ -84,13 +84,13 @@ class SuscriptionAccount{
 
     public function getIdMembership($IdUser){
 
-        $query = $this->connection->prepare(" SELECT IdMembership FROM  issuscribed WHERE (IdUser = :IdUser)"); 
+        $query = $this->connection->prepare(" SELECT IdMembership FROM  issuscribed WHERE (IdUser = :IdUser) AND EndDateSus IS NULL"); 
         $query->bindValue(":IdUser", $IdUser);
         $query->execute();
 
         $userIdMembership = $query->fetch(PDO::FETCH_ASSOC);
         $IdMembership = $userIdMembership["IdMembership"];
-
+        
         return $IdMembership;
     }
 
@@ -98,7 +98,7 @@ class SuscriptionAccount{
     public function getMembershipData($IdMembership){
 
         $query = $this->connection->prepare(" SELECT MembershipName, Price FROM  membership WHERE (IdMembership = :IdMembership)");
-        $query->bindValue(":IdMembership ", $IdMembership);
+        $query->bindValue(":IdMembership", $IdMembership);
         $query->execute();
 
         $membershipData=$query->fetch(PDO::FETCH_ASSOC);

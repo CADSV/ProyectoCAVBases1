@@ -67,10 +67,12 @@ require_once("../../data/classes/constants.php");
 
             <div class ="information-container">
             <?php  
+                     echo "<span class='PlanMessage'>Usuario: $username</span>";
 
-
-                
-            
+                     echo "<span class='PlanMessage'>Plan: $membershipName</span>";
+                     
+                     echo "<span class='PlanMessage'>Precio: $membershipPrice $</span>";
+                                
 
             ?>
             </div>
