@@ -6,6 +6,8 @@ if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
+    $username = $_SESSION["userLoggedIn"];
+
 ?>
 
 
@@ -26,9 +28,14 @@ if (!isset($_SESSION["userLoggedIn"])){
             <a href="../../index.php"> 
                 <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
             </a> 
-            <nav class = "logout">
-                <a href="../login/logout.php">Cerrar Sesión</a>
-            </nav>   
+            <div class = "rightHeader">
+                <a href="">
+                    <img src="../../assets/images/editUserGrey.png" title="EditUser" alt="Editar usuario">   
+                </a>
+                <nav class = "logout">
+                    <a href="../login/logout.php">Cerrar Sesión</a>
+                </nav>  
+            </div>  
         </header>
     </div>
 
@@ -40,29 +47,30 @@ if (!isset($_SESSION["userLoggedIn"])){
 
             <div class = "profilesSelection">
                 <div class ="adminProfile">
-                    <a href="modifysuscription.php" title = "Modificar Suscripción" alt = "Modificar Suscripción">
+                    <a href="" title = "Editar Perfil" alt = "Editar Perfil">
                         <img src="../../assets/images/profiles/editYellow.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
                     </a>
-                    <h2>Alejandro</h2>
+                    <h2><?=$username?></h2>
                 </div>
 
                 <div class ="adminProfile">
-                    <a href="modifysuscription.php" title = "Modificar Suscripción" alt = "Modificar Suscripción">
+                    <a href="" title = "Modificar Suscripción" alt = "Editar Perfil">
                         <img src="../../assets/images/profiles/editBlue.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
                     </a>
-                    <h2>Carlos</h2>
+                    <h2><?=$username?>2</h2>
                 </div>
 
                 <div class ="adminProfile">
-                    <a href="modifysuscription.php" title = "Modificar Suscripción" alt = "Modificar Suscripción">
+                    <a href="" title = "Editar Perfil" alt = "Editar Perfil">
                         <img src="../../assets/images/profiles/editRed.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
                     </a>
-                    <h2>Vicente</h2>
+                    <h2><?=$username?>3</h2>
                 </div> 
 
                 <div class = "newProfile">
-                    <img src="../../assets/images/plus.png" title="Nuevo perfil" alt="Nuevo perfil">
-
+                    <a href="" title = "Nuevo perfil" alt = "Nuevo perfil" >
+                        <img src="../../assets/images/plus.png" title="Nuevo perfil" alt="Nuevo perfil">
+                    </a>
                 </div>
             </div>
 

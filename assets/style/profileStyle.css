@@ -25,6 +25,26 @@ header {
 }
 
 
+.rightHeader {
+    width: 20%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.rightHeader a img {
+    height: 50px;
+    width: 50px;
+}
+
+.rightHeader a img:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+
 section {
     display: flex; 
     align-items: center;
@@ -36,7 +56,6 @@ section {
 
 
 .logout a {
-    cursor: pointer;
     align-self: center;
     text-decoration: none;
     justify-content: center;
@@ -51,12 +70,12 @@ section {
     font-size: 16px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-    transition-duration: 0.4s;
 }
 
 .logout a:hover {
-    background-color: #DCD8D6;
-    box-shadow: none;
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 
 
