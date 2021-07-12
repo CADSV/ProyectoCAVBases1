@@ -39,7 +39,7 @@ if (!isset($_SESSION["userLoggedIn"])){
 
             <div class="edit-container">  
                              
-                <form  action="adminProfile.php" method="">                            
+                <form  action="select_profile.php" method="">                            
                     <input class="buttonEdit" type="submit" name="plan" value="Guardar" id="Plan"required>    <label for="Premium">   </label>                                                                                            
                 </form>
                 <div class = "buttonCancel">
@@ -77,6 +77,7 @@ if (!isset($_SESSION["userLoggedIn"])){
                                 <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
                                 <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
                                 <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
+
                                 <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
                             
                         </form>

@@ -96,9 +96,13 @@ header {
 
 .plan-container  {
     display: flex;
-    
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
     
 }
+
 .plan-container form {
     align-items: center;
     justify-content: center;
@@ -175,6 +179,7 @@ a{
     border-radius: 3px;
     padding: .75rem 10px;
     margin-right: 20px;
+    margin-left: 50px;
     background-color: #346dd8;
     color: #fff;
     font-weight: 700;
