@@ -1,5 +1,5 @@
 <?php  
-
+error_reporting(E_ALL ^ E_WARNING);
 class SuscriptionAccount{
 
     private $connection;
@@ -45,19 +45,26 @@ class SuscriptionAccount{
         $query2->bindValue(":IdUser", $IdUser);
         $query2->execute();
         $userData2 = $query2->fetch(PDO::FETCH_ASSOC);
-        $CardNumber = $userData2["CardNumber"];
-        $CVV = $userData2["CVV"];
+        if($query2->rowCount() != 0){
+            $CardNumber = $userData2["CardNumber"];
+            $CVV = $userData2["CVV"];
 
-        $query3 = $this->connection->prepare("UPDATE IsSuscribed SET EndDateSus = CURRENT_TIMESTAMP WHERE (IdUser = :IdUser) AND EndDateSus IS NULL"); // Terminar la suscripción actual
-        $query3->bindValue(":IdUser", $IdUser);
-        $query3->execute();
+            $query3 = $this->connection->prepare("UPDATE IsSuscribed SET EndDateSus = CURRENT_TIMESTAMP WHERE (IdUser = :IdUser) AND EndDateSus IS NULL"); // Terminar la suscripción actual
+            $query3->bindValue(":IdUser", $IdUser);
+            $query3->execute();
 
-        $query4 = $this->connection->prepare("INSERT INTO IsSuscribed (IdUser, IdMembership, CVV, CardNumber) VALUES (:IdUser, :IdMembership, :CVV, :CardNumber)"); // Empezar nueva suscripción
-        $query4->bindValue(":IdUser", $IdUser);
-        $query4->bindValue(":IdMembership", $IdMembership);
-        $query4->bindValue(":CVV", $CVV);
-        $query4->bindValue(":CardNumber", $CardNumber);
-        $query4->execute();
+            $query4 = $this->connection->prepare("INSERT INTO IsSuscribed (IdUser, IdMembership, CVV, CardNumber) VALUES (:IdUser, :IdMembership, :CVV, :CardNumber)"); // Empezar nueva suscripción
+            $query4->bindValue(":IdUser", $IdUser);
+            $query4->bindValue(":IdMembership", $IdMembership);
+            $query4->bindValue(":CVV", $CVV);
+            $query4->bindValue(":CardNumber", $CardNumber);
+            $query4->execute();
+            return true;
+
+        }
+        
+        return false;
+        
     }
 
     private function insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate, $username, $IdMembership, $postalcode, $avenueStreet, $buildingHouse){
@@ -126,10 +133,15 @@ class SuscriptionAccount{
         $query->bindValue(":IdUser", $IdUser);
         $query->execute();
 
-        $userIdMembership = $query->fetch(PDO::FETCH_ASSOC);
-        $IdMembership = $userIdMembership["IdMembership"];
+
+        if($query->rowCount()!= 0){
+            $userIdMembership = $query->fetch(PDO::FETCH_ASSOC);
+            $IdMembership = $userIdMembership["IdMembership"];
+            return $IdMembership;
+        }
+        return null;     
         
-        return $IdMembership;
+        
     }
 
 
