@@ -11,15 +11,6 @@ require_once("../../data/classes/constants.php");
 
     $suscriptionAccount= new SuscriptionAccount($connection);
 
-    $username = $_SESSION["userLoggedIn"];
-
-    $IdUser = $suscriptionAccount->getIdUser($username);
-    $IdMembership = $suscriptionAccount->getIdMembership($IdUser);
-    $membershipData = $suscriptionAccount->getMembershipData($IdMembership);
-    
-    $membershipName=$membershipData["MembershipName"];
-    $membershipPrice=$membershipData["Price"];
-
     if(isset($_POST["changeSuscriptionButton"])) {
 
         $username = $_SESSION["userLoggedIn"];
@@ -50,13 +41,18 @@ require_once("../../data/classes/constants.php");
 </head>
 <body>
     <div class="wrapper">
+        <div class="background">
+        </div>
             <header>
-                <a href="../../index.php"> 
-                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
-                </a>          
-                <nav class = "back">
-                    <a href="select_profile.php">Volver a perfiles</a>
+                <div class="login-header">
+                    <a href="../../index.php"> 
+                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
+                    </a>          
+                </div>
+                <nav class = "login">
+                    <a href="adminProfile.php">Volver a perfil</a>
                  </nav>
+                
             </header>
         
         <div class = "line"></div>       
@@ -67,24 +63,30 @@ require_once("../../data/classes/constants.php");
 
             <div class="edit-container">  
                              
-                <form  action="select_profile.php" method="">                            
+                <form  action="adminProfile.php" method="">                            
                     <input class="buttonEdit" type="submit" name="plan" value="Guardar" id="Plan"required>    <label for="Premium">   </label>                                                                                            
                 </form>
                 <div class = "buttonCancel">
-                     <a href="select_profile.php">Cancelar</a>                                          
+                     <a href="adminProfile.php">Cancelar</a>                                          
                 </div>
             </div>
 
             <div class ="information-container">
-            <?php  
-                     echo "<span class='PlanMessage'>Usuario: $username</span>";
+                <div class = "personalinformation-container">
+                    <h3>Alejandro Carlevix</h3>
+                    <h3>alejandro@carlevix.com</h3> 
+                    <h3>Contraseña: *********</h3>
+                    <h3>Telefono: +58 412 0555556</h3>
+                </div>
 
-                     echo "<span class='PlanMessage'>Plan: $membershipName</span>";
-                     
-                     echo "<span class='PlanMessage'>Precio: $membershipPrice $</span>";
-                                
-
-            ?>
+                <div class ="personalinformation-container">
+                    <h3>Direccion</h3>
+                    <h3>Residencias Morichal Apto 3-A , Los Chaguaramos </h3>
+                    <h3>Caracas, Venezuela</h3> 
+                    <div class = "line"></div>
+                    <h3>VISA **** **** **** 5896</h3>
+                    <h3>Fecha de pago: </h3>
+                </div>
             </div>
 
         <div class = "line"></div>
@@ -95,21 +97,16 @@ require_once("../../data/classes/constants.php");
                 </div>
                 <div class="plan-container">
                     <div>
-                        <form  action="select_profile.php" method=""> 
-                                <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
-                                <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
-                                <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
-
-                                <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
+                        <form method="POST"> 
+                                <input type="radio" name="membership" value="1" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
+                                <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99 </label>
+                                <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99  </label>
+                                <input class="button" type="submit" name="changeSuscriptionButton" value="Cambiar membresía" required> 
                             
                         </form>
                     </div>
-                    <div class = "buttonCancel">
-                            <a href="select_profile.php">Cancelar</a>                                          
-                    </div>
-              
-                </div>
-                                          
+                    <form method="POST"> <input class="buttonCancelar" type="submit" name="cancelSuscriptionButton" value="Cancelar suscripción" required> </form>           
+                </div>                                          
             </div>
         </div>
     </div>
