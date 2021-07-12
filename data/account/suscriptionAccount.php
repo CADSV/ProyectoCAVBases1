@@ -68,6 +68,44 @@ class SuscriptionAccount{
         return false;
     }
 
+
+    public function getIdUser($username){
+
+        $query1 = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)"); // Buscar IdUser del User logueado actualmente
+        $query1->bindValue(":username", $username);
+        $query1->execute();
+
+        $userData = $query->fetch(PDO::FETCH_ASSOC);
+        $IdUser = $userData["IdUser"];
+
+        return $IdUser;
+    }
+
+
+    public function getIdMembership($IdUser){
+
+        $query = $this->connection->prepare(" SELECT IdMembership FROM  issuscribed WHERE (IdUser = :IdUser)"); 
+        $query->bindValue(":IdUser", $IdUser);
+        $query->execute();
+
+        $userIdMembership = $query->fetch(PDO::FETCH_ASSOC);
+        $IdMembership = $userIdMembership["IdMembership"];
+
+        return $IdMembership;
+    }
+
+
+    public function getMembershipData($IdMembership){
+
+        $query = $this->connection->prepare(" SELECT MembershipName, Price FROM  membership WHERE (IdMembership = :IdMembership)");
+        $query->bindValue(":IdMembership ", $IdMembership);
+        $query->execute();
+
+        $membershipData=$query->fetch(PDO::FETCH_ASSOC);
+
+        return $membershipData;
+    }
+
     private function validateName($name){ // Valida la longitud del nombre
         if(strlen($name)< 2 || strlen($name)> 25){
             array_push($this->errorArray, Constants::$nameLength);

@@ -1,11 +1,24 @@
 <?php
 
 require_once("../../data/config.php");
+require_once("../../data/account/suscriptionAccount.php");
+require_once("../../data/classes/constants.php");
 
 
-if (!isset($_SESSION["userLoggedIn"])){
-    header("Location: ../../index.php");
-}
+    if (!isset($_SESSION["userLoggedIn"])){
+        header("Location: ../../index.php");
+    }
+
+    $suscriptionAccount= new SuscriptionAccount($connection);
+
+    $username = $_SESSION["userLoggedIn"];
+
+    $IdUser = $suscriptionAccount->getIdUser($username);
+    $IdMembership = $suscriptionAccount->getIdMembership($IdUser);
+    $membershipData = $suscriptionAccount->getMembershipData($IdMembership);
+    
+    $membershipName=$membershipData["MembershipName"];
+    $membershipPrice=$membershipData["Price"];
 
 ?>
 
@@ -55,33 +68,9 @@ if (!isset($_SESSION["userLoggedIn"])){
             <div class ="information-container">
             <?php  
 
-                $query1 = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)"); // Buscar IdUser del User logueado actualmente
-                $query1->bindValue(":username", $username);
-                $query1->execute();
 
-                $userData = $query->fetch(PDO::FETCH_ASSOC);
-                $IdUser = $userData["IdUser"];
-
-
-                $query2 = $this->connection->prepare(" SELECT IdMembership FROM  issuscribed WHERE (IdUser = :IdUser)"); 
-                $query2->bindValue(":IdUser", $IdUser);
-                $query2->execute();
-
-
-                $userIdMembership = $query2->fetch(PDO::FETCH_ASSOC);
-                $IdMembership = $userIdMembership["IdMembership"];
-
-                $query3 = $this->connection->prepare(" SELECT MembershipName, Price FROM  membership WHERE (IdMembership = :IdMembership)");
-                $query3->bindValue(":IdMembership ", $IdMembership);
-                $query3->execute();
-
-                $membershipData=$query3->fetch(PDO::FETCH_ASSOC);
-
-                $membershipName=$membershipData["MembershipName"];
-                $membershipPrice=$membershipData["Price"];
-
-                echo $membershipName;
-                echo $membershipPrice;
+                
+            
 
             ?>
             </div>
