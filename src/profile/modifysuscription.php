@@ -27,6 +27,7 @@ require_once("../../data/classes/constants.php");
 
         $success= $suscriptionAccount->modifySuscription($username, $IdMembership);
         echo '<script language="javascript">alert("Ha cambiado de plan exitosamente");window.location.href="select_profile.php"</script>';
+    
     }
 
     if(isset($_POST["cancelSuscriptionButton"])) {
@@ -34,7 +35,7 @@ require_once("../../data/classes/constants.php");
         $username = $_SESSION["userLoggedIn"];
 
         $success= $suscriptionAccount->cancelSuscription($username);
-        echo '<script language="javascript">alert("Ha eliminado su plan, y ya no está suscrito");window.location.href="select_profile.php"</script>';
+        echo '<script language="javascript">alert("Ha cancelado su plan, y ya no está suscrito");window.location.href="select_profile.php"</script>';
     }
 
 ?>
@@ -64,7 +65,7 @@ require_once("../../data/classes/constants.php");
         <div class = "line"></div>       
 
             <div class="text-line">
-                <h1>Informacion de suscripción</h1>
+                <h1>Información de suscripción</h1>
             </div>
 
             <div class="edit-container">  
@@ -98,9 +99,9 @@ require_once("../../data/classes/constants.php");
                 <div class="plan-container">
                     <div>
                         <form method="POST"> 
-                                <input type="radio" name="membership" value="1" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
-                                <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99 </label>
-                                <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99  </label>
+                                <input type="radio" name="membership" value="1" id="Gold" required >      <label for="Gold"> Gold 7,99$</label>
+                                <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99$</label>
+                                <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99$</label>
                                 <input class="button" type="submit" name="changeSuscriptionButton" value="Cambiar membresía" required> 
                             
                         </form>
