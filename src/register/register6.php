@@ -117,7 +117,7 @@ require_once("../../data/classes/constants.php");
                 </div>
                 
                     <div class = "buttonOmitir">
-                        <div class = "marginbuttonGray">
+                        <div class = "marginbuttonChangePlan">
                             <a href="register4.php">Cambiar Plan</a>
                         </div>
                     </div>
