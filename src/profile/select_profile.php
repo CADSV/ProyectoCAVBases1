@@ -7,6 +7,9 @@ if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
+
+    $username = $_SESSION["userLoggedIn"];
+
 ?>
 
 <!DOCTYPE html>
@@ -26,9 +29,14 @@ if (!isset($_SESSION["userLoggedIn"])){
             <a href="../../index.php"> 
                 <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
             </a>    
+            <div class = "rightHeader">
+                <a href="modifysuscription.php">
+                    <img src="../../assets/images/editUserGrey.png" title="EditUser" alt="Editar usuario">   
+                </a>
                 <nav class = "logout">
                     <a href="../login/logout.php">Cerrar Sesión</a>
-                </nav>         
+                </nav>  
+            </div>       
         </header>
     </div>
 
@@ -40,23 +48,30 @@ if (!isset($_SESSION["userLoggedIn"])){
 
             <div class = "profilesSelection">
                 <div class ="profile">
-                    <img src="../../assets/images/profiles/yellowProfile.png" title="Profile" alt="Profile">
-                    <h2>Alejandro</h2>
+                    <a href="">
+                        <img src="../../assets/images/profiles/yellowProfile.png" title="Profile" alt="Profile">
+                    </a>
+                    <h2><?=$username?></h2>
                 </div>
 
                 <div class ="profile">
-                    <img src="../../assets/images/profiles/blueProfile.png" title="Profile" alt="Profile">
-                    <h2>Carlos</h2>
+                    <a href="">
+                        <img src="../../assets/images/profiles/blueProfile.png" title="Profile" alt="Profile">
+                    </a>
+                    <h2><?=$username?>2</h2>
                 </div>
 
                 <div class ="profile">
-                    <img src="../../assets/images/profiles/redProfile.png" title="Profile" alt="Profile">
-                    <h2>Vicente</h2>
+                    <a href="">
+                        <img src="../../assets/images/profiles/redProfile.png" title="Profile" alt="Profile">
+                    </a>
+                    <h2><?=$username?>3</h2>
                 </div>
 
                 <div class = "newProfile">
-                    <img src="../../assets/images/plus.png" title="New Profile" alt="New Profile">
-
+                    <a href="" title = "Nuevo perfil" alt = "Nuevo perfil" >
+                        <img src="../../assets/images/plus.png" title="Nuevo perfil" alt="Nuevo perfil">
+                    </a>
                 </div>
             </div>
 

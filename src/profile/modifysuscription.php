@@ -20,6 +20,21 @@ require_once("../../data/classes/constants.php");
     $membershipName=$membershipData["MembershipName"];
     $membershipPrice=$membershipData["Price"];
 
+    if(isset($_POST["changeSuscriptionButton"])) {
+
+        $username = $_SESSION["userLoggedIn"];
+        $IdMembership = $_POST["membership"];
+
+        $success= $suscriptionAccount->modifySuscription($username, $IdMembership);
+    }
+
+    if(isset($_POST["cancelSuscriptionButton"])) {
+
+        $username = $_SESSION["userLoggedIn"];
+
+        $success= $suscriptionAccount->cancelSuscription($username);
+    }
+
 ?>
 
 
@@ -35,18 +50,13 @@ require_once("../../data/classes/constants.php");
 </head>
 <body>
     <div class="wrapper">
-        <div class="background">
-        </div>
             <header>
-                <div class="login-header">
-                    <a href="../../index.php"> 
-                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
-                    </a>          
-                </div>
-                <nav class = "login">
-                    <a href="adminProfile.php">Volver a perfil</a>
+                <a href="../../index.php"> 
+                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
+                </a>          
+                <nav class = "back">
+                    <a href="select_profile.php">Volver a perfiles</a>
                  </nav>
-                
             </header>
         
         <div class = "line"></div>       
@@ -57,11 +67,11 @@ require_once("../../data/classes/constants.php");
 
             <div class="edit-container">  
                              
-                <form  action="adminProfile.php" method="">                            
+                <form  action="select_profile.php" method="">                            
                     <input class="buttonEdit" type="submit" name="plan" value="Guardar" id="Plan"required>    <label for="Premium">   </label>                                                                                            
                 </form>
                 <div class = "buttonCancel">
-                     <a href="adminProfile.php">Cancelar</a>                                          
+                     <a href="select_profile.php">Cancelar</a>                                          
                 </div>
             </div>
 
@@ -85,28 +95,23 @@ require_once("../../data/classes/constants.php");
                 </div>
                 <div class="plan-container">
                     <div>
-                        <form  action="adminProfile.php" method=""> 
+                        <form  action="select_profile.php" method=""> 
                                 <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
                                 <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
                                 <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
+
                                 <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
                             
                         </form>
                     </div>
-                    <div class = "buttonCancelar">
-                            <a href="adminProfile.php">Cancelar</a>                                          
+                    <div class = "buttonCancel">
+                            <a href="select_profile.php">Cancelar</a>                                          
                     </div>
               
                 </div>
-                                           
+                                          
             </div>
         </div>
-
-
-                
-
     </div>
-       
-    
 </body>
 </html>
