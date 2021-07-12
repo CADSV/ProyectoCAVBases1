@@ -15,8 +15,8 @@ require_once("../../data/classes/constants.php");
 
     $IdUser = $suscriptionAccount->getIdUser($username);
     $IdMembership = $suscriptionAccount->getIdMembership($IdUser);
-    if($IdMembership){
 
+    if($IdMembership){
         $membershipData = $suscriptionAccount->getMembershipData($IdMembership);
         $membershipName=$membershipData["MembershipName"];
         $membershipPrice=$membershipData["Price"]." $";
@@ -33,6 +33,9 @@ require_once("../../data/classes/constants.php");
         $IdMembership = $_POST["membership"];
 
         $success= $suscriptionAccount->modifySuscription($username, $IdMembership);
+        if(!$success){
+            header("Location: ../register/register4.php");
+        }
         echo '<script language="javascript">alert("Ha cambiado de plan exitosamente");window.location.href="select_profile.php"</script>';
     }
 
