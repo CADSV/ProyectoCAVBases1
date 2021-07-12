@@ -1,5 +1,5 @@
 <?php
-/*error_reporting(E_ALL ^ E_WARNING);*/
+error_reporting(E_ALL ^ E_WARNING);
 require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
 require_once("../../data/account/suscriptionAccount.php");
@@ -25,15 +25,12 @@ require_once("../../data/classes/constants.php");
         $username = $_SESSION["userLoggedIn"];
         $IdMembership = $_SESSION["IdMembership"];
 
-        echo $IdMembership;
-        echo $username;
-
         $success= $suscriptionAccount->suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate, $username, $IdMembership);
 
-        /*if($success) {
+        if($success) {
             
             header("Location: ../profile/select_profile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
-        }*/
+        }
         
 
     }
