@@ -29,7 +29,7 @@ class SuscriptionAccount{
         $userData1 = $query->fetch(PDO::FETCH_ASSOC);
         $IdUser = $userData1["IdUser"];
 
-        $query3 = $this->connection->prepare("UPDATE IsSuscribed SET EndDateSus = CURRENT_TIMESTAMP WHERE (IdUser = :IdUser)"); // Terminar la suscripción actual
+        $query3 = $this->connection->prepare("UPDATE IsSuscribed SET EndDateSus = CURRENT_TIMESTAMP WHERE (IdUser = :IdUser) AND EndDateSus IS NULL"); // Terminar la suscripción actual
         $query3->bindValue(":IdUser", $IdUser);
         $query3->execute();
     }
@@ -48,7 +48,7 @@ class SuscriptionAccount{
         $CardNumber = $userData2["CardNumber"];
         $CVV = $userData2["CVV"];
 
-        $query3 = $this->connection->prepare("UPDATE IsSuscribed SET EndDateSus = CURRENT_TIMESTAMP WHERE (IdUser = :IdUser)"); // Terminar la suscripción actual
+        $query3 = $this->connection->prepare("UPDATE IsSuscribed SET EndDateSus = CURRENT_TIMESTAMP WHERE (IdUser = :IdUser) AND EndDateSus IS NULL"); // Terminar la suscripción actual
         $query3->bindValue(":IdUser", $IdUser);
         $query3->execute();
 
