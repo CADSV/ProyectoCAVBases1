@@ -21,16 +21,16 @@ if (!isset($_SESSION["userLoggedIn"])){
 </head>
 
 <body>
-    <header>
-        <a href="../../index.php"> 
-            <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
-        </a> 
-        <div class="index-header">
-                <a href="../login/logout.php"> 
-                    <button class="button">Cerrar sesión</button>
-                </a>        
-        </div>
-    </header>
+    <div class="wrapper">
+        <header>
+            <a href="../../index.php"> 
+                <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
+            </a> 
+            <nav class = "logout">
+                <a href="../login/logout.php">Cerrar Sesión</a>
+            </nav>   
+        </header>
+    </div>
 
     <section>
         <div class = "container">
