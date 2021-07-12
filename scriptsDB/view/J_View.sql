@@ -1,4 +1,4 @@
--- REPORTE  J. Liste los usuarios con suscripción activa del plan Premiun y del plan VIP, que tengan asociados al menos 2 perfiles.
+-- REPORTE  J. Liste los usuarios con suscripción activa del plan Premium y del plan VIP, que tengan asociados al menos 2 perfiles.
 
 CREATE VIEW reporteJ AS
 SELECT Profile.IdUser, COUNT(IdProfile), User.Username, Membership.MembershipName
