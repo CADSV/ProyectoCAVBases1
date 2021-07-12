@@ -29,7 +29,7 @@ if (!isset($_SESSION["userLoggedIn"])){
                 <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
             </a> 
             <div class = "rightHeader">
-                <a href="">
+                <a href="modifysuscription.php">
                     <img src="../../assets/images/editUserGrey.png" title="EditUser" alt="Editar usuario">   
                 </a>
                 <nav class = "logout">
