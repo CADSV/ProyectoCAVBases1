@@ -1,3 +1,14 @@
+<?php
+
+require_once("../../data/config.php");
+
+
+if (!isset($_SESSION["userLoggedIn"])){
+    header("Location: ../../index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,11 +21,16 @@
 </head>
 
 <body>
-    <header>
-        <a href="../../index.php"> 
-            <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
-        </a>          
-    </header>
+    <div class="wrapper">
+        <header>
+            <a href="../../index.php"> 
+                <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
+            </a>    
+                <nav class = "logout">
+                    <a href="../login/logout.php">Cerrar Sesión</a>
+                </nav>         
+        </header>
+    </div>
 
     <section>
         <div class = "container">

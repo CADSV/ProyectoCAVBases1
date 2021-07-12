@@ -7,10 +7,10 @@
 CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     
     IdUser      INT(10) UNIQUE NOT NULL AUTO_INCREMENT, 
-    IdCity      INT(10) NOT NULL, 
+    IdCity      INT(10),     -- NULL: Ciudad Desconocida.
     Username    VARCHAR(60) UNIQUE NOT NULL , 
     EmailUser   VARCHAR(60) UNIQUE NOT NULL,    
-    PasswordUser    VARCHAR(20) NOT NULL,
+    PasswordUser    VARCHAR(255) NOT NULL,
     NameUser        VARCHAR(30) NOT NULL,
     LastNameUser    VARCHAR(30) NOT NULL,
     UserIsSuscribed     BIT(1)  NOT NULL DEFAULT 0, -- 1: Suscrito, 0: No suscrito
@@ -25,7 +25,7 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     CONSTRAINT EMAIL_Domain CHECK (EmailUser LIKE '%_@__%.__%'),
     CONSTRAINT GENDER_Domain CHECK (UserGender='M' OR UserGender='F' OR UserGender='N/A'),
 
-    CONSTRAINT User_FK FOREIGN KEY (IdCity) REFERENCES Carlevix.City(IdCity) ON DELETE CASCADE ON UPDATE CASCADE  -- Si se elimina la ciudad, no es necesario eliminar a los usuarios que viven en ella
+    CONSTRAINT User_FK FOREIGN KEY (IdCity) REFERENCES Carlevix.City(IdCity) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
     CREATE TABLE IsSuscribed ( -- Relación entre usuario y membresía, que indica suscripción actual o pasada
@@ -33,11 +33,11 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
     IdUser INT(10) NOT NULL, 
     IdMembership INT(10) NOT NULL,
     CVV INT(3) NOT NULL,
-    CardNumber INT(20) NOT NULL,
-    StartDateSus DATETIME NOT NULL, 
+    CardNumber BIGINT(20) NOT NULL,
+    StartDateSus DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     EndDateSus DATETIME,
     
-    CONSTRAINT IsSuscribed_PK PRIMARY KEY (StartDateSus),
+    CONSTRAINT IsSuscribed_PK PRIMARY KEY (IdUser, StartDateSus),
     
     CONSTRAINT IsSuscribed_FK1 FOREIGN KEY (IdUser) REFERENCES Carlevix.User(IdUser) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT IsSuscribed_FK2 FOREIGN KEY (IdMembership) REFERENCES Carlevix.Membership(IdMembership) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -46,7 +46,7 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
 
 
 
-/* CREATE DOMAIN PROFILE_PHOTO_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3, 4, 5)); --   1: Azul 2: Rojo 3: Amarillo 4: Verde 5: Morado */
+-- CREATE DOMAIN PROFILE_PHOTO_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3, 4, 5)); --   1: Azul 2: Rojo 3: Amarillo 4: Verde 5: Morado */
 
 
 CREATE TABLE Profile ( -- Perfil que tiene usuario en Carlevix para ver y preferir contenidos
@@ -64,12 +64,12 @@ CREATE TABLE Profile ( -- Perfil que tiene usuario en Carlevix para ver y prefer
 );
 
 
-/* CREATE DOMAIN RELEVANCE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2)); -- 1: Lead (Principal), 2: Secondary (Secundario) */
+-- CREATE DOMAIN RELEVANCE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2)); -- 1: Lead (Principal), 2: Secondary (Secundario) */
 
 CREATE TABLE IsAbout ( -- Es sobre, relación entre contenido y género (o categoría)
 
     IdContent INT(10) NOT NULL,
-    IdGenre INT(10) NOT NULL,
+    IdGenre INT(10) NOT NULL, 
     Relevance INT(1) NOT NULL,
 
     CONSTRAINT IsAbout_PK PRIMARY KEY (IdContent, IdGenre),
@@ -84,34 +84,34 @@ CREATE TABLE IsAbout ( -- Es sobre, relación entre contenido y género (o categ
 CREATE TABLE FeatureContent( -- Contenido individual, como películas
     
     IdContent       INT(10)  UNIQUE NOT NULL, 
-    TitleCont       VARCHAR(30)  NOT NULL,
+    TitleCont       VARCHAR(100)  NOT NULL,
     ReleaseYearCont YEAR NOT NULL,
-    IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, --1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
-    ReqSusCont      BIT(1) NOT NULL DEFAULT 0, --1: Requiere suscripcion, 0: no requiere suscripcion
+    IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, -- 1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
+    ReqSusCont      BIT(1) NOT NULL DEFAULT 0, -- 1: Requiere suscripcion, 0: no requiere suscripcion
     ContentImage    VARCHAR(250)  NOT NULL,
     Description     VARCHAR(250)  NOT NULL,
     FeatureRunTime  TIME NOT NULL,
     
     CONSTRAINT FeatureContent_PK PRIMARY KEY (IdContent),
 
-    CONSTRAINT FeatureContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
+    CONSTRAINT FeatureContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE 
 ); 
 
 
 CREATE TABLE EpisodicContent( -- Contenido episódico, es decir que tiene varias partes (temporadas y episodios)
     
-    IdContent       INT(10)  UNIQUE NOT NULL, --DEFINIR COMO CLAVE FORANEA
-    TitleCont       VARCHAR(30)  NOT NULL,
+    IdContent       INT(10)  UNIQUE NOT NULL, 
+    TitleCont       VARCHAR(100)  NOT NULL,
     ReleaseYearCont YEAR NOT NULL,
-    IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, --1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
-    ReqSusCont      BIT(1) NOT NULL DEFAULT 0, --1: Requiere suscripcion, 0: no requiere suscripcion
+    IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, -- 1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
+    ReqSusCont      BIT(1) NOT NULL DEFAULT 0, -- 1: Requiere suscripcion, 0: no requiere suscripcion
     ContentImage    VARCHAR(250)  NOT NULL,
     Description     VARCHAR(250)  NOT NULL,
     EpisodicTotalRunTime    TIME NOT NULL ,
 
     CONSTRAINT EpisodicContent_PK PRIMARY KEY (IdContent),
     
-    CONSTRAINT EpisodicContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
+    CONSTRAINT EpisodicContent_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE 
 ); 
 
 
@@ -124,7 +124,7 @@ CREATE TABLE Season( -- Temporada que tiene contenido episódico, es decir grupo
 
     CONSTRAINT Season_PK PRIMARY KEY (IdSeason, IdContent),
     
-    CONSTRAINT Season_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE -- Verificar esto
+    CONSTRAINT Season_FK FOREIGN KEY (IdContent) REFERENCES Carlevix.Content(IdContent) ON DELETE CASCADE ON UPDATE CASCADE 
 );
 
 
@@ -153,11 +153,11 @@ CREATE TABLE Directed ( -- Dirige, relación entre director y contenido
 );
 
 
-/* CREATE DOMAIN ROLE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3)); -- 1: Lead (Principal), 2: Side (De reparto), 3: Guest (Invitado) */
+-- CREATE DOMAIN ROLE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3)); -- 1: Lead (Principal), 2: Side (De reparto), 3: Guest (Invitado) */
 
 CREATE TABLE Stars  ( -- Actúa, relación entre actor y contenido
 
-    IdWorker    INT(10) NOT NULL,  
+    IdWorker    INT(10) NOT NULL, 
     IdContent   INT(10) NOT NULL, 
     Role        INT(1) NOT NULL, 
 

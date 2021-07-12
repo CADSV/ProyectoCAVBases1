@@ -29,11 +29,14 @@ body {
 }
 
 
+.carlevixLogo {
+    margin-left: 20px;
+}
+
 .index-header {
     display: flex;
     position: absolute;
-    left: 0;
-    top: 0;
+    margin: 20px 20px 0px 0px;
     width: 100%;
     border-bottom: transparent;
     z-index: 2;

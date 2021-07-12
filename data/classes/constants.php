@@ -8,8 +8,12 @@ class Constants {
     public static $emailsDontMatch = "Los correos no coinciden";
     public static $emailInvalid = "Correo inválido";
     public static $emailTaken = "Correo ya existente";
-
+    public static $passwordsDontMatch = "Las contraseñas no coinciden";
+    public static $passwordLength = "La contraseña debe tener entre 5 y 25 caracteres";
+    public static $phoneNumberincorrect = "Número telefónico inválido";
+    public static $InvalidCardNumber = "Número de tarjeta inválido";
+    public static $cardTaken = "Número de tarjeta existente";
+    public static $loginFailed = "Nombre de usuario y/o contraseña inválido";
 }
-
 
 ?>

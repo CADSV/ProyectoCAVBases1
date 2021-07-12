@@ -1,27 +1,40 @@
 <?php
+/*error_reporting(E_ALL ^ E_WARNING);*/
 require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
-require_once("../../data/account/registerAccount.php");
+require_once("../../data/account/suscriptionAccount.php");
 require_once("../../data/classes/constants.php");
 
-    $registerAccount= new RegisterAccount($connection);
+    if (!isset($_SESSION["userLoggedIn"])){
+        header("Location: register1.php");
+    }
+
+    $suscriptionAccount= new SuscriptionAccount($connection);
 
     if(isset($_POST["submitButton"])) { // Si el botón Enviar es presionado, entonces...
        
         $name = FormSanitizer::sanitizeFormString($_POST["name"]);  //Validacion del nombre. 
         $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
-        $username = FormSanitizer::sanitizeFormUsername($_POST["username"]);
-        $email = FormSanitizer::sanitizeFormEmail($_POST["email"]);
-        $email2 = FormSanitizer::sanitizeFormEmail($_POST["email2"]);
-        $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
-        $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
+        $avenueStreet = FormSanitizer::sanitizeFormString($_POST["avenueStreet"]);  //Validacion del nombre. 
+        $buildingHouse = FormSanitizer::sanitizeFormString($_POST["buildingHouse"]);
+        $cardnumber = $_POST["cardnumber"];
+        $postalcode = $_POST["postalCode"];
+        $cvv = $_POST["cvv"];
+        $expiredate = $_POST["expiredate"];
 
-        // echo $genre = FormSanitizer::sanitizeFormString($_POST["genre"]);
-        // echo $city = FormSanitizer::sanitizeFormString($_POST["city"]);
+        $username = $_SESSION["userLoggedIn"];
+        $IdMembership = $_SESSION["IdMembership"];
 
-        // $registerAccount->register($name, $lastName, $username, $email, $email2, $password, $password2);
-        // Mientras no hay back.
-    
+        echo $IdMembership;
+        echo $username;
+
+        $success= $suscriptionAccount->suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate, $username, $IdMembership);
+
+        /*if($success) {
+            
+            header("Location: ../profile/select_profile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
+        }*/
+        
 
     }
 
@@ -72,15 +85,15 @@ require_once("../../data/classes/constants.php");
                 <div class = "dataForm">
                     <form method="POST"> <!-- El método post sirve para enviar datos -->
 
-                        <?php echo $registerAccount->getError(Constants::$nameLength);?>
+                        <?php echo $suscriptionAccount->getError(Constants::$nameLength);?>
                         <input type="text" name="name" placeholder="Nombre" required> <!-- required hace que sea necesario llenar el campo antes de enviar -->
 
-                        <?php echo $registerAccount->getError(Constants::$lastNameLength);?>
+                        <?php echo $suscriptionAccount->getError(Constants::$lastNameLength);?>
                         <input type="text" name="lastName" placeholder="Apellido" required>
                         
-                        <?php echo $registerAccount->getError(Constants::$usernameLength);?>        
-                        <?php echo $registerAccount->getError(Constants::$usernameTaken);?>     <!-- Ususario Ocupado-->
-                        <input type="number" name="cardnumber" placeholder="Numero de la tarjeta" required>
+                        <?php echo $suscriptionAccount->getError(Constants::$InvalidCardNumber);?>
+                        <?php echo $suscriptionAccount->getError(Constants::$cardTaken);?>
+                        <input type="number" name="cardnumber" placeholder="Numero de la tarjeta"  required>
 
                         <div class= "date">
                               
@@ -88,34 +101,31 @@ require_once("../../data/classes/constants.php");
                             <input type="number"  name="cvv" placeholder="CVV" id="cvv" min="000" max="999" required>
                             <label class ="titleLabel" for="expiredate">Fecha de vencimiento de la tarjeta:</label>
 
-                            <input type="month" name="expiredate" placeholder="Fecha de vencimiento" min="2021-05" max="2030-12" id="expiredate" required>
+                            <input type="date" name="expiredate" placeholder="Fecha de vencimiento" min="2021-05-01" max="2030-12-01" id="expiredate" required>
                         </div>
                        
 
-                        <?php echo $registerAccount->getError(Constants::$emailsDontMatch);?>   <!-- Los correos no coinciden-->
-                        <?php echo $registerAccount->getError(Constants::$emailInvalid);?>      <!-- Correo invalido-->
-                        <?php echo $registerAccount->getError(Constants::$emailTaken);?>        <!-- Correo Ocupado-->
+
                         
-
-                        <input type="text" name="direccion" placeholder="Direccion de facturación" required>
-
-                        <input type="number" name="phonenumber" placeholder="Numero de teléfono" required>
-
+                        <div class = "text">
+                            <p>Dirección de facturamiento</p>
+                        </div>
+                        <input type="number" name="postalCode" placeholder="Código postal" required>
+                        <input type="text" name="avenueStreet" placeholder="Avenida o calle" required>
+                        <input type="text" name="buildingHouse" placeholder="Nombre de edificio o casa" required>
+                        
+                        <input type="submit" class="buttonContainer" name="submitButton" value="Iniciar Suscripción">
+                        
                         </form>
                 </div>
 
                 <div class = "buttons">
                     <div class = "buttonOmitir">
                         <div class = "marginbuttonGray">
-                            <a href="register2.php">Cambiar Plan</a>
+                            <a href="register4.php">Cambiar Plan</a>
                         </div>
                     </div>
-                        <div class = "buttonContainer">
-                            <div class = "marginbutton">  
-                                <a href="../profile/select_profile.php">Iniciar Suscripción</a>
-                            </div>
-                        </div>
-                 </div>
+                   
 
             </div>
         </section>

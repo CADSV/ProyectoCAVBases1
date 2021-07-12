@@ -110,25 +110,22 @@ section .container .columnas p, a {
 }
 
 section  .titleleft  {
-    margin: 50px 50px 5px 80px;
-    position: relative;
-    left: 200px;
+    margin-top: 30px;
+    margin-left: 20%;
     font-size: 22px;
     font-weight:lighter;
     color: #201F1F;
 }
 section  .subtitleleft  {
-    margin: 0px  50px 10px 80px;
-    position: relative;
-    left: 200px;
+    margin-top: 20px;
+    margin-left: 20%;
     font-size: 22px;
     font-weight: bolder;
     color: #201F1F;
 }
 section  .textleft  {
-    margin: 0px  50px -60px 80px;
-    position: relative;
-    left: 200px;
+    margin-top: 15px;
+    margin-left: 20%;
     font-size: 13px;
     font-weight: lighter;
     color: #201F1F;
@@ -247,6 +244,7 @@ section .container .dataForm form input {
     padding: 1em 0.9em;
     border-radius: 3px;
     min-width:fit-content;
+    margin: 10px 0;
 }
 
 section .container .dataForm form input[type="text"],
@@ -254,9 +252,9 @@ section .container .dataForm form input[type="email"],
 section .container .dataForm form input[type="password"]{
     border-color: rgba(0,0,0, 0.5);
     font-size: 14px;
-    margin: 10px 0;
     font-weight: 500;
 }
+
 
 .dataForm form input[type="submit"]{
     cursor: pointer;
@@ -409,4 +407,10 @@ section .container .dataForm .date .titleLabel {
     vertical-align: baseline;
 }
 
+.errorMessage {
+    color: #f00;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
 
+}

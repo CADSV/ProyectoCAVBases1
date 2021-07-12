@@ -2,13 +2,13 @@
 -- CUARTO NIVEL DE TABLAS (Que tienen FK que dependen del 1er, 2do y 3er Nivel)
 -------------------------------------------------------------------------------
 
-/* CREATE DOMAIN RATING_DOMAIN AS FLOAT(2) NOT NULL CHECK (VALUE BETWEEN 1 AND 5); */
+-- CREATE DOMAIN RATING_DOMAIN AS FLOAT(2) NOT NULL CHECK (VALUE BETWEEN 1 AND 5); */
 
 CREATE TABLE HasSeen ( -- Ha visto, relación entre perfil y contenido
 
     IdProfile       INT(10) NOT NULL,
     IdContent       INT(10) NOT NULL,
-    LastDateWatched DATETIME NOT NULL, 
+    LastDateWatched DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     Rating          FLOAT(2),
     WatchedByRecomm BIT(1) NOT NULL DEFAULT 0, -- 1: Visto por recomendación, 0: Visto sin recomendación.
     TimesSeen       INT(10) NOT NULL DEFAULT 1,  -- 1 es la primera visualización del contenido.
@@ -54,7 +54,7 @@ CREATE TABLE Blocked( -- Bloqueado, relación
 CREATE TABLE Session( -- Sesión, relación entre perfil y dispositivo
 
     IdProfile       INT(10) NOT NULL,
-    IdDevice        INT(10) NOT NULL,
+    IdDevice        INT(10) NOT NULL,     
     ConStartDate    DATETIME NOT NULL, 
     SessionTotalTime TIME,
 
@@ -81,10 +81,10 @@ CREATE TABLE Watchlist ( -- Lista de contenidos para ver más tarde (Mi Lista)
 CREATE TABLE Configurate ( -- Configura, relación entre perfil e idioma, clasificación por edad y subitítulo
 
     IdProfile       INT(10) NOT NULL,
-    IdLanguage      INT(10) NOT NULL, -- Crear registro español y ponerlo default aquí
-    MinAge          TINYINT(2) NOT NULL, -- Crear registro para todo público y ponerlo default aquí
-    Font            VARCHAR(20) NOT NULL,
-    Size            TINYINT(2) NOT NULL, -- Crear registro para subtítulo Arial 12 y ponerlo default aquí
+    IdLanguage      INT(10),     
+    MinAge          TINYINT(2),  
+    Font            VARCHAR(20),
+    Size            TINYINT(2), 
     ConfigurationDate DATETIME DEFAULT CURRENT_TIME,
 
     CONSTRAINT Configurate_PK PRIMARY KEY (IdProfile, ConfigurationDate),
@@ -93,20 +93,20 @@ CREATE TABLE Configurate ( -- Configura, relación entre perfil e idioma, clasif
 
 
     CONSTRAINT Configurate_FK1 FOREIGN KEY (IdProfile) REFERENCES Carlevix.Profile(IdProfile) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Configurate_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Configurate_FK3 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT Configurate_FK4 FOREIGN KEY (Font, Size) REFERENCES Carlevix.Subtitle(Font, Size) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT Configurate_FK2 FOREIGN KEY (IdLanguage) REFERENCES Carlevix.Language(IdLanguage) ON DELETE SET NULL  ON UPDATE CASCADE,
+    CONSTRAINT Configurate_FK3 FOREIGN KEY (MinAge) REFERENCES Carlevix.AgeClass(MinAge) ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT Configurate_FK4 FOREIGN KEY (Font, Size) REFERENCES Carlevix.Subtitle(Font, Size) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE Episode( -- Episodio que puede tener temporada
 
-    IdEpisode INT(10) UNIQUE NOT NULL, 
-    IdSeason INT(10) UNIQUE NOT NULL,
-    IdContent   INT(10)  NOT NULL AUTO_INCREMENT
+    IdEpisode INT(10) NOT NULL AUTO_INCREMENT, 
+    IdSeason INT(10) NOT NULL,
+    IdContent   INT(10)  NOT NULL,
     EpisodeName VARCHAR(30) NOT NULL,
     EpisodeRunTime TIME NOT NULL,
 
-    CONSTRAINT Episode_PK PRIMARY KEY (IdEpisode),
+    CONSTRAINT Episode_PK PRIMARY KEY (IdEpisode, IdSeason, IdContent),
 
     CONSTRAINT Episode_FK FOREIGN KEY (IdSeason,IdContent) REFERENCES Carlevix.Season(IdSeason,IdContent) ON DELETE CASCADE ON UPDATE CASCADE
 );
