@@ -24,7 +24,12 @@ if (!isset($_SESSION["userLoggedIn"])){
     <header>
         <a href="../../index.php"> 
             <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
-        </a>          
+        </a>    
+        <div class="index-header">
+                <a href="../login/logout.php"> 
+                    <button class="button">Cerrar sesión</button>
+                </a>        
+        </div>      
     </header>
 
     <section>
