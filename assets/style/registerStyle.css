@@ -23,18 +23,16 @@ header {
     flex: row wrap;
     justify-content: space-between;
     align-items: center;
+    padding-right: 20px;
 }
 
-header nav a {
+/* header nav a {
     color: #000;
     text-decoration: none;
     font-size: 18px;
     align-content: flex-end;
-}
+} */
 
-header nav a:hover {
-    text-decoration: underline;
-}
 
 .line {
     border-top: 1px solid #A6A6A6;
@@ -175,7 +173,7 @@ section .buttonContainer a {
     border: none;
     box-shadow: 0 1px 1px rgba(0,0,0,.25);
     color: #fff;
-    background-color: red;
+    background-color:#023ADE;
     padding: .75rem 180px;
     min-width: 110px;
     width: 550px;
@@ -193,7 +191,36 @@ section .buttonContainer a:hover {
 }
 
 
+section .buttonOmitir {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-left: auto;
+}
 
+section .buttonOmitir a {
+    align-self: center;
+    text-decoration: none;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,.25);
+    color: #fff;
+    background-color: #959392;
+    padding: 5px 50px;
+    min-width: 300px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+section .buttonOmitir a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
  
 
 
@@ -365,27 +392,27 @@ section .container .dataForm form input[type="password"]{
 }
 
 
-/* .OmitirButtonsForm form input[type="submit"]{
+.login a {
+    align-self: center;
+    text-decoration: none;
+    justify-content: center;
     border: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,.25);
     color: #fff;
     background-color: #959392;
-    text-align: center;
-    min-width: 110px;
-    margin-top: 30px;
-    width: 400px;
-    padding: 10px 100px 10px 100px;
-    justify-content: center;
+    padding: .5rem 10px;
+    min-width: fit-content;
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
-.OmitirButtonsForm form input[type="submit"]:hover{
+
+.login a:hover {
     opacity: 0.5;
     cursor: pointer;
     transition-duration: 0.3s;
-} */
-
+}
 
 /* DROPDOWNS */
 
