@@ -21,9 +21,12 @@ require_once("../../data/classes/constants.php");
         $postalcode = $_POST["postalCode"];
         $cvv = $_POST["cvv"];
         $expiredate = $_POST["expiredate"];
+
+        $username = $_SESSION["userLoggedIn"];
+        $IdMembership = $_SESSION["IdMembership"];
         
 
-        $success= $suscriptionAccount->suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate);
+        $success= $suscriptionAccount->suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate, $username, $IdMembership);
 
         if($success) {
             
