@@ -45,10 +45,6 @@ CREATE TABLE User ( -- Cuenta tipo usuario en Carlevix
 );
 
 
-
--- CREATE DOMAIN PROFILE_PHOTO_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2, 3, 4, 5)); --   1: Azul 2: Rojo 3: Amarillo 4: Verde 5: Morado */
-
-
 CREATE TABLE Profile ( -- Perfil que tiene usuario en Carlevix para ver y preferir contenidos
     
     IdProfile       INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
@@ -63,8 +59,6 @@ CREATE TABLE Profile ( -- Perfil que tiene usuario en Carlevix para ver y prefer
     CONSTRAINT Profile_FK FOREIGN KEY (IdUser) REFERENCES Carlevix.User(IdUser) ON DELETE CASCADE ON UPDATE CASCADE -- Al eliminar un usuario se eliminan sus perfiles
 );
 
-
--- CREATE DOMAIN RELEVANCE_DOMAIN AS INT(1) NOT NULL CHECK (VALUE IN (1, 2)); -- 1: Lead (Principal), 2: Secondary (Secundario) */
 
 CREATE TABLE IsAbout ( -- Es sobre, relación entre contenido y género (o categoría)
 
