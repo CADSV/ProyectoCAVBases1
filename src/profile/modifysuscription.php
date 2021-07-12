@@ -53,21 +53,37 @@ if (!isset($_SESSION["userLoggedIn"])){
             </div>
 
             <div class ="information-container">
-                <div class = "personalinformation-container">
-                    <h3>Alejandro Carlevix</h3>
-                    <h3>alejandro@carlevix.com</h3> 
-                    <h3>Contraseña: *********</h3>
-                    <h3>Telefono: +58 412 0555556</h3>
-                </div>
+            <?php  
 
-                <div class ="personalinformation-container">
-                    <h3>Direccion</h3>
-                    <h3>Residencias Morichal Apto 3-A , Los Chaguaramos </h3>
-                    <h3>Caracas, Venezuela</h3> 
-                    <div class = "line"></div>
-                    <h3>VISA **** **** **** 5896</h3>
-                    <h3>Fecha de pago: </h3>
-                </div>
+                $query1 = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)"); // Buscar IdUser del User logueado actualmente
+                $query1->bindValue(":username", $username);
+                $query1->execute();
+
+                $userData = $query->fetch(PDO::FETCH_ASSOC);
+                $IdUser = $userData["IdUser"];
+
+
+                $query2 = $this->connection->prepare(" SELECT IdMembership FROM  issuscribed WHERE (IdUser = :IdUser)"); 
+                $query2->bindValue(":IdUser", $IdUser);
+                $query2->execute();
+
+
+                $userIdMembership = $query2->fetch(PDO::FETCH_ASSOC);
+                $IdMembership = $userIdMembership["IdMembership"];
+
+                $query3 = $this->connection->prepare(" SELECT MembershipName, Price FROM  membership WHERE (IdMembership = :IdMembership)");
+                $query3->bindValue(":IdMembership ", $IdMembership);
+                $query3->execute();
+
+                $membershipData=$query3->fetch(PDO::FETCH_ASSOC);
+
+                $membershipName=$membershipData["MembershipName"];
+                $membershipPrice=$membershipData["Price"];
+
+                echo $membershipName;
+                echo $membershipPrice;
+
+            ?>
             </div>
 
         <div class = "line"></div>
