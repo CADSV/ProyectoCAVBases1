@@ -22,18 +22,13 @@ if (!isset($_SESSION["userLoggedIn"])){
 </head>
 <body>
     <div class="wrapper">
-        <div class="background">
-        </div>
             <header>
-                <div class="login-header">
-                    <a href="../../index.php"> 
-                        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
-                    </a>          
-                </div>
-                <nav class = "login">
-                    <a href="adminProfile.php">Volver a perfil</a>
+                <a href="../../index.php"> 
+                    <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
+                </a>          
+                <nav class = "back">
+                    <a href="select_profile.php">Volver a perfiles</a>
                  </nav>
-                
             </header>
         
         <div class = "line"></div>       
@@ -48,7 +43,7 @@ if (!isset($_SESSION["userLoggedIn"])){
                     <input class="buttonEdit" type="submit" name="plan" value="Guardar" id="Plan"required>    <label for="Premium">   </label>                                                                                            
                 </form>
                 <div class = "buttonCancel">
-                     <a href="adminProfile.php">Cancelar</a>                                          
+                     <a href="select_profile.php">Cancelar</a>                                          
                 </div>
             </div>
 
@@ -78,7 +73,7 @@ if (!isset($_SESSION["userLoggedIn"])){
                 </div>
                 <div class="plan-container">
                     <div>
-                        <form  action="adminProfile.php" method=""> 
+                        <form  action="select_profile.php" method=""> 
                                 <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
                                 <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
                                 <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
@@ -86,8 +81,8 @@ if (!isset($_SESSION["userLoggedIn"])){
                             
                         </form>
                     </div>
-                    <div class = "buttonCancelar">
-                            <a href="adminProfile.php">Cancelar</a>                                          
+                    <div class = "buttonCancel">
+                            <a href="select_profile.php">Cancelar</a>                                          
                     </div>
               
                 </div>
