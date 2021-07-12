@@ -53,7 +53,8 @@ class SuscriptionAccount{
             $query3->bindValue(":CardNumber", $cardnumber);
             $query3->execute();
 
-            $query4 = $this->connection->prepare("UPDATE User SET UserIsSuscribed = 1, UserPostalCode = :postalcode, UserAvenueStreet= :avenueStreet, UserBuildingHouse= :buildingHouse WHERE (Username = :username)"); 
+            $query4 = $this->connection->prepare("UPDATE User SET UserIsSuscribed = 1, UserPostalCode = :postalcode, UserAvenueStreet= :avenueStreet, UserBuildingHouse= :buildingHouse 
+                                                 WHERE (Username = :username)"); 
             $query4->bindValue(":username", $username);     // Para indicar que está suscrito
             $query4->bindValue(":postalcode", $postalcode);
             $query4->bindValue(":avenueStreet", $avenueStreet);
