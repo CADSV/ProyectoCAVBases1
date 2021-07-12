@@ -45,6 +45,7 @@ class SuscriptionAccount{
         $query2->bindValue(":IdUser", $IdUser);
         $query2->execute();
         $userData2 = $query2->fetch(PDO::FETCH_ASSOC);
+        
         if($query2->rowCount() != 0){
             $CardNumber = $userData2["CardNumber"];
             $CVV = $userData2["CVV"];
