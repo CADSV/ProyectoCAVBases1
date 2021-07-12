@@ -1,11 +1,23 @@
 <?php
 
 require_once("../../data/config.php");
+require_once("../../data/account/suscriptionAccount.php");
+require_once("../../data/classes/constants.php");
 
 
-if (!isset($_SESSION["userLoggedIn"])){
-    header("Location: ../../index.php");
-}
+    if (!isset($_SESSION["userLoggedIn"])){
+        header("Location: ../../index.php");
+    }
+
+    $suscriptionAccount= new SuscriptionAccount($connection);
+
+    if(isset($_POST["changeSuscriptionButton"])) {
+
+        $username = $_SESSION["userLoggedIn"];
+        $IdMembership = $_POST["membership"];
+
+        $success= $suscriptionAccount->modifySuscription($username, $IdMembership);
+    }
 
 ?>
 
@@ -78,11 +90,11 @@ if (!isset($_SESSION["userLoggedIn"])){
                 </div>
                 <div class="plan-container">
                     <div>
-                        <form  action="adminProfile.php" method=""> 
-                                <input type="radio" name="plan" value="Basico" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
-                                <input type="radio" name="plan" value="Estandar" id="Estandar"required>  <label for="Estandar">Estándar 10,99 </label>
-                                <input type="radio" name="plan" value="Premium" id="Premium"required>    <label for="Premium">Premium 13,99  </label>
-                                <input class="button" type="submit" name="plan" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
+                        <form method="POST"> 
+                                <input type="radio" name="membership" value="1" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
+                                <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99 </label>
+                                <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99  </label>
+                                <input class="button" type="submit" name="changeSuscriptionButton" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
                             
                         </form>
                     </div>
