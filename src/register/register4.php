@@ -15,6 +15,13 @@ require_once("../../data/config.php");
 
         header("Location: register5.php");
     }
+
+
+    if (isset($_GET["Omitir"])) {
+        echo '<script language="javascript">alert("Se ha registrado exitosamente pero no está suscrito a ningún plan. Lo invitamos a suscribirse pronto. ¡Bienvenid@ a Carlevix!");window.location.href="../profile/select_profile.php"</script>';
+
+    }
+
 ?>
 
 
@@ -104,14 +111,17 @@ require_once("../../data/config.php");
 
                  
 
+                <form method="GET">
                  <div class = "buttons">
                     
-                        <div class = "buttonOmitir">
-                            <div class = "marginbuttonGray">  
-                                <a href="../profile/select_profile.php">Omitir</a>
+                        <!-- <div class = "buttonOmitir"> -->
+                            <div class = "buttonOmitir">  
+                                <input type="submit" class = "marginButtonGray" name = "Omitir" value ="Omitir">
+                                <!-- <a href="../profile/select_profile.php">Omitir</a> -->
                             </div>
-                        </div>
+                        <!-- </div> -->
                  </div>
+                 </form>
                 
             </div>
         </section>
