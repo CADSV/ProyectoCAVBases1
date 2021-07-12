@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_WARNING);
 require_once("../../data/config.php");
 require_once("../../data/account/suscriptionAccount.php");
 require_once("../../data/classes/constants.php");
@@ -15,10 +15,17 @@ require_once("../../data/classes/constants.php");
 
     $IdUser = $suscriptionAccount->getIdUser($username);
     $IdMembership = $suscriptionAccount->getIdMembership($IdUser);
-    $membershipData = $suscriptionAccount->getMembershipData($IdMembership);
+    if($IdMembership){
+
+        $membershipData = $suscriptionAccount->getMembershipData($IdMembership);
+        $membershipName=$membershipData["MembershipName"];
+        $membershipPrice=$membershipData["Price"]." $";
+    }else{
+        $membershipName="No asignado";
+        $membershipPrice="No disponible";
+    }
     
-    $membershipName=$membershipData["MembershipName"];
-    $membershipPrice=$membershipData["Price"];
+  
 
     if(isset($_POST["changeSuscriptionButton"])) {
 
@@ -68,13 +75,14 @@ require_once("../../data/classes/constants.php");
             </div>
 
             <div class="edit-container">  
-                             
+                 <!--            
                 <form  action="select_profile.php" method="">                            
                     <input class="buttonEdit" type="submit" name="plan" value="Guardar" id="Plan"required>    <label for="Premium">   </label>                                                                                            
                 </form>
                 <div class = "buttonCancel">
                      <a href="select_profile.php">Cancelar</a>                                          
                 </div>
+                        -->
             </div>
 
             <div class ="information-container">
@@ -83,7 +91,7 @@ require_once("../../data/classes/constants.php");
 
                      echo "<span class='PlanMessage'>Plan: $membershipName</span>";
                      
-                     echo "<span class='PlanMessage'>Precio: $membershipPrice $</span>";
+                     echo "<span class='PlanMessage'>Precio: $membershipPrice </span>";
                                 
 
             ?>

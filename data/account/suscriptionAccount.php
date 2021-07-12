@@ -1,5 +1,5 @@
 <?php  
-
+error_reporting(E_ALL ^ E_WARNING);
 class SuscriptionAccount{
 
     private $connection;
@@ -126,10 +126,15 @@ class SuscriptionAccount{
         $query->bindValue(":IdUser", $IdUser);
         $query->execute();
 
-        $userIdMembership = $query->fetch(PDO::FETCH_ASSOC);
-        $IdMembership = $userIdMembership["IdMembership"];
+
+        if($query->rowCount()!= 0){
+            $userIdMembership = $query->fetch(PDO::FETCH_ASSOC);
+            $IdMembership = $userIdMembership["IdMembership"];
+            return $IdMembership;
+        }
+        return null;     
         
-        return $IdMembership;
+        
     }
 
 
