@@ -3,7 +3,7 @@
 require_once("../../data/config.php");
 
 
-if (!isset($_SESSION["userLogedIn"])){
+if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
