@@ -1,11 +1,30 @@
 <?php
 
 require_once("../../data/config.php");
+require_once("../../data/account/suscriptionAccount.php");
+require_once("../../data/classes/constants.php");
 
 
-if (!isset($_SESSION["userLoggedIn"])){
-    header("Location: ../../index.php");
-}
+    if (!isset($_SESSION["userLoggedIn"])){
+        header("Location: ../../index.php");
+    }
+
+    $suscriptionAccount= new SuscriptionAccount($connection);
+
+    if(isset($_POST["changeSuscriptionButton"])) {
+
+        $username = $_SESSION["userLoggedIn"];
+        $IdMembership = $_POST["membership"];
+
+        $success= $suscriptionAccount->modifySuscription($username, $IdMembership);
+    }
+
+    if(isset($_POST["cancelSuscriptionButton"])) {
+
+        $username = $_SESSION["userLoggedIn"];
+
+        $success= $suscriptionAccount->cancelSuscription($username);
+    }
 
 ?>
 
@@ -87,15 +106,9 @@ if (!isset($_SESSION["userLoggedIn"])){
                     </div>
               
                 </div>
-                                           
+                                          
             </div>
         </div>
-
-
-                
-
     </div>
-       
-    
 </body>
 </html>
