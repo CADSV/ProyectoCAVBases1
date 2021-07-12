@@ -146,7 +146,6 @@ section .buttons {
     flex-flow: column wrap;
     align-items: center;
     justify-items: center;
-    /* width: 1000px; */
 
 }
 
@@ -159,8 +158,8 @@ section .marginbutton{
 }
 
 section .marginbuttonGray {
-    margin-left: -14%;
-    margin-bottom: -5%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section .marginbuttonRedPlan {
@@ -176,7 +175,7 @@ section .buttonContainer a {
     border: none;
     box-shadow: 0 1px 1px rgba(0,0,0,.25);
     color: #fff;
-    background-color: #023ADE;
+    background-color: red;
     padding: .75rem 180px;
     min-width: 110px;
     width: 550px;
@@ -195,34 +194,6 @@ section .buttonContainer a:hover {
 
 
 
-section .buttonOmitir a {
-    cursor: pointer;
-    align-self: center;
-    text-decoration: none;
-    justify-content: center;
-    border: none;
-    box-shadow: 0 1px 1px rgba(0,0,0,.25);
-    color: #fff;
-    background-color: #c2c2c2;
-    padding: 5px  50px;
-    min-width: 110px;
-    width: 350px;
-    font-weight: 700;
-    font-size: 16px;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-    transition-duration: 0.4s;
-}
-
-section .buttonOmitir a:hover {
-    background-color: #505050;
-    box-shadow: none;
-}
-
-section .buttonOmitir a:hover {
-    background-color: #505050;
-    box-shadow: none;
-}
  
 
 
@@ -310,7 +281,6 @@ section .container .dataForm form input[type="password"]{
 } 
 
 .formulario form input[type="submit"]{
-    cursor: pointer;
     border: none;
     color: #fff;
     background-color: #023ADE;
@@ -319,15 +289,55 @@ section .container .dataForm form input[type="password"]{
     width: 400px;
     padding: 10px 100px 10px 100px;
     justify-content: center;
-    
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .formulario form input[type="submit"]:hover{
-    background-color: #0983F5;
-    box-shadow: none;   
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+
+.formulario .OmitirButtonForm form input[type="submit"]{
+    border: none;
+    color: #fff;
+    background-color: #959392;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 110px;
+    width: 200px;
+    padding: 10px 50px 10px 50px;
+    justify-content: center;
+    align-self: center;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.formulario .OmitirButtonForm form input[type="submit"]:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.OmitirButtonForm {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.buttonOmitir {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
 }
 
 
@@ -353,6 +363,28 @@ section .container .dataForm form input[type="password"]{
     background-color: #5f5c5c;
     box-shadow: none;   
 }
+
+
+/* .OmitirButtonsForm form input[type="submit"]{
+    border: none;
+    color: #fff;
+    background-color: #959392;
+    text-align: center;
+    min-width: 110px;
+    margin-top: 30px;
+    width: 400px;
+    padding: 10px 100px 10px 100px;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.OmitirButtonsForm form input[type="submit"]:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    transition-duration: 0.3s;
+} */
 
 
 /* DROPDOWNS */
