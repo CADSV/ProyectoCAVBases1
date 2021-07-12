@@ -26,6 +26,7 @@ require_once("../../data/classes/constants.php");
         $IdMembership = $_POST["membership"];
 
         $success= $suscriptionAccount->modifySuscription($username, $IdMembership);
+        echo '<script language="javascript">alert("Ha cambiado de plan exitosamente");window.location.href="select_profile.php"</script>';
     }
 
     if(isset($_POST["cancelSuscriptionButton"])) {
@@ -33,6 +34,7 @@ require_once("../../data/classes/constants.php");
         $username = $_SESSION["userLoggedIn"];
 
         $success= $suscriptionAccount->cancelSuscription($username);
+        echo '<script language="javascript">alert("Ha eliminado su plan, y ya no está suscrito");window.location.href="select_profile.php"</script>';
     }
 
 ?>
