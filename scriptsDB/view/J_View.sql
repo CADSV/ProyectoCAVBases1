@@ -13,5 +13,5 @@ WHERE User.IdUser IN
 	) 
 GROUP BY IdUser
 HAVING COUNT(IdProfile) >= 2
-ORDER BY COUNT(IdProfile)
+ORDER BY COUNT(IdProfile);
 
