@@ -67,6 +67,8 @@ INSERT INTO isabout VALUES (28,11,1);
 INSERT INTO isabout VALUES (29,2,1);
 INSERT INTO isabout VALUES (29,14,1);
 INSERT INTO isabout VALUES (30,2,1);
+<<<<<<< HEAD
+=======
 
 -- Performer -> Stars -> Content
 INSERT INTO stars VALUES (1,1,1);
@@ -131,3 +133,4 @@ INSERT INTO stars VALUES (8,29,3);
 INSERT INTO stars VALUES (1,30,1);
 INSERT INTO stars VALUES (9,30,3);
 
+>>>>>>> carlos

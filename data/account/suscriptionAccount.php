@@ -16,13 +16,13 @@ class SuscriptionAccount{
         $this->validateCardnumber($cardnumber,$cvv);
 
         if(empty($this->errorAray)){
-            return $this->insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate, $username, $IdMembership);
+            return $this->insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate, $username, $IdMembership, $postalcode, $avenueStreet, $buildingHouse);
         }
 
         return false;
     }
 
-    private function insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate, $username, $IdMembership){
+    private function insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate, $username, $IdMembership, $postalcode, $avenueStreet, $buildingHouse){
             
         
         $query = $this->connection->prepare("INSERT INTO Paymentcard (CardNumber, CVV, OwnerName, OwnerLastname, ExpDate) 
@@ -48,12 +48,18 @@ class SuscriptionAccount{
             $query3 = $this->connection->prepare("INSERT INTO IsSuscribed (IdUser, IdMembership, CVV, CardNumber) 
                                                 VALUES (:IdUser, :IdMembership, :CVV, :CardNumber)"); // No se inserta la fecha de inicio ya que es current_timestamp por default
             $query3->bindValue(":IdUser", $IdUser);
-            $query3->bindValue(":IdMembershio", $IdMembership);
+            $query3->bindValue(":IdMembership", $IdMembership);
             $query3->bindValue(":CVV", $cvv);
             $query3->bindValue(":CardNumber", $cardnumber);
             $query3->execute();
 
-            $query4 = $this->connection->prepare("UPDATE User SET UserIsSuscribed = b'1' WHERE (Username = :username)"); // Para indicar que está suscrito
+            $query4 = $this->connection->prepare("UPDATE User SET UserIsSuscribed = 1, UserPostalCode = :postalcode, UserAvenueStreet= :avenueStreet, UserBuildingHouse= :buildingHouse 
+                                                 WHERE (Username = :username)"); 
+            $query4->bindValue(":username", $username);     // Para indicar que está suscrito
+            $query4->bindValue(":postalcode", $postalcode);
+            $query4->bindValue(":avenueStreet", $avenueStreet);
+            $query4->bindValue(":buildingHouse", $buildingHouse);
+            
             $query4->execute();
 
             return true;
