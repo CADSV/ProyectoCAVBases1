@@ -37,21 +37,24 @@ class SuscriptionAccount{
         
         if($query->execute()) {   // Retorna true si funcionó la inserción en la base de datos, false si no
             
-            $query2 = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)");
+            $query2 = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)"); // Buscar IdUser del User logueado actualmente
             $query2->bindValue(":username", $username);
+            
             $query2->execute();
 
-            $IdUser = $query2;
-
-
-            $query3 = $this->connection->prepare("INSERT INTO IsSuscribed (IdUser, IdMembership, CVV, CardNumber, StartDateSus)
-                                                VALUES (:IdUser, :IdMembership, :CVV, :CardNumber, :StartDateSus)");
+            $userData = $query2->fetch(PDO::FETCH_ASSOC);
+            $IdUser = $userData["IdUser"];
+            
+            $query3 = $this->connection->prepare("INSERT INTO IsSuscribed (IdUser, IdMembership, CVV, CardNumber) 
+                                                VALUES (:IdUser, :IdMembership, :CVV, :CardNumber)"); // No se inserta la fecha de inicio ya que es current_timestamp por default
             $query3->bindValue(":IdUser", $IdUser);
-            $query3->bindValue(":IdMembershio", $IdMembershio);
-            $query3->bindValue(":CVV", $CVV);
-            $query3->bindValue(":CardNumber", $CardNumber);
-            $query3->bindValue(":StartDateSus", $StartDateSus);
+            $query3->bindValue(":IdMembershio", $IdMembership);
+            $query3->bindValue(":CVV", $cvv);
+            $query3->bindValue(":CardNumber", $cardnumber);
             $query3->execute();
+
+            $query4 = $this->connection->prepare("UPDATE User SET UserIsSuscribed = b'1' WHERE (Username = :username)"); // Para indicar que está suscrito
+            $query4->execute();
 
             return true;
         } 
