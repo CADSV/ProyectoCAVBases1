@@ -12,6 +12,8 @@ require_once("../../data/config.php");
         $IdMembership = $_POST["membership"];
 
         $_SESSION["IdMembership"] = $IdMembership;
+
+        header("Location: register5.php");
     }
 ?>
 
@@ -59,9 +61,9 @@ require_once("../../data/config.php");
             <div class = "container">
                 <div class="formulario">
                     <form method="POST"> 
-                        <input type="radio" name="plan" value="1" id="membership" required >      <label for="Basico">Básico</label>
-                        <input type="radio" name="plan" value="2" id="membership"required>  <label for="Estandar">Premiun</label>
-                        <input type="radio" name="plan" value="3" id="membership"required>    <label for="Premium">VIP</label>
+                        <input type="radio" name="membership" value="1" id="Basico" required >      <label for="Basico">Básico</label>
+                        <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premiun</label>
+                        <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP</label>
                         <div class= "columnas">  
                         <p> Precio Mensual</p>
                         <p>  USD 7,99  </p>
