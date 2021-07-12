@@ -40,7 +40,43 @@ class RegisterAccount{
         $query->bindValue(":gender", $gender); 
         $query->bindValue(":city", $city);    
         
-        return $query->execute(); // Retorna true si funcionó la inserción en la base de datos, false si no
+
+        if ($query->execute()){ // Retorna true si funcionó la inserción en la base de datos, false si no
+
+            $query2 = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)"); // Buscar IdUser del User logueado actualmente
+            $query2->bindValue(":username", $username);
+            $query2->execute();
+
+            $userData = $query2->fetch(PDO::FETCH_ASSOC);
+            $IdUser = $userData["IdUser"];
+
+            $query3 = $this->connection->prepare("INSERT INTO Profile (IdUser, ProfilePhoto, ProfileName)    
+                                                VALUES ( :IdUser, :ProfilePhoto, :ProfileName) ");       //Profile 1
+            $query3->bindValue(":IdUser", $IdUser);
+            $query3->bindValue(":ProfilePhoto", 3);
+            $query3->bindValue(":ProfileName", $username);
+            $query3->execute();
+
+
+            $query4 = $this->connection->prepare("INSERT INTO Profile (IdUser, ProfilePhoto, ProfileName)    
+                                                VALUES ( :IdUser, :ProfilePhoto, :ProfileName) ");       //Profile 2
+            $query4->bindValue(":IdUser", $IdUser);
+            $query4->bindValue(":ProfilePhoto", 1);
+            $query4->bindValue(":ProfileName", $username."2");
+            $query4->execute();
+
+
+            $query5 = $this->connection->prepare("INSERT INTO Profile (IdUser, ProfilePhoto, ProfileName)    
+                                                VALUES ( :IdUser, :ProfilePhoto, :ProfileName) ");       //Profile 3
+            $query5->bindValue(":IdUser", $IdUser);
+            $query5->bindValue(":ProfilePhoto", 2);
+            $query5->bindValue(":ProfileName", $username."3");
+            $query5->execute();
+
+
+            return true;
+        }
+        return false;
     }
 
     private function validateName($name){ // Valida la longitud del nombre
