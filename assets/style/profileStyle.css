@@ -22,7 +22,18 @@ section {
     margin: 20px;
     margin-top: 100px;
 }
-
+.index-header {
+    display: flex;
+    position: absolute;
+    color: rgb(27, 25, 170);
+    align-items: flex-end;
+    margin: 20px 20px 0px 0px;
+    width: 100%;
+    border-bottom: transparent;
+    z-index: 2;
+    align-items: center;
+    justify-content:space-between;
+}
 
 .container {
     min-width: none;
