@@ -26,9 +26,14 @@ if (!isset($_SESSION["userLoggedIn"])){
             <a href="../../index.php"> 
                 <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
             </a> 
-            <nav class = "logout">
-                <a href="../login/logout.php">Cerrar Sesión</a>
-            </nav>   
+            <div class = "rightHeader">
+                <a href="">
+                    <img src="../../assets/images/editUserGrey.png" title="EditUser" alt="Editar usuario">   
+                </a>
+                <nav class = "logout">
+                    <a href="../login/logout.php">Cerrar Sesión</a>
+                </nav>  
+            </div>  
         </header>
     </div>
 
