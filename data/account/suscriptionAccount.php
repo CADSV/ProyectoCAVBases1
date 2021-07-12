@@ -22,6 +22,18 @@ class SuscriptionAccount{
         return false;
     }
 
+    public function cancelSuscription($username){
+        $query = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)"); // Buscar IdUser del User logueado actualmente
+        $query->bindValue(":username", $username);
+        $query->execute();
+        $userData1 = $query->fetch(PDO::FETCH_ASSOC);
+        $IdUser = $userData1["IdUser"];
+
+        $query3 = $this->connection->prepare("UPDATE IsSuscribed SET EndDateSus = CURRENT_TIMESTAMP WHERE (IdUser = :IdUser)"); // Terminar la suscripción actual
+        $query3->bindValue(":IdUser", $IdUser);
+        $query3->execute();
+    }
+
     public function modifySuscription($username, $IdMembership){
         $query = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)"); // Buscar IdUser del User logueado actualmente
         $query->bindValue(":username", $username);
@@ -46,7 +58,6 @@ class SuscriptionAccount{
         $query4->bindValue(":CVV", $CVV);
         $query4->bindValue(":CardNumber", $CardNumber);
         $query4->execute();
-
     }
 
     private function insertSuscriptionDetails($name, $lastName, $cardnumber, $cvv, $expiredate, $username, $IdMembership, $postalcode, $avenueStreet, $buildingHouse){

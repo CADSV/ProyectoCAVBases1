@@ -19,6 +19,13 @@ require_once("../../data/classes/constants.php");
         $success= $suscriptionAccount->modifySuscription($username, $IdMembership);
     }
 
+    if(isset($_POST["cancelSuscriptionButton"])) {
+
+        $username = $_SESSION["userLoggedIn"];
+
+        $success= $suscriptionAccount->cancelSuscription($username);
+    }
+
 ?>
 
 
@@ -94,24 +101,14 @@ require_once("../../data/classes/constants.php");
                                 <input type="radio" name="membership" value="1" id="Basico" required >      <label for="Basico"> Básico 7,99</label>
                                 <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99 </label>
                                 <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99  </label>
-                                <input class="button" type="submit" name="changeSuscriptionButton" value="Cambiar plan" id="Plan"required>    <label for="Premium">   </label>                                                                 
+                                <input class="button" type="submit" name="changeSuscriptionButton" value="Cambiar membresía" required> 
                             
                         </form>
                     </div>
-                    <div class = "buttonCancelar">
-                            <a href="adminProfile.php">Cancelar</a>                                          
-                    </div>
-              
-                </div>
-                                           
+                    <form method="POST"> <input class="buttonCancelar" type="submit" name="cancelSuscriptionButton" value="Cancelar suscripción" required> </form>           
+                </div>                                          
             </div>
         </div>
-
-
-                
-
     </div>
-       
-    
 </body>
 </html>
