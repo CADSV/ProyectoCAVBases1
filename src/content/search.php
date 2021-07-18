@@ -5,9 +5,9 @@ include_once("navBar.php");
 
 /*if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../register/register1.php");
-}
+}*/
 
-$userLoggedIn = $_SESSION["userLoggedIn"];*/
+$userLoggedIn = $_SESSION["userLoggedIn"];
 
 ?>
 
@@ -30,6 +30,24 @@ $userLoggedIn = $_SESSION["userLoggedIn"];*/
                  <input type="text" class="searchInput" placeholder="Buscar contenido">
             </div>
             <div class="results"> </div>
+
+            <script language="javascript">
+
+                (function() {
+                    var username = '<?php echo $userLoggedIn; ?>';
+                    var timer;
+
+                    $(".searchInput").keyup(function(){
+                        clearTimeout(timer);
+
+                        timer= setTimeout(function(){
+                            var val=$(".searchInput").val();
+                            console.log(val);
+                        }, 500);
+                    })
+                })
+            </script>
+
 
 
                
