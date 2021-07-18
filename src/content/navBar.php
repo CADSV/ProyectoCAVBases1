@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="assets/style/navBarStyle.css"/> 
+    <link rel="stylesheet" type="text/css" href="assets/style/contentStyle.css"/> 
     <script src="https://kit.fontawesome.com/06a651c8da.js" crossorigin="anonymous"> </script>
 
 </head>

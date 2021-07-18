@@ -75,5 +75,19 @@ header {
     color: #fff;
     font-size: 20px;
     margin-left: 10px;
-    
+}
+
+.textboxContainer {
+    padding: 100px 50px;
+}
+
+.searchInput{
+    height: 50px;
+    width: 650px;
+    border: 1px solid #dedede ;
+    background-color: transparent;
+    color: #000;
+    font-size:20px;
+    padding: 5px  10px;
+    border-radius: 3px;
 }

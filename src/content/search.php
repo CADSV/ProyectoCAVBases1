@@ -10,6 +10,8 @@ include_once("navBar.php");
 $userLoggedIn = $_SESSION["userLoggedIn"];*/
 
 ?>
+
+
     <!DOCTYPE html>
     <html lang='es'>
         <head>
@@ -24,8 +26,14 @@ $userLoggedIn = $_SESSION["userLoggedIn"];*/
         </head>
         <body>
             <div class="wrapper">
+            <div class="textboxContainer">
+                 <input type="text" class="searchInput" placeholder="Buscar contenido">
+            </div>
+            <div class="results"> </div>
 
-              
+
+               
+               
             </div>
         </div>   
     </html>   

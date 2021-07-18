@@ -1,6 +1,7 @@
 <?php
 
 require_once("../../data/config.php");
+include_once("navBar.php");
 
 /*if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../register/register1.php");
@@ -17,18 +18,14 @@ $userLoggedIn = $_SESSION["userLoggedIn"];*/
             <meta name="viewport"
                 content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
             <title>Carlevix</title>
-            <link rel="stylesheet" type="text/css" href="../../assets/style/navBarStyle.css"/> 
+            <link rel="stylesheet" type="text/css" href="../../assets/style/contentStyle.css"/> 
             <script src="https://kit.fontawesome.com/06a651c8da.js" crossorigin="anonymous"> </script>
 
         </head>
         <body>
             <div class="wrapper">
 
-               <?php
-               if(!isset($hideNav)){
-                   include_once("navBar.php");
-               }
-               ?>
+              
             </div>
         </div>   
     </html>         
