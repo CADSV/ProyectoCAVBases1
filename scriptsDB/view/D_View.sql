@@ -1,6 +1,7 @@
--- REPORTE D: mprima los países donde vivan usuarios que ven series con más de 10 episodios.
+-- REPORTE D: Imprima los países donde vivan usuarios que ven series con más de 10 episodios.
 
-SELECT CountryName
+CREATE VIEW reporteD AS
+SELECT IdCountry, CountryName
 FROM country
 WHERE IdCountry IN
 
@@ -20,5 +21,4 @@ WHERE IdCity IN
                                                                     FROM episode
                                                                     GROUP BY IdContent
                                                                     HAVING COUNT(IdEpisode)>10)))));
-
 
