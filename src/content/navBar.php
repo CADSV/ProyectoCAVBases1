@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="assets/style/contentStyle.css"/> 
+    <link rel="stylesheet" type="text/css" href="../../assets/style/contentStyle.css"/> 
     <script src="https://kit.fontawesome.com/06a651c8da.js" crossorigin="anonymous"> </script>
 
 </head>
@@ -23,7 +23,7 @@
             <a href="search.php">
                 <i class="fas fa-search"></i>
             </a>
-            <a href="../profile/adminProfile.php"> 
+            <a href="../profile/select_profile.php"> 
             <i class="fas fa-user"></i>
         </a>
     </div>
