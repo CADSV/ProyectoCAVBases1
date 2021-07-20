@@ -20,7 +20,7 @@ if (!isset($_SESSION["userLoggedIn"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
-    <title>Selecciona tu perfil</title>
+    <title>Selecciona Tu Perfil</title>
     <link rel="stylesheet" href="../../assets/style/profileStyle.css">
 </head>
 
@@ -31,7 +31,7 @@ if (!isset($_SESSION["userLoggedIn"])){
                 <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
             </a>    
             <div class = "rightHeader">
-                <a href="modifysuscription.php">
+                <a href="../user/modifySuscription.php">
                     <img src="../../assets/images/editUserGrey.png" title="EditUser" alt="Editar usuario">   
                 </a>
                 <nav class = "logout">
@@ -48,7 +48,7 @@ if (!isset($_SESSION["userLoggedIn"])){
             </div>
 
             <div class = "profilesSelection">
-                <?php echo $profileContainer->showAllProfiles($username); ?>
+                <?php echo $profileContainer->showAllProfiles($username, 1); ?>
 
                 <div class = "newProfile">
                     <a href="" title = "Nuevo perfil" alt = "Nuevo perfil" >

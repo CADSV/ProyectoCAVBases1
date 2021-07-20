@@ -20,9 +20,11 @@ require_once("../../data/classes/constants.php");
         $membershipData = $suscriptionAccount->getMembershipData($IdMembership);
         $membershipName=$membershipData["MembershipName"];
         $membershipPrice=$membershipData["Price"]." $";
+        $value = 'Cambiar Membresía';
     }else{
         $membershipName="No asignado";
         $membershipPrice="No disponible";
+        $value = 'Comprar Membresía';
     }
     
   
@@ -59,7 +61,7 @@ require_once("../../data/classes/constants.php");
     <meta name="viewport" 
         content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
     <title>Modificar Suscripción</title>
-    <link rel="stylesheet" type="text/css" href="../../assets/style/modifysuscriptionStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/style/modifySuscriptionStyle.css">
 </head>
 <body>
     <div class="wrapper">
@@ -68,7 +70,7 @@ require_once("../../data/classes/constants.php");
                     <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo"> 
                 </a>          
                 <nav class = "back">
-                    <a href="selectProfile.php">Volver a perfiles</a>
+                    <a href="../profile/selectProfile.php">Volver a perfiles</a>
                  </nav>
             </header>
         
@@ -113,11 +115,10 @@ require_once("../../data/classes/constants.php");
                                 <input type="radio" name="membership" value="1" id="Gold" required >      <label for="Gold"> Gold 7,99$</label>
                                 <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99$</label>
                                 <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99$</label>
-                                <input class="button" type="submit" name="changeSuscriptionButton" value="Cambiar membresía" required> 
-                            
+                                <?php echo '<input class="button" type="submit" name="changeSuscriptionButton" value="'. $value .'" required>'; ?>                  
                         </form>
                     </div>
-                    <form method="POST"> <input class="buttonCancel" type="submit" name="cancelSuscriptionButton" value="Cancelar suscripción" required> </form>           
+                    <form method="POST"> <input class="buttonCancel" type="submit" name="cancelSuscriptionButton" value="Cancelar Suscripción" required> </form>           
                 </div>                                          
             </div>
         </div>

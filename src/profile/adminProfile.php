@@ -22,7 +22,7 @@ if (!isset($_SESSION["userLoggedIn"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
-    <title>Administrar perfiles</title>
+    <title>Administrar Perfiles</title>
     <link rel="stylesheet" href="../../assets/style/profileStyle.css">
 </head>
 
@@ -33,7 +33,7 @@ if (!isset($_SESSION["userLoggedIn"])){
                 <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
             </a> 
             <div class = "rightHeader">
-                <a href="modifysuscription.php">
+                <a href="../user/modifySuscription.php">
                     <img src="../../assets/images/editUserGrey.png" title="EditUser" alt="Editar usuario">   
                 </a>
                 <nav class = "logout">
@@ -46,34 +46,15 @@ if (!isset($_SESSION["userLoggedIn"])){
     <section>
         <div class = "container">
             <div class = "question">
-                <h1>Administrar perfiles:</h1>
+                <h1>Administrar Perfiles</h1>
             </div>
 
             <div class = "profilesSelection">
-                <div class ="adminProfile">
-                    <a href="" title = "Editar Perfil" alt = "Editar Perfil">
-                        <img src="../../assets/images/profiles/editYellow.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
-                    </a>
-                    <h2><?=$username?></h2>
-                </div>
-
-                <div class ="adminProfile">
-                    <a href="" title = "Modificar Suscripción" alt = "Editar Perfil">
-                        <img src="../../assets/images/profiles/editBlue.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
-                    </a>
-                    <h2><?=$username?>2</h2>
-                </div>
-
-                <div class ="adminProfile">
-                    <a href="" title = "Editar Perfil" alt = "Editar Perfil">
-                        <img src="../../assets/images/profiles/editRed.png" title="Editar Perfil" alt="Editar Perfil"  class = "profilePicture">
-                    </a>
-                    <h2><?=$username?>3</h2>
-                </div> 
-
+                <?php echo $profileContainer->showAllProfiles($username, 2); ?>
+                
                 <div class = "newProfile">
                     <a href="" title = "Nuevo perfil" alt = "Nuevo perfil" >
-                        <img src="../../assets/images/plus.png" title="Nuevo perfil" alt="Nuevo perfil">
+                        <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
                     </a>
                 </div>
             </div>
