@@ -1,7 +1,7 @@
 <?php
 
 require_once("../../data/config.php");
-
+require_once("../../data/containers/profileContainer.php");
 
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
@@ -10,6 +10,8 @@ if (!isset($_SESSION["userLoggedIn"])){
 
     $username = $_SESSION["userLoggedIn"];
 
+    $profileContainer = new ProfileContainer($connection);
+    echo $profileContainer->showAllProfiles($username);
 ?>
 
 <!DOCTYPE html>
