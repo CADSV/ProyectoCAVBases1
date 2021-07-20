@@ -52,7 +52,7 @@ if (!isset($_SESSION["userLoggedIn"])){
 
                 <div class = "newProfile">
                     <a href="" title = "Nuevo perfil" alt = "Nuevo perfil" >
-                        <img src="../../assets/images/plus.png" title="Nuevo perfil" alt="Nuevo perfil">
+                        <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
                     </a>
                 </div>
             </div>

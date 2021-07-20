@@ -51,7 +51,7 @@ class ProfileContainer{
             $html .= 'purpleProfile.png"';
         }
 
-        return $html . 'title="Profile" alt="Profile"></a><h2>' . $profileName . '</h2></div>';
+        return $html . 'title='. $profileName .' alt='. $profileName .'></a><h2>' . $profileName . '</h2></div>';
     }
 
 }
