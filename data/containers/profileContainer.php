@@ -19,19 +19,21 @@ class ProfileContainer{
         $query->bindValue(":username", $username);
         $query->execute();
         
-        $html = '<div class ="profile">';
-                /*    <a href="">
-                        <img src="../../assets/images/profiles/yellowProfile.png" title="Profile" alt="Profile">
-                    </a>
-                    <h2><?=$username?></h2>
-                </div>';*/
+        $html = '';
 
-        while($row = $query->fetch(PDO::FETCH_ASSOC)){
-            $html .= $row['ProfileName'];
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){ // Mostrar todos los perfiles existentes
+            $html .= $this->getProfileHtml($row);
         }
 
-        return $html . '</div>';
+        return $html; 
 
+    }
+
+    private function getProfileHtml($sqlData){ // Crear código HTML para un perfil
+        $profileName = $sqlData["ProfileName"];
+        $profilePhoto = $sqlData["ProfilePhoto"];
+
+        return $profileName . "<br>";
     }
 
 }
