@@ -44,22 +44,16 @@ if (!isset($_SESSION["userLoggedIn"])){
     <section>
         <div class = "container">
             <div class = "question">
-                <h1>¿Quién eres? Elige tu perfil</h1>
+                <h1>Crear Nuevo Perfil</h1>
             </div>
 
             <div class = "profilesSelection">
-                <?php echo $profileContainer->showAllProfiles($username, 1); ?>
-
-                <div class = "newProfile">
-                    <a href="createProfile.php" title = "Nuevo perfil" alt = "Nuevo perfil" >
-                        <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
-                    </a>
-                </div>
+                
             </div>
 
 
             <div class = "administrarPerfiles">
-                <a href="adminProfile.php" title = "Administrar Perfiles" alt = "Administrar Perfiles">ADMINISTRAR PERFILES</a>
+                <a href="selectProfile.php" alt = "Cancelar">CANCELAR</a>
             </div>
         </div>
 

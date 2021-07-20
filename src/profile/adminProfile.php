@@ -53,7 +53,7 @@ if (!isset($_SESSION["userLoggedIn"])){
                 <?php echo $profileContainer->showAllProfiles($username, 2); ?>
                 
                 <div class = "newProfile">
-                    <a href="" title = "Nuevo perfil" alt = "Nuevo perfil" >
+                    <a href="createProfile.php" title = "Nuevo perfil" alt = "Nuevo perfil" >
                         <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
                     </a>
                 </div>
