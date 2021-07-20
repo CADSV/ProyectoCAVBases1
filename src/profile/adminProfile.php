@@ -76,7 +76,7 @@ if (!isset($_SESSION["userLoggedIn"])){
 
 
             <div class = "readyButton">
-                <a href="select_profile.php" title="Listo" alt= "Listo">LISTO</a>
+                <a href="selectProfile.php" title="Listo" alt= "Listo">LISTO</a>
             </div>
         </div>
 

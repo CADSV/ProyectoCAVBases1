@@ -18,7 +18,7 @@ require_once("../../data/config.php");
 
 
     if (isset($_GET["Omitir"])) {
-        echo '<script language="javascript">alert("Se ha registrado exitosamente pero no está suscrito a ningún plan. Lo invitamos a suscribirse pronto. ¡Bienvenid@ a Carlevix!");window.location.href="../profile/select_profile.php"</script>';
+        echo '<script language="javascript">alert("Se ha registrado exitosamente pero no está suscrito a ningún plan. Lo invitamos a suscribirse pronto. ¡Bienvenid@ a Carlevix!");window.location.href="../profile/selectProfile.php"</script>';
 
     }
 
@@ -117,7 +117,7 @@ require_once("../../data/config.php");
                         <!-- <div class = "buttonOmitir"> -->
                             <div class = "buttonOmitir">  
                                 <input type="submit" class = "marginButtonGray" name = "Omitir" value ="Omitir">
-                                <!-- <a href="../profile/select_profile.php">Omitir</a> -->
+                                <!-- <a href="../profile/selectProfile.php">Omitir</a> -->
                             </div>
                         <!-- </div> -->
                  </div>

@@ -28,8 +28,8 @@ require_once("../../data/classes/constants.php");
         $success= $suscriptionAccount->suscription($name, $lastName, $cardnumber,$avenueStreet, $buildingHouse, $postalcode, $cvv, $expiredate, $username, $IdMembership);
 
         if($success) {
-            echo '<script language="javascript">alert("Se ha registrado y suscrito exitosamente. ¡Bienvenid@ a Carlevix '.$username.'!");window.location.href="../profile/select_profile.php"</script>';
-            // header("Location: ../profile/select_profile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
+            echo '<script language="javascript">alert("Se ha registrado y suscrito exitosamente. ¡Bienvenid@ a Carlevix '.$username.'!");window.location.href="../profile/selectProfile.php"</script>';
+            // header("Location: ../profile/selectProfile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
         }
         
 
