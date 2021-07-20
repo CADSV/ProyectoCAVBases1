@@ -33,7 +33,25 @@ class ProfileContainer{
         $profileName = $sqlData["ProfileName"];
         $profilePhoto = $sqlData["ProfilePhoto"];
 
-        return $profileName . "<br>";
+        $html = '<div class ="profile"><a href=""><img src="../../assets/images/profiles/';
+ 
+        if($profilePhoto == 1){ // Se muestra la foto de perfil que corrresponde
+            $html .= 'blueProfile.png"';
+        }
+        elseif($profilePhoto == 2){
+            $html .= 'redProfile.png"';
+        }
+        elseif($profilePhoto == 3){
+            $html .= 'yellowProfile.png"';
+        }
+        elseif($profilePhoto == 4){
+            $html .= 'greenProfile.png"';
+        }
+        else{
+            $html .= 'purpleProfile.png"';
+        }
+
+        return $html . 'title="Profile" alt="Profile"></a><h2>' . $profileName . '</h2></div>';
     }
 
 }

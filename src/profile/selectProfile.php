@@ -11,7 +11,6 @@ if (!isset($_SESSION["userLoggedIn"])){
     $username = $_SESSION["userLoggedIn"];
 
     $profileContainer = new ProfileContainer($connection);
-    echo $profileContainer->showAllProfiles($username);
 ?>
 
 <!DOCTYPE html>
@@ -49,26 +48,7 @@ if (!isset($_SESSION["userLoggedIn"])){
             </div>
 
             <div class = "profilesSelection">
-                <div class ="profile">
-                    <a href="">
-                        <img src="../../assets/images/profiles/yellowProfile.png" title="Profile" alt="Profile">
-                    </a>
-                    <h2><?=$username?></h2>
-                </div>
-
-                <div class ="profile">
-                    <a href="">
-                        <img src="../../assets/images/profiles/blueProfile.png" title="Profile" alt="Profile">
-                    </a>
-                    <h2><?=$username?>2</h2>
-                </div>
-
-                <div class ="profile">
-                    <a href="">
-                        <img src="../../assets/images/profiles/redProfile.png" title="Profile" alt="Profile">
-                    </a>
-                    <h2><?=$username?>3</h2>
-                </div>
+                <?php echo $profileContainer->showAllProfiles($username); ?>
 
                 <div class = "newProfile">
                     <a href="" title = "Nuevo perfil" alt = "Nuevo perfil" >
