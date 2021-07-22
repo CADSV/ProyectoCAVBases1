@@ -71,7 +71,7 @@ class ProfileContainer{
             $html .= 'editBlue.png"';
         }
         elseif($profilePhoto == 2){
-            $html .= 'editGreen.png"';
+            $html .= 'editRed.png"';
         }
         elseif($profilePhoto == 3){
             $html .= 'editYellow.png"';
