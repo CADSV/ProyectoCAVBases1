@@ -43,8 +43,6 @@ CREATE TABLE Device ( -- Dispositivo que puede utilizar usuario para navegar en 
    
     IdDevice        INT(10) UNIQUE NOT NULL AUTO_INCREMENT,
     DeviceType      VARCHAR(20) NOT NULL,
-    DeviceModel     VARCHAR(20) NOT NULL,
-    DeviceCompany   VARCHAR(20) NOT NULL,
 
     CONSTRAINT DTYPE_Domain CHECK ((DeviceType='Laptop') OR (DeviceType='Computer') OR (DeviceType='Cellphone') OR (DeviceType='Tablet') OR (DeviceType='Other/Unknown')), -- Tipo de dispositivo
 
