@@ -23,7 +23,7 @@
             <a href="search.php">
                 <i class="fas fa-search"></i>
             </a>
-            <a href="../profile/select_profile.php"> 
+            <a href="../profile/selectProfile.php"> 
             <i class="fas fa-user"></i>
         </a>
     </div>

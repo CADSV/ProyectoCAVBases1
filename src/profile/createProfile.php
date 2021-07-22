@@ -3,17 +3,15 @@
 require_once("../../data/config.php");
 require_once("../../data/containers/profileContainer.php");
 
-
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
+
     $username = $_SESSION["userLoggedIn"];
 
     $profileContainer = new ProfileContainer($connection);
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -22,7 +20,7 @@ if (!isset($_SESSION["userLoggedIn"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
-    <title>Administrar Perfiles</title>
+    <title>Selecciona Tu Perfil</title>
     <link rel="stylesheet" href="../../assets/style/profileStyle.css">
 </head>
 
@@ -31,7 +29,7 @@ if (!isset($_SESSION["userLoggedIn"])){
         <header>
             <a href="../../index.php"> 
                 <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página"> 
-            </a> 
+            </a>    
             <div class = "rightHeader">
                 <a href="../user/modifySuscription.php">
                     <img src="../../assets/images/editUserGrey.png" title="EditUser" alt="Editar usuario">   
@@ -39,29 +37,23 @@ if (!isset($_SESSION["userLoggedIn"])){
                 <nav class = "logout">
                     <a href="../login/logout.php">Cerrar Sesión</a>
                 </nav>  
-            </div>  
+            </div>       
         </header>
     </div>
 
     <section>
         <div class = "container">
             <div class = "question">
-                <h1>Administrar Perfiles</h1>
+                <h1>Crear Nuevo Perfil</h1>
             </div>
 
             <div class = "profilesSelection">
-                <?php echo $profileContainer->showAllProfiles($username, 2); ?>
                 
-                <div class = "newProfile">
-                    <a href="createProfile.php" title = "Nuevo perfil" alt = "Nuevo perfil" >
-                        <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
-                    </a>
-                </div>
             </div>
 
 
-            <div class = "readyButton">
-                <a href="selectProfile.php" title="Listo" alt= "Listo">LISTO</a>
+            <div class = "administrarPerfiles">
+                <a href="selectProfile.php" alt = "Cancelar">CANCELAR</a>
             </div>
         </div>
 
