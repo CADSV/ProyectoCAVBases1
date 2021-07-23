@@ -63,12 +63,12 @@
             <div class = "marketing">
                 <div class = "freeMonth">
                     <h2>¡Suscríbete ahora y obtén un mes totalmente gratis!</h2>
-                    <img src="assets/images/freeMonth2.jpg" alt="Mes gratis" title = "Mes gratis">
+                    <img src="assets/images/freeMonth.jpg" alt="Mes gratis" title = "Mes gratis">
                     <p>En cualquiera de nuestros planes. ¡Tu momento es ahora!</p>
                 </div>
             </div>
 
-            
+
             <div class ="divider"></div>
 
 
