@@ -61,10 +61,14 @@
 
 
             <div class = "marketing">
-
-
+                <div class = "freeMonth">
+                    <h2>¡Suscríbete ahora y obtén un mes totalmente gratis!</h2>
+                    <img src="assets/images/freeMonth2.jpg" alt="Mes gratis" title = "Mes gratis">
+                    <p>En cualquiera de nuestros planes. ¡Tu momento es ahora!</p>
+                </div>
             </div>
 
+            
             <div class ="divider"></div>
 
 
@@ -73,7 +77,7 @@
                     <?php
                      echo "<span class='deviceMsg1'>Nuestros usarios aman y prefieren ver Carlevix en sus $deviceType </span>";
                     ?>
-                    <img src="assets/images/loginBackground2.jpg" title="Imagen de fondo" alt="Cartelera multimedia, imagen de fondo">
+                    <img src="assets/images/loginBackground2.jpg" title="Dispositivos" alt="Dispositivos">
                     <?php
                      echo "<span class='deviceMsg2'>¿Qué esperas para ver todo nuestro entretenido contenido desde $article?</span>";
                     ?>
