@@ -1,3 +1,21 @@
+<?php
+    require_once ("data/imports/user_agent.php");
+
+    //create an instance of UserAgent class
+    $ua = new UserAgent();
+    $deviceType = 'computadoras';
+    $article = 'la tuya';
+    $browser = $ua -> browser();
+    
+
+    //if site is accessed from mobile, then redirect to the mobile site.
+    if($ua->is_mobile()){;
+     $deviceType = 'teléfonos';       
+     $article = 'el tuyo';            
+    }
+?>
+    
+    
     <!DOCTYPE html>
     <html lang='es'>
         <head>
@@ -40,26 +58,17 @@
             </div>
 
             <div class ="divider"></div>
-            
+
             <div class = "marketing">
-                <div class = "background2">
-                    <img src="assets/images/loginBackground2.jpg" title="Imagen de fondo" alt="Cartelera multimedia, imagen de fondo">
-                </div>
-
-                <?php
-                    //include file
-                    require_once ("data/imports/user_agent.php");
-
-                    //create an instance of UserAgent class
-                    $ua = new UserAgent();
-
-                    //if site is accessed from mobile, then redirect to the mobile site.
-                    if($ua->is_mobile()){;
-                        
-                    } else {
-                        echo "<span class='PlanMessage'>Precio: jdo </span>";
-                    }
+                <div class = "deviceImg">
+                    <?php
+                     echo "<span class='deviceMsg'>Nuestros usarios aman y prefieren ver Carlevix en sus $deviceType </span>";
                     ?>
+                    <img src="assets/images/loginBackground2.jpg" title="Imagen de fondo" alt="Cartelera multimedia, imagen de fondo">
+                    <?php
+                     echo "<span class='deviceMsg'>¿Qué esperas para ver todo nuestro entretenido contenido desde $article?</span>";
+                    ?>
+                </div>
 
             </div>
 
