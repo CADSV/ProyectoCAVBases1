@@ -217,7 +217,6 @@ a{
     flex-flow: row wrap;
     justify-content: end;
     align-items: center;
-    /* margin-top: 70px; */
     width: 70%;
 }
 
@@ -240,15 +239,6 @@ a{
 }
 
 
-.country2 {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: stretch;
-    align-items: center;
-    width: 100%;
-    margin-top: 70px;
-}
-
 
 .countries img {
     height: 150px;
@@ -256,12 +246,6 @@ a{
 }
 
 .country p {
-    margin-left: 20px;
-    font-size: 32px;
-    font-weight: 700;
-}
-
-.country2 p {
     margin-left: 20px;
     font-size: 32px;
     font-weight: 700;

@@ -1,5 +1,9 @@
 <?php
     require_once ("data/imports/user_agent.php");
+    require_once("../../data/account/indexAccount.php");
+    require_once("../../data/config.php");
+
+
 
     //create an instance of UserAgent class
     $ua = new UserAgent();
@@ -13,6 +17,22 @@
      $deviceType = 'teléfonos';       
      $article = 'el tuyo';            
     }
+
+
+    $indexAccount = new IndexAccount($connection);
+
+    // $worldPlan = $indexAccount-> worldPlan();
+    $venezuelaPlan = $indexAccount -> venezuelaPlan();
+    $belgiumPlan = $indexAccount -> belgiumPlan();
+    $francePlan = $indexAccount -> francePlan();
+    $italyPlan = $indexAccount -> italyPlan();
+    $germanyPlan = $indexAccount -> germanyPlan();
+    $colombiaPlan = $indexAccount -> colombiaPlan();
+    $portugalPlan = $indexAccount -> portugalPlan();
+    $lebanonPlan = $indexAccount -> lebanonPlan();
+    $cubaPlan = $indexAccount -> cubaPlan();
+    $northKoreaPlan = $indexAccount -> northKoreaPlan();
+
 ?>
     
     
