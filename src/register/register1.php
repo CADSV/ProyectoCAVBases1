@@ -40,9 +40,9 @@
                 <div class = "subtitle">
                     <p>Completa la configuración de tu cuenta</p>
                 </div>
-                <div class = "text">
-                    <p>Carlevix está personalizado para ti.</p>
-                    <p>Completa tus datos para ver Carlevix en</p>
+                <div class = "text">    
+                    </p> <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left"> Carlevix está personalizado para ti.</p>
+                    </p> <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left"> Completa tus datos para ver Carlevix en</p>
                     <p>cualquier dispositivo, cuando quieras.</p>
                 </div>
                 <div class = "buttonContainer">

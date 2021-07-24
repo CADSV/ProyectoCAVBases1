@@ -47,9 +47,9 @@ if (!isset($_SESSION["userLoggedIn"])){
                     <p>Configura tu pago</p>
                 </div>
                 <div class = "text">
-                    <p>Tu mes gratis empieza en cuanto configures el pago.</p>
-                    <p>Sin compromisos.</p>
-                    <p>Cancela online cuando quieras.</p>
+                    </p> <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">Tu mes gratis empieza en cuanto configures el pago.</p>
+                    </p> <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">Sin compromisos.</p>
+                    </p> <img src="../../assets/images/check_sin_circulo.png" title="check_sin_circulo" alt="check_sin_circulo" align="left">Cancela online cuando quieras.</p>
                 </div>
                 <div class = "buttonContainer">
                     <div class = "marginbutton">
