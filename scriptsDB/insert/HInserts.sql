@@ -14,6 +14,41 @@ INSERT INTO filmworker VALUES (10,'Jordana','Brewster','F');
 INSERT INTO filmworker VALUES (11,'Daniel','Brühl','M');
 
 
+
+-- Agregados 
+INSERT INTO filmworker VALUES (12,'Clint','Eastwood','M');
+INSERT INTO filmworker VALUES (13,'Francis','Ford','M');
+INSERT INTO filmworker VALUES (14,'Martin','Scorsese','M');
+INSERT INTO filmworker VALUES (15,'Stanley','Kubrick','M');
+
+INSERT INTO filmworker VALUES (16,'Alfred','Hitchcock','M');
+INSERT INTO filmworker VALUES (17,'Orson','Welles','M');
+INSERT INTO filmworker VALUES (18,'Steven','Spielberg','M');
+INSERT INTO filmworker VALUES (19,'Quentin','Tarantino','M');
+INSERT INTO filmworker VALUES (20,'Kathryn','Bigelow','F');
+INSERT INTO filmworker VALUES (21,'Alice','Guy','F');
+INSERT INTO filmworker VALUES (22,'Lois','Weber','F');
+INSERT INTO filmworker VALUES (23,'Elena','Jordi','F');
+INSERT INTO filmworker VALUES (24,'Lotte','Reiniger','F');
+INSERT INTO filmworker VALUES (25,'Helena','Cortesina','F');
+
+
+-- Director--
+INSERT INTO director VALUES (12);
+INSERT INTO director VALUES (13);
+INSERT INTO director VALUES (14);
+INSERT INTO director VALUES (15);
+INSERT INTO director VALUES (16);
+INSERT INTO director VALUES (17);
+INSERT INTO director VALUES (18);
+INSERT INTO director VALUES (19);
+INSERT INTO director VALUES (20);
+INSERT INTO director VALUES (21);
+INSERT INTO director VALUES (22);
+INSERT INTO director VALUES (23);
+INSERT INTO director VALUES (24);
+INSERT INTO director VALUES (25);
+
 -- Performer--
 INSERT INTO performer VALUES (1);
 INSERT INTO performer VALUES (2);
