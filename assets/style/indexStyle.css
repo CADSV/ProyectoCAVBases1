@@ -212,31 +212,57 @@ a{
 }
 
 
-.countryRow {
+.countries {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
-    margin-top: 70px;
-    width: 60%;
+    /* margin-top: 70px; */
+    width: 70%;
+}
+
+
+.countriesColumn {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
 }
 
 .country {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: stretch;
     align-items: center;
-    /* width: 320px; */
+    width: 100%;
+    margin-top: 70px;
 }
 
 
-.country img {
+.country2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: center;
+    width: 100%;
+    margin-top: 70px;
+}
+
+
+.countries img {
     height: 150px;
     width: 250px;
 }
 
 .country p {
-    /* margin-left: 30px; */
+    margin-left: 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.country2 p {
+    margin-left: 20px;
     font-size: 32px;
     font-weight: 700;
 }
