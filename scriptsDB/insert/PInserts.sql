@@ -176,3 +176,44 @@ INSERT INTO hasseenof VALUES (18,11,1,'0:36:24');
 INSERT INTO hasseenof VALUES (18,12,1,'0:45:14');
 INSERT INTO hasseenof VALUES (18,2,2,'3:03:01');
 INSERT INTO hasseenof VALUES (18,14,1,'0:38:06');
+
+
+-- ----------------------------------------------------------------------------------
+-- Directed
+-- ----------------------------------------------------------------------------------
+
+INSERT INTO directed VALUES (12,1);
+INSERT INTO directed VALUES (13,2);
+INSERT INTO directed VALUES (14,3);
+INSERT INTO directed VALUES (15,4);
+INSERT INTO directed VALUES (16,5);
+INSERT INTO directed VALUES (17,6);
+INSERT INTO directed VALUES (18,7);
+INSERT INTO directed VALUES (19,8);
+INSERT INTO directed VALUES (19,9);
+INSERT INTO directed VALUES (20,10);
+INSERT INTO directed VALUES (21,11);
+INSERT INTO directed VALUES (22,12);
+INSERT INTO directed VALUES (23,13);
+INSERT INTO directed VALUES (24,13);
+INSERT INTO directed VALUES (25,14);
+INSERT INTO directed VALUES (25,15);
+INSERT INTO directed VALUES (24,16);
+INSERT INTO directed VALUES (23,17);
+INSERT INTO directed VALUES (22,18);
+INSERT INTO directed VALUES (21,19);
+INSERT INTO directed VALUES (20,20);
+INSERT INTO directed VALUES (19,21);
+INSERT INTO directed VALUES (19,22);
+INSERT INTO directed VALUES (19,23);
+INSERT INTO directed VALUES (18,24);
+INSERT INTO directed VALUES (18,25);
+INSERT INTO directed VALUES (19,26);
+INSERT INTO directed VALUES (21,27);
+INSERT INTO directed VALUES (21,28);
+INSERT INTO directed VALUES (15,29);
+INSERT INTO directed VALUES (16,30);
+
+
+
+
