@@ -6,7 +6,7 @@ INSERT INTO country VALUES (5,"Italia");
 INSERT INTO country VALUES (6,"Alemania");
 INSERT INTO country VALUES (7,"Colombia");
 INSERT INTO country VALUES (8,"Portugal");
-INSERT INTO country VALUES (9,"Libano");
+INSERT INTO country VALUES (9,"Líbano");
 INSERT INTO country VALUES (10,"Cuba");
 INSERT INTO country VALUES (11,"Corea del Norte");
 

@@ -1,5 +1,10 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
     require_once ("data/imports/user_agent.php");
+    require_once("data/account/indexAccount.php");
+    require_once("data/config.php");
+
+
 
     //create an instance of UserAgent class
     $ua = new UserAgent();
@@ -13,6 +18,21 @@
      $deviceType = 'teléfonos';       
      $article = 'el tuyo';            
     }
+
+
+    $indexAccount = new IndexAccount($connection);
+
+    $venezuelaPlan = $indexAccount -> countryPlan('Venezuela');
+    $belgiumPlan = $indexAccount -> countryPlan('Bélgica');
+    $francePlan = $indexAccount -> countryPlan('Francia');
+    $italyPlan = $indexAccount -> countryPlan('Italia');
+    $germanyPlan = $indexAccount -> countryPlan('Alemania');
+    $colombiaPlan = $indexAccount -> countryPlan('Colombia');
+    $portugalPlan = $indexAccount -> countryPlan('Portugal');
+    $lebanonPlan = $indexAccount -> countryPlan('Líbano');
+    $cubaPlan = $indexAccount -> countryPlan('Cuba');
+    $northKoreaPlan = $indexAccount -> countryPlan('Corea del Norte');
+
 ?>
     
     
@@ -82,6 +102,150 @@
                      echo "<span class='deviceMsg2'>¿Qué esperas para ver todo nuestro entretenido contenido desde $article?</span>";
                     ?>
                 </div>
+
+            </div>
+
+
+            <div class ="divider"></div>
+
+
+            <div class = "marketingCountries">
+                <h2>Estos son los planes preferidos por nuestros usuarios alrededor del mundo</h2>
+
+                <div class = "countries">
+
+                    <div class = "countriesColumn">
+
+                        <div class = "country">
+                            <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
+                            <?php  echo "<span class='countryPlan'>$venezuelaPlan</span>"; ?>
+                        </div>
+
+                        <div class = "country">
+                            <img src="assets/images/flags/France.png" alt="Francia" title= "Francia">
+                            <?php  echo "<span class='countryPlan'>$francePlan</span>"; ?>
+                        </div>
+
+                        <div class = "country">
+                            <img src="assets/images/flags/Germany.png" alt="Alemania" title= "Alemania">
+                            <?php  echo "<span class='countryPlan'>$germanyPlan</span>"; ?>
+                        </div>
+
+                        <div class = "country">
+                            <img src="assets/images/flags/Portugal.png" alt="Portugal" title= "Portugal">
+                            <?php  echo "<span class='countryPlan'>$portugalPlan</span>"; ?>
+                        </div>
+
+                        <div class = "country">
+                            <img src="assets/images/flags/Cuba.png" alt="Cuba" title= "Cuba">
+                            <?php  echo "<span class='countryPlan'>$cubaPlan</span>"; ?>
+                        </div>
+
+                    </div>
+
+                    <div class = "countriesColumn">
+
+                        <div class = "country">
+                            <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
+                            <?php  echo "<span class='countryPlan'>$belgiumPlan</span>"; ?>
+                        </div>
+
+                        <div class = "country">
+                            <img src="assets/images/flags/Italy.png" alt="Italia" title= "Italia">
+                            <?php  echo "<span class='countryPlan'>$italyPlan</span>"; ?>
+                        </div>
+
+                        <div class = "country">
+                            <img src="assets/images/flags/Colombia.png" alt="Colombia" title= "Colombia">
+                            <?php  echo "<span class='countryPlan'>$colombiaPlan</span>"; ?>
+                        </div>
+
+                        <div class = "country">
+                            <img src="assets/images/flags/Lebanon.png" alt="Líbano" title= "Líbano">
+                            <?php  echo "<span class='countryPlan'>$lebanonPlan</span>"; ?>
+                        </div>
+
+                        <div class = "country">
+                            <img src="assets/images/flags/North_Korea.png" alt="Corea del Norte" title= "Corea del Norte">
+                            <?php  echo "<span class='countryPlan'>$northKoreaPlan</span>"; ?>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
+                        <p>Premium</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/France.png" alt="Francia" title= "Francia">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Italy.png" alt="Italia" title= "Italia">
+                        <p>Gold</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Germany.png" alt="Alemania" title= "Alemania">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Colombia.png" alt="Colombia" title= "Colombia">
+                        <p>Gold</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Portugal.png" alt="Portugal" title= "Portugal">
+                        <p>Gold</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Lebanon.png" alt="Líbano" title= "Líbano">
+                        <p>Premiun</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Cuba.png" alt="Cuba" title= "Cuba">
+                        <p>Gold</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/North_Korea.png" alt="Corea del Norte" title= "Corea del Norte">
+                        <p>VIP</p>
+                    </div>
+
+                </div> -->
 
             </div>
 

@@ -23,7 +23,7 @@ UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 1080, UserAvenueStreet = '
 INSERT INTO issuscribed VALUES (6,1,112,9900886673651286,'2020-10-18 23:13:56',NULL); 
 UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 2386, UserAvenueStreet = 'Spa Street', UserBuildingHouse = 'Francorchamps' WHERE IdUser = 6;
 
-INSERT INTO issuscribed VALUES (8,3,075,7624541287976542,'2020-08-15 00:00:01',NULL); 
+INSERT INTO issuscribed VALUES (8,1,075,7624541287976542,'2020-08-15 00:00:01',NULL); 
 UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 7023, UserAvenueStreet = 'El Poblado', UserBuildingHouse = 'My Heart' WHERE IdUser = 8;
 
 INSERT INTO issuscribed VALUES (10,2,666,0001000200030004,'2020-01-03 09:53:27',NULL); --
