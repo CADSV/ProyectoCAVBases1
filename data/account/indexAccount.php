@@ -22,19 +22,20 @@ class IndexAccount{
                                                                             FROM (  SELECT COUNT(IdMembership) as myCount
                                                                                     FROM IsSuscribed
                                                                                     GROUP BY IdMembership) as myTable)
-                                                ORDER BY IdMembership");
+                                                ORDER BY IdMembership DESC");
 
         $query->execute();
-        $planIdData = $query->fetch(PDO::FETCH_ASSOC);
+        
 
         if($query->rowCount()== 1){ 
 
+            $planIdData = $query->fetch(PDO::FETCH_ASSOC);
             $globalIdPlan = $planIdData["IdMembership"];
 
         } else {
 
-            $fila = mysql_fetch_row($planIdData);
-            $globalIdPlan = $fila[(rowCount())-1];
+            $planIdData = $query->fetch(PDO::FETCH_BOTH);
+            $globalIdPlan = $planIdData[0];
         }
         
         $query2 = $this->connection->prepare(" SELECT MembershipName FROM Membership WHERE (IdMembership = :IdMembership)");
