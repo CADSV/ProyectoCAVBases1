@@ -101,6 +101,48 @@
 
                     <div class = "country">
                         <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
+                        <p>Premium</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/France.png" alt="Francia" title= "Francia">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Italy.png" alt="Italia" title= "Italia">
+                        <p>Gold</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Germany.png" alt="Alemania" title= "Alemania">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Colombia.png" alt="Colombia" title= "Colombia">
+                        <p>Gold</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Portugal.png" alt="Portugal" title= "Portugal">
+                        <p>Gold</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Lebanon.png" alt="Líbano" title= "Líbano">
                         <p>Premiun</p>
                     </div>
 
@@ -109,55 +151,13 @@
                 <div class = "countryRow">
 
                     <div class = "country">
-                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
+                        <img src="assets/images/flags/Cuba.png" alt="Cuba" title= "Cuba">
+                        <p>Gold</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/North_Korea.png" alt="Corea del Norte" title= "Corea del Norte">
                         <p>VIP</p>
-                    </div>
-
-                    <div class = "country">
-                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
-                        <p>Premiun</p>
-                    </div>
-
-                </div>
-
-                <div class = "countryRow">
-
-                    <div class = "country">
-                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
-                        <p>VIP</p>
-                    </div>
-
-                    <div class = "country">
-                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
-                        <p>Premiun</p>
-                    </div>
-
-                </div>
-
-                <div class = "countryRow">
-
-                    <div class = "country">
-                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
-                        <p>VIP</p>
-                    </div>
-
-                    <div class = "country">
-                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
-                        <p>Premiun</p>
-                    </div>
-
-                </div>
-
-                <div class = "countryRow">
-
-                    <div class = "country">
-                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
-                        <p>VIP</p>
-                    </div>
-
-                    <div class = "country">
-                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
-                        <p>Premiun</p>
                     </div>
 
                 </div>

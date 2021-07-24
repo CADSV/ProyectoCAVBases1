@@ -226,6 +226,7 @@ a{
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
+    /* width: 320px; */
 }
 
 
@@ -235,7 +236,7 @@ a{
 }
 
 .country p {
-    margin-left: 30px;
+    /* margin-left: 30px; */
     font-size: 32px;
     font-weight: 700;
 }
