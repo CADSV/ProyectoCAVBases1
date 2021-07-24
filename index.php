@@ -1,7 +1,8 @@
 <?php
+error_reporting(E_ALL ^ E_WARNING);
     require_once ("data/imports/user_agent.php");
-    require_once("../../data/account/indexAccount.php");
-    require_once("../../data/config.php");
+    require_once("data/account/indexAccount.php");
+    require_once("data/config.php");
 
 
 
@@ -21,17 +22,17 @@
 
     $indexAccount = new IndexAccount($connection);
 
-    // $worldPlan = $indexAccount-> worldPlan();
-    $venezuelaPlan = $indexAccount -> venezuelaPlan();
-    $belgiumPlan = $indexAccount -> belgiumPlan();
-    $francePlan = $indexAccount -> francePlan();
-    $italyPlan = $indexAccount -> italyPlan();
-    $germanyPlan = $indexAccount -> germanyPlan();
-    $colombiaPlan = $indexAccount -> colombiaPlan();
-    $portugalPlan = $indexAccount -> portugalPlan();
-    $lebanonPlan = $indexAccount -> lebanonPlan();
-    $cubaPlan = $indexAccount -> cubaPlan();
-    $northKoreaPlan = $indexAccount -> northKoreaPlan();
+    $globalPlan = $indexAccount-> globalPlan();
+    // $venezuelaPlan = $indexAccount -> venezuelaPlan();
+    // $belgiumPlan = $indexAccount -> belgiumPlan();
+    // $francePlan = $indexAccount -> francePlan();
+    // $italyPlan = $indexAccount -> italyPlan();
+    // $germanyPlan = $indexAccount -> germanyPlan();
+    // $colombiaPlan = $indexAccount -> colombiaPlan();
+    // $portugalPlan = $indexAccount -> portugalPlan();
+    // $lebanonPlan = $indexAccount -> lebanonPlan();
+    // $cubaPlan = $indexAccount -> cubaPlan();
+    // $northKoreaPlan = $indexAccount -> northKoreaPlan();
 
 ?>
     
@@ -138,7 +139,8 @@
 
                         <div class = "country">
                             <img src="assets/images/flags/Cuba.png" alt="Cuba" title= "Cuba">
-                            <p>Gold</p>
+                            <?php  echo "<span class='countryPlan'>$globalPlan</span>"; ?>
+                            <!-- <p>Gold</p> -->
                         </div>
 
                     </div>
