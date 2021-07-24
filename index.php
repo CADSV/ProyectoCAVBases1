@@ -85,5 +85,84 @@
 
             </div>
 
+
+            <div class ="divider"></div>
+
+
+            <div class = "marketingCountries">
+                <h2>Estos son los planes preferidos por nuestros usuarios alrededor del mundo</h2>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
+                        <p>Premiun</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
+                        <p>Premiun</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
+                        <p>Premiun</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
+                        <p>Premiun</p>
+                    </div>
+
+                </div>
+
+                <div class = "countryRow">
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
+                        <p>VIP</p>
+                    </div>
+
+                    <div class = "country">
+                        <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
+                        <p>Premiun</p>
+                    </div>
+
+                </div>
+
+            </div>
+
         </body>
     </html>
