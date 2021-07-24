@@ -26,8 +26,8 @@ UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 2386, UserAvenueStreet = '
 INSERT INTO issuscribed VALUES (8,3,075,7624541287976542,'2020-08-15 00:00:01',NULL); 
 UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 7023, UserAvenueStreet = 'El Poblado', UserBuildingHouse = 'My Heart' WHERE IdUser = 8;
 
-INSERT INTO issuscribed VALUES (10,2,666,0001000200030004,'2020-01-03 09:53:27',NULL); --
-UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 8998, UserAvenueStreet = 'Dictator Avenue', UserBuildingHouse = 'Kim Un II' WHERE IdUser = 10;
+INSERT INTO issuscribed VALUES (11,2,666,0001000200030004,'2020-01-03 09:53:27',NULL); --
+UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 8998, UserAvenueStreet = 'Dictator Avenue', UserBuildingHouse = 'Brickell N3' WHERE IdUser = 11;
 
 INSERT INTO issuscribed VALUES (4,3,163,1878126903615428,'2020-07-11 22:22:01',NULL);
 UPDATE user SET UserIsSuscribed = 1, UserPostalCode = 7621, UserAvenueStreet = 'Mohammed Street', UserBuildingHouse = 'Abdala' WHERE IdUser = 4;

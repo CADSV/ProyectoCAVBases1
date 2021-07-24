@@ -43,5 +43,5 @@ INSERT INTO featurecontent VALUES (15,'Mesa Verde',2001,DEFAULT,1,'','Un banco q
 INSERT INTO featurecontent VALUES (16,'La Base de Datos',2021,DEFAULT,1,'','Un estudiante de ingeniería informática debe hacer una base de datos para guardar la información del mundo entero','2:11:00'); -- Ciencia ficción
 INSERT INTO featurecontent VALUES (17,'El Señor de los Anillos: el retorno del Rey',2003,DEFAULT,1,'','La conclusión de la trilogía del Señor de los Anillos','3:21:00'); -- Premio óscar mejor película, Aventura y Fantasía
 INSERT INTO featurecontent VALUES (18,'Viaje al Sol',2005,1,1,'','Un grupo de astronautas debe viajar al Sol para salvar al sistema solar','2:44:00'); -- Premio Oscar mejor actor principal, Ciencia ficción y Drama
-INSERT INTO featurecontent VALUES (19,'El Domingo No',2020,1,1,'','Un señor quiere pasar sus domingos tranquilo, pero sus vecinos no lo dejan','2:46:00'); -- Premio Golden Globe mejor guión, Comedia y Drama
+INSERT INTO featurecontent VALUES (19,'El Domingo No',2020,0,1,'','Un señor quiere pasar sus domingos tranquilo, pero sus vecinos no lo dejan','2:46:00'); -- Premio Golden Globe mejor guión, Comedia y Drama
 INSERT INTO featurecontent VALUES (20,'Capitán América: Civil War',2016,DEFAULT,1,'','Los Vengadores se pelean entre sí','2:27:00'); -- Actua Daniel Bruhl, Superhéroes
