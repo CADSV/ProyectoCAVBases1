@@ -22,17 +22,16 @@ error_reporting(E_ALL ^ E_WARNING);
 
     $indexAccount = new IndexAccount($connection);
 
-    $globalPlan = $indexAccount-> globalPlan();
-    // $venezuelaPlan = $indexAccount -> venezuelaPlan();
-    // $belgiumPlan = $indexAccount -> belgiumPlan();
-    // $francePlan = $indexAccount -> francePlan();
-    // $italyPlan = $indexAccount -> italyPlan();
-    // $germanyPlan = $indexAccount -> germanyPlan();
-    // $colombiaPlan = $indexAccount -> colombiaPlan();
-    // $portugalPlan = $indexAccount -> portugalPlan();
-    // $lebanonPlan = $indexAccount -> lebanonPlan();
-    // $cubaPlan = $indexAccount -> cubaPlan();
-    // $northKoreaPlan = $indexAccount -> northKoreaPlan();
+    $venezuelaPlan = $indexAccount -> countryPlan('Venezuela');
+    $belgiumPlan = $indexAccount -> countryPlan('Bélgica');
+    $francePlan = $indexAccount -> countryPlan('Francia');
+    $italyPlan = $indexAccount -> countryPlan('Italia');
+    $germanyPlan = $indexAccount -> countryPlan('Alemania');
+    $colombiaPlan = $indexAccount -> countryPlan('Colombia');
+    $portugalPlan = $indexAccount -> countryPlan('Portugal');
+    $lebanonPlan = $indexAccount -> countryPlan('Líbano');
+    $cubaPlan = $indexAccount -> countryPlan('Cuba');
+    $northKoreaPlan = $indexAccount -> countryPlan('Corea del Norte');
 
 ?>
     
@@ -119,28 +118,27 @@ error_reporting(E_ALL ^ E_WARNING);
 
                         <div class = "country">
                             <img src="assets/images/flags/Venezuela.png" alt="Venezuela" title= "Venezuela">
-                            <p>VIP</p>
+                            <?php  echo "<span class='countryPlan'>$venezuelaPlan</span>"; ?>
                         </div>
 
                         <div class = "country">
                             <img src="assets/images/flags/France.png" alt="Francia" title= "Francia">
-                            <p>VIP</p>
+                            <?php  echo "<span class='countryPlan'>$francePlan</span>"; ?>
                         </div>
 
                         <div class = "country">
                             <img src="assets/images/flags/Germany.png" alt="Alemania" title= "Alemania">
-                            <p>VIP</p>
+                            <?php  echo "<span class='countryPlan'>$germanyPlan</span>"; ?>
                         </div>
 
                         <div class = "country">
                             <img src="assets/images/flags/Portugal.png" alt="Portugal" title= "Portugal">
-                            <p>Gold</p>
+                            <?php  echo "<span class='countryPlan'>$portugalPlan</span>"; ?>
                         </div>
 
                         <div class = "country">
                             <img src="assets/images/flags/Cuba.png" alt="Cuba" title= "Cuba">
-                            <?php  echo "<span class='countryPlan'>$globalPlan</span>"; ?>
-                            <!-- <p>Gold</p> -->
+                            <?php  echo "<span class='countryPlan'>$cubaPlan</span>"; ?>
                         </div>
 
                     </div>
@@ -149,27 +147,27 @@ error_reporting(E_ALL ^ E_WARNING);
 
                         <div class = "country">
                             <img src="assets/images/flags/Belgium.png" alt="Bélgica" title= "Bélgica">
-                            <p>Premium</p>
+                            <?php  echo "<span class='countryPlan'>$belgiumPlan</span>"; ?>
                         </div>
 
                         <div class = "country">
                             <img src="assets/images/flags/Italy.png" alt="Italia" title= "Italia">
-                            <p>Gold</p>
+                            <?php  echo "<span class='countryPlan'>$italyPlan</span>"; ?>
                         </div>
 
                         <div class = "country">
                             <img src="assets/images/flags/Colombia.png" alt="Colombia" title= "Colombia">
-                            <p>Gold</p>
+                            <?php  echo "<span class='countryPlan'>$colombiaPlan</span>"; ?>
                         </div>
 
                         <div class = "country">
                             <img src="assets/images/flags/Lebanon.png" alt="Líbano" title= "Líbano">
-                            <p>Premiun</p>
+                            <?php  echo "<span class='countryPlan'>$lebanonPlan</span>"; ?>
                         </div>
 
                         <div class = "country">
                             <img src="assets/images/flags/North_Korea.png" alt="Corea del Norte" title= "Corea del Norte">
-                            <p>VIP</p>
+                            <?php  echo "<span class='countryPlan'>$northKoreaPlan</span>"; ?>
                         </div>
 
                     </div>
