@@ -2,7 +2,7 @@
 -- suscripción activa y hayan visto al menos 2 contenidos que requieran suscripción.
 
 -- SEGUNDA ENTREGA (LISTO)
-CREATE VIEW reporteH AS
+CREATE VIEW reporte_H AS
 SELECT *
 FROM user
 WHERE (NameUser LIKE '%aDRi%') 
