@@ -38,7 +38,7 @@ require_once("../../data/classes/constants.php");
         if(!$success){
             header("Location: ../register/register4.php");
         }
-        echo '<script language="javascript">alert("Ha cambiado de plan exitosamente");window.location.href="selectProfile.php"</script>';
+        echo '<script language="javascript">alert("Ha cambiado de plan exitosamente");window.location.href="../profile/selectProfile.php"</script>';
     
     }
 
@@ -98,8 +98,16 @@ require_once("../../data/classes/constants.php");
                      echo "<span class='PlanMessage'>Plan: $membershipName</span>";
                      
                      echo "<span class='PlanMessage'>Precio: $membershipPrice </span>";
-                                
 
+                     if ($membershipName == 'Gold' || $membershipName == 'Premium') {
+
+                        echo "<img src=\"../../assets/images/VIP.png\" width=300px height=300px>";
+
+                     } else if ($membershipName == 'No asignado'){
+
+                        echo "<img src=\"../../assets/images/VIP2.png\" width=300px height=300px>";
+                    
+                    }          
             ?>
             </div>
 
