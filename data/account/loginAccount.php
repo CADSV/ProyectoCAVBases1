@@ -29,12 +29,40 @@ class LoginAccount{
         return false;
     }
 
-
     public function getError($error){
         if (in_array($error, $this->errorArray)){
             return "<span class='errorMessage'>$error</span>";
         }
     }
+
+    public function insertSessionDetails($idUser, $idDevice){
+            
+       
+        $query = $this->connection->prepare("INSERT INTO Session (IdUser, IdDevice, SessionTotalTime) 
+                                        VALUES (:idUser, :idDevice, NULL)");
+        
+        $query->bindValue(":idUser", $idUser);    
+        $query->bindValue(":idDevice", $idDevice); 
+        $query->bindValue(NULL, NULL); 
+    
+        $query->execute();
+
+        
+        return true;
+    }
+    
+    public function getIdUser($username){
+
+        $query1 = $this->connection->prepare(" SELECT IdUser FROM User WHERE (Username = :username)"); // Buscar IdUser del User logueado actualmente
+        $query1->bindValue(":username", $username);
+        $query1->execute();
+
+        $userData = $query1->fetch(PDO::FETCH_ASSOC);
+        $IdUser = $userData["IdUser"];
+
+        return $IdUser;
+    }
+
 
 }
 
