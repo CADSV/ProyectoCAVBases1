@@ -42,7 +42,7 @@ if (!isset($_SESSION["userLoggedIn"])){
     </div>
 
     <section>
-        <div class = "container">
+        <div class = "containerS">
             <div class = "question">
                 <h1>¿Quién eres? Elige tu perfil</h1>
             </div>

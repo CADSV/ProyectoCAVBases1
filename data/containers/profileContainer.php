@@ -31,6 +31,18 @@ class ProfileContainer{
                 $html .= $this->getAdmProfileHtml($row);
             }
         }
+        elseif($op == 3) {
+            $profilePhotos = [1, 2, 3, 4, 5]; // Números de las imágenes de perfil
+            $usedProfilePhotos = array();
+            while($row = $query->fetch(PDO::FETCH_ASSOC)){ // Agregar a la lista profilePhotos cada imagen de perfil utilizada
+                array_push($usedProfilePhotos, $row["ProfilePhoto"]); 
+            }
+            $remainingProfilePhotos = array_diff($profilePhotos, $usedProfilePhotos); // Obtener las imágenes de perfil disponibles
+            foreach($remainingProfilePhotos as $remainingProfilePhoto){ // Crear código html para cada una de las imágenes de perfil disponibles
+                $html .= $this->getProfileInputHtml($remainingProfilePhoto);
+            }
+            
+        }
 
         return $html; 
 
@@ -84,6 +96,28 @@ class ProfileContainer{
         }
 
         return $html . 'title= Administrar'. $profileName .' alt= Administrar'. $profileName .'></a><h2>' . $profileName . '</h2></div>';
+    }
+
+    private function getProfileInputHtml($profilePhoto){ // Crear código HTML para inputs de imágenes de perfil
+        $html = '<div class ="profile"><a href=""><img src="../../assets/images/profiles/';
+ 
+        if($profilePhoto == 1){ // Se muestra la foto de perfil que corrresponde
+            $html .= 'blueProfile.png"';
+        }
+        elseif($profilePhoto == 2){
+            $html .= 'redProfile.png"';
+        }
+        elseif($profilePhoto == 3){
+            $html .= 'yellowProfile.png"';
+        }
+        elseif($profilePhoto == 4){
+            $html .= 'greenProfile.png"';
+        }
+        else{
+            $html .= 'purpleProfile.png"';
+        }
+
+        return $html . '></a></div>';
     }
 
 }

@@ -42,19 +42,31 @@ if (!isset($_SESSION["userLoggedIn"])){
     </div>
 
     <section>
-        <div class = "container">
+        <div class = "containerC">
             <div class = "question">
                 <h1>Crear Nuevo Perfil</h1>
             </div>
 
-            <div class = "profilesSelection">
-                
+            <div class = "dataForm">
+                    <form method="POST"> 
+                        <input type="text" name="profileName" placeholder="Nombre del Perfil" required>
+                        <div class = "question">
+                            <h4>Selecciona una imagen de perfil</h4>
+                        </div>
+                        <div class = "profilesSelection">
+                            <?php echo $profileContainer->showAllProfiles($username, 3); ?>
+                        </div>
+                        <div class="inputContainer">
+                            <div class = "buttonContainer">
+                                <a href="selectProfile.php" alt = "Cancelar">Cancelar</a>
+                            </div>
+                            <input type="submit" name="submitButton" value="Crear">
+                        </div>
+                    </form>
             </div>
 
 
-            <div class = "administrarPerfiles">
-                <a href="selectProfile.php" alt = "Cancelar">CANCELAR</a>
-            </div>
+            
         </div>
 
     </section>
