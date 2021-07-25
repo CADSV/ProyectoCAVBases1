@@ -12,7 +12,7 @@
 -- INSERT INTO hasseen VALUES (4, 17, CURRENT_TIMESTAMP, NULL, DEFAULT, DEFAULT, '0:52:11', '0:52:11');
 
 
-CREATE VIEW reporteA AS
+CREATE VIEW reporte_A AS
 SELECT * FROM featurecontent 
 WHERE ((FeatureRunTime >= '02:30:00') AND (IdContent IN (SELECT IdContent FROM award)) 
 AND (IdContent = (SELECT IdContent FROM genre WHERE GenreName = 'Drama')) 

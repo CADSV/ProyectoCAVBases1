@@ -2,7 +2,7 @@
 
 -- ENTREGADO
 
-CREATE VIEW reporteJ AS
+CREATE VIEW reporte_J AS
 SELECT Profile.IdUser, COUNT(IdProfile), User.Username, Membership.MembershipName
 FROM Profile
 INNER JOIN User ON Profile.IdUser = User.IdUser

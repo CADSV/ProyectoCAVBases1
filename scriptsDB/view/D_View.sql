@@ -2,7 +2,7 @@
 
 -- SEGUNDA ENTREGA (LISTO)
 
-CREATE VIEW reporteD AS
+CREATE VIEW reporte_D AS
 SELECT IdCountry, CountryName
 FROM country
 WHERE IdCountry IN
