@@ -22,5 +22,6 @@ WHERE IdCity IN
                                                                     (SELECT IdContent 
                                                                     FROM episode
                                                                     GROUP BY IdContent
-                                                                    HAVING COUNT(IdEpisode)>10)))));
+                                                                    HAVING COUNT(IdEpisode)>10)))))
+ORDER BY CountryName;
 

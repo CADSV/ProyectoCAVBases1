@@ -3,11 +3,11 @@
 
 -- SEGUNDA ENTREGA (LISTO)
 CREATE VIEW reporte_H AS
-SELECT *
-FROM user
-WHERE (NameUser LIKE '%aDRi%') 
-        AND  UserIsSuscribed=1
-        AND  IdUser IN
+SELECT U.IdUser, U.Username, U.NameUser, U.UserIsSuscribed, U.UserGender, Ci.CityName, U.UserAvenueStreet, U.UserBuildingHouse
+FROM User AS U, City As Ci
+WHERE (U.NameUser LIKE '%aDRi%') AND (U.IdCity = Ci.IdCity)
+        AND  (U.UserIsSuscribed=1)
+        AND  (U.IdUser IN
                     (SELECT IdUser
                     FROM profile
                     WHERE IdProfile IN
@@ -20,4 +20,5 @@ WHERE (NameUser LIKE '%aDRi%')
                                                         UNION  
                                                         (SELECT IdContent
                                                         FROM FeatureContent
-                                                        WHERE  ReqSusCont=1) ));
+                                                        WHERE  ReqSusCont=1) )))
+ORDER BY U.IdUser;
