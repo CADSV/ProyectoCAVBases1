@@ -56,7 +56,7 @@ CREATE TABLE Session( -- Sesión, relación entre perfil y dispositivo
     ConStartDate    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     SessionTotalTime TIME,
 
-    CONSTRAINT Session_PK PRIMARY KEY (IdProfile, IdDevice, ConStartDate),
+    CONSTRAINT Session_PK PRIMARY KEY (IdUser, IdDevice, ConStartDate),
     
     CONSTRAINT Session_FK1 FOREIGN KEY (IdUser) REFERENCES Carlevix.User(IdUser) ON DELETE CASCADE ON UPDATE CASCADE, 
     CONSTRAINT Session_FK2 FOREIGN KEY (IdDevice) REFERENCES Carlevix.Device(IdDevice) ON DELETE CASCADE ON UPDATE CASCADE
