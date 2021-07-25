@@ -47,7 +47,7 @@ require_once("../../data/classes/constants.php");
         $username = $_SESSION["userLoggedIn"];
 
         $success= $suscriptionAccount->cancelSuscription($username);
-        echo '<script language="javascript">alert("Ha cancelado su plan, y ya no está suscrito");window.location.href="selectProfile.php"</script>';
+        echo '<script language="javascript">alert("Ha cancelado su plan, y ya no está suscrito");window.location.href="../profile/selectProfile.php"</script>';
     }
 
 ?>
