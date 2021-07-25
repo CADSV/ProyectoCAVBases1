@@ -2,7 +2,7 @@
 
 -- SEGUNDA ENTREGA (LISTO)
 
-CREATE VIEW reporteD AS
+CREATE VIEW reporte_D AS
 SELECT IdCountry, CountryName
 FROM country
 WHERE IdCountry IN
@@ -22,5 +22,6 @@ WHERE IdCity IN
                                                                     (SELECT IdContent 
                                                                     FROM episode
                                                                     GROUP BY IdContent
-                                                                    HAVING COUNT(IdEpisode)>10)))));
+                                                                    HAVING COUNT(IdEpisode)>10)))))
+ORDER BY CountryName;
 
