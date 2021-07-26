@@ -278,6 +278,21 @@ section .question h1 {
     box-shadow: none;   
 }
 
+form label {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 10px;
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+form input[type="radio"]:checked + label{
+    opacity: 0.6;
+    outline: 2px solid #0983F5;
+}
+
 h4{
     color: #959392;
     margin-top: 15px;

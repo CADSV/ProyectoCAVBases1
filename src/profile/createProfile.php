@@ -20,7 +20,7 @@ if (!isset($_SESSION["userLoggedIn"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0, user-scalable=no">
-    <title>Selecciona Tu Perfil</title>
+    <title>Crea Tu Perfil</title>
     <link rel="stylesheet" href="../../assets/style/profileStyle.css">
 </head>
 

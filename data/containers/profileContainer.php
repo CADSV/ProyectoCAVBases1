@@ -99,7 +99,7 @@ class ProfileContainer{
     }
 
     private function getProfileInputHtml($profilePhoto){ // Crear código HTML para inputs de imágenes de perfil
-        $html = '<div class ="profile"><a href=""><img src="../../assets/images/profiles/';
+        $html = '<div class ="profile"><input type="radio" name="profilePhoto" value='. $profilePhoto .' id="'. $profilePhoto .'" required><label for="'. $profilePhoto .'"><img src="../../assets/images/profiles/';
  
         if($profilePhoto == 1){ // Se muestra la foto de perfil que corrresponde
             $html .= 'blueProfile.png"';
@@ -117,7 +117,7 @@ class ProfileContainer{
             $html .= 'purpleProfile.png"';
         }
 
-        return $html . '></a></div>';
+        return $html . '></label></div>';
     }
 
 }
