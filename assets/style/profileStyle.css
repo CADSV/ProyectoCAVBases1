@@ -104,7 +104,9 @@ section .question h1 {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
 .containerS .profilesSelection .profile {
@@ -188,9 +190,9 @@ section .question h1 {
 
 .administrarPerfiles {
     padding-top: 45px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .administrarPerfiles a {
@@ -202,7 +204,6 @@ section .question h1 {
     color: #fff;
     padding: .75rem 185px;
     min-width: 110px;
-    width: 550px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
@@ -215,9 +216,9 @@ section .question h1 {
 
 .readyButton {
     padding-top: 45px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .readyButton a {
@@ -231,7 +232,6 @@ section .question h1 {
     padding: .75rem 258px;
     /* padding-right: 280px; */
     min-width: 110px;
-    width: 550px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
@@ -325,4 +325,11 @@ h4{
 
 .buttonContainer a:hover {
     opacity: 0.4;
+}
+
+.errorMessage {
+    color: #f00;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
 }

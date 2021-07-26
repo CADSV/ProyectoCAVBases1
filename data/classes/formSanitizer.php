@@ -35,6 +35,14 @@ class FormSanitizer {
 
     }
 
+    public static function  sanitizeFormProfileName($inputText){   //Valida la entrada del nombre
+        $inputText = strip_tags($inputText);      //Verificar que no haya etiquetas HTML en el controller.
+        $inputText = trim($inputText);            //Elimina los espacios en blanco solo antes y después de los introducidos
+        $inputText = strtolower($inputText);          //Pone todas las letras en minuscula
+        return $inputText;
+
+    }
+
 
 }
 

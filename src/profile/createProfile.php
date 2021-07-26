@@ -1,16 +1,30 @@
 <?php
 
+require_once("../../data/classes/formSanitizer.php");
 require_once("../../data/config.php");
 require_once("../../data/containers/profileContainer.php");
+require_once("../../data/account/profileAccount.php");
+require_once("../../data/classes/constants.php");
 
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
-
     $username = $_SESSION["userLoggedIn"];
 
     $profileContainer = new ProfileContainer($connection);
+    $profileAccount= new ProfileAccount($connection);
+
+    if(isset($_POST["submitButton"])){
+        $profileName = FormSanitizer::sanitizeFormProfileName($_POST["profileName"]); 
+        $profilePhoto = $_POST["profilePhoto"];
+
+        $success = $profileAccount->registerProfile($username, $profileName, $profilePhoto);
+
+        if($success) {
+            header("Location: selectProfile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a selectProfile
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +63,7 @@ if (!isset($_SESSION["userLoggedIn"])){
 
             <div class = "dataForm">
                     <form method="POST"> 
+                        <?php echo $profileAccount->getError(Constants::$profileNameLength);?>
                         <input type="text" name="profileName" placeholder="Nombre del Perfil" required>
                         <div class = "question">
                             <h4>Selecciona una imagen de perfil</h4>
