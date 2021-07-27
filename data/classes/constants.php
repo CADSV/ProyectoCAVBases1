@@ -14,6 +14,7 @@ class Constants {
     public static $InvalidCardNumber = "Número de tarjeta inválido";
     public static $cardTaken = "Número de tarjeta existente";
     public static $loginFailed = "Nombre de usuario y/o contraseña inválido";
+    public static $profileNameLength = "El nombre del perfil debe tener una longitud de entre 2 y 20 caracteres";
 }
 
 ?>

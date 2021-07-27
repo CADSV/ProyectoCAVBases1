@@ -98,27 +98,53 @@ section .question h1 {
     margin-bottom: 30px;
 }
 
-.profilesSelection {
+.containerS .profilesSelection {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.profilesSelection .profile {
-
+.containerS .profilesSelection .profile {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
 }
 
-.profilesSelection .profile img {
+.containerS{
+    width: 100%;
+}
+
+.containerC{
+    width: 40%;
+}
+
+.containerC .profilesSelection {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.containerC .profilesSelection .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerS .profilesSelection .profile img {
     height: 208px;
     width: 208px;
 }
 
+.containerC .profilesSelection .profile img {
+    height: 104px;
+    width: 104px;
+}
 
 .profilesSelection .newProfile {
     width: 130px;
@@ -167,9 +193,9 @@ section .question h1 {
 
 .administrarPerfiles {
     padding-top: 45px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .administrarPerfiles a {
@@ -181,7 +207,6 @@ section .question h1 {
     color: #fff;
     padding: .75rem 185px;
     min-width: 110px;
-    width: 550px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
@@ -192,13 +217,11 @@ section .question h1 {
     opacity: 0.4;
 }
 
-
-
 .readyButton {
     padding-top: 45px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .readyButton a {
@@ -212,7 +235,6 @@ section .question h1 {
     padding: .75rem 258px;
     /* padding-right: 280px; */
     min-width: 110px;
-    width: 550px;
     font-weight: 700;
     font-size: 16px;
     border-radius: 3px;
@@ -221,4 +243,96 @@ section .question h1 {
 
 .readyButton a:hover {
     opacity: 0.4;
+}
+
+.dataForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.dataForm form input {
+    padding: 1em 0.9em;
+    border-radius: 3px;
+    min-width:fit-content;
+    margin: 10px 0;
+}
+
+.dataForm form input[type="text"]{
+    border-color: rgba(0,0,0, 0.5);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dataForm form input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: #023ADE;
+    min-width: 110px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+}
+
+.dataForm form input[type="submit"]:hover{
+    background-color: #0983F5;
+    box-shadow: none;   
+}
+
+form label {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 10px;
+}
+
+form input[type="radio"]{
+    display: none;
+}
+
+form input[type="radio"]:checked + label{
+    opacity: 0.6;
+    outline: 2px solid #0983F5;
+}
+
+h4{
+    color: #959392;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.buttonContainer a {
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: #fff;
+    background-color: #353535;
+    min-width: 110px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+    padding: 1em 1.3em;
+}
+
+.buttonContainer a:hover {
+    opacity: 0.4;
+}
+
+.errorMessage {
+    color: #f00;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
 }
