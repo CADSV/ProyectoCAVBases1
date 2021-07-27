@@ -11,4 +11,5 @@ INNER JOIN User ON Profile.IdUser = User.IdUser
 WHERE User.UserGender = 'M'
 GROUP BY HasSeen.IdProfile
 ORDER BY COUNT(HasSeen.IdContent) DESC
-LIMIT 3
+LIMIT 3;
+
