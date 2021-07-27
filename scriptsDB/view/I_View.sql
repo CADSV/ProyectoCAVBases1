@@ -3,7 +3,7 @@
 -- SEGUNDA ENTREGA
 
 CREATE VIEW reporte_I AS
-SELECT FeatureContent.TitleCont, COUNT(HasSeen.IdContent)
+SELECT FeatureContent.TitleCont, COUNT(HasSeen.IdContent) AS NumVisualizaciones
 FROM HasSeen
 INNER JOIN FeatureContent ON HasSeen.IdContent = FeatureContent.IdContent
 INNER JOIN Profile ON HasSeen.IdProfile = Profile.IdProfile
