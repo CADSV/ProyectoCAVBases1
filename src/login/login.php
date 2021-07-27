@@ -15,6 +15,8 @@ require_once("../../data/classes/constants.php");
 
         if($success) {
             $_SESSION["userLoggedIn"] = $username;
+            $Iduser=$loginAccount->getIdUser($username);
+            $success2=$loginAccount->insertSessionDetails($Iduser,1);
             header("Location: ../profile/selectProfile.php"); // Si la inserción del usuario en la base de datos fue exitosa, continuamos a register3
         }
     }
