@@ -18,7 +18,7 @@ INSERT INTO city VALUES (4,2,'Valencia');
 -- BÉLGICA
 INSERT INTO city VALUES (5,3,'Bruselas');
 INSERT INTO city VALUES (6,3,'Charleroi');
-INSERT INTO city VALUES (7,4,'Vlamerting');
+INSERT INTO city VALUES (7,3,'Vlamerting');
 
 -- FRANCIA
 INSERT INTO city VALUES (8,4,'París');
