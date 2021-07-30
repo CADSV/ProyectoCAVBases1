@@ -14,7 +14,7 @@
     </div>
 
     <ul class= "navLinks">
-        <li>  <a href="../../index.php">Home </a> </li>
+        <li>  <a href="home.php">Home </a> </li>
         <li>  <a href="series.php">Series </a> </li>
         <li>  <a href="movies.php">Películas </a> </li>
     </ul>
