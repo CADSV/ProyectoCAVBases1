@@ -52,7 +52,7 @@ class ProfileContainer{
         $profileName = $sqlData["ProfileName"];
         $profilePhoto = $sqlData["ProfilePhoto"];
 
-        $html = '<div class ="profile"><a href=""><img src="../../assets/images/profiles/';
+        $html = '<div class ="profile"><a href="../content/home.php"><img src="../../assets/images/profiles/';
  
         if($profilePhoto == 1){ // Se muestra la foto de perfil que corrresponde
             $html .= 'blueProfile.png"';
