@@ -64,8 +64,7 @@ class LoginAccount{
         $timeactual=$time->getTimestamp();
         $dt = new DateTime("@$timeactual");  // convert UNIX timestamp to PHP DateTime
         $timestamp= $dt->format('Y-m-d H:i:s'); 
-        //echo $start_date;
-        //echo $timestamp;
+   
         $since_start = $start_date->diff(new DateTime($timestamp));
         $num = (int) $since_start->h;
         $num = $num-4;
@@ -74,8 +73,8 @@ class LoginAccount{
         //echo $since_start->days.' days total<br>';
         //echo $since_start->y.' years<br>';
         //echo $since_start->m.' months<br>';
-       // echo $since_start->d.' days<br>';
-       // echo $since_start->h.' hours<br>';
+        // echo $since_start->d.' days<br>';
+        // echo $since_start->h.' hours<br>';
         //echo $since_start->i.' minutes<br>';
         //echo $since_start->s.' seconds<br>';
 
