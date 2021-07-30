@@ -145,7 +145,6 @@ class SuscriptionAccount{
         
     }
 
-
     public function getMembershipData($IdMembership){
 
         $query = $this->connection->prepare(" SELECT MembershipName, Price FROM  membership WHERE (IdMembership = :IdMembership)");
@@ -155,6 +154,23 @@ class SuscriptionAccount{
         $membershipData=$query->fetch(PDO::FETCH_ASSOC);
 
         return $membershipData;
+    }
+
+    public function getCardNumber($IdUser){
+
+        $query = $this->connection->prepare(" SELECT CardNumber FROM  issuscribed WHERE (IdUser = :IdUser) LIMIT 1"); 
+        $query->bindValue(":IdUser", $IdUser);
+        $query->execute();
+
+
+        if($query->rowCount()!= 0){
+            $sqlData = $query->fetch(PDO::FETCH_ASSOC);
+            $CardNumber = $sqlData["CardNumber"];
+            return $CardNumber;
+        }
+        return null;     
+        
+        
     }
 
     private function validateName($name){ // Valida la longitud del nombre
