@@ -50,7 +50,38 @@ INSERT INTO hasseen VALUES (21,27,'2021-04-02 06:32:05',NULL,0,1,'00:1:23','00:1
 INSERT INTO hasseen VALUES (8,27,'2020-08-09 05:01:15',1,0,1,'00:19:23','00:19:23');
 INSERT INTO hasseen VALUES (18,30,'2021-03-20 05:14:05',4,1,9,'00:52:59','01:20:59');
 
+-- -------Agregados
 
+INSERT INTO hasseen VALUES (12,27,'2021-05-02 06:32:05',NULL,0,4,'00:1:23','01:00:40');
+INSERT INTO hasseen VALUES (12,28,'2020-08-09 05:01:15',1,0,3,'00:19:23','00:19:23');
+INSERT INTO hasseen VALUES (12,30,'2021-06-20 05:14:05',4,1,6,'00:52:59','01:20:59');
+
+INSERT INTO hasseen VALUES (13,25,'2021-05-02 06:32:05',NULL,0,4,'00:1:23','00:40:40');
+INSERT INTO hasseen VALUES (13,24,'2020-08-09 05:01:15',1,0,3,'00:19:23','00:19:23');
+INSERT INTO hasseen VALUES (15,30,'2021-06-20 05:14:05',4,1,6,'00:52:59','00:48:59');
+INSERT INTO hasseen VALUES (15,29,'2021-06-20 05:14:05',4,1,6,'00:52:59','00:53:59');
+
+INSERT INTO hasseen VALUES (16,15,'2021-06-20 05:14:05',4,1,1,'01:20:59','01:10:59');
+INSERT INTO hasseen VALUES (16,3,'2021-06-20 05:14:05',4,1,1,'01:00:59','00:20:59');
+
+INSERT INTO hasseen VALUES (17,18,'2021-02-20 05:14:05',4,1,1,'01:20:59','01:10:59');
+INSERT INTO hasseen VALUES (17,4,'2021-04-20 05:14:05',4,1,1,'01:00:59','00:20:59');
+INSERT INTO hasseen VALUES (21,16,'2021-06-23 05:14:05',4,1,1,'01:20:59','01:10:59');
+INSERT INTO hasseen VALUES (21,14,'2021-06-25 05:14:05',4,1,1,'01:00:59','00:20:59');
+
+INSERT INTO hasseen VALUES (13,4,'2021-01-20 18:10:05',4,1,1,'01:20:59','00:19:59');
+INSERT INTO hasseen VALUES (21,4,'2020-03-20 07:10:05',4,1,1,'01:20:59','00:19:59');
+INSERT INTO hasseen VALUES (15,4,'2019-08-10 09:14:05',4,1,1,'01:20:59','00:50:59');
+INSERT INTO hasseen VALUES (12,4,'2021-06-23 05:14:05',4,1,1,'01:20:59','01:10:59');
+INSERT INTO hasseen VALUES (16,4,'2021-06-23 05:14:05',4,1,1,'01:20:59','00:30:59');
+INSERT INTO hasseen VALUES (21,15,'2018-10-25 05:14:05',4,1,1,'01:00:59','00:20:59');
+INSERT INTO hasseen VALUES (15,15,'2017-02-23 05:14:05',4,1,1,'01:00:59','00:20:59');
+INSERT INTO hasseen VALUES (17,15,'2021-08-77 05:14:05',4,1,1,'01:00:59','00:20:59');
+INSERT INTO hasseen VALUES (13,15,'2017-03-20 07:14:05',4,1,1,'01:20:59','01:05:59');
+INSERT INTO hasseen VALUES (13,16,'2016-10-20 07:14:05',4,1,1,'01:20:59','01:05:59');
+INSERT INTO hasseen VALUES (17,16,'2020-07-20 07:14:05',4,1,1,'01:20:59','00:55:59');
+
+INSERT INTO hasseen VALUES (12,16,'2021-12-20 07:14:05',4,1,1,'01:20:59','01:23:59');
 -- ----------------------------------------------------------------------------------
 -- Award
 -- ----------------------------------------------------------------------------------
@@ -168,10 +199,12 @@ INSERT INTO hasseenof VALUES (6,6,1,'1:18:26');
 INSERT INTO hasseenof VALUES (6,5,2,'3:04:25');
 INSERT INTO hasseenof VALUES (6,7,1,'1:36:32');
 
-INSERT INTO hasseenof VALUES (12,2,2,'2:40:23');
+INSERT INTO hasseenof VALUES (12,2,5,'3:40:23');
 INSERT INTO hasseenof VALUES (12,7,1,'1:14:36');
-INSERT INTO hasseenof VALUES (13,2,1,'0:36:54');
-INSERT INTO hasseenof VALUES (15,2,1,'1:00:48');
+
+INSERT INTO hasseenof VALUES (13,2,4,'2:36:54');
+
+INSERT INTO hasseenof VALUES (15,2,4,'2:10:48');
 INSERT INTO hasseenof VALUES (15,11,1,'1:12:47');
 INSERT INTO hasseenof VALUES (15,12,1,'2:36:35');
 INSERT INTO hasseenof VALUES (18,11,1,'0:36:24');
@@ -179,6 +212,42 @@ INSERT INTO hasseenof VALUES (18,12,1,'0:45:14');
 INSERT INTO hasseenof VALUES (18,2,2,'3:03:01');
 INSERT INTO hasseenof VALUES (18,14,1,'0:38:06');
 
+
+
+
+
+-- Agregados
+
+INSERT INTO hasseenof VALUES (12,14,1,'0:40:36');
+INSERT INTO hasseenof VALUES (12,11,1,'0:30:36');
+INSERT INTO hasseenof VALUES (13,7,7,'0:59:54');
+INSERT INTO hasseenof VALUES (13,1,1,'0:59:54');
+INSERT INTO hasseenof VALUES (13,5,1,'0:40:54');
+INSERT INTO hasseenof VALUES (13,4,1,'0:40:54');
+
+INSERT INTO hasseenof VALUES (15,14,1,'0:53:48');
+INSERT INTO hasseenof VALUES (16,2,1,'0:26:48');
+INSERT INTO hasseenof VALUES (16,3,1,'1:02:48');
+INSERT INTO hasseenof VALUES (16,4,1,'1:10:48');
+
+
+INSERT INTO hasseenof VALUES (17,1,1,'0:32:48');
+INSERT INTO hasseenof VALUES (17,2,2,'0:58:48');
+INSERT INTO hasseenof VALUES (17,5,1,'0:58:48');
+INSERT INTO hasseenof VALUES (17,4,2,'1:02:48');
+
+INSERT INTO hasseenof VALUES (21,4,1,'0:58:48');
+INSERT INTO hasseenof VALUES (21,7,1,'0:58:48');
+INSERT INTO hasseenof VALUES (21,5,2,'0:22:0');
+INSERT INTO hasseenof VALUES (21,2,2,'0:34:0');
+
+INSERT INTO hasseenof VALUES (21,1,1,'0:42:0');
+INSERT INTO hasseenof VALUES (15,1,1,'0:42:0');
+INSERT INTO hasseenof VALUES (15,5,1,'0:22:0');
+INSERT INTO hasseenof VALUES (12,1,1,'0:42:0');
+INSERT INTO hasseenof VALUES (12,5,1,'0:42:0');
+INSERT INTO hasseenof VALUES (16,1,1,'0:52:0');
+INSERT INTO hasseenof VALUES (16,5,1,'0:24:0');
 
 -- ----------------------------------------------------------------------------------
 -- Directed

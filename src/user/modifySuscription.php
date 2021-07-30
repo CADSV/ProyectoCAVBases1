@@ -9,12 +9,13 @@ require_once("../../data/classes/constants.php");
         header("Location: ../../index.php");
     }
 
-    $suscriptionAccount= new SuscriptionAccount($connection);
+    $suscriptionAccount = new SuscriptionAccount($connection);
 
     $username = $_SESSION["userLoggedIn"];
 
     $IdUser = $suscriptionAccount->getIdUser($username);
     $IdMembership = $suscriptionAccount->getIdMembership($IdUser);
+    $CardNumber = $suscriptionAccount->getCardNumber($IdUser);
 
     if($IdMembership){
         $membershipData = $suscriptionAccount->getMembershipData($IdMembership);
@@ -115,18 +116,28 @@ require_once("../../data/classes/constants.php");
         <div class="modifyplan-container">
             <div class="welcome-container">
                  <div class="text-line">
-                    <h1>Planes disponibles</h1>
+                    <?php if($IdMembership) {
+                                echo '<h1>Planes disponibles</h1>';
+                           }
+                    ?>
                 </div>
                 <div class="plan-container">
                     <div>
                         <form method="POST"> 
-                                <input type="radio" name="membership" value="1" id="Gold" required >      <label for="Gold"> Gold 7,99$</label>
-                                <input type="radio" name="membership" value="2" id="Premium"required>  <label for="Premium">Premium 10,99$</label>
-                                <input type="radio" name="membership" value="3" id="VIP"required>    <label for="VIP">VIP 13,99$</label>
+                                <?php if($CardNumber) {
+                                        echo '
+                                        <input type="radio" name="membership" value="1" id="Gold" required> <label for="Gold"> Gold 7,99$</label>
+                                        <input type="radio" name="membership" value="2" id="Premium"required> <label for="Premium">Premium 10,99$</label>
+                                        <input type="radio" name="membership" value="3" id="VIP"required> <label for="VIP">VIP 13,99$</label>';
+                                       }
+                                ?>
                                 <?php echo '<input class="button" type="submit" name="changeSuscriptionButton" value="'. $value .'" required>'; ?>                  
                         </form>
                     </div>
-                    <form method="POST"> <input class="buttonCancel" type="submit" name="cancelSuscriptionButton" value="Cancelar Suscripción" required> </form>           
+                    <?php if($IdMembership) {
+                                echo '<form method="POST"> <input class="buttonCancel" type="submit" name="cancelSuscriptionButton" value="Cancelar Suscripción" required> </form>';        
+                           }
+                    ?>
                 </div>                                          
             </div>
         </div>
