@@ -4,7 +4,7 @@
 -- TERCERA ENTREGA (LISTO)
 
 CREATE VIEW reporte_A AS
-SELECT F.IdContent, F.TitleCont, A.AwardName, A.WinningYear, AVG(H.Rating) AS CalificacionAvg, F.ReleaseYearCont
+SELECT F.IdContent, F.TitleCont, A.AwardName, A.WinningYear, CAST(AVG(H.Rating) AS DECIMAL(10,2)) AS CalificacionAvg, F.ReleaseYearCont
 FROM FeatureContent AS F
 INNER JOIN IsAbout AS I ON (F.IdContent = I.IdContent)
 INNER JOIN Genre AS G ON (I.IdGenre = G.IdGenre)
