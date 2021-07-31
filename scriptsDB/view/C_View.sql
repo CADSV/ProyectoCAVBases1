@@ -2,7 +2,9 @@
 -- ordenando descendentemente por la cantidad de películas recomendadas vistas.
 
 -- TERCERA ENTREGA
-SELECT User.IdUser,  User.NameUser,  SUM(HasSeen.TimesSeen) AS NumVisualizaciones
+
+CREATE VIEW reporte_C AS
+SELECT User.IdUser,  User.Username,  SUM(HasSeen.TimesSeen) AS NumVisualizaciones
 FROM HasSeen
 INNER JOIN Featurecontent ON HasSeen.IdContent = FeatureContent.IdContent
 INNER JOIN Profile ON HasSeen.IdProfile = Profile.IdProfile

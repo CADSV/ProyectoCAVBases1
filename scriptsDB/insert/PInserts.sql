@@ -82,6 +82,7 @@ INSERT INTO hasseen VALUES (13,16,'2016-10-20 07:14:05',4,1,1,'01:20:59','01:05:
 INSERT INTO hasseen VALUES (17,16,'2020-07-20 07:14:05',4,1,1,'01:20:59','00:55:59');
 
 INSERT INTO hasseen VALUES (12,16,'2021-12-20 07:14:05',4,1,1,'01:20:59','01:23:59');
+INSERT INTO hasseen VALUES (19,19,'2021-03-20 05:14:05',4.5,1,9,'00:52:59','01:20:59');
 -- ----------------------------------------------------------------------------------
 -- Award
 -- ----------------------------------------------------------------------------------
@@ -94,6 +95,9 @@ INSERT INTO award VALUES (10,5,2015,'GOLDEN');
 INSERT INTO award VALUES (12,6,2017,'OSCAR');
 INSERT INTO award VALUES (13,7,2018,'EMMY');
 INSERT INTO award VALUES (14,8,2016,'GOLDEN');
+INSERT INTO award VALUES (15,9,2012,'OSCAR');
+INSERT INTO award VALUES (18,10,2018,'OSCAR');
+INSERT INTO award VALUES (19,11,2021,'BAFTA');
 
 
 
