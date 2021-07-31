@@ -1,6 +1,7 @@
 -- REPORTE I: Imprima el top 3 de películas más vistas por los usuarios machirulos.
-
+-- 
 -- SEGUNDA ENTREGA
+-- ENTREGADO
 
 CREATE VIEW reporte_I AS
 SELECT FeatureContent.TitleCont, COUNT(HasSeen.IdContent) AS NumVisualizaciones
