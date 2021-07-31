@@ -2,6 +2,7 @@
 -- suscripción activa y hayan visto al menos 2 contenidos que requieran suscripción.
 
 -- SEGUNDA ENTREGA (LISTO)
+-- ENTREGADO
 CREATE VIEW reporte_H AS
 SELECT U.IdUser, U.Username, U.NameUser, U.UserIsSuscribed, U.UserGender, Ci.CityName, U.UserAvenueStreet, U.UserBuildingHouse
 FROM User AS U, City As Ci
