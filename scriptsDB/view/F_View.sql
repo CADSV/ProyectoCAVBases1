@@ -4,7 +4,7 @@
 
 
 CREATE VIEW reporte_F AS
-SELECT EpisodicContent.IdContent, EpisodicContent.TitleCont, Avg(hasseen.Rating) as CalificacionAvg
+SELECT EpisodicContent.IdContent, EpisodicContent.TitleCont, CAST(Avg(hasseen.Rating) AS DECIMAL(10,2)) as CalificacionAvg
 FROM HasSeen
 INNER JOIN episodicContent on HasSeen.IdContent = episodicContent.IdContent
 GROUP BY Hasseen.IdContent
