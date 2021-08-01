@@ -1,6 +1,6 @@
 <?php
 
-class previewprovider {
+class PreviewProvider {
 
     private $connection;
     private $username;
@@ -13,7 +13,7 @@ class previewprovider {
 
     public function createPreviewVideo($content){
         if ($content == null){
-            $content = $this->getRandomVideo();
+            $content = $this->getRandomContent();
         }
         $ContentName = $content->getTitleCont();
         //echo $ContentName;
@@ -57,13 +57,17 @@ class previewprovider {
 
     }
 
-    private function getRandomVideo(){
-        $query = $this->connection->prepare("SELECT idcontent FROM content ORDER BY RAND() LIMIT 1");
-        $query->execute();
+    private function getRandomContent(){
 
-        $row = $query->fetch(PDO::FETCH_ASSOC);
-        $idContent=$row["idcontent"];
-        //echo  $idContent;
+        $content = ContentProvider::getIdContents($this->connection, null, 1);
+        $content = $content[0];
+
+        // $query = $this->connection->prepare("SELECT idcontent FROM content ORDER BY RAND() LIMIT 1");
+        // $query->execute();
+
+        // $row = $query->fetch(PDO::FETCH_ASSOC);
+        // $idContent=$row["idcontent"];
+        $idContent = $content->getId();
 
         $query2 = $this->connection->prepare("SELECT * FROM featurecontent WHERE IdContent= :idcontent");
         $query2->bindValue(":idcontent", $idContent);

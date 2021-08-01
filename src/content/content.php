@@ -1,6 +1,6 @@
 <?php
 
-class content {
+class Content {
 
     private $connection, $DATA;
 
