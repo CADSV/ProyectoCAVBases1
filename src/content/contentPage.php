@@ -4,6 +4,7 @@ require_once("../../data/config.php");
 require_once("../../data/providers/previewProvider.php");
 require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
+require_once("../../data/containers/seasonContainer.php");
 include_once("navBar.php");
 require_once("header.php");
 
@@ -22,6 +23,8 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
 $preview = new PreviewProvider($connection, $userLoggedIn);
 echo $preview->createPreviewVideo($IdContent);
 
+$seasons = new SeasonContainer($connection, $userLoggedIn);
+echo $seasons->showAllSeasons($IdContent);
 
 ?>
     <!DOCTYPE html>

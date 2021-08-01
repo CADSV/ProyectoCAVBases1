@@ -56,16 +56,13 @@ class Content {
 
     
         if($query2->rowCount()!= 0){  
-            $row = $query2->fetch(PDO::FETCH_ASSOC);
-            $TitleContent=$row["TitleCont"];
-           
-        }else{
+            $row = $query2->fetch(PDO::FETCH_ASSOC);          
+        }
+        else{
             $query3 = $this->connection->prepare("SELECT * FROM episodiccontent WHERE IdContent= :idcontent");
             $query3->bindValue(":idcontent", $idContent);
             $query3->execute();
-            $row = $query3->fetch(PDO::FETCH_ASSOC);
-            $TitleContent=$row["TitleCont"];
-           
+            $row = $query3->fetch(PDO::FETCH_ASSOC);         
         }
 
         return $row;

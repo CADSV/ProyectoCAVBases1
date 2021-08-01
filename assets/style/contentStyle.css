@@ -192,12 +192,12 @@ header {
 
 }
 
-.genreCategory a h2 {
+.genreCategory h2 {
     color: #e5e5e5;
     margin: 20px;
 }
 
-.genreCategory a h2:hover {
+.genreCategory h2:hover {
     color: #fff;
 }
 
