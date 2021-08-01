@@ -284,35 +284,3 @@ INSERT INTO directed VALUES (21,27);
 INSERT INTO directed VALUES (21,28);
 INSERT INTO directed VALUES (15,29);
 INSERT INTO directed VALUES (16,30);
-
-
-/*
-
-UPDATE featureContent
-SET ContentPreview = 'assets/previewvideos/1.mp4'
-WHERE (IdContent = 1) or (IdContent = 2) or(IdContent = 3) or (IdContent = 4) or (IdContent = 5) or (IdContent = 6);
-
-UPDATE featureContent
-SET ContentPreview = 'assets/previewvideos/2.mp4'
-WHERE (IdContent = 7) or (IdContent = 8) or(IdContent = 9) or (IdContent = 10) or (IdContent = 11) or (IdContent = 12);
-
-
-UPDATE featureContent
-SET ContentPreview = 'assets/previewvideos/3.mp4'
-WHERE (IdContent = 13) or (IdContent = 14) or(IdContent = 15) or (IdContent = 16) or (IdContent = 17) or (IdContent = 18);
-
-UPDATE featureContent
-SET ContentPreview = 'assets/previewvideos/4.mp4'
-WHERE (IdContent = 19) or (IdContent = 20);
-
-UPDATE episodicContent
-SET ContentPreview = 'assets/previewvideos/5.mp4'
-WHERE (IdContent = 21) or (IdContent = 22) or(IdContent = 23);
-UPDATE episodicContent
-SET ContentPreview = 'assets/previewvideos/6.mp4'
-WHERE (IdContent = 27) or (IdContent = 28) or(IdContent = 29) or (IdContent = 30);
-
-UPDATE episodicContent
-SET ContentPreview = '../../assets/previewvideos/3.mp4'
-WHERE  (IdContent = 24) or (IdContent = 25) or (IdContent = 26);
-*/
