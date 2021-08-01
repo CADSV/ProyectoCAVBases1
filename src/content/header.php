@@ -2,6 +2,7 @@
 
 require_once("../../data/config.php");
 require_once("previewprovider.php");
+require_once("../../data/containers/categoryContainer.php");
 require_once("content.php");
 //include_once("navBar.php");
 
