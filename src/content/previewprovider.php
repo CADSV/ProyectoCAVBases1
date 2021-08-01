@@ -20,16 +20,17 @@ class previewprovider {
         $idContent = $content->getId();
        // echo $idContent;
         $preview = $content->getContentPreview();
+        $preview = '../../'.$preview;
         //echo $preview;
         //$video = $content->getContentVideo();
         $image =  $content->getContentImage();
-        $preview = '../../'.$preview;
+        $image = '../../'.$image;
 
         //Agregar episodio y temporada como subtítulo
 
         return " <div class='previewContainer'>
 
-                    <img src='$$image' class='previewImage' hidden>
+                    <img src='$image' class='previewImage' hidden>
 
                     <video autoplay muted class='previewVideo' onended='previewEnded()'>
                         <source src ='$preview' type ='video/mp4'>
@@ -40,8 +41,8 @@ class previewprovider {
                             <h3>$ContentName</h3>
                             <div class='buttons'>
 
-                                <button>Play</button>
-                                <button onclick = 'volumeToggle(this)'>Volumen</button>
+                                <button><i class = 'fas fa-play'></i>   Play</button>
+                                <button onclick = 'volumeToggle(this)'><i class = 'fas fa-volume-mute'></i></button>
 
                             </div>
 
