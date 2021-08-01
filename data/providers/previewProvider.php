@@ -16,13 +16,14 @@ class PreviewProvider {
             $content = $this->getRandomContent();
         }
         $ContentName = $content->getTitleCont();
-        //echo $ContentName;
+
         $idContent = $content->getId();
-       // echo $idContent;
+
         $preview = $content->getContentPreview();
         $preview = '../../'.$preview;
-        //echo $preview;
+
         //$video = $content->getContentVideo();
+
         $image =  $content->getContentImage();
         $image = '../../'.$image;
 
@@ -56,6 +57,24 @@ class PreviewProvider {
 
 
     }
+
+
+    public function createContentPreviewSquare($content){
+
+        $IdContent = $content->getId();
+        $image =  $content->getContentImage();
+        $image = '../../'.$image;
+        $ContentName = $content->getTitleCont();
+
+        return "<a href = '../../src/content/content.php?id=$IdContent'>
+                    <div class = 'smallPreviewContainer'>
+                        <img src='$image' title = '$ContentName'>
+                    </div>
+                </a>";
+
+
+    }
+
 
     private function getRandomContent(){
 

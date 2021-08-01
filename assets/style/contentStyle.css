@@ -163,3 +163,12 @@ header {
     min-height: 100%;
     background-color: #141414;
 }
+
+
+.smallPreviewContainer img {
+
+    width: 230px;
+    height: 129px;
+    margin-right: 4px;
+    display: inline-flex;
+}
