@@ -83,10 +83,11 @@ CREATE TABLE FeatureContent( -- Contenido individual, como películas
     IsOriginalCont  BIT(1) NOT NULL DEFAULT 0, -- 1: Es ORGINAL De Netflix, 0: No es ORGINAL De Netflix
     ReqSusCont      BIT(1) NOT NULL DEFAULT 0, -- 1: Requiere suscripcion, 0: no requiere suscripcion
     ContentImage    VARCHAR(250)  NOT NULL,
-    ContentVideo    VARCHAR(250)  NOT NULL,
-    ContentPreview  VARCHAR(255) NOT NULL,
     Description     VARCHAR(250)  NOT NULL,
     FeatureRunTime  TIME NOT NULL,
+    ContentPreview  VARCHAR(255) NOT NULL,
+    ContentVideo    VARCHAR(250),
+    
     
     CONSTRAINT FeatureContent_PK PRIMARY KEY (IdContent),
 
@@ -103,8 +104,8 @@ CREATE TABLE EpisodicContent( -- Contenido episódico, es decir que tiene varias
     ReqSusCont      BIT(1) NOT NULL DEFAULT 0, -- 1: Requiere suscripcion, 0: no requiere suscripcion
     ContentImage    VARCHAR(250)  NOT NULL,
     Description     VARCHAR(250)  NOT NULL,
-    ContentPreview  VARCHAR(255) NOT NULL,
     EpisodicTotalRunTime    TIME NOT NULL ,
+    ContentPreview  VARCHAR(255) NOT NULL,
 
     CONSTRAINT EpisodicContent_PK PRIMARY KEY (IdContent),
     

@@ -23,6 +23,7 @@ class previewprovider {
         //echo $preview;
         //$video = $content->getContentVideo();
         $image =  $content->getContentImage();
+        $preview = '../../'.$preview;
 
         //Agregar episodio y temporada como subtítulo
 
