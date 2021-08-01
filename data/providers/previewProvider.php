@@ -11,13 +11,15 @@ class PreviewProvider {
     }
 
 
-    public function createPreviewVideo($content){
-        if ($content == null){
+    public function createPreviewVideo($idContent){
+        if ($idContent == null){
             $content = $this->getRandomContent();
         }
-        $ContentName = $content->getTitleCont();
+        else {
+            $content = new Content($this->connection, $idContent);
+        }
 
-        $idContent = $content->getId();
+        $ContentName = $content->getTitleCont();
 
         $preview = $content->getContentPreview();
         $preview = '../../'.$preview;
@@ -66,7 +68,7 @@ class PreviewProvider {
         $image = '../../'.$image;
         $ContentName = $content->getTitleCont();
 
-        return "<a href = '../../src/content/content.php?id=$IdContent'>
+        return "<a href = '../../src/content/contentPage.php?id=$IdContent'>
                     <div class = 'smallPreviewContainer'>
                         <img src='$image' title = '$ContentName'>
                     </div>

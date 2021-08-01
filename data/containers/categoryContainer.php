@@ -65,7 +65,7 @@ class CategoryContainer {
         }
 
         return "<div class='genreCategory'>
-                    <a href='../../src/content/genreCategory.php?id=$IdGenre'>
+                    <a href='../../src/content/genrePage.php?id=$IdGenre'>
                         <h2>$title</h2>
                     </a> 
 

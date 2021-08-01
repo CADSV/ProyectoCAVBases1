@@ -182,7 +182,7 @@ header {
 .genreCategory {
     display: flex;
     flex-direction: column;
-    padding: 10px 15px;
+    padding: 10px 50px;
 }
 
 .genreCategory .contents {
