@@ -175,14 +175,14 @@ header {
 
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 
 .genreCategory {
     display: flex;
     flex-direction: column;
-    padding: 10px 15px;
+    padding: 10px 50px;
 }
 
 .genreCategory .contents {
@@ -192,12 +192,12 @@ header {
 
 }
 
-.genreCategory a h2 {
+.genreCategory h2 {
     color: #e5e5e5;
     margin: 20px;
 }
 
-.genreCategory a h2:hover {
+.genreCategory h2:hover {
     color: #fff;
 }
 
