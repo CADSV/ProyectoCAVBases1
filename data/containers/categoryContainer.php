@@ -29,12 +29,12 @@ class CategoryContainer {
 
     private function getCategoryHtml($sqlData, $title, $episodicContent, $featureContent){  // episodicContent y featureContent son booleanos sobre si queremos mostrar series o pelis
 
-        $categoryId = $sqlData["IdGenre"];
+        $IdGenre = $sqlData["IdGenre"];
         $title = $title == null ? $sqlData["GenreName"] : $title;
 
         if($episodicContent && $featureContent){
 
-            $contents = ContentProvider::getIdContents($this->connection, $categoryId, 5);
+            $contents = ContentProvider::getIdContents($this->connection, $IdGenre, 8);
 
         } else if ($episodicContent){
             // Obtienes las series 
@@ -64,7 +64,15 @@ class CategoryContainer {
 
         }
 
-        return $contentHtml . "<br>";
+        return "<div class='genreCategory'>
+                    <a href='../../src/content/genreCategory.php?id=$IdGenre'>
+                        <h2>$title</h2>
+                    </a> 
+
+                    <div class = 'contents'>
+                        $contentHtml
+                    </div>
+                </div>";
 
     }
 

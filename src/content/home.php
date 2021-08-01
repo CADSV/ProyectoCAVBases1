@@ -8,7 +8,7 @@ include_once("navBar.php");
 require_once("header.php");
 
 if (!isset($_SESSION["userLoggedIn"])){
-    header("Location: ../index.php");
+    header("Location: ../../index.php");
 }
 
 $userLoggedIn = $_SESSION["userLoggedIn"];
