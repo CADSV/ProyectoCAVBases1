@@ -6,7 +6,7 @@ include_once("navBar.php");
 require_once("header.php");
 
 if (!isset($_SESSION["userLoggedIn"])){
-    header("Location: ../register/register1.php");
+    header("Location: ../index.php");
 }
 
 $userLoggedIn = $_SESSION["userLoggedIn"];
@@ -24,12 +24,12 @@ echo $preview->createPreviewVideo(null);
             <title>Carlevix</title>
             <link rel="stylesheet" type="text/css" href="../../assets/style/contentStyle.css"/> 
             <script src="https://kit.fontawesome.com/06a651c8da.js" crossorigin="anonymous"> </script>
+            <script src="https://kit.fontawesome.com/2992031619.js" crossorigin="anonymous"></script>
 
         </head>
         <body>
             <div class="wrapper">
 
               
-            </div>
-        </div>   
+            </div>  
     </html>   

@@ -103,7 +103,7 @@ CREATE TABLE Episode( -- Episodio que puede tener temporada
     IdContent   INT(10)  NOT NULL,
     EpisodeName VARCHAR(30) NOT NULL,
     EpisodeRunTime TIME NOT NULL,
-    EpisodeVideo  VARCHAR(255) NOT NULL,
+    EpisodeVideo  VARCHAR(255),
 
     CONSTRAINT Episode_PK PRIMARY KEY (IdEpisode, IdSeason, IdContent),
 
