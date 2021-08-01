@@ -85,6 +85,9 @@ CREATE TABLE FeatureContent( -- Contenido individual, como películas
     ContentImage    VARCHAR(250)  NOT NULL,
     Description     VARCHAR(250)  NOT NULL,
     FeatureRunTime  TIME NOT NULL,
+    ContentPreview  VARCHAR(255) NOT NULL,
+    ContentVideo    VARCHAR(250),
+    
     
     CONSTRAINT FeatureContent_PK PRIMARY KEY (IdContent),
 
@@ -102,6 +105,7 @@ CREATE TABLE EpisodicContent( -- Contenido episódico, es decir que tiene varias
     ContentImage    VARCHAR(250)  NOT NULL,
     Description     VARCHAR(250)  NOT NULL,
     EpisodicTotalRunTime    TIME NOT NULL ,
+    ContentPreview  VARCHAR(255) NOT NULL,
 
     CONSTRAINT EpisodicContent_PK PRIMARY KEY (IdContent),
     
