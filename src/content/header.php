@@ -30,6 +30,6 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
         <script src="../../assets/js/script.js"> </script>
     </head>
     <body>
-        <!-- <div class='wrapper'>
+        <div class='headerWrapper'>
 
-        </div> -->
+        </div>
