@@ -288,7 +288,3 @@ INSERT INTO directed VALUES (21,27);
 INSERT INTO directed VALUES (21,28);
 INSERT INTO directed VALUES (15,29);
 INSERT INTO directed VALUES (16,30);
-
-
-
-
