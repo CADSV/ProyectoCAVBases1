@@ -154,7 +154,7 @@ INSERT INTO episode VALUES (7,1,24,'La positiva oyó','0:29:00', NULL);
 
 -- Episodios de La Ley Secreta
 INSERT INTO episode VALUES (1,1,25,'La operación','1:45:00', NULL);
-INSERT INTO episode VALUES (5,1,25,'La improvisación','1:45:00',, NULL);
+INSERT INTO episode VALUES (5,1,25,'La improvisación','1:45:00', NULL);
 INSERT INTO episode VALUES (6,1,25,'La oferta','1:45:00', NULL);
 INSERT INTO episode VALUES (7,1,25,'El fin de la operación','1:48:00', NULL);
 
