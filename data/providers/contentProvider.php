@@ -11,7 +11,7 @@ class ContentProvider {
 
         if($IdGenre != null){
 
-            $sql .= "(WHERE IdGenre =: IdGenre) AND (Relevance = 1) ";
+            $sql .= "WHERE (IdGenre =:IdGenre) AND (Relevance = 1) ";
 
         }
 
@@ -21,7 +21,7 @@ class ContentProvider {
 
         if($IdGenre != null) {
 
-            $query->bindValue(":Idgenre", $IdGenre);
+            $query->bindValue(":IdGenre", $IdGenre);
         }
 
         $query->bindValue(":limit", $limit, PDO::PARAM_INT);

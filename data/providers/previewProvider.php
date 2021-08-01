@@ -62,31 +62,9 @@ class PreviewProvider {
         $content = ContentProvider::getIdContents($this->connection, null, 1);
         $content = $content[0];
 
-        // $query = $this->connection->prepare("SELECT idcontent FROM content ORDER BY RAND() LIMIT 1");
-        // $query->execute();
-
-        // $row = $query->fetch(PDO::FETCH_ASSOC);
-        // $idContent=$row["idcontent"];
         $idContent = $content->getId();
 
-        $query2 = $this->connection->prepare("SELECT * FROM featurecontent WHERE IdContent= :idcontent");
-        $query2->bindValue(":idcontent", $idContent);
-        $query2->execute();
-
-    
-        if($query2->rowCount()!= 0){  
-            $row = $query2->fetch(PDO::FETCH_ASSOC);
-            $TitleContent=$row["TitleCont"];
-           // echo $TitleContent;                    
-           
-        }else{
-            $query3 = $this->connection->prepare("SELECT * FROM episodiccontent WHERE IdContent= :idcontent");
-            $query3->bindValue(":idcontent", $idContent);
-            $query3->execute();
-            $row = $query3->fetch(PDO::FETCH_ASSOC);
-            $TitleContent=$row["TitleCont"];
-           // echo $TitleContent;
-        }
+        $row = $content->getContentData($idContent);
 
         return new Content($this->connection, $row);
     }

@@ -32,9 +32,37 @@ class CategoryContainer {
         $categoryId = $sqlData["IdGenre"];
         $title = $title == null ? $sqlData["GenreName"] : $title;
 
-        return $title . "<br>";
+        if($episodicContent && $featureContent){
+
+            $contents = ContentProvider::getIdContents($this->connection, $categoryId, 1);
+
+        } else if ($episodicContent){
+            // Obtienes las series 
+
+        } else {
+            // Obtienes las pelis
+        }
+
+
+        if(sizeof($contents) == 0 ){
+            return;
+        }
+
+
+        $contentHtml = "";
+
+        foreach($contents as $content) {
+            $IdContent = $content->getId(); // Primero obtienes el ID
+            $contentData = $content->getContentData($IdContent);    // Luego a partir del Id obtienes la data
+            $content = new Content($this->connection, $contentData);    // Con la data creas el objeto Content
+            $contentHtml .= $content->getTitleCont();   // Y ahora si puedes operar con él
+        }
+
+        return $contentHtml . "<br>";
 
     }
+
+
 
 }
 

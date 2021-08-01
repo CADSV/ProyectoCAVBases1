@@ -57,12 +57,13 @@ header {
 .navLinks{
     display: flex;
     list-style: none;
+    margin-left: 20px;
 }
 
 .navLinks a{
     color: #fff;
     font-size: 14px;
-    margin-left: 20px;
+    margin-left: 30px;
     text-decoration: none;
     
 }
