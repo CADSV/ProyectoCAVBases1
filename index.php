@@ -4,6 +4,9 @@ error_reporting(E_ALL ^ E_WARNING);
     require_once("data/account/indexAccount.php");
     require_once("data/config.php");
 
+    if (isset($_SESSION["userLoggedIn"])){
+        header("Location: src/profile/selectProfile.php");
+    }
 
 
     //create an instance of UserAgent class

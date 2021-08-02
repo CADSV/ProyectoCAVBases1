@@ -7,10 +7,23 @@ if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
+if (isset($_SESSION["IdProfile"])){ // Si ya eligió un perfil, pero regresó a la selección, se desloguea
+    $_SESSION["IdProfile"] = NULL;
+}
 
-    $username = $_SESSION["userLoggedIn"];
+if(isset($_POST["profile"])){
 
-    $profileContainer = new ProfileContainer($connection);
+    $IdProfile = $_POST["profile"];
+
+    $_SESSION["IdProfile"] = $IdProfile;
+
+    header("Location: ../content/home.php");
+}
+
+$username = $_SESSION["userLoggedIn"];
+
+$profileContainer = new ProfileContainer($connection);
+
 ?>
 
 <!DOCTYPE html>
@@ -48,13 +61,15 @@ if (!isset($_SESSION["userLoggedIn"])){
             </div>
 
             <div class = "profilesSelection">
-                <?php echo $profileContainer->showAllProfiles($username, 1); ?>
+                <form method="POST"> 
+                    <?php echo $profileContainer->showAllProfiles($username, 1); ?>
 
-                <div class = "newProfile">
-                    <a href="createProfile.php" title = "Nuevo perfil" alt = "Nuevo perfil" >
-                        <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
-                    </a>
-                </div>
+                    <div class = "newProfile">
+                        <a href="createProfile.php" title = "Nuevo perfil" alt = "Nuevo perfil" >
+                            <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
+                        </a>
+                    </div>
+                </form>
             </div>
 
 

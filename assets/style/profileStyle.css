@@ -281,13 +281,33 @@ section .question h1 {
     box-shadow: none;   
 }
 
-form label {
+.containerC form label {
     width: 104px;
     height: 104px;
     margin-bottom: 10px;
 }
 
+.containerS form label {
+    width: 208px;
+    height: 208px;
+}
+
+.containerS form{
+    display: contents;
+}
+
+.containerS form h2{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 form input[type="radio"]{
+    display: none;
+}
+
+.profilesSelection form input[type="submit"]{
     display: none;
 }
 
