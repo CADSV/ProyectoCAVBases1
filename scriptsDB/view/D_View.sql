@@ -25,3 +25,19 @@ WHERE IdCity IN
                                                                     HAVING COUNT(IdEpisode)>10)))))
 ORDER BY CountryName;
 
+
+-- Otra forma de hacer la consulta
+
+/*
+SELECT country.IdCountry, (country.CountryName)
+FROM country
+INNER JOIN city ON country.IdCountry = city.IdCountry
+INNER JOIN user ON user.IdCity = city.IdCity
+INNER JOIN profile on user.IdUser = profile.IdUser
+INNER JOIN hasseen on hasseen.IdProfile = profile.IdProfile
+WHERE hasseen.IdContent in (SELECT IdContent 
+                            FROM episode
+                            GROUP BY IdContent
+                            HAVING COUNT(IdEpisode)>10)
+ORDER BY CountryName;*/
+
