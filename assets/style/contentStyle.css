@@ -14,6 +14,7 @@
     /* height: 100%; */
     display: flex;
     flex-flow: row wrap;
+    background-color: #221F1F;
 }
 
 header {
@@ -57,12 +58,13 @@ header {
 .navLinks{
     display: flex;
     list-style: none;
+    margin-left: 20px;
 }
 
 .navLinks a{
     color: #fff;
     font-size: 14px;
-    margin-left: 20px;
+    margin-left: 30px;
     text-decoration: none;
     
 }
@@ -91,6 +93,10 @@ header {
     font-size:20px;
     padding: 5px  10px;
     border-radius: 3px;
+}
+
+.previewCategories {
+    background-color: #221F1F;
 }
 
 .previewImage, .previewVideo {
@@ -153,12 +159,48 @@ header {
 
 .mainDetails i {
     color: inherit  ;
+    background-color: none;
 }
 
 
+.smallPreviewContainer {
 
-.headerWrapper {
-    min-width: 1050px;
-    min-height: 100%;
-    background-color: #141414;
+    width: 320px;
+    height: 200px;
+    margin-right: 4px;
+    display: inline-flex;
+}
+
+.smallPreviewContainer img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+.genreCategory {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+}
+
+.genreCategory .contents {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+}
+
+.genreCategory h2 {
+    color: #e5e5e5;
+    margin: 20px;
+}
+
+.genreCategory h2:hover {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
 }

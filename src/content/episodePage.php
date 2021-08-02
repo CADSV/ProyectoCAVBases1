@@ -4,19 +4,26 @@ require_once("../../data/config.php");
 require_once("../../data/providers/previewProvider.php");
 require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
+require_once("../../data/containers/seasonContainer.php");
 include_once("navBar.php");
 require_once("header.php");
+
+if(!isset($_GET["IdContent"]) || !isset($_GET["IdSeason"]) || !isset($_GET["IdEpisode"])){ // Si no se especifica algún id redirecciona a Home
+    header("Location: home.php");
+}
+
+$IdContent = $_GET["IdContent"];
+$IdSeason = $_GET["IdSeason"];
+$IdEpisode = $_GET["IdEpisode"];
 
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
 $userLoggedIn = $_SESSION["userLoggedIn"];
-$preview = new PreviewProvider($connection, $userLoggedIn);
-echo $preview->createPreviewVideo(null);
 
-$categories = new CategoryContainer($connection, $userLoggedIn);
-echo $categories->showAllCategories(null);
+$preview = new PreviewProvider($connection, $userLoggedIn);
+echo $preview->createPreviewVideo($IdContent);
 
 ?>
     <!DOCTYPE html>

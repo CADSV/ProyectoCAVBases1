@@ -1,6 +1,6 @@
 <?php
 
-class previewprovider {
+class PreviewProvider {
 
     private $connection;
     private $username;
@@ -11,18 +11,21 @@ class previewprovider {
     }
 
 
-    public function createPreviewVideo($content){
-        if ($content == null){
-            $content = $this->getRandomVideo();
+    public function createPreviewVideo($idContent){
+        if ($idContent == null){
+            $content = $this->getRandomContent();
         }
+        else {
+            $content = new Content($this->connection, $idContent);
+        }
+
         $ContentName = $content->getTitleCont();
-        //echo $ContentName;
-        $idContent = $content->getId();
-       // echo $idContent;
+
         $preview = $content->getContentPreview();
         $preview = '../../'.$preview;
-        //echo $preview;
+
         //$video = $content->getContentVideo();
+
         $image =  $content->getContentImage();
         $image = '../../'.$image;
 
@@ -57,32 +60,32 @@ class previewprovider {
 
     }
 
-    private function getRandomVideo(){
-        $query = $this->connection->prepare("SELECT idcontent FROM content ORDER BY RAND() LIMIT 1");
-        $query->execute();
 
-        $row = $query->fetch(PDO::FETCH_ASSOC);
-        $idContent=$row["idcontent"];
-        //echo  $idContent;
+    public function createContentPreviewSquare($content){
 
-        $query2 = $this->connection->prepare("SELECT * FROM featurecontent WHERE IdContent= :idcontent");
-        $query2->bindValue(":idcontent", $idContent);
-        $query2->execute();
+        $IdContent = $content->getId();
+        $image =  $content->getContentImage();
+        $image = '../../'.$image;
+        $ContentName = $content->getTitleCont();
 
-    
-        if($query2->rowCount()!= 0){  
-            $row = $query2->fetch(PDO::FETCH_ASSOC);
-            $TitleContent=$row["TitleCont"];
-           // echo $TitleContent;                    
-           
-        }else{
-            $query3 = $this->connection->prepare("SELECT * FROM episodiccontent WHERE IdContent= :idcontent");
-            $query3->bindValue(":idcontent", $idContent);
-            $query3->execute();
-            $row = $query3->fetch(PDO::FETCH_ASSOC);
-            $TitleContent=$row["TitleCont"];
-           // echo $TitleContent;
-        }
+        return "<a href = '../../src/content/contentPage.php?id=$IdContent'>
+                    <div class = 'smallPreviewContainer'>
+                        <img src='$image' title = '$ContentName'>
+                    </div>
+                </a>";
+
+
+    }
+
+
+    private function getRandomContent(){
+
+        $content = ContentProvider::getIdContents($this->connection, null, 1);
+        $content = $content[0];
+
+        $idContent = $content->getId();
+
+        $row = $content->getContentData($idContent);
 
         return new Content($this->connection, $row);
     }

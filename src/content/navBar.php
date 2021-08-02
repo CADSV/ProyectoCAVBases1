@@ -7,8 +7,8 @@
 
 <div class="topBar">
     <div class="logoContainer">
-        <a href="../../index.php">
-        <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo">
+        <a href="home.php">
+            <img src="../../assets/images/logo.png" title="Logo" alt="Logo de la página" class = "carlevixLogo">
         </a>
 
     </div>

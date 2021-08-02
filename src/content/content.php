@@ -1,6 +1,6 @@
 <?php
 
-class content {
+class Content {
 
     private $connection, $DATA;
 
@@ -45,6 +45,27 @@ class content {
 
     public function getContentVideo(){
         return $this->DATA["ContentVideo"];
+    }
+
+
+    public function getContentData($idContent){
+
+        $query2 = $this->connection->prepare("SELECT * FROM featurecontent WHERE IdContent= :idcontent");
+        $query2->bindValue(":idcontent", $idContent);
+        $query2->execute();
+
+    
+        if($query2->rowCount()!= 0){  
+            $row = $query2->fetch(PDO::FETCH_ASSOC);          
+        }
+        else{
+            $query3 = $this->connection->prepare("SELECT * FROM episodiccontent WHERE IdContent= :idcontent");
+            $query3->bindValue(":idcontent", $idContent);
+            $query3->execute();
+            $row = $query3->fetch(PDO::FETCH_ASSOC);         
+        }
+
+        return $row;
     }
 
 

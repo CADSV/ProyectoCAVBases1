@@ -7,15 +7,22 @@ require_once("../../data/containers/categoryContainer.php");
 include_once("navBar.php");
 require_once("header.php");
 
+if(!isset($_GET["id"])){ // Si no se especifica el id redirecciona a Home
+    header("Location: home.php");
+}
+
+$IdGenre = $_GET["id"];
+
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
 $userLoggedIn = $_SESSION["userLoggedIn"];
+
 $preview = new PreviewProvider($connection, $userLoggedIn);
 echo $preview->createPreviewVideo(null);
 
-$categories = new CategoryContainer($connection, $userLoggedIn);
+$categories = new CategoryContainer($connection, $userLoggedIn); // Después mostrar el género del id aquí
 echo $categories->showAllCategories(null);
 
 ?>
