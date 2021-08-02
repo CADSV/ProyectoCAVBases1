@@ -216,6 +216,10 @@ a {
     text-decoration: none;
 }
 
+.previewCategories.noScroll .genreCategory .contents{
+    white-space: normal;
+}
+
 ::-webkit-scrollbar {
     width: 15px;
     background-color: #221F1F;

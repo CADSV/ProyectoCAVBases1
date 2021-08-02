@@ -51,6 +51,16 @@ class Content {
         return $this->DATA["Description"];
     }
 
+    public function getContentGenre(){
+        $query = $this->connection->prepare("SELECT Genre.IdGenre 
+                                             FROM Genre 
+                                             INNER JOIN IsAbout ON Genre.IdGenre = IsAbout.IdGenre
+                                             WHERE IdContent =:idContent AND Relevance = 1");
+        $query->bindValue(":idContent", $this->getId());
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC)["IdGenre"];
+    }
+
     public function getContentData($idContent){
 
         $query2 = $this->connection->prepare("SELECT * FROM featurecontent WHERE IdContent= :idcontent");

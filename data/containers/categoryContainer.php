@@ -13,7 +13,6 @@ class CategoryContainer {
 
 
     public function showAllCategories() {
-
         $query = $this->connection->prepare("SELECT * FROM Genre");
         $query->execute();
 
@@ -26,15 +25,29 @@ class CategoryContainer {
         return $html."</div>";
     }
 
+    public function showCategory($idGenre, $title = NULL, $UsedIdContent){
+        $query = $this->connection->prepare("SELECT * FROM Genre WHERE IdGenre =:idGenre");
+        $query->bindValue(":idGenre", $idGenre);
+        $query->execute();
 
-    private function getCategoryHtml($sqlData, $title, $episodicContent, $featureContent){  // episodicContent y featureContent son booleanos sobre si queremos mostrar series o pelis
+        $html = "<div class = 'previewCategories noScroll'>";
+
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $html .= $this->getCategoryHtml($row, $title, true, true, $UsedIdContent);
+        }
+
+        return $html."</div>";
+    }
+
+
+    private function getCategoryHtml($sqlData, $title, $episodicContent, $featureContent, $UsedIdContent = NULL){  // episodicContent y featureContent son booleanos sobre si queremos mostrar series o pelis
 
         $IdGenre = $sqlData["IdGenre"];
         $title = $title == null ? $sqlData["GenreName"] : $title;
 
         if($episodicContent && $featureContent){
 
-            $contents = ContentProvider::getIdContents($this->connection, $IdGenre, 8);
+            $contents = ContentProvider::getIdContents($this->connection, $IdGenre, 8, $UsedIdContent);
 
         } else if ($episodicContent){
             // Obtienes las series 
