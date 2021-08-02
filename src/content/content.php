@@ -47,6 +47,9 @@ class Content {
         return $this->DATA["ContentVideo"];
     }
 
+    public function getContentDescription(){
+        return $this->DATA["Description"];
+    }
 
     public function getContentData($idContent){
 

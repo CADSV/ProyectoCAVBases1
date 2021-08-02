@@ -20,6 +20,7 @@ class PreviewProvider {
         }
 
         $ContentName = $content->getTitleCont();
+        $ContentDescription = $content->getContentDescription();
 
         $preview = $content->getContentPreview();
         $preview = '../../'.$preview;
@@ -42,9 +43,10 @@ class PreviewProvider {
                     <div class='previewOverlay'>
                         <div class= 'mainDetails'>
                             <h3>$ContentName</h3>
+                            <h4>$ContentDescription</h4>
                             <div class='buttons'>
 
-                                <button><i class = 'fas fa-play'></i>   Play</button>
+                                <button><i class = 'fas fa-play'></i>    Ver</button>
                                 <button onclick = 'volumeToggle(this)'><i class = 'fas fa-volume-mute'></i></button>
 
                             </div>
