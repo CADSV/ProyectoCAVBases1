@@ -11,9 +11,9 @@ class PreviewProvider {
     }
 
 
-    public function createPreviewVideo($idContent){
+    public function createPreviewVideo($idContent, $Category = NULL, $idGenre = NULL){
         if ($idContent == null){
-            $content = $this->getRandomContent();
+            $content = $this->getRandomContent($Category, $idGenre);
         }
         else {
             $content = new Content($this->connection, $idContent);
@@ -58,7 +58,9 @@ class PreviewProvider {
         
         
                 </div>";
+    }
 
+    public function createSeriesPreview(){
 
     }
 
@@ -70,7 +72,7 @@ class PreviewProvider {
         $image = '../../'.$image;
         $ContentName = $content->getTitleCont();
 
-        return "<a href = '../../src/content/contentPage.php?id=$IdContent'>
+        return "<a href = '../../src/content/contentPage.php?IdContent=$IdContent'>
                     <div class = 'smallPreviewContainer'>
                         <img src='$image' title = '$ContentName'>
                     </div>
@@ -80,9 +82,9 @@ class PreviewProvider {
     }
 
 
-    private function getRandomContent(){
+    private function getRandomContent($Category = NULL, $idGenre = NULL){
 
-        $content = ContentProvider::getIdContents($this->connection, null, 1);
+        $content = ContentProvider::getContents($this->connection, $idGenre, 1, null, $Category, $idGenre);
         $content = $content[0];
 
         $idContent = $content->getId();

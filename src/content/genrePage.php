@@ -5,13 +5,15 @@ require_once("../../data/providers/previewProvider.php");
 require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
 include_once("navBar.php");
-require_once("header.php");
+require_once("content.php");
 
-if(!isset($_GET["id"])){ // Si no se especifica el id redirecciona a Home
+if(!isset($_GET["IdGenre"])){ // Si no se especifica el id redirecciona a Home
     header("Location: home.php");
 }
 
-$IdGenre = $_GET["id"];
+$IdGenre = $_GET["IdGenre"];
+
+$Category = isset($_GET["Category"]) ? $_GET["Category"] : NULL; // Si hay una categoría en los parámetros de URL, la obtenemos
 
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
@@ -24,10 +26,10 @@ if (!isset($_SESSION["IdProfile"])){
 $userLoggedIn = $_SESSION["userLoggedIn"];
 
 $preview = new PreviewProvider($connection, $userLoggedIn);
-echo $preview->createPreviewVideo(null);
+echo $preview->createPreviewVideo(NULL, $Category, $IdGenre);
 
 $categories = new CategoryContainer($connection, $userLoggedIn); // Después mostrar el género del id aquí
-echo $categories->showAllCategories(null);
+echo $categories->showCategories($Category, $IdGenre);
 
 ?>
     <!DOCTYPE html>

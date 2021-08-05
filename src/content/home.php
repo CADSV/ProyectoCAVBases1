@@ -5,7 +5,8 @@ require_once("../../data/providers/previewProvider.php");
 require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
 include_once("navBar.php");
-require_once("header.php");
+require_once("content.php");
+
 
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
@@ -20,7 +21,7 @@ $preview = new PreviewProvider($connection, $userLoggedIn);
 echo $preview->createPreviewVideo(null);
 
 $categories = new CategoryContainer($connection, $userLoggedIn);
-echo $categories->showAllCategories(null);
+echo $categories->showCategories();
 
 ?>
     <!DOCTYPE html>

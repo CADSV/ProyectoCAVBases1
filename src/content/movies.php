@@ -1,17 +1,27 @@
 <?php
 
 require_once("../../data/config.php");
+require_once("../../data/providers/previewProvider.php");
+require_once("../../data/providers/contentProvider.php");
+require_once("../../data/containers/categoryContainer.php");
 include_once("navBar.php");
+require_once("content.php");
 
-    if (!isset($_SESSION["userLoggedIn"])){
-        header("Location: ../register/register1.php");
-    }
 
-    if (!isset($_SESSION["IdProfile"])){
-        header("Location: ../profile/selectProfile.php");
-    }
+if (!isset($_SESSION["userLoggedIn"])){
+    header("Location: ../../index.php");
+}
 
-    $userLoggedIn = $_SESSION["userLoggedIn"];
+if (!isset($_SESSION["IdProfile"])){
+    header("Location: ../profile/selectProfile.php");
+}
+
+$userLoggedIn = $_SESSION["userLoggedIn"];
+$preview = new PreviewProvider($connection, $userLoggedIn);
+echo $preview->createPreviewVideo(null, 2);
+
+$categories = new CategoryContainer($connection, $userLoggedIn);
+echo $categories->showCategories(2);
 
 ?>
     <!DOCTYPE html>
