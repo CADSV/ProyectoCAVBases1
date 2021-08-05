@@ -44,6 +44,11 @@ function initVideo(){
     startHideTimer();
 }
 
-function PlayContent(){
-    window.location.href="episodePage.php"
+function PlayContent(idContent,ismovie){
+    if (ismovie){
+        window.location.href="WatchMovie.php?IdContent="+idContent;
+    }else{
+        window.location.href="episodePage.php?IdContent="+idContent;
+    }
+   
 }

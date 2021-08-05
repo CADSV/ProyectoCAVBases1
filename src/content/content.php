@@ -51,6 +51,19 @@ class Content {
         return $this->DATA["Description"];
     }
 
+
+    public function ismovie($IdContent){
+        $query = $this->connection->prepare("SELECT * FROM featurecontent WHERE IdContent= :idcontent ");
+            $query->bindValue(":idcontent", $IdContent);
+            $query->execute();
+            if($query->rowCount()!= 0){
+                return 1;
+            }else{
+                return 0;
+            }
+
+    }
+
     public function getContentGenre(){
         $query = $this->connection->prepare("SELECT Genre.IdGenre 
                                              FROM Genre 
@@ -121,6 +134,14 @@ class Content {
         $query->bindValue(":idepisode",$idepisode);
         $query->execute();
         return $query->fetch(PDO::FETCH_ASSOC)["EpisodeVideo"];
+    }
+
+    public function getMovieVideo($IdContent){
+        $query = $this->connection->prepare("SELECT ContentVideo FROM featurecontent WHERE IdContent =:idContent");
+        $query->bindValue(":idContent", $IdContent);
+
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC)["ContentVideo"];
     }
 
 

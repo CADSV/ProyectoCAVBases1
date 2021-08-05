@@ -12,16 +12,6 @@ require_once("header.php");
     header("Location: home.php");
 }*/
 
-if(!isset($_GET["IdSeason"])){
-    $IdSeason=1;
-    $IdEpisode=1;
-}else{
-    $IdSeason= $_GET["IdSeason"];
-    $IdEpisode = $_GET["IdEpisode"];
-}
-
-
-
 $IdContent = $_GET["IdContent"];
 
 $IdProfile = $_SESSION["IdProfile"];
@@ -39,9 +29,9 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
 
 $preview = new PreviewProvider($connection, $userLoggedIn);
 $content = new Content($connection, $_GET["IdContent"]);
-$content->updateHasseen($IdProfile, $IdContent);
-//echo $preview->createPreviewVideo($IdContent);
-$video='../../'.$content->getEpisodeVideo($IdContent, $IdSeason, $IdEpisode);
+//$content->updateHasseen($IdProfile, $IdContent);
+
+$video='../../'.$content->getMovieVideo($IdContent);
 
 ?>
     <!DOCTYPE html>
@@ -76,6 +66,6 @@ $video='../../'.$content->getEpisodeVideo($IdContent, $IdSeason, $IdEpisode);
     </html>   
 
     <script>
-        initVideo()
+        initVideo();
 
     </script>
