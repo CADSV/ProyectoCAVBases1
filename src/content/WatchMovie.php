@@ -52,7 +52,7 @@ $video='../../'.$content->getMovieVideo($IdContent);
             <div class="watchContainer">
 
             <div class="videoControls watchNav">
-                <button class="iconButton" onclick="goBack()">  <i class="fas fa-arrow-left"></i>  </button>
+                <button class="iconButton" onclick="goBack(<?php echo $content->getId();?>)">  <i class="fas fa-arrow-left"></i>  </button>
                 <h1> <?php echo $content->getTitleCont();?>            </div> 
             
             <video autoplay controls  '>

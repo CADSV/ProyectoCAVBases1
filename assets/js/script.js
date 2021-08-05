@@ -20,8 +20,8 @@ function previewEnded(){
     $(".previewImage").toggle();
 }
 
-function goBack(){
-    window.history.back();
+function goBack(idContent){
+    window.location.href="contentPage.php?IdContent="+idContent;
 
 }
 

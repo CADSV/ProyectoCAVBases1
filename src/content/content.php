@@ -101,7 +101,7 @@ class Content {
         $query->execute();
         
         if($query->rowCount()!= 0){  
-            echo 'hola';
+            
             $query2 = $this->connection->prepare("UPDATE Hasseen SET TimesSeen=TimesSeen+1, LastDateWatched=CURRENT_TIMESTAMP WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
             $query2->bindValue("IdContent", $IdContent);
             $query2->bindValue(":Idprofile", $Idprofile);
