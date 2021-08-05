@@ -12,14 +12,25 @@ class CategoryContainer {
 
 
 
-    public function showAllCategories() {
-        $query = $this->connection->prepare("SELECT * FROM Genre");
+    public function showCategories($Category = NULL, $idGenre = NULL) {
+        $sql = "SELECT * FROM Genre";
+
+        if($idGenre){
+            $sql .= " WHERE IdGenre =:idGenre";
+        }
+
+        $query = $this->connection->prepare($sql);
+
+        if($idGenre){
+            $query->bindValue(":idGenre", $idGenre);
+        }
+
         $query->execute();
 
         $html = "<div class = 'previewCategories'>";
 
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
-            $html .= $this->getCategoryHtml($row, null, true, true);
+            $html .= $this->getCategoryHtml($row, NULL, $Category);
         }
 
         return $html."</div>";
@@ -33,34 +44,23 @@ class CategoryContainer {
         $html = "<div class = 'previewCategories noScroll'>";
 
         while($row = $query->fetch(PDO::FETCH_ASSOC)){
-            $html .= $this->getCategoryHtml($row, $title, true, true, $UsedIdContent);
+            $html .= $this->getCategoryHtml($row, $title, NULL, $UsedIdContent);
         }
 
         return $html."</div>";
     }
 
 
-    private function getCategoryHtml($sqlData, $title, $episodicContent, $featureContent, $UsedIdContent = NULL){  // episodicContent y featureContent son booleanos sobre si queremos mostrar series o pelis
+    private function getCategoryHtml($sqlData, $title, $Category = NULL, $UsedIdContent = NULL){  // episodicContent y featureContent son booleanos sobre si queremos mostrar series o pelis
 
         $IdGenre = $sqlData["IdGenre"];
         $title = $title == null ? $sqlData["GenreName"] : $title;
 
-        if($episodicContent && $featureContent){
-
-            $contents = ContentProvider::getIdContents($this->connection, $IdGenre, 8, $UsedIdContent);
-
-        } else if ($episodicContent){
-            // Obtienes las series 
-
-        } else {
-            // Obtienes las pelis
-        }
-
+        $contents = ContentProvider::getContents($this->connection, $IdGenre, 8, $UsedIdContent, $Category);
 
         if(sizeof($contents) == 0 ){
             return;
         }
-
 
         $contentHtml = "";
         $previewProvider = new PreviewProvider($this->connection, $this->username);
@@ -77,15 +77,21 @@ class CategoryContainer {
 
         }
 
-        return "<div class='genreCategory'>
-                    <a href='../../src/content/genrePage.php?id=$IdGenre'>
-                        <h2>$title</h2>
-                    </a> 
+        $html = "<div class='genreCategory'>
+                    <a href='../../src/content/genrePage.php?IdGenre=$IdGenre";
 
-                    <div class = 'contents'>
-                        $contentHtml
-                    </div>
-                </div>";
+        if($Category){
+            $html .= "&Category=$Category";
+        }
+
+        return $html . "'>
+                                <h2>$title</h2>
+                            </a> 
+                            <div class = 'contents'>
+                                $contentHtml
+                            </div>
+                        </div>";
+
 
     }
 
