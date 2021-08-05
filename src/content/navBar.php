@@ -17,6 +17,7 @@
         <li>  <a href="home.php">Home </a> </li>
         <li>  <a href="series.php">Series </a> </li>
         <li>  <a href="movies.php">Películas </a> </li>
+        <li>  <a href="watchlist.php">Mi lista </a> </li>
     </ul>
 
     <div class="rightItems">
