@@ -99,17 +99,15 @@ class Content {
         $query->bindValue(":IdContent", $IdContent);
         $query->bindValue(":Idprofile", $Idprofile);
         $query->execute();
-
+        
         if($query->rowCount()!= 0){  
-            $query2 = $this->connection->prepare("UPDATE Hasseen SET TimesSeen=TimesSeen+1 WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
+            echo 'hola';
+            $query2 = $this->connection->prepare("UPDATE Hasseen SET TimesSeen=TimesSeen+1, LastDateWatched=CURRENT_TIMESTAMP WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
             $query2->bindValue("IdContent", $IdContent);
             $query2->bindValue(":Idprofile", $Idprofile);
-
-           // $query3 = $this->connection->prepare("UPDATE Hasseen SET TimesSeen=TimesSeen+1 WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
-           // $query3->bindValue("IdContent", $IdContent);
-            //$query3->bindValue(":Idprofile", $Idprofile);
+            $query2->execute();
                      
-        }/*else{
+        }else{
              $query2 = $this->connection->prepare("INSERT INTO  Hasseen (IdProfile, IdContent, LastDateWatched, Rating, WatchedByRecomm, TimesSeen, LastMinWatched,TimeWatchedLastTime) 
                                                     VALUES (:IdProfile, :IdContent, :LastDateWatched, :Rating, :WatchedByRecomm, :TimesSeen, :LastMinWatched,:TimeWatchedLastTime)"); 
                $query2->bindValue(":Idprofile", $Idprofile);
@@ -122,7 +120,7 @@ class Content {
                 $query2->bindValue(":TimeWatchedLastTime", '00:00:00');
                 $query2->execute();
 
-        }*/
+        }
 
 
     }
