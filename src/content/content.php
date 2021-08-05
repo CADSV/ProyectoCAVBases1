@@ -108,11 +108,10 @@ class Content {
             $query2->execute();
                      
         }else{
-             $query2 = $this->connection->prepare("INSERT INTO  Hasseen (IdProfile, IdContent, LastDateWatched, Rating, WatchedByRecomm, TimesSeen, LastMinWatched,TimeWatchedLastTime) 
-                                                    VALUES (:IdProfile, :IdContent, :LastDateWatched, :Rating, :WatchedByRecomm, :TimesSeen, :LastMinWatched,:TimeWatchedLastTime)"); 
-               $query2->bindValue(":Idprofile", $Idprofile);
+             $query2 = $this->connection->prepare("INSERT INTO  Hasseen (IdProfile, IdContent, Rating, WatchedByRecomm, TimesSeen, LastMinWatched,TimeWatchedLastTime) 
+                                                    VALUES (:IdProfile, :IdContent, :Rating, :WatchedByRecomm, :TimesSeen, :LastMinWatched,:TimeWatchedLastTime)"); 
+               $query2->bindValue(":IdProfile", $Idprofile);
                $query2->bindValue(":IdContent", $IdContent);
-                $query2->bindValue(":LastDateWatched", '2021-04-15 03:14:05');
                 $query2->bindValue(":Rating", NULL);
                 $query2->bindValue(":WatchedByRecomm", TRUE);
                 $query2->bindValue(":TimesSeen", 1);
