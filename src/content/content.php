@@ -47,6 +47,19 @@ class Content {
         return $this->DATA["ContentVideo"];
     }
 
+    public function getContentDescription(){
+        return $this->DATA["Description"];
+    }
+
+    public function getContentGenre(){
+        $query = $this->connection->prepare("SELECT Genre.IdGenre 
+                                             FROM Genre 
+                                             INNER JOIN IsAbout ON Genre.IdGenre = IsAbout.IdGenre
+                                             WHERE IdContent =:idContent AND Relevance = 1");
+        $query->bindValue(":idContent", $this->getId());
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC)["IdGenre"];
+    }
 
     public function getContentData($idContent){
 

@@ -17,6 +17,10 @@ if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
+if (!isset($_SESSION["IdProfile"])){
+    header("Location: ../profile/selectProfile.php");
+}
+
 $userLoggedIn = $_SESSION["userLoggedIn"];
 
 $preview = new PreviewProvider($connection, $userLoggedIn);

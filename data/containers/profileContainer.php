@@ -51,8 +51,9 @@ class ProfileContainer{
     private function getProfileHtml($sqlData){ // Crear código HTML para un perfil
         $profileName = $sqlData["ProfileName"];
         $profilePhoto = $sqlData["ProfilePhoto"];
+        $idProfile = $sqlData["IdProfile"];
 
-        $html = '<div class ="profile"><a href="../content/home.php"><img src="../../assets/images/profiles/';
+        $html = '<div class ="profile"><input type="submit" name="profile" value='. $idProfile .' id="'. $profilePhoto .'" required><label for="'. $profilePhoto .'"><img src="../../assets/images/profiles/';
  
         if($profilePhoto == 1){ // Se muestra la foto de perfil que corrresponde
             $html .= 'blueProfile.png"';
@@ -76,8 +77,9 @@ class ProfileContainer{
     private function getAdmProfileHtml($sqlData){ // Crear código HTML para un administración de perfil
         $profileName = $sqlData["ProfileName"];
         $profilePhoto = $sqlData["ProfilePhoto"];
+        $idProfile = $sqlData["IdProfile"];
 
-        $html = '<div class ="adminProfile"><a href=""><img src="../../assets/images/profiles/';
+        $html = '<div class ="profile"><input type="submit" name="profile" value='. $idProfile .' id="'. $profilePhoto .'" required><label for="'. $profilePhoto .'"><img src="../../assets/images/profiles/';
  
         if($profilePhoto == 1){ // Se muestra la foto de perfil que corrresponde
             $html .= 'editBlue.png"';

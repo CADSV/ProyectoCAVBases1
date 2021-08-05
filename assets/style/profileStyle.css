@@ -281,13 +281,33 @@ section .question h1 {
     box-shadow: none;   
 }
 
-form label {
+.containerC form label {
     width: 104px;
     height: 104px;
     margin-bottom: 10px;
 }
 
+.containerS form label {
+    width: 208px;
+    height: 208px;
+}
+
+.containerS form{
+    display: contents;
+}
+
+.containerS form h2{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 form input[type="radio"]{
+    display: none;
+}
+
+.profilesSelection form input[type="submit"]{
     display: none;
 }
 
@@ -335,4 +355,32 @@ h4{
     font-size: 14px;
     font-weight: 400;
     text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: #221F1F;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #053F75;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background:#021D36;
+}
+::-webkit-scrollbar-thumb:active {
+    background: rgba(0,0,15,1);
+}
+::-webkit-scrollbar-track {
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+    background: #666666;
 }

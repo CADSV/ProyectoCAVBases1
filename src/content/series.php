@@ -3,11 +3,15 @@
 require_once("../../data/config.php");
 include_once("navBar.php");
 
-/*if (!isset($_SESSION["userLoggedIn"])){
-    header("Location: ../register/register1.php");
-}
+    if (!isset($_SESSION["userLoggedIn"])){
+        header("Location: ../register/register1.php");
+    }
 
-$userLoggedIn = $_SESSION["userLoggedIn"];*/
+    if (!isset($_SESSION["IdProfile"])){
+        header("Location: ../profile/selectProfile.php");
+    }
+
+    $userLoggedIn = $_SESSION["userLoggedIn"];
 
 ?>
     <!DOCTYPE html>

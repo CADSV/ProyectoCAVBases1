@@ -6,6 +6,7 @@ require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
 require_once("../../data/containers/seasonContainer.php");
 include_once("navBar.php");
+require_once("content.php");
 require_once("header.php");
 
 if(!isset($_GET["id"])){ // Si no se especifica el id redirecciona a Home
@@ -18,6 +19,10 @@ if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
+if (!isset($_SESSION["IdProfile"])){
+    header("Location: ../profile/selectProfile.php");
+}
+
 $userLoggedIn = $_SESSION["userLoggedIn"];
 
 $preview = new PreviewProvider($connection, $userLoggedIn);
@@ -25,6 +30,11 @@ echo $preview->createPreviewVideo($IdContent);
 
 $seasons = new SeasonContainer($connection, $userLoggedIn);
 echo $seasons->showAllSeasons($IdContent);
+
+$content = new Content($connection, $IdContent);
+
+$categoryContainers = new CategoryContainer($connection, $userLoggedIn);
+echo $categoryContainers->showCategory($content->getContentGenre(), 'Si te gustó "'. $content->getTitleCont() .'" te recomendamos:', $IdContent);
 
 ?>
     <!DOCTYPE html>

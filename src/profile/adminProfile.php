@@ -8,6 +8,15 @@ if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
 }
 
+    if(isset($_POST["profile"])){
+
+        $IdProfile = $_POST["idProfile"];
+
+        $_SESSION["IdProfile"] = $IdProfile;
+
+        header("Location: configurateProfile.php");
+    }
+
     $username = $_SESSION["userLoggedIn"];
 
     $profileContainer = new ProfileContainer($connection);
@@ -50,13 +59,15 @@ if (!isset($_SESSION["userLoggedIn"])){
             </div>
 
             <div class = "profilesSelection">
-                <?php echo $profileContainer->showAllProfiles($username, 2); ?>
-                
-                <div class = "newProfile">
-                    <a href="createProfile.php" title = "Nuevo perfil" alt = "Nuevo perfil" >
-                        <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
-                    </a>
-                </div>
+                <form method="POST"> 
+                    <?php echo $profileContainer->showAllProfiles($username, 2); ?>
+                    
+                    <div class = "newProfile">
+                        <a href="createProfile.php" title = "Nuevo perfil" alt = "Nuevo perfil" >
+                            <img src="../../assets/images/plus.png" title="Crear Nuevo Perfil" alt="Crear Nuevo Perfil">
+                        </a>
+                    </div>
+                </form> 
             </div>
 
 
