@@ -2,6 +2,7 @@
 
 require_once("../../data/config.php");
 include_once("navBar.php");
+require_once("header.php");
 
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");

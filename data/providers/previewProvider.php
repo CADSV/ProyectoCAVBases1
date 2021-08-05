@@ -46,7 +46,7 @@ class PreviewProvider {
                             <h4>$ContentDescription</h4>
                             <div class='buttons'>
 
-                                <button><i class = 'fas fa-play'></i>    Ver</button>
+                                <button onclick = 'PlayContent()'><i class = 'fas fa-play'></i>    Ver</button>
                                 <button onclick = 'volumeToggle(this)'><i class = 'fas fa-volume-mute'></i></button>
 
                             </div>

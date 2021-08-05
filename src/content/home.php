@@ -6,6 +6,7 @@ require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
 include_once("navBar.php");
 require_once("content.php");
+require_once("header.php");
 
 
 if (!isset($_SESSION["userLoggedIn"])){

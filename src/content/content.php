@@ -81,6 +81,47 @@ class Content {
         return $row;
     }
 
+    public function updateHasseen($Idprofile, $IdContent){
+        $query = $this->connection->prepare("SELECT * FROM Hasseen WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
+        $query->bindValue(":IdContent", $IdContent);
+        $query->bindValue(":Idprofile", $Idprofile);
+        $query->execute();
+
+        if($query->rowCount()!= 0){  
+            $query2 = $this->connection->prepare("UPDATE Hasseen SET TimesSeen=TimesSeen+1 WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
+            $query2->bindValue("IdContent", $IdContent);
+            $query2->bindValue(":Idprofile", $Idprofile);
+
+           // $query3 = $this->connection->prepare("UPDATE Hasseen SET TimesSeen=TimesSeen+1 WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
+           // $query3->bindValue("IdContent", $IdContent);
+            //$query3->bindValue(":Idprofile", $Idprofile);
+                     
+        }/*else{
+             $query2 = $this->connection->prepare("INSERT INTO  Hasseen (IdProfile, IdContent, LastDateWatched, Rating, WatchedByRecomm, TimesSeen, LastMinWatched,TimeWatchedLastTime) 
+                                                    VALUES (:IdProfile, :IdContent, :LastDateWatched, :Rating, :WatchedByRecomm, :TimesSeen, :LastMinWatched,:TimeWatchedLastTime)"); 
+               $query2->bindValue(":Idprofile", $Idprofile);
+               $query2->bindValue(":IdContent", $IdContent);
+                $query2->bindValue(":LastDateWatched", '2021-04-15 03:14:05');
+                $query2->bindValue(":Rating", NULL);
+                $query2->bindValue(":WatchedByRecomm", TRUE);
+                $query2->bindValue(":TimesSeen", 1);
+                $query2->bindValue(":LastMinWatched", '00:00:00');
+                $query2->bindValue(":TimeWatchedLastTime", '00:00:00');
+                $query2->execute();
+
+        }*/
+
+
+    }
+
+    public function getEpisodeVideo($idContent, $idseason, $idepisode){
+        $query = $this->connection->prepare("SELECT EpisodeVideo FROM episode WHERE IdContent =:idContent AND IdSeason=:Idseason AND IdEpisode=:idepisode ");
+        $query->bindValue(":idContent", $idContent);
+        $query->bindValue(":Idseason", $idseason);
+        $query->bindValue(":idepisode",$idepisode);
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC)["EpisodeVideo"];
+    }
 
 
 }
