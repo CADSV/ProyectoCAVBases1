@@ -69,7 +69,7 @@ class CategoryContainer {
         }
 
         $rContents = array();
-
+        $cont=0;
         // Obtener el contenido con mejor rating de cada género obtenido anteriormente
         while($row = $query->fetch(PDO::FETCH_ASSOC)) {
             $query2 = $this->connection->prepare("SELECT IsAbout.IdContent, AVG(Rating)
@@ -85,6 +85,12 @@ class CategoryContainer {
             if(!empty($query2)){
                 array_push($rContents, $query2->fetch(PDO::FETCH_ASSOC)["IdContent"]);
             }      
+            $cont=$cont+1;
+            
+
+            if ($cont==$query->rowCount()){
+                break;
+            }
         }
 
         $previewProvider = new PreviewProvider($this->connection, $this->idProfile);
