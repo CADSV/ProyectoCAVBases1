@@ -53,6 +53,19 @@ echo $categoryContainers->showCategory($content->getContentGenre(), 'Si te gust√
         <body>
             <div class="wrapper">
 
+            <h2><?php echo 'Califica '.$content->getTitleCont();?> </h2>
+            <div class = "ratingForm">
+                <form method="POST"> 
+                    <?php  echo '
+                        <input type="radio" name="rating" value="1" id="1" required> <label for="1"> 1 estrella </label>
+                        <input type="radio" name="rating" value="2" id="2"required> <label for="2"> 2 estrellas </label>
+                        <input type="radio" name="rating" value="3" id="3"required> <label for="3"> 3 estrellas </label>
+                        <input type="radio" name="rating" value="4" id="4"required> <label for="4"> 4 estrellas </label>
+                        <input type="radio" name="rating" value="5" id="5"required> <label for="5"> 5 estrellas </label>';
+                    ?>
+                    <?php echo '<input class="button" type="submit" name="ratingButton" value="Calificar" required>'; ?>                  
+                </form>
+            </div>
               
             </div>  
     </html>   
