@@ -38,7 +38,7 @@ class PreviewProvider {
 
         //Agregar episodio y temporada como subtítulo
 
-        return " <div class='previewContainer'>
+        $html= " <div class='previewContainer'>
 
                     <img src='$image' class='previewImage' hidden>
 
@@ -57,16 +57,17 @@ class PreviewProvider {
                             <div class='buttons'>
 
                                 <button onclick = 'PlayContent($idContent,$ismovie)'><i class = 'fas fa-play'></i>    Ver</button>
-                                <button onclick = 'volumeToggle(this)'><i class = 'fas fa-volume-mute'></i></button>
-                                <?php 
-                                    if($content->isInWatchlist($idContent, $IdProfile)){
-                                        <button onclick = 'RemoveWatchlist($idContent, $IdProfile)'> <i class='fas fa-check'></i> </button>
-                                    } else {
-                                        <button onclick = 'AddWatchlist($idContent, $IdProfile)'> <i class='fas fa-plus'></i> </button>
-                                    }
-                                ?>
+                                <button onclick = 'volumeToggle(this)'><i class = 'fas fa-volume-mute'></i></button>";
 
-                            </div>
+        if($content->isInWatchlist($idContent, $IdProfile)){
+
+           $html .= "<button onclick = 'RemoveWatchlist(this,$idContent, $IdProfile)'> <i class='fas fa-check'></i> </button>";
+        } else {
+            $html .= "<button onclick = 'AddWatchlist(this,$idContent, $IdProfile)'> <i class='fas fa-plus'></i> </button>";
+        }
+ 
+
+        $html .= "       </div>
                             <br>
                             <h4>$stars</h4>
                             <h4>$directors</h4>
@@ -77,6 +78,8 @@ class PreviewProvider {
         
         
                 </div>";
+
+        return $html;
     }
 
     public function getRatingHtml($AvgRating){

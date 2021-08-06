@@ -52,3 +52,19 @@ function PlayContent(idContent,ismovie){
     }
    
 }
+
+
+function RemoveWatchlist(button,IdContent, IdProfile){
+
+    $(button).find("i").toggleClass("fas fa-check");
+    $(button).find("i").toggleClass("fas fa-plus");
+
+}
+
+
+function AddWatchlist(button,IdContent, IdProfile){
+
+    $(button).find("i").toggleClass("fas fa-plus");
+    $(button).find("i").toggleClass("fas fa-check");
+
+}
