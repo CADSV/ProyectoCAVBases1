@@ -36,6 +36,21 @@ $content = new Content($connection, $IdContent);
 $categoryContainers = new CategoryContainer($connection, $userLoggedIn);
 echo $categoryContainers->showCategory($content->getContentGenre(), 'Si te gustó "'. $content->getTitleCont() .'" te recomendamos:', $IdContent);
 
+
+if(isset($_POST["ratingButton"])) {
+
+    $IdProfile = $_SESSION["IdProfile"];
+    $rating = $_POST["rating"];
+
+    $success= $content->addRating($IdProfile, $IdContent, $rating);
+    if($success){
+        echo '<script language="javascript">alert("Muchas gracias por calificar nuestros contenidos. ¡Esperamos que los disfrutes!");window.location.href="home.php"</script>';
+    } else {
+        echo '<script language="javascript">alert("Para calificar un contenido de Carlevix, primero tienes que haberlo visto.\n\n¿Qué esperas para disfrutar de '.$content->getTitleCont().'?");window.location.href="home.php"</script>';        
+    }
+}
+
+
 ?>
     <!DOCTYPE html>
     <html lang='es'>
@@ -53,15 +68,15 @@ echo $categoryContainers->showCategory($content->getContentGenre(), 'Si te gust�
         <body>
             <div class="wrapper">
 
-            <h2><?php echo 'Califica '.$content->getTitleCont();?> </h2>
+            <h2><?php echo 'Si ya viste '.$content->getTitleCont().' ¡Califícala!';?> </h2>
             <div class = "ratingForm">
                 <form method="POST"> 
                     <?php  echo '
-                        <input type="radio" name="rating" value="1" id="1" required> <label for="1"> 1 estrella </label>
-                        <input type="radio" name="rating" value="2" id="2"required> <label for="2"> 2 estrellas </label>
-                        <input type="radio" name="rating" value="3" id="3"required> <label for="3"> 3 estrellas </label>
-                        <input type="radio" name="rating" value="4" id="4"required> <label for="4"> 4 estrellas </label>
-                        <input type="radio" name="rating" value="5" id="5"required> <label for="5"> 5 estrellas </label>';
+                        <input type="radio" name="rating" value="1" id="1E"required> <label for="1E"> 1 estrella </label>
+                        <input type="radio" name="rating" value="2" id="2E"required> <label for="2E"> 2 estrellas </label>
+                        <input type="radio" name="rating" value="3" id="3E"required> <label for="3E"> 3 estrellas </label>
+                        <input type="radio" name="rating" value="4" id="4E"required> <label for="4E"> 4 estrellas </label>
+                        <input type="radio" name="rating" value="5" id="5E"required> <label for="5E"> 5 estrellas </label>';
                     ?>
                     <?php echo '<input class="button" type="submit" name="ratingButton" value="Calificar" required>'; ?>                  
                 </form>
