@@ -230,6 +230,23 @@ class Content {
 
     }
 
+    public function getContentRecommended($IdProfile){
+        $query = $this->connection->prepare("SELECT distinct(IsAbout.IdContent)   
+                                            FROM IsAbout
+                                            INNER JOIN Hasseenof on HasseenOf.IdGenre = IsAbout.IdGenre
+                                            WHERE Hasseenof.IdProfile = 1 AND IsAbout.IdContent NOT in (SELECT Idcontent   
+                                                                                                        FROM   HASseen
+                                                                                                        WHERE IdProfile =1 )
+                                            ORDER BY RAND() LIMIT 1");
+        $query->bindValue(":IdProfile", $IdProfile);   
+        $query->execute();    
+        if($query->rowCount()!= 0){
+           return $query->fetch(PDO::FETCH_ASSOC)["IdContent"];
+        }
+        return NULL;
+                  
+    }
+
 
 }
 
