@@ -24,12 +24,14 @@ if (!isset($_SESSION["IdProfile"])){
     header("Location: ../profile/selectProfile.php");
 }
 
+$IdProfile = $_SESSION["IdProfile"];
+
 $userLoggedIn = $_SESSION["userLoggedIn"];
 
 $preview = new PreviewProvider($connection, $userLoggedIn);
 echo $preview->createPreviewVideo(NULL, $Category, $IdGenre);
 
-$categories = new CategoryContainer($connection, $userLoggedIn); // Después mostrar el género del id aquí
+$categories = new CategoryContainer($connection, $IdProfile); // Después mostrar el género del id aquí
 echo $categories->showCategories($Category, $IdGenre);
 
 ?>

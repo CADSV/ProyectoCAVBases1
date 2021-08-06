@@ -16,7 +16,9 @@ if (!isset($_SESSION["userLoggedIn"])){
 if (!isset($_SESSION["IdProfile"])){
     header("Location: ../profile/selectProfile.php");
 }
-$IdProfile=$_SESSION["IdProfile"];
+
+$IdProfile = $_SESSION["IdProfile"];
+
 $userLoggedIn = $_SESSION["userLoggedIn"];
 $preview = new PreviewProvider($connection, $userLoggedIn);
 
@@ -27,7 +29,7 @@ $idContent =$content->getContentRecommended($IdProfile);
 
 echo $preview->createPreviewVideo($idContent);
 
-$categories = new CategoryContainer($connection, $userLoggedIn);
+$categories = new CategoryContainer($connection, $IdProfile);
 echo $categories->showCategories();
 
 ?>
