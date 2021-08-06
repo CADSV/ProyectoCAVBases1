@@ -59,6 +59,12 @@ function RemoveWatchlist(button,IdContent, IdProfile){
     $(button).find("i").toggleClass("fas fa-check");
     $(button).find("i").toggleClass("fas fa-plus");
 
+    $.post("../../data/ajax/removeWatchlist.php", { IdContent: IdContent, IdProfile: IdProfile }, function(data) {
+        if(data !== null && data !== "") {
+            alert(data);
+        }
+    })
+
 }
 
 
@@ -67,4 +73,9 @@ function AddWatchlist(button,IdContent, IdProfile){
     $(button).find("i").toggleClass("fas fa-plus");
     $(button).find("i").toggleClass("fas fa-check");
 
+    $.post("../../data/ajax/addWatchlist.php", { IdContent: IdContent, IdProfile: IdProfile }, function(data) {
+        if(data !== null && data !== "") {
+            alert(data);
+        }
+    })
 }
