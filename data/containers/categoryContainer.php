@@ -75,15 +75,16 @@ class CategoryContainer {
             $query2 = $this->connection->prepare("SELECT IsAbout.IdContent, AVG(Rating)
                                                   FROM IsAbout
                                                   INNER JOIN HasSeen ON IsAbout.IdContent = HasSeen.IdContent
-                                                  WHERE IdGenre =:idGenre AND Relevance = 1
+                                                  WHERE (IsAbout.IdGenre =:idGenre)
                                                   GROUP BY IsAbout.IdContent
-                                                  ORDER BY AVG(Rating) DESC
+                                                  ORDER BY AVG(HasSeen.Rating) DESC
                                                   LIMIT 3");
             $query2->bindValue(":idGenre", $row["IdGenre"]);
+            // $query2->bindValue(":IdProfile", $idProfile);
             $query2->execute();
 
             if(!empty($query2)){
-                
+
                 $cont2 = 0;
 
                 while($row2 = $query2->fetch(PDO::FETCH_ASSOC)){

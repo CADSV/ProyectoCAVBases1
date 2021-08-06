@@ -21,6 +21,8 @@ class WatchlistContainer {
         if($query->rowCount() !=0){
             $watchlist = new CategoryContainer($this->connection, $this->username);
             $html .= $watchlist->getCategoryHtml(NULL,'Mi Lista', 3, NULL, $IdProfile);
+        } else {
+            $html .= "<h2 class = 'watchlistAlert'>AGREGUE CONTENIDOS A SU LISTA</h2>";
         }
 
         return $html."</div>";
