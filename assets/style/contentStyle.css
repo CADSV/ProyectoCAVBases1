@@ -329,3 +329,10 @@ a {
     color: #f8ce0b;
     font-size: 24px;
   }
+
+.previewCategories.noScroll.watchlist {
+    background-color: #221F1F;
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+}
