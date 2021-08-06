@@ -23,6 +23,7 @@ class PreviewProvider {
         $ContentDescription = $content->getContentDescription();
         $idContent = $content->getId();
         $ismovie= $content->ismovie($idContent);
+        $Rating = $this->getRatingHtml($content->getAverageRating());
 
         $preview = $content->getContentPreview();
         $preview = '../../'.$preview;
@@ -46,6 +47,7 @@ class PreviewProvider {
                         <div class= 'mainDetails'>
                             <h3>$ContentName</h3>
                             <h4>$ContentDescription</h4>
+                            <h4>$Rating</h4>
                             <div class='buttons'>
 
                                 <button onclick = 'PlayContent($idContent,$ismovie)'><i class = 'fas fa-play'></i>    Ver</button>
@@ -62,8 +64,37 @@ class PreviewProvider {
                 </div>";
     }
 
-    public function createSeriesPreview(){
+    public function getRatingHtml($AvgRating){
+        if($AvgRating) {
+            $count = (int)$AvgRating;
+            $stars = $count;
+            $decimals = $AvgRating - $count;
+            $html = '';
 
+            for($count; $count > 0; $count--){ // Agregar estrella completa por cada número entero.
+                $html .= '<span class="fa fa-star checked"></span>';
+            }
+            if($decimals >= 0.1){
+                $html .= '<span class="fa fa-star-half-alt checked"></span>';
+                $stars++;
+            }
+
+            if($stars != 5){
+                for($count = 5-$stars; $count > 0; $count--){ // Agregar estrella completa por cada número entero.
+                    $html .= '<span class="fa fa-star-o"></span>';
+                }
+            }
+
+            return $html . '  ' . $AvgRating . ' Estrellas';;           
+        }
+        else{
+            return '<span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                      Sin calificar. ¡Sé el primero en calificar!';
+        }
     }
 
 

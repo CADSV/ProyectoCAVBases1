@@ -125,13 +125,17 @@ header {
 .previewOverlay .mainDetails h3{
     color: #fff;
     font-size: 45px;
-    margin-bottom: 20px;
     text-shadow: 2px 2px #000000;
 }
 
 .previewOverlay .mainDetails h4{
     color: #fff;
     text-shadow: 2px 2px #000000;
+    margin-top: 20px;
+}
+
+.previewOverlay .mainDetails span{
+    text-shadow: none;
 }
 
 .previewOverlay .mainDetails {
@@ -282,3 +286,7 @@ a {
     color: #fff;
     border: none;
 }
+
+.checked {
+    color: orange;
+  }

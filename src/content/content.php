@@ -51,6 +51,14 @@ class Content {
         return $this->DATA["Description"];
     }
 
+    public function getAverageRating(){
+        $query = $this->connection->prepare("SELECT CAST(AVG(Rating) AS DECIMAL(10,1)) FROM HasSeen WHERE IdContent =:idContent");
+        $query->bindValue(":idContent", $this->getId());
+        $query->execute();
+        $Rating = $query->fetch(PDO::FETCH_ASSOC)["CAST(AVG(Rating) AS DECIMAL(10,1))"]; 
+        return $Rating;
+    }
+
 
     public function ismovie($IdContent){
         $query = $this->connection->prepare("SELECT * FROM featurecontent WHERE IdContent= :idcontent ");
