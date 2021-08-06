@@ -11,8 +11,9 @@ if (!isset($_SESSION["userLoggedIn"])){
 if (!isset($_SESSION["IdProfile"])){
     header("Location: ../profile/selectProfile.php");
 }
-
+$profile=$_SESSION["IdProfile"];
 $userLoggedIn = $_SESSION["userLoggedIn"];
+//echo $userLoggedIn;
 
 ?>
 
@@ -36,22 +37,32 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
             </div>
             <div class="results"> </div>
 
-            <script language="javascript">
+                <script >
 
-                (function() {
-                    var username = '<?php echo $userLoggedIn; ?>';
-                    var timer;
+                    (function() {
+                        var profile = '<?php echo $profile; ?>';
+                        var timer;
 
-                    $(".searchInput").keyup(function(){
-                        clearTimeout(timer);
+                        $(".searchInput").keyup(function(){
+                            clearTimeout(timer);
 
-                        timer= setTimeout(function(){
-                            var val=$(".searchInput").val();
-                            console.log(val);
-                        }, 500);
+                            timer= setTimeout(function(){
+                                var val=$(".searchInput").val();
+
+                                if(val != ""){
+                                    $.post("ajax/getSearchResults.php", {IdProfile: profile } function(data){
+                                        $(".results").html(data);     
+
+                                    } );
+
+                                }else{
+                                    $(".results").html("");
+                                }
+                               
+                            }, 500);
+                        })
                     })
-                })
-            </script>
+                </script>
 
 
 
