@@ -34,6 +34,8 @@ class PreviewProvider {
         $image =  $content->getContentImage();
         $image = '../../'.$image;
 
+        $IdProfile = $_SESSION["IdProfile"];
+
         //Agregar episodio y temporada como subtítulo
 
         return " <div class='previewContainer'>
@@ -56,6 +58,13 @@ class PreviewProvider {
 
                                 <button onclick = 'PlayContent($idContent,$ismovie)'><i class = 'fas fa-play'></i>    Ver</button>
                                 <button onclick = 'volumeToggle(this)'><i class = 'fas fa-volume-mute'></i></button>
+                                <?php 
+                                    if($content->isInWatchlist($idContent, $IdProfile)){
+                                        <button onclick = 'RemoveWatchlist($idContent, $IdProfile)'> <i class='fas fa-check'></i> </button>
+                                    } else {
+                                        <button onclick = 'AddWatchlist($idContent, $IdProfile)'> <i class='fas fa-plus'></i> </button>
+                                    }
+                                ?>
 
                             </div>
                             <br>

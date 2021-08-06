@@ -231,6 +231,22 @@ class Content {
     }
 
 
+    public function isInWatchlist($IdContent, $IdProfile){
+
+        $query = $this->connection->prepare("SELECT * FROM Watchlist
+                                            WHERE (IdProfile =:IdProfile) AND (IdContent =:IdContent)");
+        $query->bindValue("IdProfile", $IdProfile);
+        $query->bindValue("IdContent", $IdContent);
+        $query->execute();
+
+        if($query->rowCount() != 0){
+            return true;
+        }
+
+        return false;
+    }
+
+
 }
 
 
