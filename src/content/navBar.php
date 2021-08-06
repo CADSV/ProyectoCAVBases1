@@ -21,9 +21,9 @@
     </ul>
 
     <div class="rightItems">
-            <a href="search.php">
+         <!--  <a href="search.php"> 
                 <i class="fas fa-search"></i>
-            </a>
+            </a>-->
             <a href="../profile/selectProfile.php"> 
             <i class="fas fa-user"></i>
         </a>
