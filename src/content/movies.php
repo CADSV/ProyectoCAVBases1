@@ -17,11 +17,13 @@ if (!isset($_SESSION["IdProfile"])){
     header("Location: ../profile/selectProfile.php");
 }
 
+$IdProfile = $_SESSION["IdProfile"];
+
 $userLoggedIn = $_SESSION["userLoggedIn"];
 $preview = new PreviewProvider($connection, $userLoggedIn);
 echo $preview->createPreviewVideo(null, 2);
 
-$categories = new CategoryContainer($connection, $userLoggedIn);
+$categories = new CategoryContainer($connection, $IdProfile);
 echo $categories->showCategories(2);
 
 ?>
