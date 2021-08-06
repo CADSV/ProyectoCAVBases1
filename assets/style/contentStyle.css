@@ -196,6 +196,19 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.episodeInfo {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.episodeInfo h3 {
+    color: #fff;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
 
 .genreCategory {
     display: flex;

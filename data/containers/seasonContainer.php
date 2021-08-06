@@ -73,13 +73,16 @@ class SeasonContainer {
         // El signo de interrogación (question mark) marca el inicio de los parámetros de URL. Con "&" se puede declarar más de uno
         $html = "<a href = '../../src/content/episodePage.php?IdContent=$IdContent&IdSeason=$IdSeason&IdEpisode=$IdEpisode'>
                         <div class = 'smallPreviewContainer'>
-                            <img src='$ContentImage' title = 'Episodio $IdEpisode";
+                            <div class = 'episodeInfo' >
+                                <img src='$ContentImage' title = 'Episodio $IdEpisode'>
+                                <h3>E$IdEpisode: $EpisodeName</h3>
+                            </div>";
 
         if($EpisodeName == NULL){ // Si el episodio no tiene nombre, se coloca simplemente "Temporada X"
             $html .= "'> </div> </a>";
         }
         else{
-            $html .= ": $EpisodeName'> </div> </a>";
+            $html .= "</div> </a>";
         }
 
         return $html;
