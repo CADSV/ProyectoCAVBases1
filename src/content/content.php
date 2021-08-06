@@ -150,6 +150,47 @@ class Content {
     }
 
 
+    public function getStarsNames($IdContent){
+
+        $query = $this->connection->prepare("SELECT WorkerName, WorkerLastName FROM FilmWorker
+                                            WHERE (IdWorker IN (SELECT IdWorker FROM Stars 
+                                                                WHERE (IdContent =:IdContent) 
+                                                                ORDER BY Role ASC))");
+        $query->bindValue(":IdContent", $IdContent);
+        $query->execute();
+
+        $starsNames = 'Actores: ';
+
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $starsNames .= $row["WorkerName"].' '.$row["WorkerLastName"].'. ';
+        }
+
+        return $starsNames;
+
+    }
+
+
+    public function getDirectorsNames($IdContent){
+
+        $query = $this->connection->prepare("SELECT WorkerName, WorkerLastName FROM FilmWorker
+                                            WHERE IdWorker IN (SELECT IdWorker FROM Directed 
+                                                                WHERE (IdContent =:IdContent))");
+        $query->bindValue(":IdContent", $IdContent);
+        $query->execute();
+        $directorNames = 'Director: ';
+
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $directorNames .= $row["WorkerName"].' '.$row["WorkerLastName"].'. ';
+        }
+        
+        return $directorNames;
+
+    }
+
+
 }
+
+
+
 
 ?>

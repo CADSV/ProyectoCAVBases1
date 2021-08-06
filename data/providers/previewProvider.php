@@ -28,7 +28,8 @@ class PreviewProvider {
         $preview = $content->getContentPreview();
         $preview = '../../'.$preview;
 
-        //$video = $content->getContentVideo();
+        $directors = $content->getDirectorsNames($idContent);
+        $stars = $content->getStarsNames($idContent);
 
         $image =  $content->getContentImage();
         $image = '../../'.$image;
@@ -57,7 +58,9 @@ class PreviewProvider {
                                 <button onclick = 'volumeToggle(this)'><i class = 'fas fa-volume-mute'></i></button>
 
                             </div>
-
+                            <br>
+                            <h4>$stars</h4>
+                            <h4>$directors</h4>
                         </div>
                     </div>
 
