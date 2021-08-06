@@ -30,6 +30,7 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
 $preview = new PreviewProvider($connection, $userLoggedIn);
 $content = new Content($connection, $_GET["IdContent"]);
 $content->updateHasseen($IdProfile, $IdContent);
+$content->updateHasseenOf($IdProfile, $IdContent);
 
 $video='../../'.$content->getMovieVideo($IdContent);
 
