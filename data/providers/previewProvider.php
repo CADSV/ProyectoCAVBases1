@@ -23,6 +23,7 @@ class PreviewProvider {
         $ContentDescription = $content->getContentDescription();
         $idContent = $content->getId();
         $ismovie= $content->ismovie($idContent);
+        $Rating = $this->getRatingHtml($content->getAverageRating());
 
         $preview = $content->getContentPreview();
         $preview = '../../'.$preview;
@@ -46,6 +47,10 @@ class PreviewProvider {
                         <div class= 'mainDetails'>
                             <h3>$ContentName</h3>
                             <h4>$ContentDescription</h4>
+                            <div class='stars-outer'>
+                                <div class='stars-inner'></div>
+                            </div>
+                            <h4>$Rating</h4>
                             <div class='buttons'>
 
                                 <button onclick = 'PlayContent($idContent,$ismovie)'><i class = 'fas fa-play'></i>    Ver</button>
@@ -62,8 +67,18 @@ class PreviewProvider {
                 </div>";
     }
 
-    public function createSeriesPreview(){
-
+    public function getRatingHtml($AvgRating){
+        ?>
+        <script>
+            var AvgRating = <?php echo json_encode($AvgRating, JSON_HEX_TAG); ?>;
+        </script>
+        <?php 
+        if($AvgRating) {
+            return $AvgRating . ' Estrellas';;           
+        }
+        else{
+            return '¡Sé el primero en calificar!';
+        }
     }
 
 

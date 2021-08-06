@@ -125,11 +125,17 @@ header {
 .previewOverlay .mainDetails h3{
     color: #fff;
     font-size: 45px;
-    margin-bottom: 20px;
+    text-shadow: 2px 2px #000000;
 }
 
 .previewOverlay .mainDetails h4{
     color: #fff;
+    text-shadow: 2px 2px #000000;
+    margin-top: 20px;
+}
+
+.previewOverlay .mainDetails span{
+    text-shadow: none;
 }
 
 .previewOverlay .mainDetails {
@@ -172,6 +178,7 @@ header {
     width: 320px;
     height: 200px;
     margin-right: 20px;
+    margin-bottom: 20px;
     display: inline-flex;
 }
 
@@ -279,3 +286,33 @@ a {
     color: #fff;
     border: none;
 }
+
+.stars-outer {
+    display: inline-block;
+    width: fit-content;
+    position: relative;
+    font-family: FontAwesome;
+    margin-top: 20px;
+  }
+  
+  .stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+    color: #f8ce0b;
+    font-size: 24px;
+  }
+  
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    font-family: FontAwesome;
+  }
+  
+  .stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #f8ce0b;
+    font-size: 24px;
+  }
