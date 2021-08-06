@@ -64,7 +64,7 @@ $video='../../'.$content->getEpisodeVideo($IdContent, $IdSeason, $IdEpisode);
 
             <div class="videoControls watchNav">
                 <button class="iconButton" onclick="goBack(<?php echo $content->getId();?>)">  <i class="fas fa-arrow-left"></i>  </button>
-                <h1> <?php echo $content->getTitleCont();?>            </div> 
+                <h1> <?php echo $content->getTitleCont().' T:'.$IdSeason.' E:'.$IdEpisode;?>            </div> 
             
             <video autoplay controls  '>
                         <source src ='<?php echo $video;?>' type ='video/mp4'>
