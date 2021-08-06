@@ -264,6 +264,31 @@ class Content {
     }
 
 
+    public function addRating($IdProfile, $IdContent, $Rating){
+
+        $query = $this->connection->prepare("SELECT * FROM HasSeen
+                                            WHERE (IdProfile =:IdProfile) AND (IdContent =:IdContent)");
+        $query->bindValue("IdProfile", $IdProfile);
+        $query->bindValue("IdContent", $IdContent);
+        $query->execute();
+
+        if($query->rowCount() == 0){
+            return false;
+        }
+
+        $query2 = $this->connection->prepare("UPDATE HasSeen
+                                            SET Rating =:Rating
+                                            WHERE (IdProfile =:IdProfile) AND (IdContent =:IdContent)");
+        $query2->bindValue("Rating", $Rating);
+        $query2->bindValue("IdProfile", $IdProfile);
+        $query2->bindValue("IdContent", $IdContent);
+        $query2->execute();
+
+        return true;
+        
+    }
+
+
 }
 
 
