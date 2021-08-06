@@ -93,7 +93,7 @@ header {
     width: 650px;
     border: 1px solid #dedede ;
     background-color: transparent;
-    color: #000;
+    color: rgb(255, 255, 255);
     font-size:20px;
     padding: 5px  10px;
     border-radius: 3px;
