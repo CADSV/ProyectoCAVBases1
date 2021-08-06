@@ -108,12 +108,17 @@ class CategoryContainer {
         }
     }
 
-    private function getCategoryHtml($sqlData, $title, $Category = NULL, $UsedIdContent = NULL){  // episodicContent y featureContent son booleanos sobre si queremos mostrar series o pelis
+    public function getCategoryHtml($sqlData = NULL, $title, $Category = NULL, $UsedIdContent = NULL, $IdProfile = NULL){  // episodicContent y featureContent son booleanos sobre si queremos mostrar series o pelis
 
-        $IdGenre = $sqlData["IdGenre"];
-        $title = $title == null ? $sqlData["GenreName"] : $title;
+        if($Category != 3){
+            $IdGenre = $sqlData["IdGenre"];
+            $title = $title == null ? $sqlData["GenreName"] : $title;
+        } else {
+            $IdGenre = null;
+        }
+        
 
-        $contents = ContentProvider::getContents($this->connection, $IdGenre, 8, $UsedIdContent, $Category);
+        $contents = ContentProvider::getContents($this->connection, $IdGenre, 9, $UsedIdContent, $Category, $IdProfile);
 
         if(sizeof($contents) == 0 ){
             return;
@@ -132,6 +137,15 @@ class CategoryContainer {
 
 
 
+        }
+
+        if($Category == 3){
+            return "<div class='genreCategory'> 
+                        <h2>$title</h2>
+                        <div class = 'contents'>
+                            $contentHtml
+                        </div>
+                    </div>";
         }
 
         $html = "<div class='genreCategory'>

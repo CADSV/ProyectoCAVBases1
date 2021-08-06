@@ -21,7 +21,13 @@ $IdProfile = $_SESSION["IdProfile"];
 
 $userLoggedIn = $_SESSION["userLoggedIn"];
 $preview = new PreviewProvider($connection, $userLoggedIn);
-echo $preview->createPreviewVideo(null);
+
+
+$content = new Content($connection, NULL);
+$idContent =$content->getContentRecommended($IdProfile);
+
+
+echo $preview->createPreviewVideo($idContent);
 
 $categories = new CategoryContainer($connection, $IdProfile);
 echo $categories->showCategories();

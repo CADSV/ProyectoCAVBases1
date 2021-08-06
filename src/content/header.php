@@ -5,7 +5,7 @@ require_once("../../data/providers/previewProvider.php");
 require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
 require_once("content.php");
-//include_once("navBar.php");
+// include_once("navBar.php");
 
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../register/register1.php");

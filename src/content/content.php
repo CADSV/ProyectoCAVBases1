@@ -230,6 +230,64 @@ class Content {
 
     }
 
+    public function getContentRecommended($IdProfile){
+        $query = $this->connection->prepare("SELECT distinct(IsAbout.IdContent)   
+                                            FROM IsAbout
+                                            INNER JOIN Hasseenof on HasseenOf.IdGenre = IsAbout.IdGenre
+                                            WHERE Hasseenof.IdProfile = :IdProfile AND IsAbout.IdContent NOT in (SELECT Idcontent   
+                                                                                                        FROM   HASseen
+                                                                                                        WHERE IdProfile = :IdProfile )
+                                            ORDER BY RAND() LIMIT 1");
+        $query->bindValue(":IdProfile", $IdProfile);   
+        $query->execute();    
+        if($query->rowCount()!= 0){
+           return $query->fetch(PDO::FETCH_ASSOC)["IdContent"];
+        }
+        return NULL;
+                  
+    }
+
+
+    public function isInWatchlist($IdContent, $IdProfile){
+
+        $query = $this->connection->prepare("SELECT * FROM Watchlist
+                                            WHERE (IdProfile =:IdProfile) AND (IdContent =:IdContent)");
+        $query->bindValue("IdProfile", $IdProfile);
+        $query->bindValue("IdContent", $IdContent);
+        $query->execute();
+
+        if($query->rowCount() != 0){
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public function addRating($IdProfile, $IdContent, $Rating){
+
+        $query = $this->connection->prepare("SELECT * FROM HasSeen
+                                            WHERE (IdProfile =:IdProfile) AND (IdContent =:IdContent)");
+        $query->bindValue("IdProfile", $IdProfile);
+        $query->bindValue("IdContent", $IdContent);
+        $query->execute();
+
+        if($query->rowCount() == 0){
+            return false;
+        }
+
+        $query2 = $this->connection->prepare("UPDATE HasSeen
+                                            SET Rating =:Rating
+                                            WHERE (IdProfile =:IdProfile) AND (IdContent =:IdContent)");
+        $query2->bindValue("Rating", $Rating);
+        $query2->bindValue("IdProfile", $IdProfile);
+        $query2->bindValue("IdContent", $IdContent);
+        $query2->execute();
+
+        return true;
+        
+    }
+
 
 }
 
