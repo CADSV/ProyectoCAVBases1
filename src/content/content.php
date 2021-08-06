@@ -234,9 +234,9 @@ class Content {
         $query = $this->connection->prepare("SELECT distinct(IsAbout.IdContent)   
                                             FROM IsAbout
                                             INNER JOIN Hasseenof on HasseenOf.IdGenre = IsAbout.IdGenre
-                                            WHERE Hasseenof.IdProfile = 1 AND IsAbout.IdContent NOT in (SELECT Idcontent   
+                                            WHERE Hasseenof.IdProfile = :IdProfile AND IsAbout.IdContent NOT in (SELECT Idcontent   
                                                                                                         FROM   HASseen
-                                                                                                        WHERE IdProfile =1 )
+                                                                                                        WHERE IdProfile = :IdProfile )
                                             ORDER BY RAND() LIMIT 1");
         $query->bindValue(":IdProfile", $IdProfile);   
         $query->execute();    
