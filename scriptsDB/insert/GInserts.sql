@@ -154,6 +154,9 @@ INSERT INTO episode VALUES (7,1,24,'La positiva oyó','0:29:00', 'assets/preview
 
 -- Episodios de La Ley Secreta
 INSERT INTO episode VALUES (1,1,25,'La operación','1:45:00', 'assets/previewvideos/3.mp4');
+INSERT INTO episode VALUES (2,1,25,'Agentes encubiertos','1:45:00','assets/previewvideos/3.mp4');
+INSERT INTO episode VALUES (3,1,25,'La frustración','1:45:00','assets/previewvideos/3.mp4');
+INSERT INTO episode VALUES (4,1,25,'El equipo descubierto','1:45:00','assets/previewvideos/3.mp4');
 INSERT INTO episode VALUES (5,1,25,'La improvisación','1:45:00', 'assets/previewvideos/3.mp4');
 INSERT INTO episode VALUES (6,1,25,'La oferta','1:45:00', 'assets/previewvideos/3.mp4');
 INSERT INTO episode VALUES (7,1,25,'El fin de la operación','1:48:00', 'assets/previewvideos/3.mp4');

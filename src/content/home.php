@@ -16,10 +16,16 @@ if (!isset($_SESSION["userLoggedIn"])){
 if (!isset($_SESSION["IdProfile"])){
     header("Location: ../profile/selectProfile.php");
 }
-
+$IdProfile=$_SESSION["IdProfile"];
 $userLoggedIn = $_SESSION["userLoggedIn"];
 $preview = new PreviewProvider($connection, $userLoggedIn);
-echo $preview->createPreviewVideo(null);
+
+
+$content = new Content($connection, NULL);
+$idContent =$content->getContentRecommended($IdProfile);
+
+
+echo $preview->createPreviewVideo($idContent);
 
 $categories = new CategoryContainer($connection, $userLoggedIn);
 echo $categories->showCategories();

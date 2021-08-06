@@ -230,6 +230,23 @@ class Content {
 
     }
 
+    public function getContentRecommended($IdProfile){
+        $query = $this->connection->prepare("SELECT distinct(IsAbout.IdContent)   
+                                            FROM IsAbout
+                                            INNER JOIN Hasseenof on HasseenOf.IdGenre = IsAbout.IdGenre
+                                            WHERE Hasseenof.IdProfile = :IdProfile AND IsAbout.IdContent NOT in (SELECT Idcontent   
+                                                                                                        FROM   HASseen
+                                                                                                        WHERE IdProfile = :IdProfile )
+                                            ORDER BY RAND() LIMIT 1");
+        $query->bindValue(":IdProfile", $IdProfile);   
+        $query->execute();    
+        if($query->rowCount()!= 0){
+           return $query->fetch(PDO::FETCH_ASSOC)["IdContent"];
+        }
+        return NULL;
+                  
+    }
+
 
     public function isInWatchlist($IdContent, $IdProfile){
 
