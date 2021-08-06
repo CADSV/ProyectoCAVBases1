@@ -129,6 +129,49 @@ class Content {
 
         }
 
+    }
+
+
+
+    public function updateHasseenOf($IdProfile, $IdContent){
+        $query = $this->connection->prepare("SELECT IdGenre  FROM isabout WHERE IdContent =:IdContent");
+        $query->bindValue(":IdContent", $IdContent);
+        $query->execute();
+        //echo $query->rowCount();
+        $cont=0;
+        while( $Generos=$query->fetch(PDO::FETCH_ASSOC)["IdGenre"]){
+            //echo 'Hello';
+            //$Generos=$query->fetch(PDO::FETCH_ASSOC)["IdGenre"];
+            $query2 = $this->connection->prepare("SELECT *  FROM hasseenof WHERE IdProfile =:IdProfile AND IdGenre=:IdGenre");
+            $query2->bindValue(":IdProfile", $IdProfile);
+            $query2->bindValue(":IdGenre", $Generos);
+            $query2->execute();
+            if($query2->rowCount()!= 0){
+                $query3 = $this->connection->prepare("UPDATE hasseenof SET TimesSeen=TimesSeen+1 WHERE IdProfile =:IdProfile AND IdGenre=:IdGenre ");
+                $query3->bindValue(":IdProfile", $IdProfile);
+                $query3->bindValue(":IdGenre", $Generos);
+                $query3->execute();
+                //echo 'Hello1';
+            }else{
+                $query3 = $this->connection->prepare("INSERT INTO hasseenof (IdProfile, IdGenre, TimesSeen, TotalSeenTime)  
+                                                             VALUES (:IdProfile, :IdGenre, :TimesSeen, :TotalSeenTime)");
+                $query3->bindValue(":IdProfile", $IdProfile);
+                $query3->bindValue(":IdGenre", $Generos);
+                $query3->bindValue(":TimesSeen", 1);
+                $query3->bindValue(":TotalSeenTime",'01:40:04');
+                $query3->execute();
+                //echo 'Hello2';
+
+            }
+
+            $cont=$cont+1;
+            //echo $Generos;
+
+            if ($cont==$query->rowCount()){
+                break;
+            }
+            
+        }
 
     }
 
