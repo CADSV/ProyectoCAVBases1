@@ -6,13 +6,16 @@ class ContentProvider {
     // $limit indica la cantidad de contenidos que queremos obtener
     // Si $IdGenre es null, traerá todos los contenidos de todas las categorías
     // $UsedIdContent existe si se está viendo un contenido acutalmente, por lo que se excluirá de las recomendaciones
-    public static function getContents($connection, $IdGenre, $limit, $UsedIdContent = NULL, $Category = NULL){
+    public static function getContents($connection, $IdGenre, $limit, $UsedIdContent = NULL, $Category = NULL, $IdProfile = NULL){
 
         if($Category == 1){ // Series
             $sql = "SELECT IsAbout.IdContent FROM IsAbout INNER JOIN EpisodicContent ON IsAbout.IdContent = EpisodicContent.IdContent ";
         }
         elseif($Category == 2){ // Películas
             $sql = "SELECT IsAbout.IdContent FROM IsAbout INNER JOIN FeatureContent ON IsAbout.IdContent = FeatureContent.IdContent ";
+        } 
+        elseif($Category == 3){
+            $sql = "SELECT IdContent FROM Watchlist ";
         }
         else{ // Todo
             $sql = "SELECT IdContent FROM IsAbout ";
@@ -28,6 +31,10 @@ class ContentProvider {
 
         }
 
+        if($IdProfile != null){
+            $sql .="WHERE (IdProfile =:IdProfile) ";
+        }
+
         $sql .= "ORDER BY RAND() LIMIT :limit";
 
         $query = $connection->prepare($sql);
@@ -39,6 +46,10 @@ class ContentProvider {
             if($UsedIdContent){
                 $query->bindValue(":UsedIdContent", $UsedIdContent);
             }
+        }
+
+        if($IdProfile != null){
+            $query->bindValue(":IdProfile", $IdProfile);
         }
 
         $query->bindValue(":limit", $limit, PDO::PARAM_INT);
