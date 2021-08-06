@@ -5,16 +5,27 @@ require_once("../../data/providers/previewProvider.php");
 require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
 require_once("../../data/containers/seasonContainer.php");
-include_once("navBar.php");
+//include_once("navBar.php");
 require_once("header.php");
 
-if(!isset($_GET["IdContent"]) || !isset($_GET["IdSeason"]) || !isset($_GET["IdEpisode"])){ // Si no se especifica algún id redirecciona a Home
+/*if(!isset($_GET["IdContent"]) || !isset($_GET["IdSeason"]) || !isset($_GET["IdEpisode"])){ // Si no se especifica algún id redirecciona a Home
     header("Location: home.php");
+}*/
+
+if(!isset($_GET["IdSeason"])){
+    $IdSeason=1;
+    $IdEpisode=1;
+}else{
+    $IdSeason= $_GET["IdSeason"];
+    $IdEpisode = $_GET["IdEpisode"];
 }
 
+
+
 $IdContent = $_GET["IdContent"];
-$IdSeason = $_GET["IdSeason"];
-$IdEpisode = $_GET["IdEpisode"];
+
+$IdProfile = $_SESSION["IdProfile"];
+
 
 if (!isset($_SESSION["userLoggedIn"])){
     header("Location: ../../index.php");
@@ -27,7 +38,10 @@ if (!isset($_SESSION["IdProfile"])){
 $userLoggedIn = $_SESSION["userLoggedIn"];
 
 $preview = new PreviewProvider($connection, $userLoggedIn);
-echo $preview->createPreviewVideo($IdContent);
+$content = new Content($connection, $_GET["IdContent"]);
+$content->updateHasseen($IdProfile, $IdContent);
+//echo $preview->createPreviewVideo($IdContent);
+$video='../../'.$content->getEpisodeVideo($IdContent, $IdSeason, $IdEpisode);
 
 ?>
     <!DOCTYPE html>
@@ -44,8 +58,24 @@ echo $preview->createPreviewVideo($IdContent);
 
         </head>
         <body>
-            <div class="wrapper">
+            
+            <div class="watchContainer">
+
+            <div class="videoControls watchNav">
+                <button class="iconButton" onclick="goBack(<?php echo $content->getId();?>)">  <i class="fas fa-arrow-left"></i>  </button>
+                <h1> <?php echo $content->getTitleCont();?>            </div> 
+            
+            <video autoplay controls  '>
+                        <source src ='<?php echo $video;?>' type ='video/mp4'>
+            </video>
+                
+            </div>
 
               
-            </div>  
+            
     </html>   
+
+    <script>
+        initVideo()
+
+    </script>

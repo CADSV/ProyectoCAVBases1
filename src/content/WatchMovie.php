@@ -4,9 +4,17 @@ require_once("../../data/config.php");
 require_once("../../data/providers/previewProvider.php");
 require_once("../../data/providers/contentProvider.php");
 require_once("../../data/containers/categoryContainer.php");
-include_once("navBar.php");
-require_once("content.php");
+require_once("../../data/containers/seasonContainer.php");
+//include_once("navBar.php");
 require_once("header.php");
+
+/*if(!isset($_GET["IdContent"]) || !isset($_GET["IdSeason"]) || !isset($_GET["IdEpisode"])){ // Si no se especifica algún id redirecciona a Home
+    header("Location: home.php");
+}*/
+
+$IdContent = $_GET["IdContent"];
+
+$IdProfile = $_SESSION["IdProfile"];
 
 
 if (!isset($_SESSION["userLoggedIn"])){
@@ -18,11 +26,12 @@ if (!isset($_SESSION["IdProfile"])){
 }
 
 $userLoggedIn = $_SESSION["userLoggedIn"];
-$preview = new PreviewProvider($connection, $userLoggedIn);
-echo $preview->createPreviewVideo(null);
 
-$categories = new CategoryContainer($connection, $userLoggedIn);
-echo $categories->showCategories();
+$preview = new PreviewProvider($connection, $userLoggedIn);
+$content = new Content($connection, $_GET["IdContent"]);
+$content->updateHasseen($IdProfile, $IdContent);
+
+$video='../../'.$content->getMovieVideo($IdContent);
 
 ?>
     <!DOCTYPE html>
@@ -39,8 +48,24 @@ echo $categories->showCategories();
 
         </head>
         <body>
-            <div class="wrapper">
+            
+            <div class="watchContainer">
+
+            <div class="videoControls watchNav">
+                <button class="iconButton" onclick="goBack(<?php echo $content->getId();?>)">  <i class="fas fa-arrow-left"></i>  </button>
+                <h1> <?php echo $content->getTitleCont();?>            </div> 
+            
+            <video autoplay controls  '>
+                        <source src ='<?php echo $video;?>' type ='video/mp4'>
+            </video>
+                
+            </div>
 
               
-            </div>  
+            
     </html>   
+
+    <script>
+        initVideo();
+
+    </script>

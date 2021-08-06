@@ -7,6 +7,7 @@ require_once("../../data/containers/categoryContainer.php");
 require_once("../../data/containers/seasonContainer.php");
 include_once("navBar.php");
 require_once("content.php");
+require_once("header.php");
 
 if(!isset($_GET["IdContent"])){ // Si no se especifica el id redirecciona a Home
     header("Location: home.php");

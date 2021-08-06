@@ -51,6 +51,19 @@ class Content {
         return $this->DATA["Description"];
     }
 
+
+    public function ismovie($IdContent){
+        $query = $this->connection->prepare("SELECT * FROM featurecontent WHERE IdContent= :idcontent ");
+            $query->bindValue(":idcontent", $IdContent);
+            $query->execute();
+            if($query->rowCount()!= 0){
+                return 1;
+            }else{
+                return 0;
+            }
+
+    }
+
     public function getContentGenre(){
         $query = $this->connection->prepare("SELECT Genre.IdGenre 
                                              FROM Genre 
@@ -81,6 +94,52 @@ class Content {
         return $row;
     }
 
+    public function updateHasseen($Idprofile, $IdContent){
+        $query = $this->connection->prepare("SELECT * FROM Hasseen WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
+        $query->bindValue(":IdContent", $IdContent);
+        $query->bindValue(":Idprofile", $Idprofile);
+        $query->execute();
+        
+        if($query->rowCount()!= 0){  
+            
+            $query2 = $this->connection->prepare("UPDATE Hasseen SET TimesSeen=TimesSeen+1, LastDateWatched=CURRENT_TIMESTAMP WHERE IdProfile =:Idprofile AND IdContent=:IdContent ");
+            $query2->bindValue("IdContent", $IdContent);
+            $query2->bindValue(":Idprofile", $Idprofile);
+            $query2->execute();
+                     
+        }else{
+             $query2 = $this->connection->prepare("INSERT INTO  Hasseen (IdProfile, IdContent, Rating, WatchedByRecomm, TimesSeen, LastMinWatched,TimeWatchedLastTime) 
+                                                    VALUES (:IdProfile, :IdContent, :Rating, :WatchedByRecomm, :TimesSeen, :LastMinWatched,:TimeWatchedLastTime)"); 
+               $query2->bindValue(":IdProfile", $Idprofile);
+               $query2->bindValue(":IdContent", $IdContent);
+                $query2->bindValue(":Rating", NULL);
+                $query2->bindValue(":WatchedByRecomm", TRUE);
+                $query2->bindValue(":TimesSeen", 1);
+                $query2->bindValue(":LastMinWatched", '00:00:00');
+                $query2->bindValue(":TimeWatchedLastTime", '00:00:00');
+                $query2->execute();
+
+        }
+
+
+    }
+
+    public function getEpisodeVideo($idContent, $idseason, $idepisode){
+        $query = $this->connection->prepare("SELECT EpisodeVideo FROM episode WHERE IdContent =:idContent AND IdSeason=:Idseason AND IdEpisode=:idepisode ");
+        $query->bindValue(":idContent", $idContent);
+        $query->bindValue(":Idseason", $idseason);
+        $query->bindValue(":idepisode",$idepisode);
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC)["EpisodeVideo"];
+    }
+
+    public function getMovieVideo($IdContent){
+        $query = $this->connection->prepare("SELECT ContentVideo FROM featurecontent WHERE IdContent =:idContent");
+        $query->bindValue(":idContent", $IdContent);
+
+        $query->execute();
+        return $query->fetch(PDO::FETCH_ASSOC)["ContentVideo"];
+    }
 
 
 }

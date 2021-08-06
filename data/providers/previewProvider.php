@@ -21,6 +21,8 @@ class PreviewProvider {
 
         $ContentName = $content->getTitleCont();
         $ContentDescription = $content->getContentDescription();
+        $idContent = $content->getId();
+        $ismovie= $content->ismovie($idContent);
 
         $preview = $content->getContentPreview();
         $preview = '../../'.$preview;
@@ -46,7 +48,7 @@ class PreviewProvider {
                             <h4>$ContentDescription</h4>
                             <div class='buttons'>
 
-                                <button><i class = 'fas fa-play'></i>    Ver</button>
+                                <button onclick = 'PlayContent($idContent,$ismovie)'><i class = 'fas fa-play'></i>    Ver</button>
                                 <button onclick = 'volumeToggle(this)'><i class = 'fas fa-volume-mute'></i></button>
 
                             </div>
