@@ -78,12 +78,23 @@ class CategoryContainer {
                                                   WHERE IdGenre =:idGenre AND Relevance = 1
                                                   GROUP BY IsAbout.IdContent
                                                   ORDER BY AVG(Rating) DESC
-                                                  LIMIT 1");
+                                                  LIMIT 3");
             $query2->bindValue(":idGenre", $row["IdGenre"]);
             $query2->execute();
 
             if(!empty($query2)){
-                array_push($rContents, $query2->fetch(PDO::FETCH_ASSOC)["IdContent"]);
+                
+                $cont2 = 0;
+
+                while($row2 = $query2->fetch(PDO::FETCH_ASSOC)){
+                    array_push($rContents, $row2["IdContent"]);
+                    $cont2 = $cont2 + 1;
+
+                    if ($cont2==$query2->rowCount()){
+                        break;
+                    }
+                }
+                
             }      
             $cont=$cont+1;
             
