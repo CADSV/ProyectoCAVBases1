@@ -47,6 +47,9 @@ class PreviewProvider {
                         <div class= 'mainDetails'>
                             <h3>$ContentName</h3>
                             <h4>$ContentDescription</h4>
+                            <div class='stars-outer'>
+                                <div class='stars-inner'></div>
+                            </div>
                             <h4>$Rating</h4>
                             <div class='buttons'>
 
@@ -65,35 +68,16 @@ class PreviewProvider {
     }
 
     public function getRatingHtml($AvgRating){
+        ?>
+        <script>
+            var AvgRating = <?php echo json_encode($AvgRating, JSON_HEX_TAG); ?>;
+        </script>
+        <?php 
         if($AvgRating) {
-            $count = (int)$AvgRating;
-            $stars = $count;
-            $decimals = $AvgRating - $count;
-            $html = '';
-
-            for($count; $count > 0; $count--){ // Agregar estrella completa por cada número entero.
-                $html .= '<span class="fa fa-star checked"></span>';
-            }
-            if($decimals >= 0.1){
-                $html .= '<span class="fa fa-star-half-alt checked"></span>';
-                $stars++;
-            }
-
-            if($stars != 5){
-                for($count = 5-$stars; $count > 0; $count--){ // Agregar estrella completa por cada número entero.
-                    $html .= '<span class="fa fa-star-o"></span>';
-                }
-            }
-
-            return $html . '  ' . $AvgRating . ' Estrellas';;           
+            return $AvgRating . ' Estrellas';;           
         }
         else{
-            return '<span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                      Sin calificar. ¡Sé el primero en calificar!';
+            return '¡Sé el primero en calificar!';
         }
     }
 
